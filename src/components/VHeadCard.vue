@@ -44,7 +44,9 @@ defineProps({
           v-text="title"
         />
 
-        <v-icon v-else-if="icon" size="32" :class="iconClass" v-text="icon" />
+        <v-icon v-else-if="icon" size="32" :class="iconClass">
+          {{ icon }}
+        </v-icon>
 
         <div v-if="text" class="text-h5 font-weight-thin" v-text="text" />
       </v-sheet>

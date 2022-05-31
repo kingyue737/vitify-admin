@@ -1,6 +1,7 @@
 {
   "name": "vitify-admin",
   "version": "0.0.1",
+  "packageManager": "pnpm@7.1.7",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
@@ -10,13 +11,14 @@
     "test:e2e": "start-server-and-test preview http://127.0.0.1:5050/ 'cypress open'",
     "test:e2e:ci": "start-server-and-test preview http://127.0.0.1:5050/ 'cypress run'",
     "typecheck": "vue-tsc --noEmit",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "supportedBrowsers": "(echo export default && browserslist-useragent-regexp --allowHigherVersions) > ./src/supportedBrowsers.ts",
     "type:vuetify": "node ./scripts/vuetify-type.mjs > ./src/vuetify2.d.ts"
   },
   "dependencies": {
     "@mdi/js": "^6.7.96",
     "@vue/composition-api": "^1.6.2",
-    "@vueuse/core": "^8.5.0",
+    "@vueuse/core": "^8.6.0",
     "axios": "^0.27.2",
     "echarts": "^5.3.2",
     "js-cookie": "^3.0.1",
@@ -33,14 +35,20 @@
   "devDependencies": {
     "@cypress/vite-dev-server": "^2.2.3",
     "@cypress/vue": "^2.2.4",
+    "@rushstack/eslint-patch": "^1.1.0",
     "@types/js-cookie": "^3.0.1",
     "@types/lodash": "^4.14.182",
     "@types/node": "^16.11.25",
     "@types/nprogress": "^0.2.0",
     "@vitejs/plugin-legacy": "^1.8.2",
+    "@vue/eslint-config-prettier": "^7.0.0",
+    "@vue/eslint-config-typescript": "^10.0.0",
     "@vue/runtime-dom": "^3.2.36",
     "browserslist-useragent-regexp": "^3.0.2",
     "cypress": "^9.7.0",
+    "eslint": "^8.16.0",
+    "eslint-plugin-cypress": "^2.12.1",
+    "eslint-plugin-vue": "^9.0.1",
     "prettier": "^2.6.2",
     "sass": "~1.32.12",
     "start-server-and-test": "^1.14.0",
@@ -54,7 +62,16 @@
     "vite-plugin-vue2-svg": "^0.1.8",
     "vue-template-babel-compiler": "^1.2.0",
     "vue-template-compiler": "^2.6.14",
-    "vue-tsc": "^0.35.0"
+    "vue-tsc": "^0.35.2"
+  },
+  "pnpm": {
+    "packageExtensions": {
+      "@vue/eslint-config-typescript": {
+        "dependencies": {
+          "eslint-plugin-vue": "^9.0.1"
+        }
+      }
+    }
   },
   "browserslist": [
     "> 1%",
@@ -64,3 +81,4 @@
     "not ie>0"
   ]
 }
+

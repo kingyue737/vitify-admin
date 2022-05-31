@@ -65,13 +65,13 @@ export default defineComponent({
           <v-list-item-icon class="mr-2">
             <v-icon> $mdi-key-variant </v-icon>
           </v-list-item-icon>
-          <v-list-item-title link v-text="'重置密码'" />
+          <v-list-item-title link> 重置密码 </v-list-item-title>
         </v-list-item>
         <v-list-item @click="logOut">
           <v-list-item-icon class="mr-2">
             <v-icon> $mdi-logout </v-icon>
           </v-list-item-icon>
-          <v-list-item-title link v-text="'注销'" />
+          <v-list-item-title link> 注销 </v-list-item-title>
         </v-list-item>
       </v-list>
     </v-menu>

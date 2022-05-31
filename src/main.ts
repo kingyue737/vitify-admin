@@ -24,4 +24,3 @@ const app = createApp({
 app.component('VHeadCard', VHeadCard).component('VChart', VChart as any)
 
 app.mount('#app')
-

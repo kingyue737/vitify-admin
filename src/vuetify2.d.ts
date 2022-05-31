@@ -1,4790 +1,4790 @@
-import type { DefineComponent } from "@vue/runtime-dom";
-import type { DataTableHeader, DataOptions } from "vuetify";
+import type { DefineComponent } from 'vue'
+import type { DataTableHeader, DataOptions } from 'vuetify'
 
-declare module "@vue/runtime-dom" {
+declare module '@vue/runtime-dom' {
   export interface GlobalComponents {
     VApp: DefineComponent<{
-      /** Sets the DOM id on the component */ id?: string;
-    }>;
+      /** Sets the DOM id on the component */ id?: string
+    }>
     VAppBar: DefineComponent<{
-      /** Applies position: absolute to the component. */ absolute?: boolean;
+      /** Applies position: absolute to the component. */ absolute?: boolean
       /** Designates the component as part of the application layout. Used for dynamically adjusting content sizing. Components using this prop should reside **outside** of `v-main` component to function properly. You can find more information about layouts on the [application page](/components/application). **Note:** this prop automatically applies **position: fixed** to the layout element. You can overwrite this functionality by using the `absolute` prop */
-      app?: boolean;
+      app?: boolean
       /** Aligns the component towards the bottom. */
-      bottom?: boolean;
+      bottom?: boolean
       /** Designates that the application's `v-navigation-drawer` that is positioned on the left is below the app-bar. */
-      clippedLeft?: boolean;
+      clippedLeft?: boolean
       /** Designates that the application's `v-navigation-drawer` that is positioned on the right is below the app-bar. */
-      clippedRight?: boolean;
+      clippedRight?: boolean
       /** Puts the toolbar into a collapsed state reducing its maximum width. */
-      collapse?: boolean;
+      collapse?: boolean
       /** Puts the app-bar into a collapsed state when scrolling. */
-      collapseOnScroll?: boolean;
+      collapseOnScroll?: boolean
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Reduces the height of the toolbar content to 48px (96px when using the **prominent** prop). */
-      dense?: boolean;
+      dense?: boolean
       /** Elevates the app-bar when scrolling. */
-      elevateOnScroll?: boolean;
+      elevateOnScroll?: boolean
       /** Designates an elevation applied to the component between 0 and 24. You can find more information on the [elevation page](/styles/elevation). */
-      elevation?: number | string;
+      elevation?: number | string
       /** Use this prop to increase the height of the toolbar _without_ using the `extension` slot for adding content. May be used in conjunction with the **extension-height** prop, and any of the other props that affect the height of the toolbar, e.g. **prominent**, **dense**, etc., **WITH THE EXCEPTION** of **height**. */
-      extended?: boolean;
+      extended?: boolean
       /** Specify an explicit height for the `extension` slot.  */
-      extensionHeight?: number | string;
+      extensionHeight?: number | string
       /** When using the **src** prop or `img` slot, will fade the image when scrolling. */
-      fadeImgOnScroll?: boolean;
+      fadeImgOnScroll?: boolean
       /** Applies **position: fixed** to the component. */
-      fixed?: boolean;
+      fixed?: boolean
       /** Removes the toolbar's box-shadow. */
-      flat?: boolean;
+      flat?: boolean
       /** Applies **display: inline-flex** to the component. */
-      floating?: boolean;
+      floating?: boolean
       /** Designates a specific height for the toolbar. Overrides the heights imposed by other props, e.g. **prominent**, **dense**, **extended**, etc. */
-      height?: number | string;
+      height?: number | string
       /** Hides the app-bar when scrolling. Will still show the `extension` slot. */
-      hideOnScroll?: boolean;
+      hideOnScroll?: boolean
       /** Hides the app-bar when scrolling down and displays it when scrolling up. */
-      invertedScroll?: boolean;
+      invertedScroll?: boolean
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Sets the maximum height for the component. */
-      maxHeight?: number | string;
+      maxHeight?: number | string
       /** Sets the maximum width for the component. */
-      maxWidth?: number | string;
+      maxWidth?: number | string
       /** Sets the minimum height for the component. */
-      minHeight?: number | string;
+      minHeight?: number | string
       /** Sets the minimum width for the component. */
-      minWidth?: number | string;
+      minWidth?: number | string
       /** Removes elevation (box-shadow) and adds a *thin* border. */
-      outlined?: boolean;
+      outlined?: boolean
       /** Increases the height of the toolbar content to 128px. */
-      prominent?: boolean;
+      prominent?: boolean
       /** Designates the **border-radius** applied to the component. You can find more information on the [Border Radius page](/styles/border-radius). */
-      rounded?: boolean | string;
+      rounded?: boolean | string
       /** Hides the app-bar when scrolling. Will **NOT** show the `extension` slot. */
-      scrollOffScreen?: boolean;
+      scrollOffScreen?: boolean
       /** Designates the element to target for scrolling events. Uses `window` by default. */
-      scrollTarget?: string;
+      scrollTarget?: string
       /** The amount of scroll distance down before **hide-on-scroll** activates. */
-      scrollThreshold?: string | number;
+      scrollThreshold?: string | number
       /** Applies a large border radius on the top left and bottom right of the card. */
-      shaped?: boolean;
+      shaped?: boolean
       /** Reduce the height of the toolbar content to 56px (112px when using the **prominent** prop). */
-      short?: boolean;
+      short?: boolean
       /** Shrinks a **prominent** toolbar to a **dense** or **short** (default) one when scrolling. */
-      shrinkOnScroll?: boolean;
+      shrinkOnScroll?: boolean
       /** Image source. See `v-img` for details */
-      src?: string | object;
+      src?: string | object
       /** Specify a custom tag used on the root element. */
-      tag?: string;
+      tag?: string
       /** Removes the component's **border-radius**. */
-      tile?: boolean;
+      tile?: boolean
       /** Controls whether the component is visible or hidden. */
-      value?: boolean;
+      value?: boolean
       /** Sets the width for the component. */
-      width?: number | string;
-    }>;
-    VAppBarNavIcon: DefineComponent<{}>;
-    VAppBarTitle: DefineComponent<{}>;
+      width?: number | string
+    }>
+    VAppBarNavIcon: DefineComponent<{}>
+    VAppBarTitle: DefineComponent<{}>
     VAlert: DefineComponent<{
       /** Puts a border on the alert. Accepts **top** \| **right** \| **bottom** \| **left**. */
-      border?: string;
+      border?: string
       /** Change the default icon used for **dismissible** alerts. */
-      closeIcon?: string;
+      closeIcon?: string
       /** Text used for *aria-label* on **dismissible** alerts. Can also be customizing globally in [Internationalization](/customization/internationalization). */
-      closeLabel?: string;
+      closeLabel?: string
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Applies the defined **color** to the alert's border. */
-      coloredBorder?: boolean;
+      coloredBorder?: boolean
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Decreases component's height. */
-      dense?: boolean;
+      dense?: boolean
       /** Adds a close icon that can hide the alert. */
-      dismissible?: boolean;
+      dismissible?: boolean
       /** Designates an elevation applied to the component between 0 and 24. You can find more information on the [elevation page](/styles/elevation). */
-      elevation?: number | string;
+      elevation?: number | string
       /** Sets the height for the component. */
-      height?: number | string;
+      height?: number | string
       /** Designates a specific icon. */
-      icon?: boolean | string;
+      icon?: boolean | string
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Sets the maximum height for the component. */
-      maxHeight?: number | string;
+      maxHeight?: number | string
       /** Sets the maximum width for the component. */
-      maxWidth?: number | string;
+      maxWidth?: number | string
       /** Sets the minimum height for the component. */
-      minHeight?: number | string;
+      minHeight?: number | string
       /** Sets the minimum width for the component. */
-      minWidth?: number | string;
+      minWidth?: number | string
       /** Sets the transition mode (does not apply to transition-group). You can find more information on the Vue documentation [for transition modes](https://vuejs.org/v2/api/#transition). */
-      mode?: string;
+      mode?: string
       /** Sets the transition origin on the element. You can find more information on the MDN documentation [for transition origin](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin). */
-      origin?: string;
+      origin?: string
       /** Makes the background transparent and applies a thin border. */
-      outlined?: boolean;
+      outlined?: boolean
       /** Displays a larger vertically centered icon to draw more attention. */
-      prominent?: boolean;
+      prominent?: boolean
       /** Designates the **border-radius** applied to the component. You can find more information on the [Border Radius page](/styles/border-radius). */
-      rounded?: boolean | string;
+      rounded?: boolean | string
       /** Applies a large border radius on the top left and bottom right of the card. */
-      shaped?: boolean;
+      shaped?: boolean
       /** Specify a custom tag used on the root element. */
-      tag?: string;
+      tag?: string
       /** Applies the defined **color** to text and a low opacity background of the same. */
-      text?: boolean;
+      text?: boolean
       /** Removes the component's border-radius. */
-      tile?: boolean;
+      tile?: boolean
       /** Sets the component transition. Can be one of the [built in transitions](/styles/transitions) or one your own. */
-      transition?: string;
+      transition?: string
       /** Specify a **success**, **info**, **warning** or **error** alert. Uses the contextual color and has a pre-defined icon. */
-      type?: string;
+      type?: string
       /** Controls whether the component is visible or hidden. */
-      value?: boolean;
+      value?: boolean
       /** Sets the width for the component. */
-      width?: number | string;
-    }>;
+      width?: number | string
+    }>
     VAutocomplete: DefineComponent<{
-      /** Allow the menu to overflow off the screen */ allowOverflow?: boolean;
+      /** Allow the menu to overflow off the screen */ allowOverflow?: boolean
       /** Appends an icon to the component, uses the same syntax as `v-icon` */
-      appendIcon?: string;
+      appendIcon?: string
       /** Appends an icon to the outside the component's input, uses same syntax as `v-icon` */
-      appendOuterIcon?: string;
+      appendOuterIcon?: string
       /** Specifies which DOM element that this component should detach to. String can be any valid querySelector and Object can be any valid Node. This will attach to the root `v-app` component by default. */
-      attach?: any;
+      attach?: any
       /** When searching, will always highlight the first option */
-      autoSelectFirst?: boolean;
+      autoSelectFirst?: boolean
       /** Enables autofocus */
-      autofocus?: boolean;
+      autofocus?: boolean
       /** Changes the background-color of the input */
-      backgroundColor?: string;
+      backgroundColor?: string
       /** Keeps a local _unique_ copy of all items that have been passed through the **items** prop. */
-      cacheItems?: boolean;
+      cacheItems?: boolean
       /** Changes display of selections to chips */
-      chips?: boolean;
+      chips?: boolean
       /** Applied when using **clearable** and the input is dirty */
-      clearIcon?: string;
+      clearIcon?: string
       /** Add input clear functionality, default icon is Material Design Icons **mdi-clear** */
-      clearable?: boolean;
+      clearable?: boolean
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Creates counter for input length; if no number is specified, it defaults to 25. Does not apply any validation. */
-      counter?: boolean | number | string;
-      counterValue?: Function;
+      counter?: boolean | number | string
+      counterValue?: Function
       /** Applies the dark theme variant to the component. This will default the components color to _white_ unless you've configured your [application theme](/customization/theme) to **dark** or if you are using the **color** prop on the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Adds a remove icon to selected chips */
-      deletableChips?: boolean;
+      deletableChips?: boolean
       /** Reduces the input height */
-      dense?: boolean;
+      dense?: boolean
       /** Disables keyboard lookup */
-      disableLookup?: boolean;
+      disableLookup?: boolean
       /** Disables the input */
-      disabled?: boolean;
+      disabled?: boolean
       /** Will force the components content to render on mounted. This is useful if you have content that will not be rendered in the DOM that you want crawled for SEO. */
-      eager?: boolean;
+      eager?: boolean
       /** Puts the input in a manual error state */
-      error?: boolean;
+      error?: boolean
       /** The total number of errors that should display at once */
-      errorCount?: number | string;
+      errorCount?: number | string
       /** Puts the input in an error state and passes through custom error messages. Will be combined with any validations that occur from the **rules** prop. This field will not trigger validation */
-      errorMessages?: string | any[];
+      errorMessages?: string | any[]
       /** Applies the alternate filled input style */
-      filled?: boolean;
+      filled?: boolean
       /** The filtering algorithm used when searching. [example](https://github.com/vuetifyjs/vuetify/blob/master/packages/vuetify/src/components/VAutocomplete/VAutocomplete.ts#L40) */
-      filter?: Function;
+      filter?: Function
       /** Removes elevation (shadow) added to element when using the **solo** or **solo-inverted** props */
-      flat?: boolean;
+      flat?: boolean
       /** Designates input type as full-width */
-      fullWidth?: boolean;
+      fullWidth?: boolean
       /** Sets the height of the input */
-      height?: number | string;
+      height?: number | string
       /** Hides hint and validation errors. When set to `auto` messages will be rendered only if there's a message (hint, error message, counter value etc) to display */
-      hideDetails?: boolean | string;
+      hideDetails?: boolean | string
       /** Hides the menu when there are no options to show.  Useful for preventing the menu from opening before results are fetched asynchronously.  Also has the effect of opening the menu when the `items` array changes if not already open. */
-      hideNoData?: boolean;
+      hideNoData?: boolean
       /** Do not display in the select menu items that are already selected */
-      hideSelected?: boolean;
+      hideSelected?: boolean
       /** Hides spin buttons on the input when type is set to `number`. */
-      hideSpinButtons?: boolean;
+      hideSpinButtons?: boolean
       /** Hint text */
-      hint?: string;
+      hint?: string
       /** Sets the DOM id on the component */
-      id?: string;
+      id?: string
       /** Sets color of selected items */
-      itemColor?: string;
+      itemColor?: string
       /** Set property of **items**'s disabled value */
-      itemDisabled?: string | any[] | Function;
+      itemDisabled?: string | any[] | Function
       /** Set property of **items**'s text value */
-      itemText?: string | any[] | Function;
+      itemText?: string | any[] | Function
       /** Set property of **items**'s value - **must be primitive**. Dot notation is supported. **Note:** This is currently not supported with `v-combobox` [GitHub Issue](https://github.com/vuetifyjs/vuetify/issues/5479) */
-      itemValue?: string | any[] | Function;
+      itemValue?: string | any[] | Function
       /** Can be an array of objects or array of strings. When using objects, will look for a text, value and disabled keys. This can be changed using the **item-text**, **item-value** and **item-disabled** props.  Objects that have a **header** or **divider** property are considered special cases and generate a list header or divider; these items are not selectable. */
-      items?: any[];
+      items?: any[]
       /** Sets input label */
-      label?: string;
+      label?: string
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Specifies the height of the loader */
-      loaderHeight?: number | string;
+      loaderHeight?: number | string
       /** Displays linear progress bar. Can either be a String which specifies which color is applied to the progress bar (any material color or theme color - **primary**, **secondary**, **success**, **info**, **warning**, **error**) or a Boolean which uses the component **color** (set by color prop - if it's supported by the component) or the primary color */
-      loading?: boolean | string;
+      loading?: boolean | string
       /** Pass props through to the `v-menu` component. Accepts either a string for boolean props `menu-props="auto, overflowY"`, or an object `:menu-props="{ auto: true, overflowY: true }"` */
-      menuProps?: string | any[] | object;
+      menuProps?: string | any[] | object
       /** Displays a list of messages or message if using a string */
-      messages?: string | any[];
+      messages?: string | any[]
       /** Changes select to multiple. Accepts array for value */
-      multiple?: boolean;
+      multiple?: boolean
       /** Display text when there is no data */
-      noDataText?: string;
+      noDataText?: string
       /** Do not apply filtering when searching. Useful when data is being filtered server side */
-      noFilter?: boolean;
+      noFilter?: boolean
       /** When using the **clearable** prop, once cleared, the select menu will either open or stay open, depending on the current state */
-      openOnClear?: boolean;
+      openOnClear?: boolean
       /** Applies the outlined style to the input */
-      outlined?: boolean;
+      outlined?: boolean
       /** Forces hint to always be visible */
-      persistentHint?: boolean;
+      persistentHint?: boolean
       /** Forces placeholder to always be visible */
-      persistentPlaceholder?: boolean;
+      persistentPlaceholder?: boolean
       /** Sets the input's placeholder text */
-      placeholder?: string;
+      placeholder?: string
       /** Displays prefix text */
-      prefix?: string;
+      prefix?: string
       /** Prepends an icon to the component, uses the same syntax as `v-icon` */
-      prependIcon?: string;
+      prependIcon?: string
       /** Prepends an icon inside the component's input, uses the same syntax as `v-icon` */
-      prependInnerIcon?: string;
+      prependInnerIcon?: string
       /** Puts input in readonly state */
-      readonly?: boolean;
+      readonly?: boolean
       /** Changes the selection behavior to return the object directly rather than the value specified with **item-value** */
-      returnObject?: boolean;
+      returnObject?: boolean
       /** Reverses the input orientation */
-      reverse?: boolean;
+      reverse?: boolean
       /** Adds a border radius to the input */
-      rounded?: boolean;
+      rounded?: boolean
       /** Accepts a mixed array of types `function`, `boolean` and `string`. Functions pass an input value as an argument and must return either `true` / `false` or a `string` containing an error message. The input field will enter an error state if a function returns (or any value in the array contains) `false` or is a `string` */
-      rules?: any[];
+      rules?: any[]
       /** Search value. Can be used with `.sync` modifier. */
-      searchInput?: string;
+      searchInput?: string
       /** Round if `outlined` and increase `border-radius` if `filled`. Must be used with either `outlined` or `filled` */
-      shaped?: boolean;
+      shaped?: boolean
       /** Label does not move on focus/dirty */
-      singleLine?: boolean;
+      singleLine?: boolean
       /** Changes display of selections to chips with the **small** property */
-      smallChips?: boolean;
+      smallChips?: boolean
       /** Changes the style of the input */
-      solo?: boolean;
+      solo?: boolean
       /** Reduces element opacity until focused */
-      soloInverted?: boolean;
+      soloInverted?: boolean
       /** Puts the input in a manual success state */
-      success?: boolean;
+      success?: boolean
       /** Puts the input in a success state and passes through custom success messages. */
-      successMessages?: string | any[];
+      successMessages?: string | any[]
       /** Displays suffix text */
-      suffix?: string;
+      suffix?: string
       /** Sets input type */
-      type?: string;
+      type?: string
       /** Delays validation until blur event */
-      validateOnBlur?: boolean;
+      validateOnBlur?: boolean
       /** The input's value */
-      value?: any;
+      value?: any
       /** The comparison algorithm used for values. [More info](https://github.com/vuetifyjs/vuetify/blob/master/packages/vuetify/src/util/helpers.ts) */
-      valueComparator?: Function;
-    }>;
+      valueComparator?: Function
+    }>
     VAvatar: DefineComponent<{
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Sets the height for the component. */
-      height?: number | string;
+      height?: number | string
       /** Designates that the avatar is on the left side of a component. This is hooked into by components such as [v-chip](/components/chips) and [v-btn](/components/buttons). */
-      left?: boolean;
+      left?: boolean
       /** Sets the maximum height for the component. */
-      maxHeight?: number | string;
+      maxHeight?: number | string
       /** Sets the maximum width for the component. */
-      maxWidth?: number | string;
+      maxWidth?: number | string
       /** Sets the minimum height for the component. */
-      minHeight?: number | string;
+      minHeight?: number | string
       /** Sets the minimum width for the component. */
-      minWidth?: number | string;
+      minWidth?: number | string
       /** Designates that the avatar is on the right side of a component. This is hooked into by components such as [v-chip](/components/chips) and [v-btn](/components/buttons). */
-      right?: boolean;
+      right?: boolean
       /** Designates the **border-radius** applied to the component. You can find more information on the [Border Radius page](/styles/border-radius). */
-      rounded?: boolean | string;
+      rounded?: boolean | string
       /** Sets the height and width of the component. */
-      size?: number | string;
+      size?: number | string
       /** Removes the component's **border-radius**. */
-      tile?: boolean;
+      tile?: boolean
       /** Sets the width for the component. */
-      width?: number | string;
-    }>;
+      width?: number | string
+    }>
     VBadge: DefineComponent<{
       /** Removes badge padding for the use of the `v-avatar` in the **badge** slot. */
-      avatar?: boolean;
+      avatar?: boolean
       /** Applies a **2px** by default and **1.5px** border around the badge when using the **dot** property. */
-      bordered?: boolean;
+      bordered?: boolean
       /** Aligns the component towards the bottom. */
-      bottom?: boolean;
+      bottom?: boolean
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Any content you want injected as text into the badge. */
-      content?: any;
+      content?: any
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Reduce the size of the badge and hide its contents */
-      dot?: boolean;
+      dot?: boolean
       /** Designates a specific icon used in the badge. */
-      icon?: string;
+      icon?: string
       /** Moves the badge to be inline with the wrapping element. Supports the usage of the **left** prop. */
-      inline?: boolean;
+      inline?: boolean
       /** The **aria-label** used for the badge */
-      label?: string;
+      label?: string
       /** Aligns the component towards the left. */
-      left?: boolean;
+      left?: boolean
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Sets the transition mode (does not apply to transition-group). You can find more information on the Vue documentation [for transition modes](https://vuejs.org/v2/api/#transition). */
-      mode?: string;
+      mode?: string
       /** Offset the badge on the x-axis. */
-      offsetX?: number | string;
+      offsetX?: number | string
       /** Offset the badge on the y-axis. */
-      offsetY?: number | string;
+      offsetY?: number | string
       /** Sets the transition origin on the element. You can find more information on the MDN documentation [for transition origin](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin). */
-      origin?: string;
+      origin?: string
       /** Overlaps the slotted content on top of the component. */
-      overlap?: boolean;
+      overlap?: boolean
       /** Removes the component's border-radius. */
-      tile?: boolean;
+      tile?: boolean
       /** Sets the component transition. Can be one of the [built in transitions](/styles/transitions) or one your own. */
-      transition?: string;
+      transition?: string
       /** Controls whether the component is visible or hidden. */
-      value?: any;
-    }>;
+      value?: any
+    }>
     VBanner: DefineComponent<{
       /** When used inside of `v-main`, will calculate top based upon application `v-toolbar` and `v-system-bar`. */
-      app?: boolean;
+      app?: boolean
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Designates an elevation applied to the component between 0 and 24. You can find more information on the [elevation page](/styles/elevation). */
-      elevation?: number | string;
+      elevation?: number | string
       /** Sets the height for the component. */
-      height?: number | string;
+      height?: number | string
       /** Designates a specific icon. */
-      icon?: string;
+      icon?: string
       /** Designates a specific icon color. */
-      iconColor?: string;
+      iconColor?: string
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Sets the maximum height for the component. */
-      maxHeight?: number | string;
+      maxHeight?: number | string
       /** Sets the maximum width for the component. */
-      maxWidth?: number | string;
+      maxWidth?: number | string
       /** Sets the minimum height for the component. */
-      minHeight?: number | string;
+      minHeight?: number | string
       /** Sets the minimum width for the component. */
-      minWidth?: number | string;
+      minWidth?: number | string
       /** Sets the designated mobile breakpoint for the component. */
-      mobileBreakpoint?: number | string;
+      mobileBreakpoint?: number | string
       /** Removes elevation (box-shadow) and adds a *thin* border. */
-      outlined?: boolean;
+      outlined?: boolean
       /** Designates the **border-radius** applied to the component. You can find more information on the [Border Radius page](/styles/border-radius). */
-      rounded?: boolean | string;
+      rounded?: boolean | string
       /** Applies a large border radius on the top left and bottom right of the card. */
-      shaped?: boolean;
+      shaped?: boolean
       /** Forces the banner onto a single line. */
-      singleLine?: boolean;
+      singleLine?: boolean
       /** Applies **position: sticky** to the component (**Evergreen browsers only**). You can find more information on the [MDN documentation for sticky position](https://developer.mozilla.org/en-US/docs/Web/CSS/position). */
-      sticky?: boolean;
+      sticky?: boolean
       /** Specify a custom tag used on the root element. */
-      tag?: string;
+      tag?: string
       /** Removes the component's **border-radius**. */
-      tile?: boolean;
+      tile?: boolean
       /** Controls whether the component is visible or hidden. */
-      value?: boolean;
+      value?: boolean
       /** Sets the width for the component. */
-      width?: number | string;
-    }>;
+      width?: number | string
+    }>
     VBottomNavigation: DefineComponent<{
       /** Applies **position: absolute** to the component. */
-      absolute?: boolean;
+      absolute?: boolean
       /** The class applied to a [v-btn](/components/buttons) when activated. */
-      activeClass?: string;
+      activeClass?: string
       /** Designates the component as part of the application layout. Used for dynamically adjusting content sizing. Components using this prop should reside **outside** of `v-main` component to function properly. You can find more information about layouts on the [application page](/components/application). **Note:** this prop automatically applies **position: fixed** to the layout element. You can overwrite this functionality by using the `absolute` prop */
-      app?: boolean;
+      app?: boolean
       /** Changes the background-color for the component. */
-      backgroundColor?: string;
+      backgroundColor?: string
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Applies **position: fixed** to the component. */
-      fixed?: boolean;
+      fixed?: boolean
       /** Force [v-btn](/components/buttons)s to take up all available space. */
-      grow?: boolean;
+      grow?: boolean
       /** Sets the height for the component. */
-      height?: number | string;
+      height?: number | string
       /** Will transition the navigation off screen when scrolling up. */
-      hideOnScroll?: boolean;
+      hideOnScroll?: boolean
       /** Uses an alternative horizontal styling for [v-btn](/components/buttons). */
-      horizontal?: boolean;
+      horizontal?: boolean
       /** Controls whether the component is visible or hidden. Supports the **.sync** modifier. */
-      inputValue?: boolean;
+      inputValue?: boolean
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Forces a value to always be selected (if available). */
-      mandatory?: boolean;
+      mandatory?: boolean
       /** Sets the maximum height for the component. */
-      maxHeight?: number | string;
+      maxHeight?: number | string
       /** Sets the maximum width for the component. */
-      maxWidth?: number | string;
+      maxWidth?: number | string
       /** Sets the minimum height for the component. */
-      minHeight?: number | string;
+      minHeight?: number | string
       /** Sets the minimum width for the component. */
-      minWidth?: number | string;
+      minWidth?: number | string
       /** Designates the element to target for scrolling events. Uses `window` by default. */
-      scrollTarget?: string;
+      scrollTarget?: string
       /** The amount of scroll distance down before **hide-on-scroll** activates. */
-      scrollThreshold?: string | number;
+      scrollThreshold?: string | number
       /** Hides text of [v-btn](/components/buttons)s when they are not active. */
-      shift?: boolean;
+      shift?: boolean
       /** Specify a custom tag used on the root element. */
-      tag?: string;
+      tag?: string
       /** Holds the value of the currently active [v-btn](/components/buttons). If the button has no value supplied, its index will be used instead.. */
-      value?: any;
+      value?: any
       /** Sets the width for the component. */
-      width?: number | string;
-    }>;
+      width?: number | string
+    }>
     VBottomSheet: DefineComponent<{
       /** Designate a custom activator when the `activator` slot is not used. String can be any valid querySelector and Object can be any valid Node. */
-      activator?: any;
+      activator?: any
       /** Specifies which DOM element that this component should detach to. String can be any valid querySelector and Object can be any valid Node. This will attach to the root `v-app` component by default. */
-      attach?: any;
+      attach?: any
       /** Milliseconds to wait before closing component. */
-      closeDelay?: number | string;
+      closeDelay?: number | string
       /** Applies a custom class to the detached element. This is useful because the content is moved to the beginning of the `v-app` component (unless the **attach** prop is provided) and is not targetable by classes passed directly on the component. */
-      contentClass?: string;
+      contentClass?: string
       /** Applies the dark theme variant to the component. This will default the components color to _white_ unless you've configured your [application theme](/customization/theme) to **dark** or if you are using the **color** prop on the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Disables the ability to open the component. */
-      disabled?: boolean;
+      disabled?: boolean
       /** Will force the components content to render on mounted. This is useful if you have content that will not be rendered in the DOM that you want crawled for SEO. */
-      eager?: boolean;
+      eager?: boolean
       /** Changes layout for fullscreen display. */
-      fullscreen?: boolean;
+      fullscreen?: boolean
       /** Hides the display of the overlay. */
-      hideOverlay?: boolean;
+      hideOverlay?: boolean
       /** Reduces the sheet content maximum width to 70%. */
-      inset?: boolean;
+      inset?: boolean
       /** Detaches the menu content inside of the component as opposed to the document. */
-      internalActivator?: boolean;
+      internalActivator?: boolean
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Sets the maximum width for the component. */
-      maxWidth?: string | number;
+      maxWidth?: string | number
       /** Disables the bounce effect when clicking outside of a `v-dialog`'s content when using the **persistent** prop. */
-      noClickAnimation?: boolean;
+      noClickAnimation?: boolean
       /** Milliseconds to wait before opening component. */
-      openDelay?: number | string;
-      openOnClick?: boolean;
-      openOnFocus?: boolean;
+      openDelay?: number | string
+      openOnClick?: boolean
+      openOnFocus?: boolean
       /** Designates whether component should activate when its activator is hovered. */
-      openOnHover?: boolean;
+      openOnHover?: boolean
       /** Sets the transition origin on the element. You can find more information on the MDN documentation [for transition origin](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin). */
-      origin?: string;
+      origin?: string
       /** Sets the overlay color. */
-      overlayColor?: string;
+      overlayColor?: string
       /** Sets the overlay opacity. */
-      overlayOpacity?: number | string;
+      overlayOpacity?: number | string
       /** Clicking outside of the element or pressing **esc** key will not deactivate it. */
-      persistent?: boolean;
+      persistent?: boolean
       /** Tab focus will return to the first child of the dialog by default. Disable this when using external tools that require focus such as TinyMCE or vue-clipboard. */
-      retainFocus?: boolean;
-      returnValue?: any;
+      retainFocus?: boolean
+      returnValue?: any
       /** When set to true, expects a `v-card` and a `v-card-text` component with a designated height. For more information, check out the [scrollable example](/components/dialogs#scrollable). */
-      scrollable?: boolean;
+      scrollable?: boolean
       /** Sets the component transition. Can be one of the [built in transitions](/styles/transitions) or one your own. */
-      transition?: string;
+      transition?: string
       /** Controls whether the component is visible or hidden. */
-      value?: any;
+      value?: any
       /** Sets the width for the component. */
-      width?: string | number;
-    }>;
+      width?: string | number
+    }>
     VBreadcrumbs: DefineComponent<{
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Specifies the dividing character between items. */
-      divider?: string;
+      divider?: string
       /** An array of objects for each breadcrumb. */
-      items?: any[];
+      items?: any[]
       /** Increase the font-size of the breadcrumb item text to 16px (14px default). */
-      large?: boolean;
+      large?: boolean
       /** Applies the light theme variant to the component. */
-      light?: boolean;
-    }>;
+      light?: boolean
+    }>
     VBreadcrumbsItem: DefineComponent<{
       /** Configure the active CSS class applied when the link is active. You can find more information about the [**active-class** prop](https://router.vuejs.org/api/#active-class) on the vue-router documentation. */
-      activeClass?: string;
+      activeClass?: string
       /** Setting **append** prop always appends the relative path to the current path. You can find more information about the [**append** prop](https://router.vuejs.org/api/#append) on the vue-router documentation. */
-      append?: boolean;
+      append?: boolean
       /** Removes the ability to click or target the component. */
-      disabled?: boolean;
+      disabled?: boolean
       /** Exactly match the link. Without this, '/' will match every route. You can find more information about the [**exact** prop](https://router.vuejs.org/api/#exact) on the vue-router documentation. */
-      exact?: boolean;
+      exact?: boolean
       /** Configure the active CSS class applied when the link is active with exact match. You can find more information about the [**exact-active-class** prop](https://router.vuejs.org/api/#exact-active-class) on the vue-router documentation. */
-      exactActiveClass?: string;
+      exactActiveClass?: string
       /** Exactly match the link, ignoring the `query` and the `hash` sections. You can find more information about the [**exact-path** prop](https://router.vuejs.org/api/#exact-path) on the vue-router documentation. */
-      exactPath?: boolean;
+      exactPath?: boolean
       /** Designates the component as anchor and applies the **href** attribute. */
-      href?: string | object;
+      href?: string | object
       /** Designates that the component is a link. This is automatic when using the **href** or **to** prop. */
-      link?: boolean;
+      link?: boolean
       /** Specifies the link is a `nuxt-link`. For use with the [nuxt framework](https://nuxtjs.org/api/components-nuxt-link/). */
-      nuxt?: boolean;
+      nuxt?: boolean
       /** Setting **replace** prop will call `router.replace()` instead of `router.push()` when clicked, so the navigation will not leave a history record. You can find more information about the [**replace** prop](https://router.vuejs.org/api/#replace) on the vue-router documentation. */
-      replace?: boolean;
+      replace?: boolean
       /** Applies the [v-ripple](/directives/ripple) directive. */
-      ripple?: boolean | object;
+      ripple?: boolean | object
       /** Specify a custom tag used on the root element. */
-      tag?: string;
+      tag?: string
       /** Designates the target attribute. This should only be applied when using the **href** prop. */
-      target?: string;
+      target?: string
       /** Denotes the target route of the link. You can find more information about the [**to** prop](https://router.vuejs.org/api/#to) on the vue-router documentation. */
-      to?: string | object;
-    }>;
+      to?: string | object
+    }>
     VBreadcrumbsDivider: DefineComponent<{
-      /** Specify a custom tag used on the root element. */ tag?: string;
-    }>;
+      /** Specify a custom tag used on the root element. */ tag?: string
+    }>
     VBtn: DefineComponent<{
       /** Applies **position: absolute** to the component. */
-      absolute?: boolean;
+      absolute?: boolean
       /** Configure the active CSS class applied when the link is active. You can find more information about the [**active-class** prop](https://router.vuejs.org/api/#active-class) on the vue-router documentation. */
-      activeClass?: string;
+      activeClass?: string
       /** Setting **append** prop always appends the relative path to the current path. You can find more information about the [**append** prop](https://router.vuejs.org/api/#append) on the vue-router documentation. */
-      append?: boolean;
+      append?: boolean
       /** Expands the button to 100% of available space. */
-      block?: boolean;
+      block?: boolean
       /** Aligns the component towards the bottom. */
-      bottom?: boolean;
+      bottom?: boolean
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Removes the button box shadow. */
-      depressed?: boolean;
+      depressed?: boolean
       /** Removes the ability to click or target the component. */
-      disabled?: boolean;
+      disabled?: boolean
       /** Designates an elevation applied to the component between 0 and 24. You can find more information on the [elevation page](/styles/elevation). */
-      elevation?: number | string;
+      elevation?: number | string
       /** Exactly match the link. Without this, '/' will match every route. You can find more information about the [**exact** prop](https://router.vuejs.org/api/#exact) on the vue-router documentation. */
-      exact?: boolean;
+      exact?: boolean
       /** Configure the active CSS class applied when the link is active with exact match. You can find more information about the [**exact-active-class** prop](https://router.vuejs.org/api/#exact-active-class) on the vue-router documentation. */
-      exactActiveClass?: string;
+      exactActiveClass?: string
       /** Exactly match the link, ignoring the `query` and the `hash` sections. You can find more information about the [**exact-path** prop](https://router.vuejs.org/api/#exact-path) on the vue-router documentation. */
-      exactPath?: boolean;
+      exactPath?: boolean
       /** Designates the button as a floating-action-button. Button will become _round_. */
-      fab?: boolean;
+      fab?: boolean
       /** Applies **position: fixed** to the component. */
-      fixed?: boolean;
+      fixed?: boolean
       /** Sets the height for the component. */
-      height?: number | string;
+      height?: number | string
       /** Designates the component as anchor and applies the **href** attribute. */
-      href?: string | object;
+      href?: string | object
       /** Designates the button as icon. Button will become _round_ and applies the **text** prop. */
-      icon?: boolean;
+      icon?: boolean
       /** Controls the button's active state. */
-      inputValue?: any;
+      inputValue?: any
       /** Makes the component large. */
-      large?: boolean;
+      large?: boolean
       /** Aligns the component towards the left. This should be used with the **absolute** or **fixed** props. */
-      left?: boolean;
+      left?: boolean
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Designates that the component is a link. This is automatic when using the **href** or **to** prop. */
-      link?: boolean;
+      link?: boolean
       /** Adds a loading icon animation. */
-      loading?: boolean;
+      loading?: boolean
       /** Sets the maximum height for the component. */
-      maxHeight?: number | string;
+      maxHeight?: number | string
       /** Sets the maximum width for the component. */
-      maxWidth?: number | string;
+      maxWidth?: number | string
       /** Sets the minimum height for the component. */
-      minHeight?: number | string;
+      minHeight?: number | string
       /** Sets the minimum width for the component. */
-      minWidth?: number | string;
+      minWidth?: number | string
       /** Specifies the link is a `nuxt-link`. For use with the [nuxt framework](https://nuxtjs.org/api/components-nuxt-link/). */
-      nuxt?: boolean;
+      nuxt?: boolean
       /** Makes the background transparent and applies a thin border. */
-      outlined?: boolean;
+      outlined?: boolean
       /** Removes the default background change applied when hovering over the button. */
-      plain?: boolean;
+      plain?: boolean
       /** Setting **replace** prop will call `router.replace()` instead of `router.push()` when clicked, so the navigation will not leave a history record. You can find more information about the [**replace** prop](https://router.vuejs.org/api/#replace) on the vue-router documentation. */
-      replace?: boolean;
+      replace?: boolean
       /** Don't blur on click. */
-      retainFocusOnClick?: boolean;
+      retainFocusOnClick?: boolean
       /** Aligns the component towards the right. This should be used with the **absolute** or **fixed** props. */
-      right?: boolean;
+      right?: boolean
       /** Applies the [v-ripple](/directives/ripple) directive. */
-      ripple?: boolean | object;
+      ripple?: boolean | object
       /** Applies a large border radius on the button. */
-      rounded?: boolean;
+      rounded?: boolean
       /** Applies a large border radius on the top left and bottom right of the card. */
-      shaped?: boolean;
+      shaped?: boolean
       /** Makes the component small. */
-      small?: boolean;
+      small?: boolean
       /** Specify a custom tag used on the root element. */
-      tag?: string;
+      tag?: string
       /** Designates the target attribute. This should only be applied when using the **href** prop. */
-      target?: string;
+      target?: string
       /** Makes the background transparent. When using the **color** prop, the color will be applied to the button text instead of the background. */
-      text?: boolean;
+      text?: boolean
       /** Removes the component's **border-radius**. */
-      tile?: boolean;
+      tile?: boolean
       /** Denotes the target route of the link. You can find more information about the [**to** prop](https://router.vuejs.org/api/#to) on the vue-router documentation. */
-      to?: string | object;
+      to?: string | object
       /** Aligns the content towards the top. */
-      top?: boolean;
+      top?: boolean
       /** Set the button's **type** attribute. */
-      type?: string;
+      type?: string
       /** Controls whether the component is visible or hidden. */
-      value?: any;
+      value?: any
       /** Sets the width for the component. */
-      width?: number | string;
+      width?: number | string
       /** Makes the component extra large. */
-      xLarge?: boolean;
+      xLarge?: boolean
       /** Makes the component extra small. */
-      xSmall?: boolean;
-    }>;
+      xSmall?: boolean
+    }>
     VBtnToggle: DefineComponent<{
       /** The **active-class** applied to children when they are activated. */
-      activeClass?: string;
+      activeClass?: string
       /** Changes the background-color for the component. */
-      backgroundColor?: string;
+      backgroundColor?: string
       /** Removes the group's border. */
-      borderless?: boolean;
+      borderless?: boolean
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Reduces the button size and padding. */
-      dense?: boolean;
+      dense?: boolean
       /** Generally used in [v-toolbar](/components/toolbars) and [v-app-bar](/components/app-bars). Removes background color, border and increases space between the buttons */
-      group?: boolean;
+      group?: boolean
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Forces a value to always be selected (if available). */
-      mandatory?: boolean;
+      mandatory?: boolean
       /** Sets a maximum number of selections that can be made. */
-      max?: number | string;
+      max?: number | string
       /** Allow multiple selections. The **value** prop must be an _array_. */
-      multiple?: boolean;
+      multiple?: boolean
       /** Round edge buttons */
-      rounded?: boolean;
+      rounded?: boolean
       /** Applies a large border radius on the top left and bottom right of the card. */
-      shaped?: boolean;
+      shaped?: boolean
       /** Specify a custom tag used on the root element. */
-      tag?: string;
+      tag?: string
       /** Removes the component's border-radius. */
-      tile?: boolean;
+      tile?: boolean
       /** The designated model value for the component. */
-      value?: any;
+      value?: any
       /** Apply a custom value comparator function */
-      valueComparator?: Function;
-    }>;
+      valueComparator?: Function
+    }>
     VCalendar: DefineComponent<{
       /** Specifies what categories to display in the `category` view. This controls the order of the categories as well. If the calendar uses events any categories specified in those events not specified in this value are dynamically rendered in the view unless `category-hide-dynamic` is true. */
-      categories?: any[] | string;
+      categories?: any[] | string
       /** The number of days to render in the `category` view. */
-      categoryDays?: number | string;
+      categoryDays?: number | string
       /** The category to place events in that have invalid categories. A category is invalid when it is not a string. By default events without a category are not displayed until this value is specified. */
-      categoryForInvalid?: string;
+      categoryForInvalid?: string
       /** Sets whether categories specified in an event should be hidden if it's not defined in `categories`. */
-      categoryHideDynamic?: boolean;
+      categoryHideDynamic?: boolean
       /** Set whether the `category` view should show all defined `categories` even if there are no events for a category. */
-      categoryShowAll?: boolean;
+      categoryShowAll?: boolean
       /** If categories is a list of objects, you can use this to determine what property to print out as the category text on the calendar. You can provide a function to do some logic or just define the prop name. It's similar to item-text on v-select */
-      categoryText?: string | Function;
+      categoryText?: string | Function
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Formats day of the month string that appears in a day to a specified locale */
-      dayFormat?: Function;
+      dayFormat?: Function
       /** The ending date on the calendar (inclusive) in the format of `YYYY-MM-DD`. This may be ignored depending on the `type` of the calendar. */
-      end?: string | number | Date;
+      end?: string | number | Date
       /** Set property of *event*'s category. Instead of a property a function can be given which takes an event and returns the category. */
-      eventCategory?: string | Function;
+      eventCategory?: string | Function
       /** A background color for all events or a function which accepts an event object passed to the calendar to return a color. */
-      eventColor?: string | Function;
+      eventColor?: string | Function
       /** Set property of *event*'s end timestamp. */
-      eventEnd?: string;
+      eventEnd?: string
       /** The height of an event in pixels in the `month` view and at the top of the `day` views. */
-      eventHeight?: number;
+      eventHeight?: number
       /** Margin bottom for event */
-      eventMarginBottom?: number;
+      eventMarginBottom?: number
       /** Whether the more 'button' is displayed on a calendar with too many events in a given day. It will say something like '5 more' and when clicked generates a `click:more` event. */
-      eventMore?: boolean;
+      eventMore?: boolean
       /** The text to display in the more 'button' given the number of hidden events. */
-      eventMoreText?: string;
+      eventMoreText?: string
       /** Set property of *event*'s displayed name, or a function which accepts an event object passed to the calendar as the first argument and a flag signalling whether the name is for a timed event (true) or an event over a day. */
-      eventName?: string | Function;
+      eventName?: string | Function
       /** One of `stack`, `column`, or a custom render function */
-      eventOverlapMode?: string | Function;
+      eventOverlapMode?: string | Function
       /** A value in minutes that's used to determine whether two timed events should be placed in column beside each other or should be treated as slightly overlapping events. */
-      eventOverlapThreshold?: string | number;
+      eventOverlapThreshold?: string | number
       /** Applies the `v-ripple` directive. */
-      eventRipple?: boolean | object;
+      eventRipple?: boolean | object
       /** Set property of *event*'s start timestamp. */
-      eventStart?: string;
+      eventStart?: string
       /** A text color for all events or a function which accepts an event object passed to the calendar to return a color. */
-      eventTextColor?: string | Function;
+      eventTextColor?: string | Function
       /** If Dates or milliseconds are used as the start or end timestamp of an event, this prop can be a string to a property on the event that is truthy if the event is a timed event or a function which takes the event and returns a truthy value if the event is a timed event. */
-      eventTimed?: string | Function;
+      eventTimed?: string | Function
       /** An array of event objects with a property for a start timestamp and optionally a name and end timestamp. If an end timestamp is not given, the value of start will be used. If no name is given, you must provide an implementation for the `event` slot. */
-      events?: any[];
+      events?: any[]
       /** The first interval to display in the `day` view. If `intervalMinutes` is set to 60 and this is set to 9 the first time in the view is 9am. */
-      firstInterval?: number | string;
+      firstInterval?: number | string
       /** The first time to display in the `day` view. If specified, this overwrites any `firstInterval` value specified. This can be the number of minutes since midnight, a string in the format of `HH:mm`, or an object with number properties hour and minute. */
-      firstTime?: number | string | object;
+      firstTime?: number | string | object
       /** If the header at the top of the `day` view should be visible. */
-      hideHeader?: boolean;
+      hideHeader?: boolean
       /** The number of intervals to display in the `day` view. */
-      intervalCount?: number | string;
+      intervalCount?: number | string
       /** Formats time of day string that appears in the interval gutter of the `day` and `week` view to specified locale */
-      intervalFormat?: Function;
+      intervalFormat?: Function
       /** The height of an interval in pixels in the `day` view. */
-      intervalHeight?: number | string;
+      intervalHeight?: number | string
       /** The number of minutes the intervals are in the `day` view. A common interval is 60 minutes so the intervals are an hour. */
-      intervalMinutes?: number | string;
+      intervalMinutes?: number | string
       /** Returns CSS styling to apply to the interval. */
-      intervalStyle?: Function;
+      intervalStyle?: Function
       /** The width of the interval gutter on the left side in the `day` view. */
-      intervalWidth?: number | string;
+      intervalWidth?: number | string
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** The locale of the calendar. */
-      locale?: string;
+      locale?: string
       /** Sets the day that determines the first week of the year, starting with 0 for **Sunday**. For ISO 8601 this should be 4. */
-      localeFirstDayOfYear?: string | number;
+      localeFirstDayOfYear?: string | number
       /** The maximum number of days to display in the custom calendar if an `end` day is not set. */
-      maxDays?: number;
+      maxDays?: number
       /** The minimum number of weeks to display in the `month` or `week` view. */
-      minWeeks?: any;
+      minWeeks?: any
       /** Formats month string that appears in a day to specified locale */
-      monthFormat?: Function;
+      monthFormat?: Function
       /** Override the day & time which is considered now. This is in the format of `YYYY-MM-DD hh:mm:ss`. The calendar is styled according to now. */
-      now?: string;
+      now?: string
       /** If true, the intervals in the `day` view will be 9 AM as opposed to 09:00 AM */
-      shortIntervals?: boolean;
+      shortIntervals?: boolean
       /** Whether the short versions of a month should be used (Jan vs January). */
-      shortMonths?: boolean;
+      shortMonths?: boolean
       /** Whether the short versions of a weekday should be used (Mon vs Monday). */
-      shortWeekdays?: boolean;
+      shortWeekdays?: boolean
       /** Checks if a given day and time should be displayed in the interval gutter of the `day` view. */
-      showIntervalLabel?: Function;
+      showIntervalLabel?: Function
       /** Whether the name of the month should be displayed on the first day of the month. */
-      showMonthOnFirst?: boolean;
+      showMonthOnFirst?: boolean
       /** Whether week numbers should be displayed when using the `month` view. */
-      showWeek?: boolean;
+      showWeek?: boolean
       /** The starting date on the calendar (inclusive) in the format of `YYYY-MM-DD`. This may be ignored depending on the `type` of the calendar. */
-      start?: string | number | Date;
+      start?: string | number | Date
       /** A string which is one of `month`, `week`, `day`, `4day`, `custom-weekly`, `custom-daily`, and `category`. The custom types look at the `start` and `end` dates passed to the component as opposed to the `value`. */
-      type?: string;
+      type?: string
       /** A date in the format of `YYYY-MM-DD` which determines what span of time for the calendar. */
-      value?: string | number | Date;
+      value?: string | number | Date
       /** Formats day of the week string that appears in the header to specified locale */
-      weekdayFormat?: Function;
+      weekdayFormat?: Function
       /** Specifies which days of the week to display. To display Monday through Friday only, a value of `[1, 2, 3, 4, 5]` can be used. To display a week starting on Monday a value of `[1, 2, 3, 4, 5, 6, 0]` can be used. */
-      weekdays?: any[] | string;
-    }>;
+      weekdays?: any[] | string
+    }>
     VCalendarDaily: DefineComponent<{
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Formats day of the month string that appears in a day to a specified locale */
-      dayFormat?: Function;
+      dayFormat?: Function
       /** The ending date on the calendar (inclusive) in the format of `YYYY-MM-DD`. This may be ignored depending on the `type` of the calendar. */
-      end?: string | number | Date;
+      end?: string | number | Date
       /** The first interval to display in the `day` view. If `intervalMinutes` is set to 60 and this is set to 9 the first time in the view is 9am. */
-      firstInterval?: number | string;
+      firstInterval?: number | string
       /** The first time to display in the `day` view. If specified, this overwrites any `firstInterval` value specified. This can be the number of minutes since midnight, a string in the format of `HH:mm`, or an object with number properties hour and minute. */
-      firstTime?: number | string | object;
+      firstTime?: number | string | object
       /** If the header at the top of the `day` view should be visible. */
-      hideHeader?: boolean;
+      hideHeader?: boolean
       /** The number of intervals to display in the `day` view. */
-      intervalCount?: number | string;
+      intervalCount?: number | string
       /** Formats time of day string that appears in the interval gutter of the `day` and `week` view to specified locale */
-      intervalFormat?: Function;
+      intervalFormat?: Function
       /** The height of an interval in pixels in the `day` view. */
-      intervalHeight?: number | string;
+      intervalHeight?: number | string
       /** The number of minutes the intervals are in the `day` view. A common interval is 60 minutes so the intervals are an hour. */
-      intervalMinutes?: number | string;
+      intervalMinutes?: number | string
       /** Returns CSS styling to apply to the interval. */
-      intervalStyle?: Function;
+      intervalStyle?: Function
       /** The width of the interval gutter on the left side in the `day` view. */
-      intervalWidth?: number | string;
+      intervalWidth?: number | string
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** The locale of the calendar. */
-      locale?: string;
+      locale?: string
       /** The maximum number of days to display in the custom calendar if an `end` day is not set. */
-      maxDays?: number;
+      maxDays?: number
       /** Override the day & time which is considered now. This is in the format of `YYYY-MM-DD hh:mm:ss`. The calendar is styled according to now. */
-      now?: string;
+      now?: string
       /** If true, the intervals in the `day` view will be 9 AM as opposed to 09:00 AM */
-      shortIntervals?: boolean;
+      shortIntervals?: boolean
       /** Whether the short versions of a weekday should be used (Mon vs Monday). */
-      shortWeekdays?: boolean;
+      shortWeekdays?: boolean
       /** Checks if a given day and time should be displayed in the interval gutter of the `day` view. */
-      showIntervalLabel?: Function;
+      showIntervalLabel?: Function
       /** The starting date on the calendar (inclusive) in the format of `YYYY-MM-DD`. This may be ignored depending on the `type` of the calendar. */
-      start?: string | number | Date;
+      start?: string | number | Date
       /** Formats day of the week string that appears in the header to specified locale */
-      weekdayFormat?: Function;
+      weekdayFormat?: Function
       /** Specifies which days of the week to display. To display Monday through Friday only, a value of `[1, 2, 3, 4, 5]` can be used. To display a week starting on Monday a value of `[1, 2, 3, 4, 5, 6, 0]` can be used. */
-      weekdays?: any[] | string;
-    }>;
+      weekdays?: any[] | string
+    }>
     VCalendarWeekly: DefineComponent<{
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Formats day of the month string that appears in a day to a specified locale */
-      dayFormat?: Function;
+      dayFormat?: Function
       /** The ending date on the calendar (inclusive) in the format of `YYYY-MM-DD`. This may be ignored depending on the `type` of the calendar. */
-      end?: string | number | Date;
+      end?: string | number | Date
       /** If the header at the top of the `day` view should be visible. */
-      hideHeader?: boolean;
+      hideHeader?: boolean
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** The locale of the calendar. */
-      locale?: string;
+      locale?: string
       /** Sets the day that determines the first week of the year, starting with 0 for **Sunday**. For ISO 8601 this should be 4. */
-      localeFirstDayOfYear?: string | number;
+      localeFirstDayOfYear?: string | number
       /** The minimum number of weeks to display in the `month` or `week` view. */
-      minWeeks?: any;
+      minWeeks?: any
       /** Formats month string that appears in a day to specified locale */
-      monthFormat?: Function;
+      monthFormat?: Function
       /** Override the day & time which is considered now. This is in the format of `YYYY-MM-DD hh:mm:ss`. The calendar is styled according to now. */
-      now?: string;
+      now?: string
       /** Whether the short versions of a month should be used (Jan vs January). */
-      shortMonths?: boolean;
+      shortMonths?: boolean
       /** Whether the short versions of a weekday should be used (Mon vs Monday). */
-      shortWeekdays?: boolean;
+      shortWeekdays?: boolean
       /** Whether the name of the month should be displayed on the first day of the month. */
-      showMonthOnFirst?: boolean;
+      showMonthOnFirst?: boolean
       /** Whether week numbers should be displayed when using the `month` view. */
-      showWeek?: boolean;
+      showWeek?: boolean
       /** The starting date on the calendar (inclusive) in the format of `YYYY-MM-DD`. This may be ignored depending on the `type` of the calendar. */
-      start?: string | number | Date;
+      start?: string | number | Date
       /** Formats day of the week string that appears in the header to specified locale */
-      weekdayFormat?: Function;
+      weekdayFormat?: Function
       /** Specifies which days of the week to display. To display Monday through Friday only, a value of `[1, 2, 3, 4, 5]` can be used. To display a week starting on Monday a value of `[1, 2, 3, 4, 5, 6, 0]` can be used. */
-      weekdays?: any[] | string;
-    }>;
+      weekdays?: any[] | string
+    }>
     VCalendarMonthly: DefineComponent<{
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Formats day of the month string that appears in a day to a specified locale */
-      dayFormat?: Function;
+      dayFormat?: Function
       /** The ending date on the calendar (inclusive) in the format of `YYYY-MM-DD`. This may be ignored depending on the `type` of the calendar. */
-      end?: string | number | Date;
+      end?: string | number | Date
       /** If the header at the top of the `day` view should be visible. */
-      hideHeader?: boolean;
+      hideHeader?: boolean
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** The locale of the calendar. */
-      locale?: string;
+      locale?: string
       /** Sets the day that determines the first week of the year, starting with 0 for **Sunday**. For ISO 8601 this should be 4. */
-      localeFirstDayOfYear?: string | number;
+      localeFirstDayOfYear?: string | number
       /** The minimum number of weeks to display in the `month` or `week` view. */
-      minWeeks?: any;
+      minWeeks?: any
       /** Formats month string that appears in a day to specified locale */
-      monthFormat?: Function;
+      monthFormat?: Function
       /** Override the day & time which is considered now. This is in the format of `YYYY-MM-DD hh:mm:ss`. The calendar is styled according to now. */
-      now?: string;
+      now?: string
       /** Whether the short versions of a month should be used (Jan vs January). */
-      shortMonths?: boolean;
+      shortMonths?: boolean
       /** Whether the short versions of a weekday should be used (Mon vs Monday). */
-      shortWeekdays?: boolean;
+      shortWeekdays?: boolean
       /** Whether the name of the month should be displayed on the first day of the month. */
-      showMonthOnFirst?: boolean;
+      showMonthOnFirst?: boolean
       /** Whether week numbers should be displayed when using the `month` view. */
-      showWeek?: boolean;
+      showWeek?: boolean
       /** The starting date on the calendar (inclusive) in the format of `YYYY-MM-DD`. This may be ignored depending on the `type` of the calendar. */
-      start?: string | number | Date;
+      start?: string | number | Date
       /** Formats day of the week string that appears in the header to specified locale */
-      weekdayFormat?: Function;
+      weekdayFormat?: Function
       /** Specifies which days of the week to display. To display Monday through Friday only, a value of `[1, 2, 3, 4, 5]` can be used. To display a week starting on Monday a value of `[1, 2, 3, 4, 5, 6, 0]` can be used. */
-      weekdays?: any[] | string;
-    }>;
+      weekdays?: any[] | string
+    }>
     VCard: DefineComponent<{
       /** Configure the active CSS class applied when the link is active. You can find more information about the [**active-class** prop](https://router.vuejs.org/api/#active-class) on the vue-router documentation. */
-      activeClass?: string;
+      activeClass?: string
       /** Setting **append** prop always appends the relative path to the current path. You can find more information about the [**append** prop](https://router.vuejs.org/api/#append) on the vue-router documentation. */
-      append?: boolean;
+      append?: boolean
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Removes the ability to click or target the component. */
-      disabled?: boolean;
+      disabled?: boolean
       /** Designates an elevation applied to the component between 0 and 24. You can find more information on the [elevation page](/styles/elevation). */
-      elevation?: number | string;
+      elevation?: number | string
       /** Exactly match the link. Without this, '/' will match every route. You can find more information about the [**exact** prop](https://router.vuejs.org/api/#exact) on the vue-router documentation. */
-      exact?: boolean;
+      exact?: boolean
       /** Configure the active CSS class applied when the link is active with exact match. You can find more information about the [**exact-active-class** prop](https://router.vuejs.org/api/#exact-active-class) on the vue-router documentation. */
-      exactActiveClass?: string;
+      exactActiveClass?: string
       /** Exactly match the link, ignoring the `query` and the `hash` sections. You can find more information about the [**exact-path** prop](https://router.vuejs.org/api/#exact-path) on the vue-router documentation. */
-      exactPath?: boolean;
+      exactPath?: boolean
       /** Removes the card's elevation. */
-      flat?: boolean;
+      flat?: boolean
       /** Sets the height for the component. */
-      height?: number | string;
+      height?: number | string
       /** Will apply an elevation of 4dp when hovered (default 2dp). You can find more information on the [elevation page](/styles/elevation). */
-      hover?: boolean;
+      hover?: boolean
       /** Designates the component as anchor and applies the **href** attribute. */
-      href?: string | object;
+      href?: string | object
       /** Specifies an image background for the card. For more advanced implementations, it is recommended that you use the [v-img](/components/images) component. You can find a [v-img example here](/components/cards/#media-with-text). */
-      img?: string;
+      img?: string
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Designates that the component is a link. This is automatic when using the **href** or **to** prop. */
-      link?: boolean;
+      link?: boolean
       /** Specifies the height of the loader */
-      loaderHeight?: number | string;
+      loaderHeight?: number | string
       /** Displays linear progress bar. Can either be a String which specifies which color is applied to the progress bar (any material color or theme color - **primary**, **secondary**, **success**, **info**, **warning**, **error**) or a Boolean which uses the component **color** (set by color prop - if it's supported by the component) or the primary color */
-      loading?: boolean | string;
+      loading?: boolean | string
       /** Sets the maximum height for the component. */
-      maxHeight?: number | string;
+      maxHeight?: number | string
       /** Sets the maximum width for the component. */
-      maxWidth?: number | string;
+      maxWidth?: number | string
       /** Sets the minimum height for the component. */
-      minHeight?: number | string;
+      minHeight?: number | string
       /** Sets the minimum width for the component. */
-      minWidth?: number | string;
+      minWidth?: number | string
       /** Specifies the link is a `nuxt-link`. For use with the [nuxt framework](https://nuxtjs.org/api/components-nuxt-link/). */
-      nuxt?: boolean;
+      nuxt?: boolean
       /** Removes elevation (box-shadow) and adds a *thin* border. */
-      outlined?: boolean;
+      outlined?: boolean
       /** Specifies a higher default elevation (8dp). You can find more information on the [elevation page](/styles/elevation). */
-      raised?: boolean;
+      raised?: boolean
       /** Setting **replace** prop will call `router.replace()` instead of `router.push()` when clicked, so the navigation will not leave a history record. You can find more information about the [**replace** prop](https://router.vuejs.org/api/#replace) on the vue-router documentation. */
-      replace?: boolean;
+      replace?: boolean
       /** Applies the [v-ripple](/directives/ripple) directive. */
-      ripple?: boolean | object;
+      ripple?: boolean | object
       /** Designates the **border-radius** applied to the component. You can find more information on the [Border Radius page](/styles/border-radius). */
-      rounded?: boolean | string;
+      rounded?: boolean | string
       /** Applies a large border radius on the top left and bottom right of the card. */
-      shaped?: boolean;
+      shaped?: boolean
       /** Specify a custom tag used on the root element. */
-      tag?: string;
+      tag?: string
       /** Designates the target attribute. This should only be applied when using the **href** prop. */
-      target?: string;
+      target?: string
       /** Removes the component's **border-radius**. */
-      tile?: boolean;
+      tile?: boolean
       /** Denotes the target route of the link. You can find more information about the [**to** prop](https://router.vuejs.org/api/#to) on the vue-router documentation. */
-      to?: string | object;
+      to?: string | object
       /** Sets the width for the component. */
-      width?: number | string;
-    }>;
+      width?: number | string
+    }>
     VCardActions: DefineComponent<{
-      /** Specify a custom tag used on the root element. */ tag?: string;
-    }>;
+      /** Specify a custom tag used on the root element. */ tag?: string
+    }>
     VCardSubtitle: DefineComponent<{
-      /** Specify a custom tag used on the root element. */ tag?: string;
-    }>;
+      /** Specify a custom tag used on the root element. */ tag?: string
+    }>
     VCardText: DefineComponent<{
-      /** Specify a custom tag used on the root element. */ tag?: string;
-    }>;
+      /** Specify a custom tag used on the root element. */ tag?: string
+    }>
     VCardTitle: DefineComponent<{
-      /** Specify a custom tag used on the root element. */ tag?: string;
-    }>;
+      /** Specify a custom tag used on the root element. */ tag?: string
+    }>
     VCarousel: DefineComponent<{
       /** The **active-class** applied to children when they are activated. */
-      activeClass?: string;
+      activeClass?: string
       /** Determines whether carousel is continuous */
-      continuous?: boolean;
+      continuous?: boolean
       /** Determines if the carousel should cycle through images. */
-      cycle?: boolean;
+      cycle?: boolean
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Sets icon for carousel delimiter */
-      delimiterIcon?: string;
+      delimiterIcon?: string
       /** Sets the height for the component */
-      height?: number | string;
+      height?: number | string
       /** Hides the bottom delimiter background. */
-      hideDelimiterBackground?: boolean;
+      hideDelimiterBackground?: boolean
       /** Hides the carousel's bottom delimiters. */
-      hideDelimiters?: boolean;
+      hideDelimiters?: boolean
       /** The duration between image cycles. Requires the **cycle** prop. */
-      interval?: number | string;
+      interval?: number | string
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Forces a value to always be selected (if available). */
-      mandatory?: boolean;
+      mandatory?: boolean
       /** Sets a maximum number of selections that can be made. */
-      max?: number | string;
+      max?: number | string
       /** Allow multiple selections. The **value** prop must be an _array_. */
-      multiple?: boolean;
+      multiple?: boolean
       /** The displayed icon for forcing pagination to the next item. */
-      nextIcon?: boolean | string;
+      nextIcon?: boolean | string
       /** The displayed icon for forcing pagination to the previous item. */
-      prevIcon?: boolean | string;
+      prevIcon?: boolean | string
       /** Displays a carousel progress bar. Requires the **cycle** prop and **interval**. */
-      progress?: boolean;
+      progress?: boolean
       /** Applies specified color to progress bar. */
-      progressColor?: string;
+      progressColor?: string
       /** Reverse the normal transition direction. */
-      reverse?: boolean;
+      reverse?: boolean
       /** Displays arrows for next/previous navigation. */
-      showArrows?: boolean;
+      showArrows?: boolean
       /** Displays navigation arrows only when the carousel is hovered over. */
-      showArrowsOnHover?: boolean;
+      showArrowsOnHover?: boolean
       /** Specify a custom tag used on the root element. */
-      tag?: string;
+      tag?: string
       /** Provide a custom **left** and **right** function when swiped left or right. */
-      touch?: object;
+      touch?: object
       /** Disable touch support. */
-      touchless?: boolean;
+      touchless?: boolean
       /** The designated model value for the component. */
-      value?: any;
+      value?: any
       /** Apply a custom value comparator function */
-      valueComparator?: Function;
+      valueComparator?: Function
       /** Uses a vertical transition when changing windows. */
-      vertical?: boolean;
+      vertical?: boolean
       /** Displays carousel delimiters vertically. */
-      verticalDelimiters?: string;
-    }>;
+      verticalDelimiters?: string
+    }>
     VCarouselItem: DefineComponent<{
       /** Configure the active CSS class applied when the link is active. You can find more information about the [**active-class** prop](https://router.vuejs.org/api/#active-class) on the vue-router documentation. */
-      activeClass?: string;
+      activeClass?: string
       /** Setting **append** prop always appends the relative path to the current path. You can find more information about the [**append** prop](https://router.vuejs.org/api/#append) on the vue-router documentation. */
-      append?: boolean;
+      append?: boolean
       /** Removes the ability to click or target the component. */
-      disabled?: boolean;
+      disabled?: boolean
       /** Will force the components content to render on mounted. This is useful if you have content that will not be rendered in the DOM that you want crawled for SEO. */
-      eager?: boolean;
+      eager?: boolean
       /** Exactly match the link. Without this, '/' will match every route. You can find more information about the [**exact** prop](https://router.vuejs.org/api/#exact) on the vue-router documentation. */
-      exact?: boolean;
+      exact?: boolean
       /** Configure the active CSS class applied when the link is active with exact match. You can find more information about the [**exact-active-class** prop](https://router.vuejs.org/api/#exact-active-class) on the vue-router documentation. */
-      exactActiveClass?: string;
+      exactActiveClass?: string
       /** Exactly match the link, ignoring the `query` and the `hash` sections. You can find more information about the [**exact-path** prop](https://router.vuejs.org/api/#exact-path) on the vue-router documentation. */
-      exactPath?: boolean;
+      exactPath?: boolean
       /** Designates the component as anchor and applies the **href** attribute. */
-      href?: string | object;
+      href?: string | object
       /** Designates that the component is a link. This is automatic when using the **href** or **to** prop. */
-      link?: boolean;
+      link?: boolean
       /** Specifies the link is a `nuxt-link`. For use with the [nuxt framework](https://nuxtjs.org/api/components-nuxt-link/). */
-      nuxt?: boolean;
+      nuxt?: boolean
       /** Setting **replace** prop will call `router.replace()` instead of `router.push()` when clicked, so the navigation will not leave a history record. You can find more information about the [**replace** prop](https://router.vuejs.org/api/#replace) on the vue-router documentation. */
-      replace?: boolean;
+      replace?: boolean
       /** Sets the reverse transition */
-      reverseTransition?: boolean | string;
+      reverseTransition?: boolean | string
       /** Applies the [v-ripple](/directives/ripple) directive. */
-      ripple?: boolean | object;
+      ripple?: boolean | object
       /** Specify a custom tag used on the root element. */
-      tag?: string;
+      tag?: string
       /** Designates the target attribute. This should only be applied when using the **href** prop. */
-      target?: string;
+      target?: string
       /** Denotes the target route of the link. You can find more information about the [**to** prop](https://router.vuejs.org/api/#to) on the vue-router documentation. */
-      to?: string | object;
+      to?: string | object
       /** The transition used when the component progressing through items. Can be one of the [built in transitions](/styles/transitions) or one your own. */
-      transition?: boolean | string;
+      transition?: boolean | string
       /** The value used when the component is selected in a group. If not provided, the index will be used. */
-      value?: any;
-    }>;
+      value?: any
+    }>
     VCheckbox: DefineComponent<{
       /** Appends an icon to the component, uses the same syntax as `v-icon` */
-      appendIcon?: string;
+      appendIcon?: string
       /** Changes the background-color of the input */
-      backgroundColor?: string;
+      backgroundColor?: string
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Applies the dark theme variant to the component. This will default the components color to _white_ unless you've configured your [application theme](/customization/theme) to **dark** or if you are using the **color** prop on the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Reduces the input height */
-      dense?: boolean;
+      dense?: boolean
       /** Disable the input */
-      disabled?: boolean;
+      disabled?: boolean
       /** Puts the input in a manual error state */
-      error?: boolean;
+      error?: boolean
       /** The total number of errors that should display at once */
-      errorCount?: number | string;
+      errorCount?: number | string
       /** Puts the input in an error state and passes through custom error messages. Will be combined with any validations that occur from the **rules** prop. This field will not trigger validation */
-      errorMessages?: string | any[];
+      errorMessages?: string | any[]
       /** Sets value for falsy state */
-      falseValue?: any;
+      falseValue?: any
       /** Hides hint and validation errors. When set to `auto` messages will be rendered only if there's a message (hint, error message, counter value etc) to display */
-      hideDetails?: boolean | string;
+      hideDetails?: boolean | string
       /** Hides spin buttons on the input when type is set to `number`. */
-      hideSpinButtons?: boolean;
+      hideSpinButtons?: boolean
       /** Hint text */
-      hint?: string;
+      hint?: string
       /** Sets the DOM id on the component */
-      id?: string;
+      id?: string
       /** Sets an indeterminate state for the checkbox */
-      indeterminate?: boolean;
+      indeterminate?: boolean
       /** The icon used when in an indeterminate state */
-      indeterminateIcon?: string;
+      indeterminateIcon?: string
       /** The **v-model** bound value */
-      inputValue?: any;
+      inputValue?: any
       /** Sets input label */
-      label?: string;
+      label?: string
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Displays a list of messages or message if using a string */
-      messages?: string | any[];
+      messages?: string | any[]
       /** Changes expected model to an array */
-      multiple?: boolean;
+      multiple?: boolean
       /** The icon used when inactive */
-      offIcon?: string;
+      offIcon?: string
       /** The icon used when active */
-      onIcon?: string;
+      onIcon?: string
       /** Forces hint to always be visible */
-      persistentHint?: boolean;
+      persistentHint?: boolean
       /** Prepends an icon to the component, uses the same syntax as `v-icon` */
-      prependIcon?: string;
+      prependIcon?: string
       /** Puts input in readonly state */
-      readonly?: boolean;
+      readonly?: boolean
       /** Applies the [v-ripple](/directives/ripple) directive. */
-      ripple?: boolean | object;
+      ripple?: boolean | object
       /** Accepts a mixed array of types `function`, `boolean` and `string`. Functions pass an input value as an argument and must return either `true` / `false` or a `string` containing an error message. The input field will enter an error state if a function returns (or any value in the array contains) `false` or is a `string` */
-      rules?: any[];
+      rules?: any[]
       /** Puts the input in a manual success state */
-      success?: boolean;
+      success?: boolean
       /** Puts the input in a success state and passes through custom success messages. */
-      successMessages?: string | any[];
+      successMessages?: string | any[]
       /** Sets value for truthy state */
-      trueValue?: any;
+      trueValue?: any
       /** Delays validation until blur event */
-      validateOnBlur?: boolean;
+      validateOnBlur?: boolean
       /** The input's value */
-      value?: any;
+      value?: any
       /** Apply a custom value comparator function */
-      valueComparator?: Function;
-    }>;
+      valueComparator?: Function
+    }>
     VSimpleCheckbox: DefineComponent<{
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Disables simple checkbox. */
-      disabled?: boolean;
+      disabled?: boolean
       /** Sets an indeterminate state for the simple checkbox. */
-      indeterminate?: boolean;
+      indeterminate?: boolean
       /** The icon used when in an indeterminate state. */
-      indeterminateIcon?: string;
+      indeterminateIcon?: string
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** The icon used when inactive. */
-      offIcon?: string;
+      offIcon?: string
       /** The icon used when active. */
-      onIcon?: string;
+      onIcon?: string
       /** Applies the [v-ripple](/directives/ripple) directive. */
-      ripple?: boolean;
+      ripple?: boolean
       /** A boolean value that represents whether the simple checkbox is checked. */
-      value?: boolean;
-    }>;
+      value?: boolean
+    }>
     VChip: DefineComponent<{
-      /** Determines whether the chip is visible or not. */ active?: boolean;
+      /** Determines whether the chip is visible or not. */ active?: boolean
       /** Configure the active CSS class applied when the link is active. You can find more information about the [**active-class** prop](https://router.vuejs.org/api/#active-class) on the vue-router documentation. */
-      activeClass?: string;
+      activeClass?: string
       /** Setting **append** prop always appends the relative path to the current path. You can find more information about the [**append** prop](https://router.vuejs.org/api/#append) on the vue-router documentation. */
-      append?: boolean;
+      append?: boolean
       /** Adds remove button */
-      close?: boolean;
+      close?: boolean
       /** Change the default icon used for **close** chips */
-      closeIcon?: string;
+      closeIcon?: string
       /** Text used for *aria-label* on the close button in **close** chips. Can also be customized globally in [Internationalization](/customization/internationalization). */
-      closeLabel?: string;
+      closeLabel?: string
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Disables the chip, making it un-selectable */
-      disabled?: boolean;
+      disabled?: boolean
       /** Makes the chip draggable */
-      draggable?: boolean;
+      draggable?: boolean
       /** Exactly match the link. Without this, '/' will match every route. You can find more information about the [**exact** prop](https://router.vuejs.org/api/#exact) on the vue-router documentation. */
-      exact?: boolean;
+      exact?: boolean
       /** Configure the active CSS class applied when the link is active with exact match. You can find more information about the [**exact-active-class** prop](https://router.vuejs.org/api/#exact-active-class) on the vue-router documentation. */
-      exactActiveClass?: string;
+      exactActiveClass?: string
       /** Exactly match the link, ignoring the `query` and the `hash` sections. You can find more information about the [**exact-path** prop](https://router.vuejs.org/api/#exact-path) on the vue-router documentation. */
-      exactPath?: boolean;
+      exactPath?: boolean
       /** Displays a selection icon when selected */
-      filter?: boolean;
+      filter?: boolean
       /** Change the default icon used for **filter** chips */
-      filterIcon?: string;
+      filterIcon?: string
       /** Designates the component as anchor and applies the **href** attribute. */
-      href?: string | object;
+      href?: string | object
       /** Controls the **active** state of the item. This is typically used to highlight the component. */
-      inputValue?: any;
+      inputValue?: any
       /** Removes circle edges */
-      label?: boolean;
+      label?: boolean
       /** Makes the component large. */
-      large?: boolean;
+      large?: boolean
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Explicitly define the chip as a link */
-      link?: boolean;
+      link?: boolean
       /** Specifies the link is a `nuxt-link`. For use with the [nuxt framework](https://nuxtjs.org/api/components-nuxt-link/). */
-      nuxt?: boolean;
+      nuxt?: boolean
       /** Removes background and applies border and text color */
-      outlined?: boolean;
+      outlined?: boolean
       /** Remove `v-avatar` padding */
-      pill?: boolean;
+      pill?: boolean
       /** Setting **replace** prop will call `router.replace()` instead of `router.push()` when clicked, so the navigation will not leave a history record. You can find more information about the [**replace** prop](https://router.vuejs.org/api/#replace) on the vue-router documentation. */
-      replace?: boolean;
+      replace?: boolean
       /** Applies the [v-ripple](/directives/ripple) directive. */
-      ripple?: boolean | object;
+      ripple?: boolean | object
       /** Makes the component small. */
-      small?: boolean;
+      small?: boolean
       /** Specify a custom tag used on the root element. */
-      tag?: string;
+      tag?: string
       /** Designates the target attribute. This should only be applied when using the **href** prop. */
-      target?: string;
+      target?: string
       /** Applies a specified color to the control text */
-      textColor?: string;
+      textColor?: string
       /** Denotes the target route of the link. You can find more information about the [**to** prop](https://router.vuejs.org/api/#to) on the vue-router documentation. */
-      to?: string | object;
+      to?: string | object
       /** The value used when a child of a [v-chip-group](/components/chip-groups). */
-      value?: any;
+      value?: any
       /** Makes the component extra large. */
-      xLarge?: boolean;
+      xLarge?: boolean
       /** Makes the component extra small. */
-      xSmall?: boolean;
-    }>;
+      xSmall?: boolean
+    }>
     VChipGroup: DefineComponent<{
       /** The **active-class** applied to children when they are activated. */
-      activeClass?: string;
+      activeClass?: string
       /** Forces the selected chip to be centered */
-      centerActive?: boolean;
+      centerActive?: boolean
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Remove horizontal pagination and wrap items as needed */
-      column?: boolean;
+      column?: boolean
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Forces a value to always be selected (if available). */
-      mandatory?: boolean;
+      mandatory?: boolean
       /** Sets a maximum number of selections that can be made. */
-      max?: number | string;
+      max?: number | string
       /** Sets the designated mobile breakpoint for the component. */
-      mobileBreakpoint?: number | string;
+      mobileBreakpoint?: number | string
       /** Allow multiple selections. The **value** prop must be an _array_. */
-      multiple?: boolean;
+      multiple?: boolean
       /** Specify the icon to use for the next icon */
-      nextIcon?: string;
+      nextIcon?: string
       /** Specify the icon to use for the prev icon */
-      prevIcon?: string;
+      prevIcon?: string
       /** Force the display of the pagination arrows */
-      showArrows?: boolean | string;
+      showArrows?: boolean | string
       /** Specify a custom tag used on the root element. */
-      tag?: string;
+      tag?: string
       /** The designated model value for the component. */
-      value?: any;
+      value?: any
       /** Apply a custom value comparator function */
-      valueComparator?: Function;
-    }>;
+      valueComparator?: Function
+    }>
     VColorPicker: DefineComponent<{
-      /** Height of canvas */ canvasHeight?: string | number;
+      /** Height of canvas */ canvasHeight?: string | number
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Disables picker */
-      disabled?: boolean;
+      disabled?: boolean
       /** Changes the size of the selection dot on the canvas */
-      dotSize?: number | string;
+      dotSize?: number | string
       /** Designates an elevation applied to the component between 0 and 24. You can find more information on the [elevation page](/styles/elevation). */
-      elevation?: number | string;
+      elevation?: number | string
       /** Removes elevation */
-      flat?: boolean;
+      flat?: boolean
       /** Hides canvas */
-      hideCanvas?: boolean;
+      hideCanvas?: boolean
       /** Hides inputs */
-      hideInputs?: boolean;
+      hideInputs?: boolean
       /** Hides mode switch */
-      hideModeSwitch?: boolean;
+      hideModeSwitch?: boolean
       /** Hides sliders */
-      hideSliders?: boolean;
+      hideSliders?: boolean
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Sets mode of inputs. Available modes are 'rgba', 'hsla', and 'hexa'. Can be synced with the `.sync` modifier. */
-      mode?: string;
+      mode?: string
       /** Displays color swatches */
-      showSwatches?: boolean;
+      showSwatches?: boolean
       /** Sets the available color swatches to select from - This prop only accepts rgba hex strings */
-      swatches?: any[];
+      swatches?: any[]
       /** Sets the maximum height of the swatches section */
-      swatchesMaxHeight?: number | string;
+      swatchesMaxHeight?: number | string
       /** Current color. This can be either a string representing a hex color, or an object representing a RGBA, HSLA, or HSVA value */
-      value?: object | string;
+      value?: object | string
       /** Sets the width of the color picker */
-      width?: number | string;
-    }>;
+      width?: number | string
+    }>
     VContent: DefineComponent<{
-      /** Specify a custom tag used on the root element. */ tag?: string;
-    }>;
+      /** Specify a custom tag used on the root element. */ tag?: string
+    }>
     VCombobox: DefineComponent<{
-      /** Allow the menu to overflow off the screen */ allowOverflow?: boolean;
+      /** Allow the menu to overflow off the screen */ allowOverflow?: boolean
       /** Appends an icon to the component, uses the same syntax as `v-icon` */
-      appendIcon?: string;
+      appendIcon?: string
       /** Appends an icon to the outside the component's input, uses same syntax as `v-icon` */
-      appendOuterIcon?: string;
+      appendOuterIcon?: string
       /** Specifies which DOM element that this component should detach to. String can be any valid querySelector and Object can be any valid Node. This will attach to the root `v-app` component by default. */
-      attach?: any;
+      attach?: any
       /** When searching, will always highlight the first option */
-      autoSelectFirst?: boolean;
+      autoSelectFirst?: boolean
       /** Enables autofocus */
-      autofocus?: boolean;
+      autofocus?: boolean
       /** Changes the background-color of the input */
-      backgroundColor?: string;
+      backgroundColor?: string
       /** Keeps a local _unique_ copy of all items that have been passed through the **items** prop. */
-      cacheItems?: boolean;
+      cacheItems?: boolean
       /** Changes display of selections to chips */
-      chips?: boolean;
+      chips?: boolean
       /** Applied when using **clearable** and the input is dirty */
-      clearIcon?: string;
+      clearIcon?: string
       /** Add input clear functionality, default icon is Material Design Icons **mdi-clear** */
-      clearable?: boolean;
+      clearable?: boolean
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Creates counter for input length; if no number is specified, it defaults to 25. Does not apply any validation. */
-      counter?: boolean | number | string;
-      counterValue?: Function;
+      counter?: boolean | number | string
+      counterValue?: Function
       /** Applies the dark theme variant to the component. This will default the components color to _white_ unless you've configured your [application theme](/customization/theme) to **dark** or if you are using the **color** prop on the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Adds a remove icon to selected chips */
-      deletableChips?: boolean;
+      deletableChips?: boolean
       /** Accepts an array of strings that will trigger a new tag when typing. Does not replace the normal Tab and Enter keys. */
-      delimiters?: any[];
+      delimiters?: any[]
       /** Reduces the input height */
-      dense?: boolean;
+      dense?: boolean
       /** Disables keyboard lookup */
-      disableLookup?: boolean;
+      disableLookup?: boolean
       /** Disables the input */
-      disabled?: boolean;
+      disabled?: boolean
       /** Will force the components content to render on mounted. This is useful if you have content that will not be rendered in the DOM that you want crawled for SEO. */
-      eager?: boolean;
+      eager?: boolean
       /** Puts the input in a manual error state */
-      error?: boolean;
+      error?: boolean
       /** The total number of errors that should display at once */
-      errorCount?: number | string;
+      errorCount?: number | string
       /** Puts the input in an error state and passes through custom error messages. Will be combined with any validations that occur from the **rules** prop. This field will not trigger validation */
-      errorMessages?: string | any[];
+      errorMessages?: string | any[]
       /** Applies the alternate filled input style */
-      filled?: boolean;
+      filled?: boolean
       /** The filtering algorithm used when searching. [example](https://github.com/vuetifyjs/vuetify/blob/master/packages/vuetify/src/components/VAutocomplete/VAutocomplete.ts#L40) */
-      filter?: Function;
+      filter?: Function
       /** Removes elevation (shadow) added to element when using the **solo** or **solo-inverted** props */
-      flat?: boolean;
+      flat?: boolean
       /** Designates input type as full-width */
-      fullWidth?: boolean;
+      fullWidth?: boolean
       /** Sets the height of the input */
-      height?: number | string;
+      height?: number | string
       /** Hides hint and validation errors. When set to `auto` messages will be rendered only if there's a message (hint, error message, counter value etc) to display */
-      hideDetails?: boolean | string;
+      hideDetails?: boolean | string
       /** Hides the menu when there are no options to show.  Useful for preventing the menu from opening before results are fetched asynchronously.  Also has the effect of opening the menu when the `items` array changes if not already open. */
-      hideNoData?: boolean;
+      hideNoData?: boolean
       /** Do not display in the select menu items that are already selected */
-      hideSelected?: boolean;
+      hideSelected?: boolean
       /** Hides spin buttons on the input when type is set to `number`. */
-      hideSpinButtons?: boolean;
+      hideSpinButtons?: boolean
       /** Hint text */
-      hint?: string;
+      hint?: string
       /** Sets the DOM id on the component */
-      id?: string;
+      id?: string
       /** Sets color of selected items */
-      itemColor?: string;
+      itemColor?: string
       /** Set property of **items**'s disabled value */
-      itemDisabled?: string | any[] | Function;
+      itemDisabled?: string | any[] | Function
       /** Set property of **items**'s text value */
-      itemText?: string | any[] | Function;
+      itemText?: string | any[] | Function
       /** Set property of **items**'s value - **must be primitive**. Dot notation is supported. **Note:** This is currently not supported with `v-combobox` [GitHub Issue](https://github.com/vuetifyjs/vuetify/issues/5479) */
-      itemValue?: string | any[] | Function;
+      itemValue?: string | any[] | Function
       /** Can be an array of objects or array of strings. When using objects, will look for a text, value and disabled keys. This can be changed using the **item-text**, **item-value** and **item-disabled** props.  Objects that have a **header** or **divider** property are considered special cases and generate a list header or divider; these items are not selectable. */
-      items?: any[];
+      items?: any[]
       /** Sets input label */
-      label?: string;
+      label?: string
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Specifies the height of the loader */
-      loaderHeight?: number | string;
+      loaderHeight?: number | string
       /** Displays linear progress bar. Can either be a String which specifies which color is applied to the progress bar (any material color or theme color - **primary**, **secondary**, **success**, **info**, **warning**, **error**) or a Boolean which uses the component **color** (set by color prop - if it's supported by the component) or the primary color */
-      loading?: boolean | string;
+      loading?: boolean | string
       /** Pass props through to the `v-menu` component. Accepts either a string for boolean props `menu-props="auto, overflowY"`, or an object `:menu-props="{ auto: true, overflowY: true }"` */
-      menuProps?: string | any[] | object;
+      menuProps?: string | any[] | object
       /** Displays a list of messages or message if using a string */
-      messages?: string | any[];
+      messages?: string | any[]
       /** Changes select to multiple. Accepts array for value */
-      multiple?: boolean;
+      multiple?: boolean
       /** Display text when there is no data */
-      noDataText?: string;
+      noDataText?: string
       /** Do not apply filtering when searching. Useful when data is being filtered server side */
-      noFilter?: boolean;
+      noFilter?: boolean
       /** When using the **clearable** prop, once cleared, the select menu will either open or stay open, depending on the current state */
-      openOnClear?: boolean;
+      openOnClear?: boolean
       /** Applies the outlined style to the input */
-      outlined?: boolean;
+      outlined?: boolean
       /** Forces hint to always be visible */
-      persistentHint?: boolean;
+      persistentHint?: boolean
       /** Forces placeholder to always be visible */
-      persistentPlaceholder?: boolean;
+      persistentPlaceholder?: boolean
       /** Sets the input's placeholder text */
-      placeholder?: string;
+      placeholder?: string
       /** Displays prefix text */
-      prefix?: string;
+      prefix?: string
       /** Prepends an icon to the component, uses the same syntax as `v-icon` */
-      prependIcon?: string;
+      prependIcon?: string
       /** Prepends an icon inside the component's input, uses the same syntax as `v-icon` */
-      prependInnerIcon?: string;
+      prependInnerIcon?: string
       /** Puts input in readonly state */
-      readonly?: boolean;
+      readonly?: boolean
       /** Changes the selection behavior to return the object directly rather than the value specified with **item-value** */
-      returnObject?: boolean;
+      returnObject?: boolean
       /** Reverses the input orientation */
-      reverse?: boolean;
+      reverse?: boolean
       /** Adds a border radius to the input */
-      rounded?: boolean;
+      rounded?: boolean
       /** Accepts a mixed array of types `function`, `boolean` and `string`. Functions pass an input value as an argument and must return either `true` / `false` or a `string` containing an error message. The input field will enter an error state if a function returns (or any value in the array contains) `false` or is a `string` */
-      rules?: any[];
+      rules?: any[]
       /** Search value. Can be used with `.sync` modifier. */
-      searchInput?: string;
+      searchInput?: string
       /** Round if `outlined` and increase `border-radius` if `filled`. Must be used with either `outlined` or `filled` */
-      shaped?: boolean;
+      shaped?: boolean
       /** Label does not move on focus/dirty */
-      singleLine?: boolean;
+      singleLine?: boolean
       /** Changes display of selections to chips with the **small** property */
-      smallChips?: boolean;
+      smallChips?: boolean
       /** Changes the style of the input */
-      solo?: boolean;
+      solo?: boolean
       /** Reduces element opacity until focused */
-      soloInverted?: boolean;
+      soloInverted?: boolean
       /** Puts the input in a manual success state */
-      success?: boolean;
+      success?: boolean
       /** Puts the input in a success state and passes through custom success messages. */
-      successMessages?: string | any[];
+      successMessages?: string | any[]
       /** Displays suffix text */
-      suffix?: string;
+      suffix?: string
       /** Sets input type */
-      type?: string;
+      type?: string
       /** Delays validation until blur event */
-      validateOnBlur?: boolean;
+      validateOnBlur?: boolean
       /** The input's value */
-      value?: any;
+      value?: any
       /** The comparison algorithm used for values. [More info](https://github.com/vuetifyjs/vuetify/blob/master/packages/vuetify/src/util/helpers.ts) */
-      valueComparator?: Function;
-    }>;
+      valueComparator?: Function
+    }>
     VDataIterator: DefineComponent<{
-      checkboxColor?: string;
+      checkboxColor?: string
       /** Function to filter items */
-      customFilter?: Function;
+      customFilter?: Function
       /** Function used to group items */
-      customGroup?: Function;
+      customGroup?: Function
       /** Function used to sort items */
-      customSort?: Function;
+      customSort?: Function
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Disables filtering completely */
-      disableFiltering?: boolean;
+      disableFiltering?: boolean
       /** Disables pagination completely */
-      disablePagination?: boolean;
+      disablePagination?: boolean
       /** Disables sorting completely */
-      disableSort?: boolean;
+      disableSort?: boolean
       /** Array of expanded items. Can be used with `.sync` modifier */
-      expanded?: any[];
+      expanded?: any[]
       /** See the [`v-data-footer`](/api/v-data-footer) API for more information */
-      footerProps?: object;
+      footerProps?: object
       /** Changes which item property should be used for grouping items. Currently only supports a single grouping in the format: `group` or `['group']`. When using an array, only the first element is considered. Can be used with `.sync` modifier */
-      groupBy?: string | any[];
+      groupBy?: string | any[]
       /** Changes which direction grouping is done. Can be used with `.sync` modifier */
-      groupDesc?: boolean | any[];
+      groupDesc?: boolean | any[]
       /** Hides default footer */
-      hideDefaultFooter?: boolean;
+      hideDefaultFooter?: boolean
       /** The property on each item that is used as a unique key */
-      itemKey?: string;
+      itemKey?: string
       /** The array of items to display */
-      items?: any[];
+      items?: any[]
       /** Changes how many items per page should be visible. Can be used with `.sync` modifier. Setting this prop to `-1` will display all items on the page */
-      itemsPerPage?: number;
+      itemsPerPage?: number
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** If `true` and no items are provided, then a loading text will be shown */
-      loading?: boolean | string;
+      loading?: boolean | string
       /** Text shown when `loading` is true and no items are provided */
-      loadingText?: string;
+      loadingText?: string
       /** Sets the locale used for sorting. This is passed into [`Intl.Collator()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Collator/Collator) in the default `customSort` function */
-      locale?: string;
+      locale?: string
       /** Used to set when to toggle between regular table and mobile view */
-      mobileBreakpoint?: number | string;
+      mobileBreakpoint?: number | string
       /** If `true` then one can sort on multiple properties */
-      multiSort?: boolean;
+      multiSort?: boolean
       /** If `true` then one can not disable sorting, it will always switch between ascending and descending */
-      mustSort?: boolean;
+      mustSort?: boolean
       /** Text shown when no items are provided to the component */
-      noDataText?: string;
+      noDataText?: string
       /** Text shown when `search` prop is used and there are no results */
-      noResultsText?: string;
-      options?: DataOptions;
-      page?: number;
+      noResultsText?: string
+      options?: DataOptions
+      page?: number
       /** Text input used to filter items */
-      search?: string;
+      search?: string
       /** The property on each item that is used to determine if it is selectable or not */
-      selectableKey?: string;
+      selectableKey?: string
       /** Used only when data is provided by a server. Should be set to the total amount of items available on server so that pagination works correctly */
-      serverItemsLength?: number;
+      serverItemsLength?: number
       /** Changes expansion mode to single expand */
-      singleExpand?: boolean;
+      singleExpand?: boolean
       /** Changes selection mode to single select */
-      singleSelect?: boolean;
+      singleSelect?: boolean
       /** Changes which item property (or properties) should be used for sort order. Can be used with `.sync` modifier */
-      sortBy?: string | any[];
+      sortBy?: string | any[]
       /** Changes which direction sorting is done. Can be used with `.sync` modifier */
-      sortDesc?: boolean | any[];
+      sortDesc?: boolean | any[]
       /** Used for controlling selected rows */
-      value?: any[];
-    }>;
+      value?: any[]
+    }>
     VDataFooter: DefineComponent<{
-      /** Disables items-per-page dropdown */ disableItemsPerPage?: boolean;
+      /** Disables items-per-page dropdown */ disableItemsPerPage?: boolean
       /** Disables pagination buttons */
-      disablePagination?: boolean;
+      disablePagination?: boolean
       /** First icon */
-      firstIcon?: string;
+      firstIcon?: string
       /** Text for 'All' option in items-per-page dropdown */
-      itemsPerPageAllText?: string;
+      itemsPerPageAllText?: string
       /** Array of options to show in the items-per-page dropdown */
-      itemsPerPageOptions?: any[];
+      itemsPerPageOptions?: any[]
       /** Text for items-per-page dropdown */
-      itemsPerPageText?: string;
+      itemsPerPageText?: string
       /** Last icon */
-      lastIcon?: string;
+      lastIcon?: string
       /** Next icon */
-      nextIcon?: string;
+      nextIcon?: string
       /** DataOptions */
-      options?: object;
-      pageText?: string;
+      options?: object
+      pageText?: string
       /** DataPagination */
-      pagination?: object;
+      pagination?: object
       /** Previous icon */
-      prevIcon?: string;
+      prevIcon?: string
       /** Show current page number between prev/next icons */
-      showCurrentPage?: boolean;
+      showCurrentPage?: boolean
       /** Show first/last icons */
-      showFirstLastPage?: boolean;
-    }>;
+      showFirstLastPage?: boolean
+    }>
     VDataTable: DefineComponent<{
       /** Enables calculation of column widths. `widths` property will be available in select scoped slots */
-      calculateWidths?: boolean;
+      calculateWidths?: boolean
       /** Set the caption (using `<caption>`) */
-      caption?: string;
+      caption?: string
       /** Set the color of the checkboxes (showSelect must be used) */
-      checkboxColor?: string;
+      checkboxColor?: string
       /** Function to filter items */
-      customFilter?: Function;
+      customFilter?: Function
       /** Function used to group items */
-      customGroup?: Function;
+      customGroup?: Function
       /** Function used to sort items */
-      customSort?: Function;
+      customSort?: Function
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Decreases the height of rows */
-      dense?: boolean;
+      dense?: boolean
       /** Disables filtering completely */
-      disableFiltering?: boolean;
+      disableFiltering?: boolean
       /** Disables pagination completely */
-      disablePagination?: boolean;
+      disablePagination?: boolean
       /** Disables sorting completely */
-      disableSort?: boolean;
+      disableSort?: boolean
       /** Icon used for expand toggle button. */
-      expandIcon?: string;
+      expandIcon?: string
       /** Array of expanded items. Can be used with `.sync` modifier */
-      expanded?: any[];
+      expanded?: any[]
       /** Fixed header to top of table. **NOTE:** Does not work in IE11 */
-      fixedHeader?: boolean;
+      fixedHeader?: boolean
       /** See the [`v-data-footer`](/api/v-data-footer) API for more information */
-      footerProps?: object;
+      footerProps?: object
       /** Changes which item property should be used for grouping items. Currently only supports a single grouping in the format: `group` or `['group']`. When using an array, only the first element is considered. Can be used with `.sync` modifier */
-      groupBy?: string | any[];
+      groupBy?: string | any[]
       /** Changes which direction grouping is done. Can be used with `.sync` modifier */
-      groupDesc?: boolean | any[];
+      groupDesc?: boolean | any[]
       /** Pass props to the default header. See [`v-data-table-header` API](/api/v-data-table-header) for more information */
-      headerProps?: object;
+      headerProps?: object
       /** An array of objects that each describe a header column. See the example below for a definition of all properties */
-      headers?: DataTableHeader[];
+      headers?: DataTableHeader[]
       /** Can be used in combination with `hide-default-header` to specify the number of columns in the table to allow expansion rows and loading bar to function properly */
-      headersLength?: number;
+      headersLength?: number
       /** Set an explicit height of table */
-      height?: number | string;
+      height?: number | string
       /** Hides default footer */
-      hideDefaultFooter?: boolean;
+      hideDefaultFooter?: boolean
       /** Hide the default headers */
-      hideDefaultHeader?: boolean;
+      hideDefaultHeader?: boolean
       /** Property on supplied `items` that contains item's row class or function that takes an item as an argument and returns the class of corresponding row */
-      itemClass?: string | Function;
+      itemClass?: string | Function
       /** The property on each item that is used as a unique key */
-      itemKey?: string;
+      itemKey?: string
       /** The array of items to display */
-      items?: any[];
+      items?: any[]
       /** Changes how many items per page should be visible. Can be used with `.sync` modifier. Setting this prop to `-1` will display all items on the page */
-      itemsPerPage?: number;
+      itemsPerPage?: number
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Specifies the height of the loader */
-      loaderHeight?: number | string;
+      loaderHeight?: number | string
       /** If `true` and no items are provided, then a loading text will be shown */
-      loading?: boolean | string;
+      loading?: boolean | string
       /** Text shown when `loading` is true and no items are provided */
-      loadingText?: string;
+      loadingText?: string
       /** Sets the locale used for sorting. This is passed into [`Intl.Collator()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Collator/Collator) in the default `customSort` function */
-      locale?: string;
+      locale?: string
       /** Used to set when to toggle between regular table and mobile view */
-      mobileBreakpoint?: number | string;
+      mobileBreakpoint?: number | string
       /** If `true` then one can sort on multiple properties */
-      multiSort?: boolean;
+      multiSort?: boolean
       /** If `true` then one can not disable sorting, it will always switch between ascending and descending */
-      mustSort?: boolean;
+      mustSort?: boolean
       /** Text shown when no items are provided to the component */
-      noDataText?: string;
+      noDataText?: string
       /** Text shown when `search` prop is used and there are no results */
-      noResultsText?: string;
-      options?: DataOptions;
+      noResultsText?: string
+      options?: DataOptions
       /** The current displayed page number (1-indexed) */
-      page?: number;
+      page?: number
       /** Text input used to filter items */
-      search?: string;
+      search?: string
       /** The property on each item that is used to determine if it is selectable or not */
-      selectableKey?: string;
+      selectableKey?: string
       /** Used only when data is provided by a server. Should be set to the total amount of items available on server so that pagination works correctly */
-      serverItemsLength?: number;
+      serverItemsLength?: number
       /** Shows the expand toggle in default rows */
-      showExpand?: boolean;
+      showExpand?: boolean
       /** Shows the group by toggle in the header and enables grouped rows */
-      showGroupBy?: boolean;
+      showGroupBy?: boolean
       /** Shows the select checkboxes in both the header and rows (if using default rows) */
-      showSelect?: boolean;
+      showSelect?: boolean
       /** Changes expansion mode to single expand */
-      singleExpand?: boolean;
+      singleExpand?: boolean
       /** Changes selection mode to single select */
-      singleSelect?: boolean;
+      singleSelect?: boolean
       /** Changes which item property (or properties) should be used for sort order. Can be used with `.sync` modifier */
-      sortBy?: string | any[];
+      sortBy?: string | any[]
       /** Changes which direction sorting is done. Can be used with `.sync` modifier */
-      sortDesc?: boolean | any[];
+      sortDesc?: boolean | any[]
       /** Used for controlling selected rows */
-      value?: any[];
-    }>;
+      value?: any[]
+    }>
     VEditDialog: DefineComponent<{
       /** Sets the default text for the cancel button when using the **large** prop */
-      cancelText?: any;
+      cancelText?: any
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Will force the components content to render on mounted. This is useful if you have content that will not be rendered in the DOM that you want crawled for SEO. */
-      eager?: boolean;
+      eager?: boolean
       /** Attaches a submit and cancel button to the dialog */
-      large?: boolean;
+      large?: boolean
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Clicking outside or pressing **esc** key will not dismiss the dialog */
-      persistent?: boolean;
-      returnValue?: any;
+      persistent?: boolean
+      returnValue?: any
       /** Sets the default text for the save button when using the **large** prop */
-      saveText?: any;
+      saveText?: any
       /** Sets the component transition. Can be one of the [built in transitions](/styles/transitions) or one your own. */
-      transition?: string;
-    }>;
+      transition?: string
+    }>
     VDataTableHeader: DefineComponent<{
-      checkboxColor?: string;
+      checkboxColor?: string
       /** Toggles rendering of sort button */
-      disableSort?: boolean;
+      disableSort?: boolean
       /** Indicates if all items in table are selected */
-      everyItem?: boolean;
+      everyItem?: boolean
       /** Array of header items to display */
-      headers?: any[];
+      headers?: any[]
       /** Renders mobile view of headers */
-      mobile?: boolean;
+      mobile?: boolean
       /** Options object. Identical to the one on `v-data-table` */
-      options?: object;
+      options?: object
       /** Shows group by button */
-      showGroupBy?: boolean;
+      showGroupBy?: boolean
       /** Toggles rendering of select-all checkbox */
-      singleSelect?: boolean;
+      singleSelect?: boolean
       /** Indicates if one or more items in table are selected */
-      someItems?: boolean;
+      someItems?: boolean
       /** Sets the label text used by the default sort-by selector when `v-data-table` is rendering the mobile view */
-      sortByText?: string;
+      sortByText?: string
       /** Icon used for sort button */
-      sortIcon?: string;
-    }>;
+      sortIcon?: string
+    }>
     VSimpleTable: DefineComponent<{
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Decreases paddings to render a dense table */
-      dense?: boolean;
+      dense?: boolean
       /** Sets table header to fixed mode */
-      fixedHeader?: boolean;
+      fixedHeader?: boolean
       /** Sets the height for the component */
-      height?: number | string;
+      height?: number | string
       /** Applies the light theme variant to the component. */
-      light?: boolean;
-    }>;
+      light?: boolean
+    }>
     VDatePicker: DefineComponent<{
       /** Determines which picker in the date or month picker is being displayed. Allowed values: `'DATE'`, `'MONTH'`, `'YEAR'` */
-      activePicker?: string;
+      activePicker?: string
       /** Restricts which dates can be selected */
-      allowedDates?: Function;
+      allowedDates?: Function
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Allows you to customize the format of the day string that appears in the date table. Called with date (ISO 8601 **date** string) arguments. */
-      dayFormat?: Function;
+      dayFormat?: Function
       /** Disables interaction with the picker */
-      disabled?: boolean;
+      disabled?: boolean
       /** Designates an elevation applied to the component between 0 and 24. You can find more information on the [elevation page](/styles/elevation). */
-      elevation?: number | string;
+      elevation?: number | string
       /** Sets the color for event dot. It can be string (all events will have the same color) or `object` where attribute is the event date and value is boolean/color/array of colors for specified date or `function` taking date as a parameter and returning boolean/color/array of colors for that date */
-      eventColor?: any[] | Function | object | string;
+      eventColor?: any[] | Function | object | string
       /** Array of dates or object defining events or colors or function returning boolean/color/array of colors */
-      events?: any[] | Function | object;
+      events?: any[] | Function | object
       /** Sets the first day of the week, starting with 0 for Sunday. */
-      firstDayOfWeek?: string | number;
+      firstDayOfWeek?: string | number
       /** Removes  elevation */
-      flat?: boolean;
+      flat?: boolean
       /** Forces 100% width */
-      fullWidth?: boolean;
+      fullWidth?: boolean
       /** Defines the header color. If not specified it will use the color defined by <code>color</code> prop or the default picker color */
-      headerColor?: string;
+      headerColor?: string
       /** Allows you to customize the format of the month string that appears in the header of the calendar. Called with date (ISO 8601 **date** string) arguments. */
-      headerDateFormat?: Function;
+      headerDateFormat?: Function
       /** Orients picker horizontal */
-      landscape?: boolean;
+      landscape?: boolean
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Sets the locale. Accepts a string with a BCP 47 language tag. */
-      locale?: string;
+      locale?: string
       /** Sets the day that determines the first week of the year, starting with 0 for **Sunday**. For ISO 8601 this should be 4. */
-      localeFirstDayOfYear?: string | number;
+      localeFirstDayOfYear?: string | number
       /** Maximum allowed date/month (ISO 8601 format) */
-      max?: string;
+      max?: string
       /** Minimum allowed date/month (ISO 8601 format) */
-      min?: string;
+      min?: string
       /** Formatting function used for displaying months in the months table. Called with date (ISO 8601 **date** string) arguments. */
-      monthFormat?: Function;
+      monthFormat?: Function
       /** Allow the selection of multiple dates */
-      multiple?: boolean;
+      multiple?: boolean
       /** Sets the icon for next month/year button */
-      nextIcon?: string;
-      nextMonthAriaLabel?: string;
-      nextYearAriaLabel?: string;
+      nextIcon?: string
+      nextMonthAriaLabel?: string
+      nextYearAriaLabel?: string
       /** Hide the picker title */
-      noTitle?: boolean;
+      noTitle?: boolean
       /** Displayed year/month */
-      pickerDate?: string;
+      pickerDate?: string
       /** Sets the icon for previous month/year button */
-      prevIcon?: string;
-      prevMonthAriaLabel?: string;
-      prevYearAriaLabel?: string;
+      prevIcon?: string
+      prevMonthAriaLabel?: string
+      prevYearAriaLabel?: string
       /** Allow the selection of date range */
-      range?: boolean;
+      range?: boolean
       /** Updates the picker model when changing months/years automatically */
-      reactive?: boolean;
+      reactive?: boolean
       /** Makes the picker readonly (doesn't allow to select new date) */
-      readonly?: boolean;
+      readonly?: boolean
       /** Allows changing displayed month with mouse scroll */
-      scrollable?: boolean;
+      scrollable?: boolean
       /** Text used for translating the number of selected dates when using *multiple* prop. Can also be customizing globally in [Internationalization](/customization/internationalization). */
-      selectedItemsText?: string;
+      selectedItemsText?: string
       /** Toggles visibility of days from previous and next months */
-      showAdjacentMonths?: boolean;
+      showAdjacentMonths?: boolean
       /** Toggles visibility of the current date/month outline or shows the provided date/month as a current */
-      showCurrent?: boolean | string;
+      showCurrent?: boolean | string
       /** Toggles visibility of the week numbers in the body of the calendar */
-      showWeek?: boolean;
+      showWeek?: boolean
       /** Allows you to customize the format of the date string that appears in the title of the date picker. Called with date (ISO 8601 **date** string) arguments. */
-      titleDateFormat?: Function;
+      titleDateFormat?: Function
       /** Determines the type of the picker - `date` for date picker, `month` for month picker */
-      type?: string;
+      type?: string
       /** Date picker model (ISO 8601 format, YYYY-mm-dd or YYYY-mm) */
-      value?: any[] | string;
+      value?: any[] | string
       /** Allows you to customize the format of the weekday string that appears in the body of the calendar. Called with date (ISO 8601 **date** string) arguments. */
-      weekdayFormat?: Function;
+      weekdayFormat?: Function
       /** Width of the picker */
-      width?: number | string;
+      width?: number | string
       /** Allows you to customize the format of the year string that appears in the header of the calendar. Called with date (ISO 8601 **date** string) arguments. */
-      yearFormat?: Function;
+      yearFormat?: Function
       /** Sets the icon in the year selection button */
-      yearIcon?: string;
-    }>;
+      yearIcon?: string
+    }>
     VDialog: DefineComponent<{
       /** Designate a custom activator when the `activator` slot is not used. String can be any valid querySelector and Object can be any valid Node. */
-      activator?: any;
+      activator?: any
       /** Specifies which DOM element that this component should detach to. String can be any valid querySelector and Object can be any valid Node. This will attach to the root `v-app` component by default. */
-      attach?: any;
+      attach?: any
       /** Milliseconds to wait before closing component. */
-      closeDelay?: number | string;
+      closeDelay?: number | string
       /** Applies a custom class to the detached element. This is useful because the content is moved to the beginning of the `v-app` component (unless the **attach** prop is provided) and is not targetable by classes passed directly on the component. */
-      contentClass?: string;
+      contentClass?: string
       /** Applies the dark theme variant to the component. This will default the components color to _white_ unless you've configured your [application theme](/customization/theme) to **dark** or if you are using the **color** prop on the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Disables the ability to open the component. */
-      disabled?: boolean;
+      disabled?: boolean
       /** Will force the components content to render on mounted. This is useful if you have content that will not be rendered in the DOM that you want crawled for SEO. */
-      eager?: boolean;
+      eager?: boolean
       /** Changes layout for fullscreen display. */
-      fullscreen?: boolean;
+      fullscreen?: boolean
       /** Hides the display of the overlay. */
-      hideOverlay?: boolean;
+      hideOverlay?: boolean
       /** Detaches the menu content inside of the component as opposed to the document. */
-      internalActivator?: boolean;
+      internalActivator?: boolean
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Sets the maximum width for the component. */
-      maxWidth?: string | number;
+      maxWidth?: string | number
       /** Disables the bounce effect when clicking outside of a `v-dialog`'s content when using the **persistent** prop. */
-      noClickAnimation?: boolean;
+      noClickAnimation?: boolean
       /** Milliseconds to wait before opening component. */
-      openDelay?: number | string;
-      openOnClick?: boolean;
-      openOnFocus?: boolean;
+      openDelay?: number | string
+      openOnClick?: boolean
+      openOnFocus?: boolean
       /** Designates whether component should activate when its activator is hovered. */
-      openOnHover?: boolean;
+      openOnHover?: boolean
       /** Sets the transition origin on the element. You can find more information on the MDN documentation [for transition origin](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin). */
-      origin?: string;
+      origin?: string
       /** Sets the overlay color. */
-      overlayColor?: string;
+      overlayColor?: string
       /** Sets the overlay opacity. */
-      overlayOpacity?: number | string;
+      overlayOpacity?: number | string
       /** Clicking outside of the element or pressing **esc** key will not deactivate it. */
-      persistent?: boolean;
+      persistent?: boolean
       /** Tab focus will return to the first child of the dialog by default. Disable this when using external tools that require focus such as TinyMCE or vue-clipboard. */
-      retainFocus?: boolean;
-      returnValue?: any;
+      retainFocus?: boolean
+      returnValue?: any
       /** When set to true, expects a `v-card` and a `v-card-text` component with a designated height. For more information, check out the [scrollable example](/components/dialogs#scrollable). */
-      scrollable?: boolean;
+      scrollable?: boolean
       /** Sets the component transition. Can be one of the [built in transitions](/styles/transitions) or one your own. */
-      transition?: string | boolean;
+      transition?: string | boolean
       /** Controls whether the component is visible or hidden. */
-      value?: any;
+      value?: any
       /** Sets the width for the component. */
-      width?: string | number;
-    }>;
+      width?: string | number
+    }>
     VDivider: DefineComponent<{
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Adds indentation (72px) for **normal** dividers, reduces max height for **vertical**. */
-      inset?: boolean;
+      inset?: boolean
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Displays dividers vertically */
-      vertical?: boolean;
-    }>;
+      vertical?: boolean
+    }>
     VExpansionPanels: DefineComponent<{
-      /** Removes the margin around open panels */ accordion?: boolean;
+      /** Removes the margin around open panels */ accordion?: boolean
       /** The **active-class** applied to children when they are activated. */
-      activeClass?: string;
+      activeClass?: string
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Disables the entire expansion-panel */
-      disabled?: boolean;
+      disabled?: boolean
       /** Removes the expansion-panel's elevation and borders */
-      flat?: boolean;
+      flat?: boolean
       /** Makes the expansion-panel headers focusable */
-      focusable?: boolean;
+      focusable?: boolean
       /** Applies a background-color shift on hover to expansion panel headers */
-      hover?: boolean;
+      hover?: boolean
       /** Makes the expansion-panel open with a inset style */
-      inset?: boolean;
+      inset?: boolean
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Forces a value to always be selected (if available). */
-      mandatory?: boolean;
+      mandatory?: boolean
       /** Sets a maximum number of selections that can be made. */
-      max?: number | string;
+      max?: number | string
       /** Allow multiple selections. The **value** prop must be an _array_. */
-      multiple?: boolean;
+      multiple?: boolean
       /** Makes the expansion-panel open with an popout style */
-      popout?: boolean;
+      popout?: boolean
       /** Makes the entire expansion-panel read only. */
-      readonly?: boolean;
+      readonly?: boolean
       /** Specify a custom tag used on the root element. */
-      tag?: string;
+      tag?: string
       /** Removes the border-radius */
-      tile?: boolean;
+      tile?: boolean
       /** Controls the opened/closed state of content in the expansion-panel. Corresponds to a zero-based index of the currently opened content. If the `multiple` prop (previously `expand` in 1.5.x) is used then it is an array of numbers where each entry corresponds to the index of the opened content.  The index order is not relevant. */
-      value?: any;
+      value?: any
       /** Apply a custom value comparator function */
-      valueComparator?: Function;
-    }>;
+      valueComparator?: Function
+    }>
     VExpansionPanel: DefineComponent<{
       /** Configure the active CSS class applied when the link is active. You can find more information about the [**active-class** prop](https://router.vuejs.org/api/#active-class) on the vue-router documentation. */
-      activeClass?: string;
+      activeClass?: string
       /** Disables the expansion-panel content */
-      disabled?: boolean;
+      disabled?: boolean
       /** Makes the expansion-panel content read only. */
-      readonly?: boolean;
-    }>;
+      readonly?: boolean
+    }>
     VExpansionPanelHeader: DefineComponent<{
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Removes the icon rotation animation when expanding a panel */
-      disableIconRotate?: boolean;
+      disableIconRotate?: boolean
       /** Set the expand action icon */
-      expandIcon?: string;
+      expandIcon?: string
       /** Hide the expand icon in the content header */
-      hideActions?: boolean;
+      hideActions?: boolean
       /** Applies the [v-ripple](/directives/ripple) directive. */
-      ripple?: boolean | object;
-    }>;
+      ripple?: boolean | object
+    }>
     VExpansionPanelContent: DefineComponent<{
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Will force the components content to render on mounted. This is useful if you have content that will not be rendered in the DOM that you want crawled for SEO. */
-      eager?: boolean;
-    }>;
+      eager?: boolean
+    }>
     VFileInput: DefineComponent<{
       /** Appends an icon to the component, uses the same syntax as `v-icon` */
-      appendIcon?: string;
+      appendIcon?: string
       /** Appends an icon to the outside the component's input, uses same syntax as `v-icon` */
-      appendOuterIcon?: string;
+      appendOuterIcon?: string
       /** Enables autofocus */
-      autofocus?: boolean;
+      autofocus?: boolean
       /** Changes the background-color of the input */
-      backgroundColor?: string;
+      backgroundColor?: string
       /** Changes display of selections to chips */
-      chips?: boolean;
+      chips?: boolean
       /** Applied when using **clearable** and the input is dirty */
-      clearIcon?: string;
+      clearIcon?: string
       /** Add input clear functionality, default icon is Material Design Icons **mdi-clear** */
-      clearable?: boolean;
+      clearable?: boolean
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Creates counter for input length; if no number is specified, it defaults to 25. Does not apply any validation. */
-      counter?: boolean | number | string;
+      counter?: boolean | number | string
       /** The text displayed when using the **counter** and **show-size** props. Can also be customized globally on the [internationalization page](/customization/internationalization). */
-      counterSizeString?: string;
+      counterSizeString?: string
       /** The text displayed when using the **counter** prop. Can also be customized globally on the [internationalization page](/customization/internationalization). */
-      counterString?: string;
-      counterValue?: Function;
+      counterString?: string
+      counterValue?: Function
       /** Applies the dark theme variant to the component. This will default the components color to _white_ unless you've configured your [application theme](/customization/theme) to **dark** or if you are using the **color** prop on the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Reduces the input height */
-      dense?: boolean;
+      dense?: boolean
       /** Disable the input */
-      disabled?: boolean;
+      disabled?: boolean
       /** Puts the input in a manual error state */
-      error?: boolean;
+      error?: boolean
       /** The total number of errors that should display at once */
-      errorCount?: number | string;
+      errorCount?: number | string
       /** Puts the input in an error state and passes through custom error messages. Will be combined with any validations that occur from the **rules** prop. This field will not trigger validation */
-      errorMessages?: string | any[];
+      errorMessages?: string | any[]
       /** Applies the alternate filled input style */
-      filled?: boolean;
+      filled?: boolean
       /** Removes elevation (shadow) added to element when using the **solo** or **solo-inverted** props */
-      flat?: boolean;
+      flat?: boolean
       /** Designates input type as full-width */
-      fullWidth?: boolean;
+      fullWidth?: boolean
       /** Sets the height of the input */
-      height?: number | string;
+      height?: number | string
       /** Hides hint and validation errors. When set to `auto` messages will be rendered only if there's a message (hint, error message, counter value etc) to display */
-      hideDetails?: boolean | string;
+      hideDetails?: boolean | string
       /** Display the icon only without the input (file names) */
-      hideInput?: boolean;
+      hideInput?: boolean
       /** Hides spin buttons on the input when type is set to `number`. */
-      hideSpinButtons?: boolean;
+      hideSpinButtons?: boolean
       /** Hint text */
-      hint?: string;
+      hint?: string
       /** Sets the DOM id on the component */
-      id?: string;
+      id?: string
       /** Sets input label */
-      label?: string;
+      label?: string
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Specifies the height of the loader */
-      loaderHeight?: number | string;
+      loaderHeight?: number | string
       /** Displays linear progress bar. Can either be a String which specifies which color is applied to the progress bar (any material color or theme color - **primary**, **secondary**, **success**, **info**, **warning**, **error**) or a Boolean which uses the component **color** (set by color prop - if it's supported by the component) or the primary color */
-      loading?: boolean | string;
+      loading?: boolean | string
       /** Displays a list of messages or message if using a string */
-      messages?: string | any[];
+      messages?: string | any[]
       /** Adds the **multiple** attribute to the input, allowing multiple file selections. */
-      multiple?: boolean;
+      multiple?: boolean
       /** Applies the outlined style to the input */
-      outlined?: boolean;
+      outlined?: boolean
       /** Forces hint to always be visible */
-      persistentHint?: boolean;
+      persistentHint?: boolean
       /** Forces placeholder to always be visible */
-      persistentPlaceholder?: boolean;
+      persistentPlaceholder?: boolean
       /** Sets the input's placeholder text */
-      placeholder?: string;
+      placeholder?: string
       /** Displays prefix text */
-      prefix?: string;
+      prefix?: string
       /** Prepends an icon to the component, uses the same syntax as `v-icon` */
-      prependIcon?: string;
+      prependIcon?: string
       /** Prepends an icon inside the component's input, uses the same syntax as `v-icon` */
-      prependInnerIcon?: string;
+      prependInnerIcon?: string
       /** Reverses the input orientation */
-      reverse?: boolean;
+      reverse?: boolean
       /** Adds a border radius to the input */
-      rounded?: boolean;
+      rounded?: boolean
       /** Accepts a mixed array of types `function`, `boolean` and `string`. Functions pass an input value as an argument and must return either `true` / `false` or a `string` containing an error message. The input field will enter an error state if a function returns (or any value in the array contains) `false` or is a `string` */
-      rules?: any[];
+      rules?: any[]
       /** Round if `outlined` and increase `border-radius` if `filled`. Must be used with either `outlined` or `filled` */
-      shaped?: boolean;
+      shaped?: boolean
       /** Sets the displayed size of selected file(s). When using **true** will default to _1000_ displaying (**kB, MB, GB**) while _1024_ will display (**KiB, MiB, GiB**). */
-      showSize?: boolean | number;
+      showSize?: boolean | number
       /** Label does not move on focus/dirty */
-      singleLine?: boolean;
+      singleLine?: boolean
       /** Changes display of selections to chips with the **small** property */
-      smallChips?: boolean;
+      smallChips?: boolean
       /** Changes the style of the input */
-      solo?: boolean;
+      solo?: boolean
       /** Reduces element opacity until focused */
-      soloInverted?: boolean;
+      soloInverted?: boolean
       /** Puts the input in a manual success state */
-      success?: boolean;
+      success?: boolean
       /** Puts the input in a success state and passes through custom success messages. */
-      successMessages?: string | any[];
+      successMessages?: string | any[]
       /** Displays suffix text */
-      suffix?: string;
+      suffix?: string
       /** The length of a filename before it is truncated with ellipsis */
-      truncateLength?: number | string;
+      truncateLength?: number | string
       /** Sets input type */
-      type?: string;
+      type?: string
       /** Delays validation until blur event */
-      validateOnBlur?: boolean;
+      validateOnBlur?: boolean
       /** A single or array of [File objects](https://developer.mozilla.org/en-US/docs/Web/API/File). */
-      value?: any;
-    }>;
+      value?: any
+    }>
     VFooter: DefineComponent<{
       /** Applies **position: absolute** to the component. */
-      absolute?: boolean;
+      absolute?: boolean
       /** Designates the component as part of the application layout. Used for dynamically adjusting content sizing. Components using this prop should reside **outside** of `v-main` component to function properly. You can find more information about layouts on the [application page](/components/application). **Note:** this prop automatically applies **position: fixed** to the layout element. You can overwrite this functionality by using the `absolute` prop */
-      app?: boolean;
+      app?: boolean
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Designates an elevation applied to the component between 0 and 24. You can find more information on the [elevation page](/styles/elevation). */
-      elevation?: number | string;
+      elevation?: number | string
       /** Applies **position: fixed** to the component. */
-      fixed?: boolean;
+      fixed?: boolean
       /** Sets the height for the component. */
-      height?: number | string;
+      height?: number | string
       /** Positions the toolbar offset from an application `v-navigation-drawer` */
-      inset?: boolean;
+      inset?: boolean
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Sets the maximum height for the component. */
-      maxHeight?: number | string;
+      maxHeight?: number | string
       /** Sets the maximum width for the component. */
-      maxWidth?: number | string;
+      maxWidth?: number | string
       /** Sets the minimum height for the component. */
-      minHeight?: number | string;
+      minHeight?: number | string
       /** Sets the minimum width for the component. */
-      minWidth?: number | string;
+      minWidth?: number | string
       /** Removes elevation (box-shadow) and adds a *thin* border. */
-      outlined?: boolean;
+      outlined?: boolean
       /** Remove all padding from the footer */
-      padless?: boolean;
+      padless?: boolean
       /** Designates the **border-radius** applied to the component. You can find more information on the [Border Radius page](/styles/border-radius). */
-      rounded?: boolean | string;
+      rounded?: boolean | string
       /** Applies a large border radius on the top left and bottom right of the card. */
-      shaped?: boolean;
+      shaped?: boolean
       /** Specify a custom tag used on the root element. */
-      tag?: string;
+      tag?: string
       /** Removes the component's **border-radius**. */
-      tile?: boolean;
+      tile?: boolean
       /** Sets the width for the component. */
-      width?: number | string;
-    }>;
+      width?: number | string
+    }>
     VForm: DefineComponent<{
-      /** Puts all children inputs into a disabled state. */ disabled?: boolean;
+      /** Puts all children inputs into a disabled state. */ disabled?: boolean
       /** If enabled, **value** will always be _true_ unless there are visible validation errors. You can still call `validate()` to manually trigger validation */
-      lazyValidation?: boolean;
+      lazyValidation?: boolean
       /** Puts all children inputs into a readonly state. */
-      readonly?: boolean;
+      readonly?: boolean
       /** A boolean value representing the validity of the form. */
-      value?: boolean;
-    }>;
+      value?: boolean
+    }>
     VContainer: DefineComponent<{
-      /** Removes viewport maximum-width size breakpoints */ fluid?: boolean;
+      /** Removes viewport maximum-width size breakpoints */ fluid?: boolean
       /** Sets the DOM id on the component */
-      id?: string;
+      id?: string
       /** Specify a custom tag used on the root element. */
-      tag?: string;
-    }>;
+      tag?: string
+    }>
     VCol: DefineComponent<{
       /** Applies the [align-items](https://developer.mozilla.org/en-US/docs/Web/CSS/align-items) css property. Available options are **start**, **center**, **end**, **auto**, **baseline** and **stretch**. */
-      alignSelf?: string;
+      alignSelf?: string
       /** Sets the default number of columns the component extends. Available options are **1 -> 12** and **auto**. */
-      cols?: boolean | string | number;
+      cols?: boolean | string | number
       /** Changes the number of columns on large and greater breakpoints. */
-      lg?: boolean | string | number;
+      lg?: boolean | string | number
       /** Changes the number of columns on medium and greater breakpoints. */
-      md?: boolean | string | number;
+      md?: boolean | string | number
       /** Sets the default offset for the column. */
-      offset?: string | number;
+      offset?: string | number
       /** Changes the offset of the component on large and greater breakpoints. */
-      offsetLg?: string | number;
+      offsetLg?: string | number
       /** Changes the offset of the component on medium and greater breakpoints. */
-      offsetMd?: string | number;
+      offsetMd?: string | number
       /** Changes the offset of the component on small and greater breakpoints. */
-      offsetSm?: string | number;
+      offsetSm?: string | number
       /** Changes the offset of the component on extra large and greater breakpoints. */
-      offsetXl?: string | number;
+      offsetXl?: string | number
       /** Sets the default [order](https://developer.mozilla.org/en-US/docs/Web/CSS/order) for the column. */
-      order?: string | number;
+      order?: string | number
       /** Changes the order of the component on large and greater breakpoints. */
-      orderLg?: string | number;
+      orderLg?: string | number
       /** Changes the order of the component on medium and greater breakpoints. */
-      orderMd?: string | number;
+      orderMd?: string | number
       /** Changes the order of the component on small and greater breakpoints. */
-      orderSm?: string | number;
+      orderSm?: string | number
       /** Changes the order of the component on extra large and greater breakpoints. */
-      orderXl?: string | number;
+      orderXl?: string | number
       /** Changes the number of columns on small and greater breakpoints. */
-      sm?: boolean | string | number;
+      sm?: boolean | string | number
       /** Specify a custom tag used on the root element. */
-      tag?: string;
+      tag?: string
       /** Changes the number of columns on extra large and greater breakpoints. */
-      xl?: boolean | string | number;
-    }>;
+      xl?: boolean | string | number
+    }>
     VRow: DefineComponent<{
       /** Applies the [align-items](https://developer.mozilla.org/en-US/docs/Web/CSS/align-items) css property. Available options are **start**, **center**, **end**, **baseline** and **stretch**. */
-      align?: string;
+      align?: string
       /** Applies the [align-content](https://developer.mozilla.org/en-US/docs/Web/CSS/align-content) css property. Available options are **start**, **center**, **end**, **space-between**, **space-around** and **stretch**. */
-      alignContent?: string;
+      alignContent?: string
       /** Changes the **align-content** property on large and greater breakpoints. */
-      alignContentLg?: string;
+      alignContentLg?: string
       /** Changes the **align-content** property on medium and greater breakpoints. */
-      alignContentMd?: string;
+      alignContentMd?: string
       /** Changes the **align-content** property on small and greater breakpoints. */
-      alignContentSm?: string;
+      alignContentSm?: string
       /** Changes the **align-content** property on extra large and greater breakpoints. */
-      alignContentXl?: string;
+      alignContentXl?: string
       /** Changes the **align-items** property on large and greater breakpoints. */
-      alignLg?: string;
+      alignLg?: string
       /** Changes the **align-items** property on medium and greater breakpoints. */
-      alignMd?: string;
+      alignMd?: string
       /** Changes the **align-items** property on small and greater breakpoints. */
-      alignSm?: string;
+      alignSm?: string
       /** Changes the **align-items** property on extra large and greater breakpoints. */
-      alignXl?: string;
+      alignXl?: string
       /** Reduces the gutter between `v-col`s. */
-      dense?: boolean;
+      dense?: boolean
       /** Applies the [justify-content](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content) css property. Available options are **start**, **center**, **end**, **space-between** and **space-around**. */
-      justify?: string;
+      justify?: string
       /** Changes the **justify-content** property on large and greater breakpoints. */
-      justifyLg?: string;
+      justifyLg?: string
       /** Changes the **justify-content** property on medium and greater breakpoints. */
-      justifyMd?: string;
+      justifyMd?: string
       /** Changes the **justify-content** property on small and greater breakpoints. */
-      justifySm?: string;
+      justifySm?: string
       /** Changes the **justify-content** property on extra large and greater breakpoints. */
-      justifyXl?: string;
+      justifyXl?: string
       /** Removes the gutter between `v-col`s. */
-      noGutters?: boolean;
+      noGutters?: boolean
       /** Specify a custom tag used on the root element. */
-      tag?: string;
-    }>;
+      tag?: string
+    }>
     VSpacer: DefineComponent<{
-      /** Specify a custom tag used on the root element. */ tag?: string;
-    }>;
+      /** Specify a custom tag used on the root element. */ tag?: string
+    }>
 
     VHover: DefineComponent<{
       /** Milliseconds to wait before closing component. */
-      closeDelay?: number | string;
+      closeDelay?: number | string
       /** Turns off hover functionality */
-      disabled?: boolean;
+      disabled?: boolean
       /** Milliseconds to wait before opening component. */
-      openDelay?: number | string;
+      openDelay?: number | string
       /** Controls whether the component is visible or hidden. */
-      value?: boolean;
-    }>;
+      value?: boolean
+    }>
     VIcon: DefineComponent<{
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Makes icon smaller (20px) */
-      dense?: boolean;
+      dense?: boolean
       /** Disable the input */
-      disabled?: boolean;
+      disabled?: boolean
       /** Makes the component large. */
-      large?: boolean;
+      large?: boolean
       /** Applies appropriate margins to the icon inside of a button when placed to the **left** of another element or text */
-      left?: boolean;
+      left?: boolean
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Applies appropriate margins to the icon inside of a button when placed to the **right** of another element or text */
-      right?: boolean;
+      right?: boolean
       /** Specifies a custom font size for the icon */
-      size?: number | string;
+      size?: number | string
       /** Makes the component small. */
-      small?: boolean;
+      small?: boolean
       /** Specifies a custom tag to be used */
-      tag?: string;
+      tag?: string
       /** Makes the component extra large. */
-      xLarge?: boolean;
+      xLarge?: boolean
       /** Makes the component extra small. */
-      xSmall?: boolean;
-    }>;
+      xSmall?: boolean
+    }>
     VImg: DefineComponent<{
       /** Alternate text for screen readers. Leave empty for decorative images */
-      alt?: string;
+      alt?: string
       /** Calculated as `width/height`, so for a 1920x1080px image this will be `1.7778`. Will be calculated automatically if omitted */
-      aspectRatio?: string | number;
+      aspectRatio?: string | number
       /** Prevents the image from being cropped if it doesn't fit */
-      contain?: boolean;
+      contain?: boolean
       /** Apply a custom class to the responsive content div. */
-      contentClass?: string;
+      contentClass?: string
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Will force the components content to render on mounted. This is useful if you have content that will not be rendered in the DOM that you want crawled for SEO. */
-      eager?: boolean;
+      eager?: boolean
       /** Overlays a gradient onto the image. Only supports [linear-gradient](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient) syntax, anything else should be done with classes (see examples) */
-      gradient?: string;
+      gradient?: string
       /** Sets the height for the component. */
-      height?: number | string;
+      height?: number | string
       /** Something to show while waiting for the main image to load, typically a small base64-encoded thumbnail. Has a slight blur filter applied.
 
 Use [vuetify-loader](https://github.com/vuetifyjs/vuetify-loader) to generate automatically */
-      lazySrc?: string;
+      lazySrc?: string
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Sets the maximum height for the component. */
-      maxHeight?: number | string;
+      maxHeight?: number | string
       /** Sets the maximum width for the component. */
-      maxWidth?: number | string;
+      maxWidth?: number | string
       /** Sets the minimum height for the component. */
-      minHeight?: number | string;
+      minHeight?: number | string
       /** Sets the minimum width for the component. */
-      minWidth?: number | string;
+      minWidth?: number | string
       /** Options that are passed to the [Intersection observer](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) constructor. */
-      options?: object;
+      options?: object
       /** Overrides the default to change which parts get cropped off. Uses the same syntax as [`background-position`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-position) */
-      position?: string;
+      position?: string
       /** For use with `srcset`, see [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-sizes) */
-      sizes?: string;
+      sizes?: string
       /** The image URL. This prop is mandatory */
-      src?: string | object;
+      src?: string | object
       /** A set of alternate images to use based on device size. [Read more...](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-srcset) */
-      srcset?: string;
+      srcset?: string
       /** The transition to use when switching from `lazy-src` to `src` */
-      transition?: boolean | string;
+      transition?: boolean | string
       /** Sets the width for the component. */
-      width?: number | string;
-    }>;
+      width?: number | string
+    }>
     VInput: DefineComponent<{
       /** Appends an icon to the component, uses the same syntax as `v-icon` */
-      appendIcon?: string;
+      appendIcon?: string
       /** Changes the background-color of the input */
-      backgroundColor?: string;
+      backgroundColor?: string
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Applies the dark theme variant to the component. This will default the components color to _white_ unless you've configured your [application theme](/customization/theme) to **dark** or if you are using the **color** prop on the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Reduces the input height */
-      dense?: boolean;
+      dense?: boolean
       /** Disable the input */
-      disabled?: boolean;
+      disabled?: boolean
       /** Puts the input in a manual error state */
-      error?: boolean;
+      error?: boolean
       /** The total number of errors that should display at once */
-      errorCount?: number | string;
+      errorCount?: number | string
       /** Puts the input in an error state and passes through custom error messages. Will be combined with any validations that occur from the **rules** prop. This field will not trigger validation */
-      errorMessages?: string | any[];
+      errorMessages?: string | any[]
       /** Sets the height of the input */
-      height?: number | string;
+      height?: number | string
       /** Hides hint and validation errors. When set to `auto` messages will be rendered only if there's a message (hint, error message, counter value etc) to display */
-      hideDetails?: boolean | string;
+      hideDetails?: boolean | string
       /** Hides spin buttons on the input when type is set to `number`. */
-      hideSpinButtons?: boolean;
+      hideSpinButtons?: boolean
       /** Hint text */
-      hint?: string;
+      hint?: string
       /** Sets the DOM id on the component */
-      id?: string;
+      id?: string
       /** Sets input label */
-      label?: string;
+      label?: string
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Displays linear progress bar. Can either be a String which specifies which color is applied to the progress bar (any material color or theme color - **primary**, **secondary**, **success**, **info**, **warning**, **error**) or a Boolean which uses the component **color** (set by color prop - if it's supported by the component) or the primary color */
-      loading?: boolean;
+      loading?: boolean
       /** Displays a list of messages or message if using a string */
-      messages?: string | any[];
+      messages?: string | any[]
       /** Forces hint to always be visible */
-      persistentHint?: boolean;
+      persistentHint?: boolean
       /** Prepends an icon to the component, uses the same syntax as `v-icon` */
-      prependIcon?: string;
+      prependIcon?: string
       /** Puts input in readonly state */
-      readonly?: boolean;
+      readonly?: boolean
       /** Accepts a mixed array of types `function`, `boolean` and `string`. Functions pass an input value as an argument and must return either `true` / `false` or a `string` containing an error message. The input field will enter an error state if a function returns (or any value in the array contains) `false` or is a `string` */
-      rules?: any[];
+      rules?: any[]
       /** Puts the input in a manual success state */
-      success?: boolean;
+      success?: boolean
       /** Puts the input in a success state and passes through custom success messages. */
-      successMessages?: string | any[];
+      successMessages?: string | any[]
       /** Delays validation until blur event */
-      validateOnBlur?: boolean;
+      validateOnBlur?: boolean
       /** The input's value */
-      value?: any;
-    }>;
+      value?: any
+    }>
     VItem: DefineComponent<{
       /** Configure the active CSS class applied when the link is active. You can find more information about the [**active-class** prop](https://router.vuejs.org/api/#active-class) on the vue-router documentation. */
-      activeClass?: string;
+      activeClass?: string
       /** Removes the ability to click or target the component. */
-      disabled?: boolean;
+      disabled?: boolean
       /** The value used when the component is selected in a group. If not provided, the index will be used. */
-      value?: any;
-    }>;
+      value?: any
+    }>
     VItemGroup: DefineComponent<{
       /** Configure the active CSS class applied when the link is active. You can find more information about the [**active-class** prop](https://router.vuejs.org/api/#active-class) on the vue-router documentation. */
-      activeClass?: string;
+      activeClass?: string
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Forces a value to always be selected (if available). */
-      mandatory?: boolean;
+      mandatory?: boolean
       /** Sets a maximum number of selections that can be made. */
-      max?: number | string;
+      max?: number | string
       /** Allow multiple selections. The **value** prop must be an _array_. */
-      multiple?: boolean;
+      multiple?: boolean
       /** Specify a custom tag used on the root element. */
-      tag?: string;
+      tag?: string
       /** The designated model value for the component. */
-      value?: any;
+      value?: any
       /** Apply a custom value comparator function */
-      valueComparator?: Function;
-    }>;
+      valueComparator?: Function
+    }>
     VLazy: DefineComponent<{
-      /** Sets the height for the component. */ height?: number | string;
+      /** Sets the height for the component. */ height?: number | string
       /** Sets the maximum height for the component. */
-      maxHeight?: number | string;
+      maxHeight?: number | string
       /** Sets the maximum width for the component. */
-      maxWidth?: number | string;
+      maxWidth?: number | string
       /** Sets the minimum height for the component. */
-      minHeight?: number | string;
+      minHeight?: number | string
       /** Sets the minimum width for the component. */
-      minWidth?: number | string;
+      minWidth?: number | string
       /** Options that are passed to the [Intersection observer](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) constructor. */
-      options?: object;
+      options?: object
       /** Specify a custom tag used on the root element. */
-      tag?: string;
+      tag?: string
       /** Sets the component transition. Can be one of the [built in transitions](/styles/transitions) or one your own. */
-      transition?: string;
+      transition?: string
       /** Controls whether the component is visible or hidden. */
-      value?: any;
+      value?: any
       /** Sets the width for the component. */
-      width?: number | string;
-    }>;
+      width?: number | string
+    }>
     VListItemActionText: DefineComponent<{
-      /** Specify a custom tag used on the root element. */ tag?: string;
-    }>;
+      /** Specify a custom tag used on the root element. */ tag?: string
+    }>
     VListItemContent: DefineComponent<{
-      /** Specify a custom tag used on the root element. */ tag?: string;
-    }>;
+      /** Specify a custom tag used on the root element. */ tag?: string
+    }>
     VListItemTitle: DefineComponent<{
-      /** Specify a custom tag used on the root element. */ tag?: string;
-    }>;
+      /** Specify a custom tag used on the root element. */ tag?: string
+    }>
     VListItemSubtitle: DefineComponent<{
-      /** Specify a custom tag used on the root element. */ tag?: string;
-    }>;
+      /** Specify a custom tag used on the root element. */ tag?: string
+    }>
     VList: DefineComponent<{
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Lowers max height of list tiles */
-      dense?: boolean;
+      dense?: boolean
       /** Disables all children `v-list-item` components */
-      disabled?: boolean;
+      disabled?: boolean
       /** Designates an elevation applied to the component between 0 and 24. You can find more information on the [elevation page](/styles/elevation). */
-      elevation?: number | string;
+      elevation?: number | string
       /** Will only collapse when explicitly closed */
-      expand?: boolean;
+      expand?: boolean
       /** Remove the highlighted background on active `v-list-item`s */
-      flat?: boolean;
+      flat?: boolean
       /** Sets the height for the component. */
-      height?: number | string;
+      height?: number | string
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Sets the maximum height for the component. */
-      maxHeight?: number | string;
+      maxHeight?: number | string
       /** Sets the maximum width for the component. */
-      maxWidth?: number | string;
+      maxWidth?: number | string
       /** Sets the minimum height for the component. */
-      minHeight?: number | string;
+      minHeight?: number | string
       /** Sets the minimum width for the component. */
-      minWidth?: number | string;
+      minWidth?: number | string
       /** An alternative styling that reduces `v-list-item` width and rounds the corners. Typically used with **[v-navigation-drawer](/components/navigation-drawers)** */
-      nav?: boolean;
+      nav?: boolean
       /** Removes elevation (box-shadow) and adds a *thin* border. */
-      outlined?: boolean;
+      outlined?: boolean
       /** Rounds the `v-list-item` edges */
-      rounded?: boolean;
+      rounded?: boolean
       /** Provides an alternative active style for `v-list-item`. */
-      shaped?: boolean;
+      shaped?: boolean
       /** Removes top padding. Used when previous sibling is a header */
-      subheader?: boolean;
+      subheader?: boolean
       /** Specify a custom tag used on the root element. */
-      tag?: string;
+      tag?: string
       /** Increases list-item height for three lines. This prop uses [line-clamp](https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-line-clamp) and is not supported in all browsers. */
-      threeLine?: boolean;
+      threeLine?: boolean
       /** Removes the component's **border-radius**. */
-      tile?: boolean;
+      tile?: boolean
       /** Increases list-item height for two lines. This prop uses [line-clamp](https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-line-clamp) and is not supported in all browsers. */
-      twoLine?: boolean;
+      twoLine?: boolean
       /** Sets the width for the component. */
-      width?: number | string;
-    }>;
+      width?: number | string
+    }>
     VListGroup: DefineComponent<{
       /** Configure the active CSS class applied when the link is active. You can find more information about the [**active-class** prop](https://router.vuejs.org/api/#active-class) on the vue-router documentation. */
-      activeClass?: string;
+      activeClass?: string
       /** Appends an icon to the component, uses the same syntax as `v-icon` */
-      appendIcon?: string;
+      appendIcon?: string
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Disables all children `v-list-item` components */
-      disabled?: boolean;
+      disabled?: boolean
       /** Will force the components content to render on mounted. This is useful if you have content that will not be rendered in the DOM that you want crawled for SEO. */
-      eager?: boolean;
+      eager?: boolean
       /** Assign a route namespace. Accepts a string or regexp for determining active state */
-      group?: string | RegExp;
+      group?: string | RegExp
       /** Removes left padding assigned for action icons from group items */
-      noAction?: boolean;
+      noAction?: boolean
       /** Prepends an icon to the component, uses the same syntax as `v-icon` */
-      prependIcon?: string;
+      prependIcon?: string
       /** Applies the [v-ripple](/directives/ripple) directive. */
-      ripple?: boolean | object;
+      ripple?: boolean | object
       /** Designate the component as nested list group */
-      subGroup?: boolean;
+      subGroup?: boolean
       /** Expands / Collapse the list-group */
-      value?: any;
-    }>;
+      value?: any
+    }>
     VListItem: DefineComponent<{
       /** Configure the active CSS class applied when the link is active. You can find more information about the [**active-class** prop](https://router.vuejs.org/api/#active-class) on the vue-router documentation. */
-      activeClass?: string;
+      activeClass?: string
       /** Setting **append** prop always appends the relative path to the current path. You can find more information about the [**append** prop](https://router.vuejs.org/api/#append) on the vue-router documentation. */
-      append?: boolean;
+      append?: boolean
       /** Applies specified color to the control when in an **active** state or **input-value** is **true** - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`) */
-      color?: string;
+      color?: string
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Lowers max height of list tiles */
-      dense?: boolean;
+      dense?: boolean
       /** Disables the component */
-      disabled?: boolean;
+      disabled?: boolean
       /** Exactly match the link. Without this, '/' will match every route. You can find more information about the [**exact** prop](https://router.vuejs.org/api/#exact) on the vue-router documentation. */
-      exact?: boolean;
+      exact?: boolean
       /** Configure the active CSS class applied when the link is active with exact match. You can find more information about the [**exact-active-class** prop](https://router.vuejs.org/api/#exact-active-class) on the vue-router documentation. */
-      exactActiveClass?: string;
+      exactActiveClass?: string
       /** Exactly match the link, ignoring the `query` and the `hash` sections. You can find more information about the [**exact-path** prop](https://router.vuejs.org/api/#exact-path) on the vue-router documentation. */
-      exactPath?: boolean;
+      exactPath?: boolean
       /** Designates the component as anchor and applies the **href** attribute. */
-      href?: string | object;
+      href?: string | object
       /** If set, the list tile will not be rendered as a link even if it has to/href prop or @click handler */
-      inactive?: boolean;
+      inactive?: boolean
       /** Controls the **active** state of the item. This is typically used to highlight the component */
-      inputValue?: any;
+      inputValue?: any
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Designates that the component is a link. This is automatic when using the **href** or **to** prop. */
-      link?: boolean;
+      link?: boolean
       /** Specifies the link is a `nuxt-link`. For use with the [nuxt framework](https://nuxtjs.org/api/components-nuxt-link/). */
-      nuxt?: boolean;
+      nuxt?: boolean
       /** Setting **replace** prop will call `router.replace()` instead of `router.push()` when clicked, so the navigation will not leave a history record. You can find more information about the [**replace** prop](https://router.vuejs.org/api/#replace) on the vue-router documentation. */
-      replace?: boolean;
+      replace?: boolean
       /** Applies the [v-ripple](/directives/ripple) directive. */
-      ripple?: boolean | object;
+      ripple?: boolean | object
       /** Allow text selection inside `v-list-item`. This prop uses [user-select](https://developer.mozilla.org/en-US/docs/Web/CSS/user-select) */
-      selectable?: boolean;
+      selectable?: boolean
       /** Specify a custom tag used on the root element. */
-      tag?: string;
+      tag?: string
       /** Designates the target attribute. This should only be applied when using the **href** prop. */
-      target?: string;
+      target?: string
       /** Increases list-item height for three lines. This prop uses [line-clamp](https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-line-clamp) and is not supported in all browsers. */
-      threeLine?: boolean;
+      threeLine?: boolean
       /** Denotes the target route of the link. You can find more information about the [**to** prop](https://router.vuejs.org/api/#to) on the vue-router documentation. */
-      to?: string | object;
+      to?: string | object
       /** Increases list-item height for two lines. This prop uses [line-clamp](https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-line-clamp) and is not supported in all browsers. */
-      twoLine?: boolean;
+      twoLine?: boolean
       /** The value used when a child of a [v-list-item-group](/components/list-item-groups). */
-      value?: any;
-    }>;
-    VListItemAction: DefineComponent<{}>;
+      value?: any
+    }>
+    VListItemAction: DefineComponent<{}>
     VListItemAvatar: DefineComponent<{
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Sets the height for the component. */
-      height?: number | string;
+      height?: number | string
       /** Uses an alternative horizontal style. */
-      horizontal?: boolean;
+      horizontal?: boolean
       /** Designates that the avatar is on the left side of a component. This is hooked into by components such as [v-chip](/components/chips) and [v-btn](/components/buttons). */
-      left?: boolean;
+      left?: boolean
       /** Sets the maximum height for the component. */
-      maxHeight?: number | string;
+      maxHeight?: number | string
       /** Sets the maximum width for the component. */
-      maxWidth?: number | string;
+      maxWidth?: number | string
       /** Sets the minimum height for the component. */
-      minHeight?: number | string;
+      minHeight?: number | string
       /** Sets the minimum width for the component. */
-      minWidth?: number | string;
+      minWidth?: number | string
       /** Designates that the avatar is on the right side of a component. This is hooked into by components such as [v-chip](/components/chips) and [v-btn](/components/buttons). */
-      right?: boolean;
+      right?: boolean
       /** Designates the **border-radius** applied to the component. You can find more information on the [Border Radius page](/styles/border-radius). */
-      rounded?: boolean | string;
+      rounded?: boolean | string
       /** Sets the height and width of the component. */
-      size?: number | string;
+      size?: number | string
       /** Removes the component's **border-radius**. */
-      tile?: boolean;
+      tile?: boolean
       /** Sets the width for the component. */
-      width?: number | string;
-    }>;
-    VListItemIcon: DefineComponent<{}>;
+      width?: number | string
+    }>
+    VListItemIcon: DefineComponent<{}>
     VListItemGroup: DefineComponent<{
       /** The **active-class** applied to children when they are activated. */
-      activeClass?: string;
+      activeClass?: string
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Forces a value to always be selected (if available). */
-      mandatory?: boolean;
+      mandatory?: boolean
       /** Sets a maximum number of selections that can be made. */
-      max?: number | string;
+      max?: number | string
       /** Allow multiple selections. The **value** prop must be an _array_. */
-      multiple?: boolean;
+      multiple?: boolean
       /** Specify a custom tag used on the root element. */
-      tag?: string;
+      tag?: string
       /** Sets the active list-item inside the list-group */
-      value?: any;
+      value?: any
       /** Apply a custom value comparator function */
-      valueComparator?: Function;
-    }>;
+      valueComparator?: Function
+    }>
     VMain: DefineComponent<{
-      /** Specify a custom tag used on the root element. */ tag?: string;
-    }>;
+      /** Specify a custom tag used on the root element. */ tag?: string
+    }>
     VMenu: DefineComponent<{
       /** Applies **position: absolute** to the component. */
-      absolute?: boolean;
+      absolute?: boolean
       /** Designate a custom activator when the `activator` slot is not used. String can be any valid querySelector and Object can be any valid Node. */
-      activator?: any;
+      activator?: any
       /** Removes overflow re-positioning for the content */
-      allowOverflow?: boolean;
+      allowOverflow?: boolean
       /** Specifies which DOM element that this component should detach to. String can be any valid querySelector and Object can be any valid Node. This will attach to the root `v-app` component by default. */
-      attach?: any;
+      attach?: any
       /** Centers list on selected element */
-      auto?: boolean;
+      auto?: boolean
       /** Aligns the component towards the bottom. */
-      bottom?: boolean;
+      bottom?: boolean
       /** Milliseconds to wait before closing component. Only works with the **open-on-hover** prop */
-      closeDelay?: number | string;
+      closeDelay?: number | string
       /** Designates if menu should close on outside-activator click */
-      closeOnClick?: boolean;
+      closeOnClick?: boolean
       /** Designates if menu should close when its content is clicked */
-      closeOnContentClick?: boolean;
+      closeOnContentClick?: boolean
       /** Applies a custom class to the detached element. This is useful because the content is moved to the beginning of the `v-app` component (unless the **attach** prop is provided) and is not targetable by classes passed directly on the component. */
-      contentClass?: string;
+      contentClass?: string
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Removes all keyboard interaction */
-      disableKeys?: boolean;
+      disableKeys?: boolean
       /** Disables the menu */
-      disabled?: boolean;
+      disabled?: boolean
       /** Will force the components content to render on mounted. This is useful if you have content that will not be rendered in the DOM that you want crawled for SEO. */
-      eager?: boolean;
+      eager?: boolean
       /** Detaches the menu content inside of the component as opposed to the document. */
-      internalActivator?: boolean;
+      internalActivator?: boolean
       /** Aligns the component towards the left. */
-      left?: boolean;
+      left?: boolean
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Sets the max height of the menu content */
-      maxHeight?: number | string;
+      maxHeight?: number | string
       /** Sets the maximum width for the content */
-      maxWidth?: number | string;
+      maxWidth?: number | string
       /** Sets the minimum width for the content */
-      minWidth?: number | string;
+      minWidth?: number | string
       /** Nudge the content to the bottom */
-      nudgeBottom?: number | string;
+      nudgeBottom?: number | string
       /** Nudge the content to the left */
-      nudgeLeft?: number | string;
+      nudgeLeft?: number | string
       /** Nudge the content to the right */
-      nudgeRight?: number | string;
+      nudgeRight?: number | string
       /** Nudge the content to the top */
-      nudgeTop?: number | string;
+      nudgeTop?: number | string
       /** Nudge the content width */
-      nudgeWidth?: number | string;
+      nudgeWidth?: number | string
       /** Causes the component to flip to the opposite side when repositioned due to overflow */
-      offsetOverflow?: boolean;
+      offsetOverflow?: boolean
       /** Offset the menu on the x-axis. Works in conjunction with direction left/right */
-      offsetX?: boolean;
+      offsetX?: boolean
       /** Offset the menu on the y-axis. Works in conjunction with direction top/bottom */
-      offsetY?: boolean;
+      offsetY?: boolean
       /** Milliseconds to wait before opening component. Only works with the **open-on-hover** prop */
-      openDelay?: number | string;
+      openDelay?: number | string
       /** Designates whether menu should open on activator click */
-      openOnClick?: boolean;
-      openOnFocus?: boolean;
+      openOnClick?: boolean
+      openOnFocus?: boolean
       /** Designates whether menu should open on activator hover */
-      openOnHover?: boolean;
+      openOnHover?: boolean
       /** Sets the transition origin on the element. You can find more information on the MDN documentation [for transition origin](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin). */
-      origin?: string;
+      origin?: string
       /** Used to position the content when not using an activator slot */
-      positionX?: number;
+      positionX?: number
       /** Used to position the content when not using an activator slot */
-      positionY?: number;
+      positionY?: number
       /** The value that is updated when the menu is closed - must be primitive. Dot notation is supported */
-      returnValue?: any;
+      returnValue?: any
       /** Aligns the component towards the right. */
-      right?: boolean;
+      right?: boolean
       /** Designates the **border-radius** applied to the component. You can find more information on the [Border Radius page](/styles/border-radius). */
-      rounded?: boolean | string;
+      rounded?: boolean | string
       /** Removes the component's **border-radius**. */
-      tile?: boolean;
+      tile?: boolean
       /** Aligns the content towards the top. */
-      top?: boolean;
+      top?: boolean
       /** Sets the component transition. Can be one of the [built in transitions](/styles/transitions) or one your own. */
-      transition?: boolean | string;
+      transition?: boolean | string
       /** Controls whether the component is visible or hidden. */
-      value?: any;
+      value?: any
       /** The z-index used for the component */
-      zIndex?: number | string;
-    }>;
+      zIndex?: number | string
+    }>
     VNavigationDrawer: DefineComponent<{
       /** Applies **position: absolute** to the component. */
-      absolute?: boolean;
+      absolute?: boolean
       /** Designates the component as part of the application layout. Used for dynamically adjusting content sizing. Components using this prop should reside **outside** of `v-main` component to function properly. You can find more information about layouts on the [application page](/components/application). **Note:** this prop automatically applies **position: fixed** to the layout element. You can overwrite this functionality by using the `absolute` prop */
-      app?: boolean;
+      app?: boolean
       /** Expands from the bottom of the screen on mobile devices */
-      bottom?: boolean;
+      bottom?: boolean
       /** A clipped drawer rests under the application toolbar. **Note:** requires the **clipped-left** or **clipped-right** prop on `v-app-bar` to work as intended */
-      clipped?: boolean;
+      clipped?: boolean
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Will automatically open/close drawer when resized depending if mobile or desktop. */
-      disableResizeWatcher?: boolean;
+      disableResizeWatcher?: boolean
       /** Disables opening of navigation drawer when route changes */
-      disableRouteWatcher?: boolean;
+      disableRouteWatcher?: boolean
       /** Collapses the drawer to a **mini-variant** until hovering with the mouse */
-      expandOnHover?: boolean;
+      expandOnHover?: boolean
       /** Applies **position: fixed** to the component. */
-      fixed?: boolean;
+      fixed?: boolean
       /** A floating drawer has no visible container (no border-right) */
-      floating?: boolean;
+      floating?: boolean
       /** Sets the height of the navigation drawer */
-      height?: number | string;
+      height?: number | string
       /** Hides the display of the overlay. */
-      hideOverlay?: boolean;
+      hideOverlay?: boolean
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Condenses navigation drawer width, also accepts the **.sync** modifier. With this, the drawer will re-open when clicking it */
-      miniVariant?: boolean;
+      miniVariant?: boolean
       /** Designates the width assigned when the `mini` prop is turned on */
-      miniVariantWidth?: number | string;
+      miniVariantWidth?: number | string
       /** Sets the designated mobile breakpoint for the component. This will apply alternate styles for mobile devices such as the `temporary` prop, or activate the `bottom` prop when the breakpoint value is met. Setting the value to `0` will disable this functionality. */
-      mobileBreakpoint?: number | string;
+      mobileBreakpoint?: number | string
       /** Sets the overlay color. */
-      overlayColor?: string;
+      overlayColor?: string
       /** Sets the overlay opacity. */
-      overlayOpacity?: number | string;
+      overlayOpacity?: number | string
       /** The drawer remains visible regardless of screen size */
-      permanent?: boolean;
+      permanent?: boolean
       /** Places the navigation drawer on the right */
-      right?: boolean;
+      right?: boolean
       /** Specifies a [v-img](/components/images) as the component's background. */
-      src?: string | object;
+      src?: string | object
       /** Remove all automated state functionality (resize, mobile, route) and manually control the drawer state */
-      stateless?: boolean;
+      stateless?: boolean
       /** Specify a custom tag used on the root element. */
-      tag?: string;
+      tag?: string
       /** A temporary drawer sits above its application and uses a scrim (overlay) to darken the background */
-      temporary?: boolean;
+      temporary?: boolean
       /** Disable mobile touch functionality */
-      touchless?: boolean;
+      touchless?: boolean
       /** Controls whether the component is visible or hidden. */
-      value?: any;
+      value?: any
       /** Sets the width for the component. */
-      width?: number | string;
-    }>;
+      width?: number | string
+    }>
     VOtpInput: DefineComponent<{
       /** Applies the dark theme variant to the component. This will default the components color to _white_ unless you've configured your [application theme](/customization/theme) to **dark** or if you are using the **color** prop on the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Disable the input */
-      disabled?: boolean;
+      disabled?: boolean
       /** Hides spin buttons on the input when type is set to `number`. */
-      hideSpinButtons?: boolean;
+      hideSpinButtons?: boolean
       /** Sets the DOM id on the component */
-      id?: string;
+      id?: string
       /** The OTP field's length */
-      length?: number | string;
+      length?: number | string
       /** Outlined style applied by default to the input, set to `true` to apply plain style */
-      plain?: boolean;
+      plain?: boolean
       /** Puts input in readonly state */
-      readonly?: boolean;
+      readonly?: boolean
       /** Supported types: `text`, `password`, `number` */
-      type?: string;
+      type?: string
       /** The input's value */
-      value?: any;
-    }>;
+      value?: any
+    }>
     VOverflowBtn: DefineComponent<{
-      /** Allow the menu to overflow off the screen */ allowOverflow?: boolean;
+      /** Allow the menu to overflow off the screen */ allowOverflow?: boolean
       /** Appends an icon to the component, uses the same syntax as `v-icon` */
-      appendIcon?: string;
+      appendIcon?: string
       /** Appends an icon to the outside the component's input, uses same syntax as `v-icon` */
-      appendOuterIcon?: string;
+      appendOuterIcon?: string
       /** Specifies which DOM element that this component should detach to. String can be any valid querySelector and Object can be any valid Node. This will attach to the root `v-app` component by default. */
-      attach?: any;
+      attach?: any
       /** When searching, will always highlight the first option */
-      autoSelectFirst?: boolean;
+      autoSelectFirst?: boolean
       /** Enables autofocus */
-      autofocus?: boolean;
+      autofocus?: boolean
       /** Changes the background-color of the input */
-      backgroundColor?: string;
+      backgroundColor?: string
       /** Keeps a local _unique_ copy of all items that have been passed through the **items** prop. */
-      cacheItems?: boolean;
+      cacheItems?: boolean
       /** Changes display of selections to chips */
-      chips?: boolean;
+      chips?: boolean
       /** Applied when using **clearable** and the input is dirty */
-      clearIcon?: string;
+      clearIcon?: string
       /** Add input clear functionality, default icon is Material Design Icons **mdi-clear** */
-      clearable?: boolean;
+      clearable?: boolean
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Creates counter for input length; if no number is specified, it defaults to 25. Does not apply any validation. */
-      counter?: boolean | number | string;
-      counterValue?: Function;
+      counter?: boolean | number | string
+      counterValue?: Function
       /** Applies the dark theme variant to the component. This will default the components color to _white_ unless you've configured your [application theme](/customization/theme) to **dark** or if you are using the **color** prop on the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Adds a remove icon to selected chips */
-      deletableChips?: boolean;
+      deletableChips?: boolean
       /** Reduces the input height */
-      dense?: boolean;
+      dense?: boolean
       /** Disables keyboard lookup */
-      disableLookup?: boolean;
+      disableLookup?: boolean
       /** Disables the input */
-      disabled?: boolean;
+      disabled?: boolean
       /** Will force the components content to render on mounted. This is useful if you have content that will not be rendered in the DOM that you want crawled for SEO. */
-      eager?: boolean;
+      eager?: boolean
       /** Creates an editable button */
-      editable?: boolean;
+      editable?: boolean
       /** Puts the input in a manual error state */
-      error?: boolean;
+      error?: boolean
       /** The total number of errors that should display at once */
-      errorCount?: number | string;
+      errorCount?: number | string
       /** Puts the input in an error state and passes through custom error messages. Will be combined with any validations that occur from the **rules** prop. This field will not trigger validation */
-      errorMessages?: string | any[];
+      errorMessages?: string | any[]
       /** Applies the alternate filled input style */
-      filled?: boolean;
+      filled?: boolean
       /** The filtering algorithm used when searching. [example](https://github.com/vuetifyjs/vuetify/blob/master/packages/vuetify/src/components/VAutocomplete/VAutocomplete.ts#L40) */
-      filter?: Function;
+      filter?: Function
       /** Removes elevation (shadow) added to element when using the **solo** or **solo-inverted** props */
-      flat?: boolean;
+      flat?: boolean
       /** Designates input type as full-width */
-      fullWidth?: boolean;
+      fullWidth?: boolean
       /** Sets the height of the input */
-      height?: number | string;
+      height?: number | string
       /** Hides hint and validation errors. When set to `auto` messages will be rendered only if there's a message (hint, error message, counter value etc) to display */
-      hideDetails?: boolean | string;
+      hideDetails?: boolean | string
       /** Hides the menu when there are no options to show.  Useful for preventing the menu from opening before results are fetched asynchronously.  Also has the effect of opening the menu when the `items` array changes if not already open. */
-      hideNoData?: boolean;
+      hideNoData?: boolean
       /** Do not display in the select menu items that are already selected */
-      hideSelected?: boolean;
+      hideSelected?: boolean
       /** Hides spin buttons on the input when type is set to `number`. */
-      hideSpinButtons?: boolean;
+      hideSpinButtons?: boolean
       /** Hint text */
-      hint?: string;
+      hint?: string
       /** Sets the DOM id on the component */
-      id?: string;
+      id?: string
       /** Sets color of selected items */
-      itemColor?: string;
+      itemColor?: string
       /** Set property of **items**'s disabled value */
-      itemDisabled?: string | any[] | Function;
+      itemDisabled?: string | any[] | Function
       /** Set property of **items**'s text value */
-      itemText?: string | any[] | Function;
+      itemText?: string | any[] | Function
       /** Set property of **items**'s value - **must be primitive**. Dot notation is supported. **Note:** This is currently not supported with `v-combobox` [GitHub Issue](https://github.com/vuetifyjs/vuetify/issues/5479) */
-      itemValue?: string | any[] | Function;
+      itemValue?: string | any[] | Function
       /** Can be an array of objects or array of strings. When using objects, will look for a text, value and disabled keys. This can be changed using the **item-text**, **item-value** and **item-disabled** props.  Objects that have a **header** or **divider** property are considered special cases and generate a list header or divider; these items are not selectable. */
-      items?: any[];
+      items?: any[]
       /** Sets input label */
-      label?: string;
+      label?: string
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Specifies the height of the loader */
-      loaderHeight?: number | string;
+      loaderHeight?: number | string
       /** Displays linear progress bar. Can either be a String which specifies which color is applied to the progress bar (any material color or theme color - **primary**, **secondary**, **success**, **info**, **warning**, **error**) or a Boolean which uses the component **color** (set by color prop - if it's supported by the component) or the primary color */
-      loading?: boolean | string;
+      loading?: boolean | string
       /** Pass props through to the `v-menu` component. Accepts either a string for boolean props `menu-props="auto, overflowY"`, or an object `:menu-props="{ auto: true, overflowY: true }"` */
-      menuProps?: string | any[] | object;
+      menuProps?: string | any[] | object
       /** Displays a list of messages or message if using a string */
-      messages?: string | any[];
+      messages?: string | any[]
       /** Changes select to multiple. Accepts array for value */
-      multiple?: boolean;
+      multiple?: boolean
       /** Display text when there is no data */
-      noDataText?: string;
+      noDataText?: string
       /** Do not apply filtering when searching. Useful when data is being filtered server side */
-      noFilter?: boolean;
+      noFilter?: boolean
       /** When using the **clearable** prop, once cleared, the select menu will either open or stay open, depending on the current state */
-      openOnClear?: boolean;
+      openOnClear?: boolean
       /** Applies the outlined style to the input */
-      outlined?: boolean;
+      outlined?: boolean
       /** Forces hint to always be visible */
-      persistentHint?: boolean;
+      persistentHint?: boolean
       /** Forces label to always be visible */
-      persistentPlaceholder?: boolean;
+      persistentPlaceholder?: boolean
       /** Sets the input's placeholder text */
-      placeholder?: string;
+      placeholder?: string
       /** Displays prefix text */
-      prefix?: string;
+      prefix?: string
       /** Prepends an icon to the component, uses the same syntax as `v-icon` */
-      prependIcon?: string;
+      prependIcon?: string
       /** Prepends an icon inside the component's input, uses the same syntax as `v-icon` */
-      prependInnerIcon?: string;
+      prependInnerIcon?: string
       /** Puts input in readonly state */
-      readonly?: boolean;
+      readonly?: boolean
       /** Changes the selection behavior to return the object directly rather than the value specified with **item-value** */
-      returnObject?: boolean;
+      returnObject?: boolean
       /** Reverses the input orientation */
-      reverse?: boolean;
+      reverse?: boolean
       /** Adds a border radius to the input */
-      rounded?: boolean;
+      rounded?: boolean
       /** Accepts a mixed array of types `function`, `boolean` and `string`. Functions pass an input value as an argument and must return either `true` / `false` or a `string` containing an error message. The input field will enter an error state if a function returns (or any value in the array contains) `false` or is a `string` */
-      rules?: any[];
+      rules?: any[]
       /** Search value. Can be used with `.sync` modifier. */
-      searchInput?: string;
+      searchInput?: string
       /** Creates a segmented button */
-      segmented?: boolean;
+      segmented?: boolean
       /** Round if `outlined` and increase `border-radius` if `filled`. Must be used with either `outlined` or `filled` */
-      shaped?: boolean;
+      shaped?: boolean
       /** Label does not move on focus/dirty */
-      singleLine?: boolean;
+      singleLine?: boolean
       /** Changes display of selections to chips with the **small** property */
-      smallChips?: boolean;
+      smallChips?: boolean
       /** Changes the style of the input */
-      solo?: boolean;
+      solo?: boolean
       /** Reduces element opacity until focused */
-      soloInverted?: boolean;
+      soloInverted?: boolean
       /** Puts the input in a manual success state */
-      success?: boolean;
+      success?: boolean
       /** Puts the input in a success state and passes through custom success messages. */
-      successMessages?: string | any[];
+      successMessages?: string | any[]
       /** Displays suffix text */
-      suffix?: string;
+      suffix?: string
       /** Sets input type */
-      type?: string;
+      type?: string
       /** Delays validation until blur event */
-      validateOnBlur?: boolean;
+      validateOnBlur?: boolean
       /** The input's value */
-      value?: any;
+      value?: any
       /** The comparison algorithm used for values. [More info](https://github.com/vuetifyjs/vuetify/blob/master/packages/vuetify/src/util/helpers.ts) */
-      valueComparator?: Function;
-    }>;
+      valueComparator?: Function
+    }>
     VOverlay: DefineComponent<{
       /** Applies **position: absolute** to the component. */
-      absolute?: boolean;
+      absolute?: boolean
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Sets the overlay opacity */
-      opacity?: number | string;
+      opacity?: number | string
       /** Controls whether the component is visible or hidden. */
-      value?: any;
+      value?: any
       /** The z-index used for the component */
-      zIndex?: number | string;
-    }>;
+      zIndex?: number | string
+    }>
     VPagination: DefineComponent<{
-      /** Shape pagination elements as circles */ circle?: boolean;
+      /** Shape pagination elements as circles */ circle?: boolean
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
-      currentPageAriaLabel?: string;
+      color?: string
+      currentPageAriaLabel?: string
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Disables component */
-      disabled?: boolean;
+      disabled?: boolean
       /** The length of the pagination component */
-      length?: number;
+      length?: number
       /** Applies the light theme variant to the component. */
-      light?: boolean;
-      nextAriaLabel?: string;
+      light?: boolean
+      nextAriaLabel?: string
       /** Specify the icon to use for the next icon */
-      nextIcon?: string;
-      pageAriaLabel?: string;
+      nextIcon?: string
+      pageAriaLabel?: string
       /** Specify the icon to use for the prev icon */
-      prevIcon?: string;
-      previousAriaLabel?: string;
+      prevIcon?: string
+      previousAriaLabel?: string
       /** Specify the max total visible pagination numbers */
-      totalVisible?: number | string;
+      totalVisible?: number | string
       /** Current selected page */
-      value?: number;
-      wrapperAriaLabel?: string;
-    }>;
+      value?: number
+      wrapperAriaLabel?: string
+    }>
     VSheet: DefineComponent<{
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Designates an elevation applied to the component between 0 and 24. You can find more information on the [elevation page](/styles/elevation). */
-      elevation?: number | string;
+      elevation?: number | string
       /** Sets the height for the component. */
-      height?: number | string;
+      height?: number | string
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Sets the maximum height for the component. */
-      maxHeight?: number | string;
+      maxHeight?: number | string
       /** Sets the maximum width for the component. */
-      maxWidth?: number | string;
+      maxWidth?: number | string
       /** Sets the minimum height for the component. */
-      minHeight?: number | string;
+      minHeight?: number | string
       /** Sets the minimum width for the component. */
-      minWidth?: number | string;
+      minWidth?: number | string
       /** Removes elevation (box-shadow) and adds a *thin* border. */
-      outlined?: boolean;
+      outlined?: boolean
       /** Designates the **border-radius** applied to the component. You can find more information on the [Border Radius page](/styles/border-radius). */
-      rounded?: boolean | string;
+      rounded?: boolean | string
       /** Applies a large border radius on the top left and bottom right of the card. */
-      shaped?: boolean;
+      shaped?: boolean
       /** Specify a custom tag used on the root element. */
-      tag?: string;
+      tag?: string
       /** Removes the component's **border-radius**. */
-      tile?: boolean;
+      tile?: boolean
       /** Sets the width for the component. */
-      width?: number | string;
-    }>;
+      width?: number | string
+    }>
     VParallax: DefineComponent<{
-      /** Attaches an alt property to the parallax image */ alt?: string;
+      /** Attaches an alt property to the parallax image */ alt?: string
       /** Sets the height for the component */
-      height?: string | number;
+      height?: string | number
       /** The image to parallax */
-      src?: string;
+      src?: string
       /** A set of alternate images to use based on device size. [Read more...](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-srcset) */
-      srcset?: string;
-    }>;
+      srcset?: string
+    }>
     VProgressCircular: DefineComponent<{
-      /** Deprecated - Pending removal */ button?: boolean;
+      /** Deprecated - Pending removal */ button?: boolean
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Constantly animates, use when loading progress is unknown. */
-      indeterminate?: boolean;
+      indeterminate?: boolean
       /** Rotates the circle start point in deg */
-      rotate?: number | string;
+      rotate?: number | string
       /** Sets the diameter of the circle in pixels */
-      size?: number | string;
+      size?: number | string
       /** The percentage value for current progress */
-      value?: number | string;
+      value?: number | string
       /** Sets the stroke of the circle in pixels */
-      width?: number | string;
-    }>;
+      width?: number | string
+    }>
     VProgressLinear: DefineComponent<{
       /** Applies **position: absolute** to the component. */
-      absolute?: boolean;
+      absolute?: boolean
       /** Reduce the height to 0, hiding component */
-      active?: boolean;
+      active?: boolean
       /** Background color, set to component's color if null */
-      backgroundColor?: string;
+      backgroundColor?: string
       /** Background opacity, if null it defaults to 0.3 if background color is not specified or 1 otherwise */
-      backgroundOpacity?: number | string;
+      backgroundOpacity?: number | string
       /** Aligns the component towards the bottom. */
-      bottom?: boolean;
+      bottom?: boolean
       /** The percentage value for the buffer */
-      bufferValue?: number | string;
+      bufferValue?: number | string
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Applies **position: fixed** to the component. */
-      fixed?: boolean;
+      fixed?: boolean
       /** Sets the height for the component */
-      height?: number | string;
+      height?: number | string
       /** Constantly animates, use when loading progress is unknown. */
-      indeterminate?: boolean;
+      indeterminate?: boolean
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Animates like **indeterminate** prop but inverse */
-      query?: boolean;
+      query?: boolean
       /** Displays reversed progress (right to left in LTR mode and left to right in RTL) */
-      reverse?: boolean;
+      reverse?: boolean
       /** Adds a border radius to the progress component */
-      rounded?: boolean;
+      rounded?: boolean
       /** An alternative style for portraying loading that works in tandem with **buffer-value** */
-      stream?: boolean;
+      stream?: boolean
       /** Adds a stripe background to the filled portion of the progress component */
-      striped?: boolean;
+      striped?: boolean
       /** Aligns the content towards the top. */
-      top?: boolean;
+      top?: boolean
       /** The designated model value for the component. */
-      value?: number | string;
-    }>;
+      value?: number | string
+    }>
     VRadioGroup: DefineComponent<{
       /** The **active-class** applied to children when they are activated. */
-      activeClass?: string;
+      activeClass?: string
       /** Appends an icon to the component, uses the same syntax as `v-icon` */
-      appendIcon?: string;
+      appendIcon?: string
       /** Changes the background-color of the input */
-      backgroundColor?: string;
+      backgroundColor?: string
       /** Displays radio buttons in column */
-      column?: boolean;
+      column?: boolean
       /** Applies the dark theme variant to the component. This will default the components color to _white_ unless you've configured your [application theme](/customization/theme) to **dark** or if you are using the **color** prop on the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Reduces the input height */
-      dense?: boolean;
+      dense?: boolean
       /** Disable the input */
-      disabled?: boolean;
+      disabled?: boolean
       /** Puts the input in a manual error state */
-      error?: boolean;
+      error?: boolean
       /** The total number of errors that should display at once */
-      errorCount?: number | string;
+      errorCount?: number | string
       /** Puts the input in an error state and passes through custom error messages. Will be combined with any validations that occur from the **rules** prop. This field will not trigger validation */
-      errorMessages?: string | any[];
+      errorMessages?: string | any[]
       /** Hides hint and validation errors. When set to `auto` messages will be rendered only if there's a message (hint, error message, counter value etc) to display */
-      hideDetails?: boolean | string;
+      hideDetails?: boolean | string
       /** Hides spin buttons on the input when type is set to `number`. */
-      hideSpinButtons?: boolean;
+      hideSpinButtons?: boolean
       /** Hint text */
-      hint?: string;
+      hint?: string
       /** Sets the DOM id on the component */
-      id?: string;
+      id?: string
       /** Sets input label */
-      label?: string;
+      label?: string
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Forces a value to always be selected (if available). */
-      mandatory?: boolean;
+      mandatory?: boolean
       /** Sets a maximum number of selections that can be made. */
-      max?: number | string;
+      max?: number | string
       /** Displays a list of messages or message if using a string */
-      messages?: string | any[];
+      messages?: string | any[]
       /** Allow multiple selections. The **value** prop must be an _array_. */
-      multiple?: boolean;
+      multiple?: boolean
       /** Sets the component's name attribute */
-      name?: string;
+      name?: string
       /** Forces hint to always be visible */
-      persistentHint?: boolean;
+      persistentHint?: boolean
       /** Prepends an icon to the component, uses the same syntax as `v-icon` */
-      prependIcon?: string;
+      prependIcon?: string
       /** Puts input in readonly state */
-      readonly?: boolean;
+      readonly?: boolean
       /** Displays radio buttons in row */
-      row?: boolean;
+      row?: boolean
       /** Accepts a mixed array of types `function`, `boolean` and `string`. Functions pass an input value as an argument and must return either `true` / `false` or a `string` containing an error message. The input field will enter an error state if a function returns (or any value in the array contains) `false` or is a `string` */
-      rules?: any[];
+      rules?: any[]
       /** Puts the input in a manual success state */
-      success?: boolean;
+      success?: boolean
       /** Puts the input in a success state and passes through custom success messages. */
-      successMessages?: string | any[];
+      successMessages?: string | any[]
       /** Specify a custom tag used on the root element. */
-      tag?: string;
+      tag?: string
       /** Delays validation until blur event */
-      validateOnBlur?: boolean;
+      validateOnBlur?: boolean
       /** The input's value */
-      value?: any;
+      value?: any
       /** Apply a custom value comparator function */
-      valueComparator?: Function;
-    }>;
+      valueComparator?: Function
+    }>
     VRadio: DefineComponent<{
       /** Configure the active CSS class applied when the link is active. You can find more information about the [**active-class** prop](https://router.vuejs.org/api/#active-class) on the vue-router documentation. */
-      activeClass?: string;
+      activeClass?: string
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Removes the ability to click or target the component. */
-      disabled?: boolean;
+      disabled?: boolean
       /** Sets the DOM id on the component */
-      id?: string;
+      id?: string
       /** Sets input label */
-      label?: string;
+      label?: string
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Sets the component's name attribute */
-      name?: string;
+      name?: string
       /** The icon used when inactive */
-      offIcon?: string;
+      offIcon?: string
       /** The icon used when active */
-      onIcon?: string;
+      onIcon?: string
       /** Puts input in readonly state */
-      readonly?: boolean;
+      readonly?: boolean
       /** Applies the [v-ripple](/directives/ripple) directive. */
-      ripple?: boolean | object;
+      ripple?: boolean | object
       /** The value used when the component is selected in a group. If not provided, the index will be used. */
-      value?: any;
-    }>;
+      value?: any
+    }>
     VRangeSlider: DefineComponent<{
       /** Appends an icon to the component, uses the same syntax as `v-icon` */
-      appendIcon?: string;
+      appendIcon?: string
       /** Changes the background-color of the input */
-      backgroundColor?: string;
+      backgroundColor?: string
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Applies the dark theme variant to the component. This will default the components color to _white_ unless you've configured your [application theme](/customization/theme) to **dark** or if you are using the **color** prop on the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Reduces the input height */
-      dense?: boolean;
+      dense?: boolean
       /** Disable the input */
-      disabled?: boolean;
+      disabled?: boolean
       /** Puts the input in a manual error state */
-      error?: boolean;
+      error?: boolean
       /** The total number of errors that should display at once */
-      errorCount?: number | string;
+      errorCount?: number | string
       /** Puts the input in an error state and passes through custom error messages. Will be combined with any validations that occur from the **rules** prop. This field will not trigger validation */
-      errorMessages?: string | any[];
+      errorMessages?: string | any[]
       /** Sets the height of the input */
-      height?: number | string;
+      height?: number | string
       /** Hides hint and validation errors. When set to `auto` messages will be rendered only if there's a message (hint, error message, counter value etc) to display */
-      hideDetails?: boolean | string;
+      hideDetails?: boolean | string
       /** Hides spin buttons on the input when type is set to `number`. */
-      hideSpinButtons?: boolean;
+      hideSpinButtons?: boolean
       /** Hint text */
-      hint?: string;
+      hint?: string
       /** Sets the DOM id on the component */
-      id?: string;
+      id?: string
       /** Reverse the label position. Works with **rtl**. */
-      inverseLabel?: boolean;
+      inverseLabel?: boolean
       /** Sets input label */
-      label?: string;
+      label?: string
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Specifies the height of the loader */
-      loaderHeight?: number | string;
+      loaderHeight?: number | string
       /** Displays linear progress bar. Can either be a String which specifies which color is applied to the progress bar (any material color or theme color - **primary**, **secondary**, **success**, **info**, **warning**, **error**) or a Boolean which uses the component **color** (set by color prop - if it's supported by the component) or the primary color */
-      loading?: boolean | string;
+      loading?: boolean | string
       /** Sets the maximum allowed value */
-      max?: number | string;
+      max?: number | string
       /** Displays a list of messages or message if using a string */
-      messages?: string | any[];
+      messages?: string | any[]
       /** Sets the minimum allowed value */
-      min?: number | string;
+      min?: number | string
       /** Forces hint to always be visible */
-      persistentHint?: boolean;
+      persistentHint?: boolean
       /** Prepends an icon to the component, uses the same syntax as `v-icon` */
-      prependIcon?: string;
+      prependIcon?: string
       /** Puts input in readonly state */
-      readonly?: boolean;
+      readonly?: boolean
       /** Accepts a mixed array of types `function`, `boolean` and `string`. Functions pass an input value as an argument and must return either `true` / `false` or a `string` containing an error message. The input field will enter an error state if a function returns (or any value in the array contains) `false` or is a `string` */
-      rules?: any[];
+      rules?: any[]
       /** If greater than 0, sets step interval for ticks */
-      step?: number | string;
+      step?: number | string
       /** Puts the input in a manual success state */
-      success?: boolean;
+      success?: boolean
       /** Puts the input in a success state and passes through custom success messages. */
-      successMessages?: string | any[];
+      successMessages?: string | any[]
       /** Sets the thumb and thumb label color */
-      thumbColor?: string;
+      thumbColor?: string
       /** Show thumb label. If `true` it shows label when using slider. If set to `'always'` it always shows label. */
-      thumbLabel?: boolean | string;
+      thumbLabel?: boolean | string
       /** Controls the size of the thumb label. */
-      thumbSize?: number | string;
+      thumbSize?: number | string
       /** When provided with Array<string>, will attempt to map the labels to each step in index order */
-      tickLabels?: any[];
+      tickLabels?: any[]
       /** Controls the size of **ticks** */
-      tickSize?: number | string;
+      tickSize?: number | string
       /** Show track ticks. If `true` it shows ticks when using slider. If set to `'always'` it always shows ticks. */
-      ticks?: boolean | string;
+      ticks?: boolean | string
       /** Sets the track's color */
-      trackColor?: string;
+      trackColor?: string
       /** Sets the track's fill color */
-      trackFillColor?: string;
+      trackFillColor?: string
       /** Delays validation until blur event */
-      validateOnBlur?: boolean;
+      validateOnBlur?: boolean
       /** The input's value */
-      value?: any;
+      value?: any
       /** Changes slider direction to vertical */
-      vertical?: boolean;
-    }>;
+      vertical?: boolean
+    }>
     VRating: DefineComponent<{
-      /** The color used for empty icons */ backgroundColor?: string;
+      /** The color used for empty icons */ backgroundColor?: string
       /** Allows for the component to be cleared. Triggers when the icon containing the current value is clicked. */
-      clearable?: boolean;
+      clearable?: boolean
       /** Milliseconds to wait before closing component. */
-      closeDelay?: number | string;
+      closeDelay?: number | string
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Icons have a smaller size */
-      dense?: boolean;
+      dense?: boolean
       /** The icon displayed when empty */
-      emptyIcon?: string;
+      emptyIcon?: string
       /** The icon displayed when full */
-      fullIcon?: string;
+      fullIcon?: string
       /** The icon displayed when half (requires **half-increments** prop) */
-      halfIcon?: string;
+      halfIcon?: string
       /** Allows the selection of half increments */
-      halfIncrements?: boolean;
+      halfIncrements?: boolean
       /** Provides visual feedback when hovering over icons */
-      hover?: boolean;
+      hover?: boolean
       /** The **aria-label** used for icons */
-      iconLabel?: string;
+      iconLabel?: string
       /** Makes the component large. */
-      large?: boolean;
+      large?: boolean
       /** The amount of ratings to show */
-      length?: number | string;
+      length?: number | string
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Milliseconds to wait before opening component. */
-      openDelay?: number | string;
+      openDelay?: number | string
       /** Removes all hover effects and pointer events */
-      readonly?: boolean;
+      readonly?: boolean
       /** Applies the [v-ripple](/directives/ripple) directive. */
-      ripple?: boolean | object;
+      ripple?: boolean | object
       /** Sets the height and width of the component. */
-      size?: number | string;
+      size?: number | string
       /** Makes the component small. */
-      small?: boolean;
+      small?: boolean
       /** The rating value */
-      value?: number;
+      value?: number
       /** Makes the component extra large. */
-      xLarge?: boolean;
+      xLarge?: boolean
       /** Makes the component extra small. */
-      xSmall?: boolean;
-    }>;
+      xSmall?: boolean
+    }>
     VResponsive: DefineComponent<{
       /** Sets a base aspect ratio, calculated as width/height. This will only set a **minimum** height, the component can still grow if it has a lot of content. */
-      aspectRatio?: string | number;
+      aspectRatio?: string | number
       /** Apply a custom class to the responsive content div. */
-      contentClass?: string;
+      contentClass?: string
       /** Sets the height for the component. */
-      height?: number | string;
+      height?: number | string
       /** Sets the maximum height for the component. */
-      maxHeight?: number | string;
+      maxHeight?: number | string
       /** Sets the maximum width for the component. */
-      maxWidth?: number | string;
+      maxWidth?: number | string
       /** Sets the minimum height for the component. */
-      minHeight?: number | string;
+      minHeight?: number | string
       /** Sets the minimum width for the component. */
-      minWidth?: number | string;
+      minWidth?: number | string
       /** Sets the width for the component. */
-      width?: number | string;
-    }>;
+      width?: number | string
+    }>
     VSelect: DefineComponent<{
       /** Appends an icon to the component, uses the same syntax as `v-icon` */
-      appendIcon?: string;
+      appendIcon?: string
       /** Appends an icon to the outside the component's input, uses same syntax as `v-icon` */
-      appendOuterIcon?: string;
+      appendOuterIcon?: string
       /** Specifies which DOM element that this component should detach to. String can be any valid querySelector and Object can be any valid Node. This will attach to the root `v-app` component by default. */
-      attach?: any;
+      attach?: any
       /** Enables autofocus */
-      autofocus?: boolean;
+      autofocus?: boolean
       /** Changes the background-color of the input */
-      backgroundColor?: string;
+      backgroundColor?: string
       /** Keeps a local _unique_ copy of all items that have been passed through the **items** prop. */
-      cacheItems?: boolean;
+      cacheItems?: boolean
       /** Changes display of selections to chips */
-      chips?: boolean;
+      chips?: boolean
       /** Applied when using **clearable** and the input is dirty */
-      clearIcon?: string;
+      clearIcon?: string
       /** Add input clear functionality, default icon is Material Design Icons **mdi-clear** */
-      clearable?: boolean;
+      clearable?: boolean
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Creates counter for input length; if no number is specified, it defaults to 25. Does not apply any validation. */
-      counter?: boolean | number | string;
-      counterValue?: Function;
+      counter?: boolean | number | string
+      counterValue?: Function
       /** Applies the dark theme variant to the component. This will default the components color to _white_ unless you've configured your [application theme](/customization/theme) to **dark** or if you are using the **color** prop on the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Adds a remove icon to selected chips */
-      deletableChips?: boolean;
+      deletableChips?: boolean
       /** Reduces the input height */
-      dense?: boolean;
+      dense?: boolean
       /** Disables keyboard lookup */
-      disableLookup?: boolean;
+      disableLookup?: boolean
       /** Disables the input */
-      disabled?: boolean;
+      disabled?: boolean
       /** Will force the components content to render on mounted. This is useful if you have content that will not be rendered in the DOM that you want crawled for SEO. */
-      eager?: boolean;
+      eager?: boolean
       /** Puts the input in a manual error state */
-      error?: boolean;
+      error?: boolean
       /** The total number of errors that should display at once */
-      errorCount?: number | string;
+      errorCount?: number | string
       /** Puts the input in an error state and passes through custom error messages. Will be combined with any validations that occur from the **rules** prop. This field will not trigger validation */
-      errorMessages?: string | any[];
+      errorMessages?: string | any[]
       /** Applies the alternate filled input style */
-      filled?: boolean;
+      filled?: boolean
       /** Removes elevation (shadow) added to element when using the **solo** or **solo-inverted** props */
-      flat?: boolean;
+      flat?: boolean
       /** Designates input type as full-width */
-      fullWidth?: boolean;
+      fullWidth?: boolean
       /** Sets the height of the input */
-      height?: number | string;
+      height?: number | string
       /** Hides hint and validation errors. When set to `auto` messages will be rendered only if there's a message (hint, error message, counter value etc) to display */
-      hideDetails?: boolean | string;
+      hideDetails?: boolean | string
       /** Do not display in the select menu items that are already selected */
-      hideSelected?: boolean;
+      hideSelected?: boolean
       /** Hides spin buttons on the input when type is set to `number`. */
-      hideSpinButtons?: boolean;
+      hideSpinButtons?: boolean
       /** Hint text */
-      hint?: string;
+      hint?: string
       /** Sets the DOM id on the component */
-      id?: string;
+      id?: string
       /** Sets color of selected items */
-      itemColor?: string;
+      itemColor?: string
       /** Set property of **items**'s disabled value */
-      itemDisabled?: string | any[] | Function;
+      itemDisabled?: string | any[] | Function
       /** Set property of **items**'s text value */
-      itemText?: string | any[] | Function;
+      itemText?: string | any[] | Function
       /** Set property of **items**'s value - **must be primitive**. Dot notation is supported. **Note:** This is currently not supported with `v-combobox` [GitHub Issue](https://github.com/vuetifyjs/vuetify/issues/5479) */
-      itemValue?: string | any[] | Function;
+      itemValue?: string | any[] | Function
       /** Can be an array of objects or array of strings. When using objects, will look for a text, value and disabled keys. This can be changed using the **item-text**, **item-value** and **item-disabled** props.  Objects that have a **header** or **divider** property are considered special cases and generate a list header or divider; these items are not selectable. */
-      items?: any[];
+      items?: any[]
       /** Sets input label */
-      label?: string;
+      label?: string
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Specifies the height of the loader */
-      loaderHeight?: number | string;
+      loaderHeight?: number | string
       /** Displays linear progress bar. Can either be a String which specifies which color is applied to the progress bar (any material color or theme color - **primary**, **secondary**, **success**, **info**, **warning**, **error**) or a Boolean which uses the component **color** (set by color prop - if it's supported by the component) or the primary color */
-      loading?: boolean | string;
+      loading?: boolean | string
       /** Pass props through to the `v-menu` component. Accepts either a string for boolean props `menu-props="auto, overflowY"`, or an object `:menu-props="{ auto: true, overflowY: true }"` */
-      menuProps?: string | any[] | object;
+      menuProps?: string | any[] | object
       /** Displays a list of messages or message if using a string */
-      messages?: string | any[];
+      messages?: string | any[]
       /** Changes select to multiple. Accepts array for value */
-      multiple?: boolean;
+      multiple?: boolean
       /** Display text when there is no data */
-      noDataText?: string;
+      noDataText?: string
       /** When using the **clearable** prop, once cleared, the select menu will either open or stay open, depending on the current state */
-      openOnClear?: boolean;
+      openOnClear?: boolean
       /** Applies the outlined style to the input */
-      outlined?: boolean;
+      outlined?: boolean
       /** Forces hint to always be visible */
-      persistentHint?: boolean;
+      persistentHint?: boolean
       /** Forces placeholder to always be visible */
-      persistentPlaceholder?: boolean;
+      persistentPlaceholder?: boolean
       /** Sets the input's placeholder text */
-      placeholder?: string;
+      placeholder?: string
       /** Displays prefix text */
-      prefix?: string;
+      prefix?: string
       /** Prepends an icon to the component, uses the same syntax as `v-icon` */
-      prependIcon?: string;
+      prependIcon?: string
       /** Prepends an icon inside the component's input, uses the same syntax as `v-icon` */
-      prependInnerIcon?: string;
+      prependInnerIcon?: string
       /** Puts input in readonly state */
-      readonly?: boolean;
+      readonly?: boolean
       /** Changes the selection behavior to return the object directly rather than the value specified with **item-value** */
-      returnObject?: boolean;
+      returnObject?: boolean
       /** Reverses the input orientation */
-      reverse?: boolean;
+      reverse?: boolean
       /** Adds a border radius to the input */
-      rounded?: boolean;
+      rounded?: boolean
       /** Accepts a mixed array of types `function`, `boolean` and `string`. Functions pass an input value as an argument and must return either `true` / `false` or a `string` containing an error message. The input field will enter an error state if a function returns (or any value in the array contains) `false` or is a `string` */
-      rules?: any[];
+      rules?: any[]
       /** Round if `outlined` and increase `border-radius` if `filled`. Must be used with either `outlined` or `filled` */
-      shaped?: boolean;
+      shaped?: boolean
       /** Label does not move on focus/dirty */
-      singleLine?: boolean;
+      singleLine?: boolean
       /** Changes display of selections to chips with the **small** property */
-      smallChips?: boolean;
+      smallChips?: boolean
       /** Changes the style of the input */
-      solo?: boolean;
+      solo?: boolean
       /** Reduces element opacity until focused */
-      soloInverted?: boolean;
+      soloInverted?: boolean
       /** Puts the input in a manual success state */
-      success?: boolean;
+      success?: boolean
       /** Puts the input in a success state and passes through custom success messages. */
-      successMessages?: string | any[];
+      successMessages?: string | any[]
       /** Displays suffix text */
-      suffix?: string;
+      suffix?: string
       /** Sets input type */
-      type?: string;
+      type?: string
       /** Delays validation until blur event */
-      validateOnBlur?: boolean;
+      validateOnBlur?: boolean
       /** The input's value */
-      value?: any;
+      value?: any
       /** The comparison algorithm used for values. [More info](https://github.com/vuetifyjs/vuetify/blob/master/packages/vuetify/src/util/helpers.ts) */
-      valueComparator?: Function;
-    }>;
+      valueComparator?: Function
+    }>
     VSkeletonLoader: DefineComponent<{
       /** Remove the loading animation from the skeleton */
-      boilerplate?: boolean;
+      boilerplate?: boolean
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Designates an elevation applied to the component between 0 and 24. You can find more information on the [elevation page](/styles/elevation). */
-      elevation?: number | string;
+      elevation?: number | string
       /** Sets the height for the component. */
-      height?: number | string;
+      height?: number | string
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Applies a loading animation with a on-hover loading cursor. A value of **false** will only work when there is content in the `default` slot. */
-      loading?: boolean;
+      loading?: boolean
       /** Sets the maximum height for the component. */
-      maxHeight?: number | string;
+      maxHeight?: number | string
       /** Sets the maximum width for the component. */
-      maxWidth?: number | string;
+      maxWidth?: number | string
       /** Sets the minimum height for the component. */
-      minHeight?: number | string;
+      minHeight?: number | string
       /** Sets the minimum width for the component. */
-      minWidth?: number | string;
+      minWidth?: number | string
       /** Removes the component's border-radius */
-      tile?: boolean;
+      tile?: boolean
       /** Sets the component transition. Can be one of the [built in transitions](/styles/transitions) or one your own. */
-      transition?: string;
+      transition?: string
       /** A string delimited list of skeleton components to create such as `type="text@3"` or `type="card, list-item"`. Will recursively generate a corresponding skeleton from the provided string. Also supports short-hand for multiple elements such as **article@3** and **paragraph@2** which will generate 3 _article_ skeletons and 2 _paragraph_ skeletons. Please see below for a list of available pre-defined options. */
-      type?: string;
+      type?: string
       /** A custom types object that will be combined with the pre-defined options. For a list of available pre-defined options, see the **type** prop. */
-      types?: object;
+      types?: object
       /** Sets the width for the component. */
-      width?: number | string;
-    }>;
+      width?: number | string
+    }>
     VSlider: DefineComponent<{
       /** Appends an icon to the component, uses the same syntax as `v-icon` */
-      appendIcon?: string;
+      appendIcon?: string
       /** Changes the background-color of the input */
-      backgroundColor?: string;
+      backgroundColor?: string
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Applies the dark theme variant to the component. This will default the components color to _white_ unless you've configured your [application theme](/customization/theme) to **dark** or if you are using the **color** prop on the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Reduces the input height */
-      dense?: boolean;
+      dense?: boolean
       /** Disable the input */
-      disabled?: boolean;
+      disabled?: boolean
       /** Puts the input in a manual error state */
-      error?: boolean;
+      error?: boolean
       /** The total number of errors that should display at once */
-      errorCount?: number | string;
+      errorCount?: number | string
       /** Puts the input in an error state and passes through custom error messages. Will be combined with any validations that occur from the **rules** prop. This field will not trigger validation */
-      errorMessages?: string | any[];
+      errorMessages?: string | any[]
       /** Sets the height of the input */
-      height?: number | string;
+      height?: number | string
       /** Hides hint and validation errors. When set to `auto` messages will be rendered only if there's a message (hint, error message, counter value etc) to display */
-      hideDetails?: boolean | string;
+      hideDetails?: boolean | string
       /** Hides spin buttons on the input when type is set to `number`. */
-      hideSpinButtons?: boolean;
+      hideSpinButtons?: boolean
       /** Hint text */
-      hint?: string;
+      hint?: string
       /** Sets the DOM id on the component */
-      id?: string;
+      id?: string
       /** Reverse the label position. Works with **rtl**. */
-      inverseLabel?: boolean;
+      inverseLabel?: boolean
       /** Sets input label */
-      label?: string;
+      label?: string
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Specifies the height of the loader */
-      loaderHeight?: number | string;
+      loaderHeight?: number | string
       /** Displays linear progress bar. Can either be a String which specifies which color is applied to the progress bar (any material color or theme color - **primary**, **secondary**, **success**, **info**, **warning**, **error**) or a Boolean which uses the component **color** (set by color prop - if it's supported by the component) or the primary color */
-      loading?: boolean | string;
+      loading?: boolean | string
       /** Sets the maximum allowed value */
-      max?: number | string;
+      max?: number | string
       /** Displays a list of messages or message if using a string */
-      messages?: string | any[];
+      messages?: string | any[]
       /** Sets the minimum allowed value */
-      min?: number | string;
+      min?: number | string
       /** Forces hint to always be visible */
-      persistentHint?: boolean;
+      persistentHint?: boolean
       /** Prepends an icon to the component, uses the same syntax as `v-icon` */
-      prependIcon?: string;
+      prependIcon?: string
       /** Puts input in readonly state */
-      readonly?: boolean;
+      readonly?: boolean
       /** Accepts a mixed array of types `function`, `boolean` and `string`. Functions pass an input value as an argument and must return either `true` / `false` or a `string` containing an error message. The input field will enter an error state if a function returns (or any value in the array contains) `false` or is a `string` */
-      rules?: any[];
+      rules?: any[]
       /** If greater than 0, sets step interval for ticks */
-      step?: number | string;
+      step?: number | string
       /** Puts the input in a manual success state */
-      success?: boolean;
+      success?: boolean
       /** Puts the input in a success state and passes through custom success messages. */
-      successMessages?: string | any[];
+      successMessages?: string | any[]
       /** Sets the thumb and thumb label color */
-      thumbColor?: string;
+      thumbColor?: string
       /** Show thumb label. If `true` it shows label when using slider. If set to `'always'` it always shows label. */
-      thumbLabel?: boolean | string;
+      thumbLabel?: boolean | string
       /** Controls the size of the thumb label. */
-      thumbSize?: number | string;
+      thumbSize?: number | string
       /** When provided with Array<string>, will attempt to map the labels to each step in index order */
-      tickLabels?: any[];
+      tickLabels?: any[]
       /** Controls the size of **ticks** */
-      tickSize?: number | string;
+      tickSize?: number | string
       /** Show track ticks. If `true` it shows ticks when using slider. If set to `'always'` it always shows ticks. */
-      ticks?: boolean | string;
+      ticks?: boolean | string
       /** Sets the track's color */
-      trackColor?: string;
+      trackColor?: string
       /** Sets the track's fill color */
-      trackFillColor?: string;
+      trackFillColor?: string
       /** Delays validation until blur event */
-      validateOnBlur?: boolean;
+      validateOnBlur?: boolean
       /** The input's value */
-      value?: any;
+      value?: any
       /** Changes slider direction to vertical */
-      vertical?: boolean;
-    }>;
+      vertical?: boolean
+    }>
     VSlideGroup: DefineComponent<{
       /** The **active-class** applied to children when they are activated. */
-      activeClass?: string;
+      activeClass?: string
       /** Forces the selected component to be centered */
-      centerActive?: boolean;
+      centerActive?: boolean
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Forces a value to always be selected (if available). */
-      mandatory?: boolean;
+      mandatory?: boolean
       /** Sets a maximum number of selections that can be made. */
-      max?: number | string;
+      max?: number | string
       /** Sets the designated mobile breakpoint for the component. */
-      mobileBreakpoint?: number | string;
+      mobileBreakpoint?: number | string
       /** Allow multiple selections. The **value** prop must be an _array_. */
-      multiple?: boolean;
+      multiple?: boolean
       /** The appended slot when arrows are shown */
-      nextIcon?: string;
+      nextIcon?: string
       /** The prepended slot when arrows are shown */
-      prevIcon?: string;
+      prevIcon?: string
       /** Change when the overflow arrow indicators are shown. By **default**, arrows *always* display on Desktop when the container is overflowing. When the container overflows on mobile, arrows are not shown by default. A **show-arrows** value of `true` allows these arrows to show on Mobile if the container overflowing. A value of `desktop` *always* displays arrows on Desktop while a value of `mobile` always displays arrows on Mobile. A value of `always` always displays arrows on Desktop *and* Mobile. Find more information on how to customize breakpoint thresholds on the [breakpoints page](/customizing/breakpoints). */
-      showArrows?: boolean | string;
+      showArrows?: boolean | string
       /** Specify a custom tag used on the root element. */
-      tag?: string;
+      tag?: string
       /** The designated model value for the component. */
-      value?: any;
+      value?: any
       /** Apply a custom value comparator function */
-      valueComparator?: Function;
-    }>;
+      valueComparator?: Function
+    }>
     VSlideItem: DefineComponent<{
       /** Configure the active CSS class applied when the link is active. You can find more information about the [**active-class** prop](https://router.vuejs.org/api/#active-class) on the vue-router documentation. */
-      activeClass?: string;
+      activeClass?: string
       /** Removes the ability to click or target the component. */
-      disabled?: boolean;
+      disabled?: boolean
       /** The value used when the component is selected in a group. If not provided, the index will be used. */
-      value?: any;
-    }>;
+      value?: any
+    }>
     VSnackbar: DefineComponent<{
       /** Applies **position: absolute** to the component. */
-      absolute?: boolean;
+      absolute?: boolean
       /** Respects boundaries of—and will not overlap with—other `app` components like `v-app-bar`, `v-navigation-drawer`, and `v-footer`. */
-      app?: boolean;
+      app?: boolean
       /** Aligns the component towards the bottom. */
-      bottom?: boolean;
+      bottom?: boolean
       /** Positions the snackbar in the center of the screen, (x and y axis). */
-      centered?: boolean;
+      centered?: boolean
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Apply a custom class to the snackbar content */
-      contentClass?: string;
+      contentClass?: string
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Designates an elevation applied to the component between 0 and 24. You can find more information on the [elevation page](/styles/elevation). */
-      elevation?: number | string;
+      elevation?: number | string
       /** Sets the height for the component. */
-      height?: number | string;
+      height?: number | string
       /** Aligns the component towards the left. */
-      left?: boolean;
+      left?: boolean
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Sets the maximum height for the component. */
-      maxHeight?: number | string;
+      maxHeight?: number | string
       /** Sets the maximum width for the component. */
-      maxWidth?: number | string;
+      maxWidth?: number | string
       /** Sets the minimum height for the component. */
-      minHeight?: number | string;
+      minHeight?: number | string
       /** Sets the minimum width for the component. */
-      minWidth?: number | string;
+      minWidth?: number | string
       /** Gives the snackbar a larger minimum height. */
-      multiLine?: boolean;
+      multiLine?: boolean
       /** Removes elevation (box-shadow) and adds a *thin* border. */
-      outlined?: boolean;
+      outlined?: boolean
       /** Aligns the component towards the right. */
-      right?: boolean;
+      right?: boolean
       /** Designates the **border-radius** applied to the component. You can find more information on the [Border Radius page](/styles/border-radius). */
-      rounded?: boolean | string;
+      rounded?: boolean | string
       /** Applies a large border radius on the top left and bottom right of the card. */
-      shaped?: boolean;
+      shaped?: boolean
       /** Specify a custom tag used on the root element. */
-      tag?: string;
+      tag?: string
       /** Applies the defined **color** to text and a low opacity background of the same. */
-      text?: boolean;
+      text?: boolean
       /** Removes the component's **border-radius**. */
-      tile?: boolean;
+      tile?: boolean
       /** Time (in milliseconds) to wait until snackbar is automatically hidden.  Use `-1` to keep open indefinitely (`0` in version < 2.3 ). It is recommended for this number to be between `4000` and `10000`. Changes to this property will reset the timeout. */
-      timeout?: number | string;
+      timeout?: number | string
       /** Aligns the content towards the top. */
-      top?: boolean;
+      top?: boolean
       /** Sets the component transition. Can be one of the [built in transitions](/styles/transitions) or one your own. */
-      transition?: boolean | string;
+      transition?: boolean | string
       /** Controls whether the component is visible or hidden. */
-      value?: any;
+      value?: any
       /** Stacks snackbar content on top of the actions (button). */
-      vertical?: boolean;
+      vertical?: boolean
       /** Sets the width for the component. */
-      width?: number | string;
-    }>;
+      width?: number | string
+    }>
     VSparkline: DefineComponent<{
       /** Trace the length of the line when first rendered */
-      autoDraw?: boolean;
+      autoDraw?: boolean
       /** Amount of time (in ms) to run the trace animation */
-      autoDrawDuration?: number;
+      autoDrawDuration?: number
       /** The easing function to use for the trace animation */
-      autoDrawEasing?: string;
+      autoDrawEasing?: string
       /** Automatically expand bars to use space efficiently */
-      autoLineWidth?: boolean;
+      autoLineWidth?: boolean
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Using the **fill** property allows you to better customize the look and feel of your sparkline. */
-      fill?: boolean;
+      fill?: boolean
       /** An array of colors to use as a linear-gradient */
-      gradient?: any[];
+      gradient?: any[]
       /** The direction the gradient should run */
-      gradientDirection?: string;
+      gradientDirection?: string
       /** Height of the SVG trendline or bars */
-      height?: string | number;
+      height?: string | number
       /** The label font size */
-      labelSize?: number | string;
+      labelSize?: number | string
       /** An array of string labels that correspond to the same index as its data counterpart */
-      labels?: any[];
+      labels?: any[]
       /** The thickness of the line, in px */
-      lineWidth?: string | number;
+      lineWidth?: string | number
       /** Low `smooth` or high `line-width` values may result in cropping, increase padding to compensate */
-      padding?: string | number;
+      padding?: string | number
       /** Show labels below each data point */
-      showLabels?: boolean;
+      showLabels?: boolean
       /** Number of px to use as a corner radius. `true` defaults to 8, `false` is 0 */
-      smooth?: boolean | number | string;
+      smooth?: boolean | number | string
       /** Choose between a trendline or bars */
-      type?: string;
+      type?: string
       /** An array of numbers. */
-      value?: any[];
+      value?: any[]
       /** Width of the SVG trendline or bars */
-      width?: number | string;
-    }>;
+      width?: number | string
+    }>
     VSpeedDial: DefineComponent<{
       /** Applies **position: absolute** to the component. */
-      absolute?: boolean;
+      absolute?: boolean
       /** Aligns the component towards the bottom. */
-      bottom?: boolean;
+      bottom?: boolean
       /** Direction in which speed-dial content will show. Possible values are `top`, `bottom`, `left`, `right`. */
-      direction?: string;
+      direction?: string
       /** Applies **position: fixed** to the component. */
-      fixed?: boolean;
+      fixed?: boolean
       /** Aligns the component towards the left. */
-      left?: boolean;
+      left?: boolean
       /** Sets the transition mode (does not apply to transition-group). You can find more information on the Vue documentation [for transition modes](https://vuejs.org/v2/api/#transition). */
-      mode?: string;
+      mode?: string
       /** Opens speed-dial on hover */
-      openOnHover?: boolean;
+      openOnHover?: boolean
       /** Sets the transition origin on the element. You can find more information on the MDN documentation [for transition origin](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin). */
-      origin?: string;
+      origin?: string
       /** Aligns the component towards the right. */
-      right?: boolean;
+      right?: boolean
       /** Aligns the content towards the top. */
-      top?: boolean;
+      top?: boolean
       /** Sets the component transition. Can be one of the [built in transitions](/styles/transitions) or one your own. */
-      transition?: string;
+      transition?: string
       /** Controls whether the component is visible or hidden. */
-      value?: any;
-    }>;
+      value?: any
+    }>
     VStepper: DefineComponent<{
-      /** Places the labels beneath the step */ altLabels?: boolean;
+      /** Places the labels beneath the step */ altLabels?: boolean
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Designates an elevation applied to the component between 0 and 24. You can find more information on the [elevation page](/styles/elevation). */
-      elevation?: number | string;
+      elevation?: number | string
       /** Removes the stepper's elevation. */
-      flat?: boolean;
+      flat?: boolean
       /** Sets the height for the component. */
-      height?: number | string;
+      height?: number | string
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Sets the maximum height for the component. */
-      maxHeight?: number | string;
+      maxHeight?: number | string
       /** Sets the maximum width for the component. */
-      maxWidth?: number | string;
+      maxWidth?: number | string
       /** Sets the minimum height for the component. */
-      minHeight?: number | string;
+      minHeight?: number | string
       /** Sets the minimum width for the component. */
-      minWidth?: number | string;
+      minWidth?: number | string
       /** Allow user to jump to any step */
-      nonLinear?: boolean;
+      nonLinear?: boolean
       /** Removes elevation (box-shadow) and adds a *thin* border. */
-      outlined?: boolean;
+      outlined?: boolean
       /** Designates the **border-radius** applied to the component. You can find more information on the [Border Radius page](/styles/border-radius). */
-      rounded?: boolean | string;
+      rounded?: boolean | string
       /** Applies a large border radius on the top left and bottom right of the card. */
-      shaped?: boolean;
+      shaped?: boolean
       /** Specify a custom tag used on the root element. */
-      tag?: string;
+      tag?: string
       /** Removes the component's **border-radius**. */
-      tile?: boolean;
+      tile?: boolean
       /** The designated model value for the component. */
-      value?: any;
+      value?: any
       /** Display steps vertically */
-      vertical?: boolean;
+      vertical?: boolean
       /** Sets the width for the component. */
-      width?: number | string;
-    }>;
+      width?: number | string
+    }>
     VStepperContent: DefineComponent<{
-      /** Sets step to associate the content to */ step?: number | string;
-    }>;
+      /** Sets step to associate the content to */ step?: number | string
+    }>
     VStepperStep: DefineComponent<{
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Marks step as complete */
-      complete?: boolean;
+      complete?: boolean
       /** Icon to display when step is marked as completed */
-      completeIcon?: string;
+      completeIcon?: string
       /** Icon to display when step is editable */
-      editIcon?: string;
+      editIcon?: string
       /** Marks step as editable */
-      editable?: boolean;
+      editable?: boolean
       /** Icon to display when step has an error */
-      errorIcon?: string;
+      errorIcon?: string
       /** Accepts a mixed array of types `function`, `boolean` and `string`. Functions pass an input value as an argument and must return either `true` / `false` or a `string` containing an error message. The input field will enter an error state if a function returns (or any value in the array contains) `false` or is a `string` */
-      rules?: any[];
+      rules?: any[]
       /** Content to display inside step circle */
-      step?: number | string;
-    }>;
+      step?: number | string
+    }>
     VStepperHeader: DefineComponent<{
-      /** Specify a custom tag used on the root element. */ tag?: string;
-    }>;
+      /** Specify a custom tag used on the root element. */ tag?: string
+    }>
     VStepperItems: DefineComponent<{
-      /** Specify a custom tag used on the root element. */ tag?: string;
-    }>;
+      /** Specify a custom tag used on the root element. */ tag?: string
+    }>
     VSubheader: DefineComponent<{
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Adds indentation (72px) */
-      inset?: boolean;
+      inset?: boolean
       /** Applies the light theme variant to the component. */
-      light?: boolean;
-    }>;
+      light?: boolean
+    }>
     VSwitch: DefineComponent<{
       /** Appends an icon to the component, uses the same syntax as `v-icon` */
-      appendIcon?: string;
+      appendIcon?: string
       /** Changes the background-color of the input */
-      backgroundColor?: string;
+      backgroundColor?: string
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Applies the dark theme variant to the component. This will default the components color to _white_ unless you've configured your [application theme](/customization/theme) to **dark** or if you are using the **color** prop on the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Reduces the input height */
-      dense?: boolean;
+      dense?: boolean
       /** Disable the input */
-      disabled?: boolean;
+      disabled?: boolean
       /** Puts the input in a manual error state */
-      error?: boolean;
+      error?: boolean
       /** The total number of errors that should display at once */
-      errorCount?: number | string;
+      errorCount?: number | string
       /** Puts the input in an error state and passes through custom error messages. Will be combined with any validations that occur from the **rules** prop. This field will not trigger validation */
-      errorMessages?: string | any[];
+      errorMessages?: string | any[]
       /** Sets value for falsy state */
-      falseValue?: any;
+      falseValue?: any
       /** Display component without elevation. Default elevation for thumb is 4dp, `flat` resets it */
-      flat?: boolean;
+      flat?: boolean
       /** Hides hint and validation errors. When set to `auto` messages will be rendered only if there's a message (hint, error message, counter value etc) to display */
-      hideDetails?: boolean | string;
+      hideDetails?: boolean | string
       /** Hides spin buttons on the input when type is set to `number`. */
-      hideSpinButtons?: boolean;
+      hideSpinButtons?: boolean
       /** Hint text */
-      hint?: string;
+      hint?: string
       /** Sets the DOM id on the component */
-      id?: string;
+      id?: string
       /** The **v-model** bound value */
-      inputValue?: any;
+      inputValue?: any
       /** Enlarge the `v-switch` track to encompass the thumb */
-      inset?: boolean;
+      inset?: boolean
       /** Sets input label */
-      label?: string;
+      label?: string
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Displays circular progress bar. Can either be a String which specifies which color is applied to the progress bar (any material color or theme color - primary, secondary, success, info, warning, error) or a Boolean which uses the component color (set by color prop - if it's supported by the component) or the primary color */
-      loading?: boolean | string;
+      loading?: boolean | string
       /** Displays a list of messages or message if using a string */
-      messages?: string | any[];
+      messages?: string | any[]
       /** Changes expected model to an array */
-      multiple?: boolean;
+      multiple?: boolean
       /** Forces hint to always be visible */
-      persistentHint?: boolean;
+      persistentHint?: boolean
       /** Prepends an icon to the component, uses the same syntax as `v-icon` */
-      prependIcon?: string;
+      prependIcon?: string
       /** Puts input in readonly state */
-      readonly?: boolean;
+      readonly?: boolean
       /** Applies the [v-ripple](/directives/ripple) directive. */
-      ripple?: boolean | object;
+      ripple?: boolean | object
       /** Accepts a mixed array of types `function`, `boolean` and `string`. Functions pass an input value as an argument and must return either `true` / `false` or a `string` containing an error message. The input field will enter an error state if a function returns (or any value in the array contains) `false` or is a `string` */
-      rules?: any[];
+      rules?: any[]
       /** Puts the input in a manual success state */
-      success?: boolean;
+      success?: boolean
       /** Puts the input in a success state and passes through custom success messages. */
-      successMessages?: string | any[];
+      successMessages?: string | any[]
       /** Sets value for truthy state */
-      trueValue?: any;
+      trueValue?: any
       /** Delays validation until blur event */
-      validateOnBlur?: boolean;
+      validateOnBlur?: boolean
       /** The input's value */
-      value?: any;
+      value?: any
       /** Apply a custom value comparator function */
-      valueComparator?: Function;
-    }>;
+      valueComparator?: Function
+    }>
     VSystemBar: DefineComponent<{
       /** Applies **position: absolute** to the component. */
-      absolute?: boolean;
+      absolute?: boolean
       /** Designates the component as part of the application layout. Used for dynamically adjusting content sizing. Components using this prop should reside **outside** of `v-main` component to function properly. You can find more information about layouts on the [application page](/components/application). **Note:** this prop automatically applies **position: fixed** to the layout element. You can overwrite this functionality by using the `absolute` prop */
-      app?: boolean;
+      app?: boolean
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Applies **position: fixed** to the component. */
-      fixed?: boolean;
+      fixed?: boolean
       /** Sets the height for the component. */
-      height?: number | string;
+      height?: number | string
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Reduces the system bar opacity. */
-      lightsOut?: boolean;
+      lightsOut?: boolean
       /** Increases the system bar height to 32px (24px default). */
-      window?: boolean;
-    }>;
+      window?: boolean
+    }>
     VTabs: DefineComponent<{
       /** The **active-class** applied to children when they are activated. */
-      activeClass?: string;
+      activeClass?: string
       /** Make `v-tabs` lined up with the toolbar title */
-      alignWithTitle?: boolean;
+      alignWithTitle?: boolean
       /** Changes the background color of the component. */
-      backgroundColor?: string;
+      backgroundColor?: string
       /** Forces the selected tab to be centered */
-      centerActive?: boolean;
+      centerActive?: boolean
       /** Centers the tabs */
-      centered?: boolean;
+      centered?: boolean
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** `v-tabs-item` min-width 160px, max-width 360px */
-      fixedTabs?: boolean;
+      fixedTabs?: boolean
       /** Force `v-tab`'s to take up all available space */
-      grow?: boolean;
+      grow?: boolean
       /** Sets the height of the tabs bar */
-      height?: number | string;
+      height?: number | string
       /** Hide's the generated `v-tabs-slider` */
-      hideSlider?: boolean;
+      hideSlider?: boolean
       /** Will stack icon and text vertically */
-      iconsAndText?: boolean;
+      iconsAndText?: boolean
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Sets the designated mobile breakpoint for the component. */
-      mobileBreakpoint?: string | number;
+      mobileBreakpoint?: string | number
       /** Right pagination icon */
-      nextIcon?: string;
+      nextIcon?: string
       /** Does not require an active item. Useful when using `v-tab` as a `router-link` */
-      optional?: boolean;
+      optional?: boolean
       /** Left pagination icon */
-      prevIcon?: string;
+      prevIcon?: string
       /** Aligns tabs to the right */
-      right?: boolean;
+      right?: boolean
       /** Show pagination arrows if the tab items overflow their container. For mobile devices, arrows will only display when using this prop. */
-      showArrows?: boolean | string;
+      showArrows?: boolean | string
       /** Changes the background color of an auto-generated `v-tabs-slider` */
-      sliderColor?: string;
+      sliderColor?: string
       /** Changes the size of the slider, **height** for horizontal, **width** for vertical. */
-      sliderSize?: number | string;
+      sliderSize?: number | string
       /** The designated model value for the component. */
-      value?: any;
+      value?: any
       /** Stacks tabs on top of each other vertically. */
-      vertical?: boolean;
-    }>;
+      vertical?: boolean
+    }>
     VTab: DefineComponent<{
       /** Configure the active CSS class applied when the link is active. You can find more information about the [**active-class** prop](https://router.vuejs.org/api/#active-class) on the vue-router documentation. */
-      activeClass?: string;
+      activeClass?: string
       /** Setting **append** prop always appends the relative path to the current path. You can find more information about the [**append** prop](https://router.vuejs.org/api/#append) on the vue-router documentation. */
-      append?: boolean;
+      append?: boolean
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Removes the ability to click or target the component. */
-      disabled?: boolean;
+      disabled?: boolean
       /** Exactly match the link. Without this, '/' will match every route. You can find more information about the [**exact** prop](https://router.vuejs.org/api/#exact) on the vue-router documentation. */
-      exact?: boolean;
+      exact?: boolean
       /** Configure the active CSS class applied when the link is active with exact match. You can find more information about the [**exact-active-class** prop](https://router.vuejs.org/api/#exact-active-class) on the vue-router documentation. */
-      exactActiveClass?: string;
+      exactActiveClass?: string
       /** Exactly match the link, ignoring the `query` and the `hash` sections. You can find more information about the [**exact-path** prop](https://router.vuejs.org/api/#exact-path) on the vue-router documentation. */
-      exactPath?: boolean;
+      exactPath?: boolean
       /** Designates the component as anchor and applies the **href** attribute. */
-      href?: string | object;
+      href?: string | object
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Designates that the component is a link. This is automatic when using the **href** or **to** prop. */
-      link?: boolean;
+      link?: boolean
       /** Specifies the link is a `nuxt-link`. For use with the [nuxt framework](https://nuxtjs.org/api/components-nuxt-link/). */
-      nuxt?: boolean;
+      nuxt?: boolean
       /** Setting **replace** prop will call `router.replace()` instead of `router.push()` when clicked, so the navigation will not leave a history record. You can find more information about the [**replace** prop](https://router.vuejs.org/api/#replace) on the vue-router documentation. */
-      replace?: boolean;
+      replace?: boolean
       /** Applies the [v-ripple](/directives/ripple) directive. */
-      ripple?: boolean | object;
+      ripple?: boolean | object
       /** Specify a custom tag used on the root element. */
-      tag?: string;
+      tag?: string
       /** Designates the target attribute. This should only be applied when using the **href** prop. */
-      target?: string;
+      target?: string
       /** Denotes the target route of the link. You can find more information about the [**to** prop](https://router.vuejs.org/api/#to) on the vue-router documentation. */
-      to?: string | object;
-    }>;
+      to?: string | object
+    }>
     VTabItem: DefineComponent<{
       /** Configure the active CSS class applied when the link is active. You can find more information about the [**active-class** prop](https://router.vuejs.org/api/#active-class) on the vue-router documentation. */
-      activeClass?: string;
+      activeClass?: string
       /** Removes the ability to click or target the component. */
-      disabled?: boolean;
+      disabled?: boolean
       /** Will force the components content to render on mounted. This is useful if you have content that will not be rendered in the DOM that you want crawled for SEO. */
-      eager?: boolean;
+      eager?: boolean
       /** Sets the DOM id on the component */
-      id?: string;
+      id?: string
       /** Sets the reverse transition */
-      reverseTransition?: boolean | string;
+      reverseTransition?: boolean | string
       /** The transition used when the component progressing through items. Can be one of the [built in transitions](/styles/transitions) or one your own. */
-      transition?: boolean | string;
+      transition?: boolean | string
       /** Sets the value of the tab. If not provided, the index will be used. */
-      value?: any;
-    }>;
+      value?: any
+    }>
     VTabsItems: DefineComponent<{
       /** The **active-class** applied to children when they are activated. */
-      activeClass?: string;
+      activeClass?: string
       /** If `true`, window will "wrap around" from the last item to the first, and from the first item to the last */
-      continuous?: boolean;
+      continuous?: boolean
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Forces a value to always be selected (if available). */
-      mandatory?: boolean;
+      mandatory?: boolean
       /** Sets a maximum number of selections that can be made. */
-      max?: number | string;
+      max?: number | string
       /** Allow multiple selections. The **value** prop must be an _array_. */
-      multiple?: boolean;
+      multiple?: boolean
       /** Icon used for the "next" button if `show-arrows` is `true` */
-      nextIcon?: boolean | string;
+      nextIcon?: boolean | string
       /** Icon used for the "prev" button if `show-arrows` is `true` */
-      prevIcon?: boolean | string;
+      prevIcon?: boolean | string
       /** Reverse the normal transition direction. */
-      reverse?: boolean;
+      reverse?: boolean
       /** Display the "next" and "prev" buttons */
-      showArrows?: boolean;
+      showArrows?: boolean
       /** Display the "next" and "prev" buttons on hover. `show-arrows` MUST ALSO be set. */
-      showArrowsOnHover?: boolean;
+      showArrowsOnHover?: boolean
       /** Specify a custom tag used on the root element. */
-      tag?: string;
+      tag?: string
       /** Provide a custom **left** and **right** function when swiped left or right. */
-      touch?: object;
+      touch?: object
       /** Disable touch support. */
-      touchless?: boolean;
+      touchless?: boolean
       /** The designated model value for the component. */
-      value?: any;
+      value?: any
       /** Apply a custom value comparator function */
-      valueComparator?: Function;
+      valueComparator?: Function
       /** Uses a vertical transition when changing windows. */
-      vertical?: boolean;
-    }>;
+      vertical?: boolean
+    }>
     VTabsSlider: DefineComponent<{
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
-    }>;
+      color?: string
+    }>
     VTextarea: DefineComponent<{
       /** Appends an icon to the component, uses the same syntax as `v-icon` */
-      appendIcon?: string;
+      appendIcon?: string
       /** Appends an icon to the outside the component's input, uses same syntax as `v-icon` */
-      appendOuterIcon?: string;
+      appendOuterIcon?: string
       /** Automatically grow the textarea depending on amount of text */
-      autoGrow?: boolean;
+      autoGrow?: boolean
       /** Enables autofocus */
-      autofocus?: boolean;
+      autofocus?: boolean
       /** Changes the background-color of the input */
-      backgroundColor?: string;
+      backgroundColor?: string
       /** Applied when using **clearable** and the input is dirty */
-      clearIcon?: string;
+      clearIcon?: string
       /** Add input clear functionality, default icon is Material Design Icons **mdi-clear** */
-      clearable?: boolean;
+      clearable?: boolean
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Creates counter for input length; if no number is specified, it defaults to 25. Does not apply any validation. */
-      counter?: boolean | number | string;
-      counterValue?: Function;
+      counter?: boolean | number | string
+      counterValue?: Function
       /** Applies the dark theme variant to the component. This will default the components color to _white_ unless you've configured your [application theme](/customization/theme) to **dark** or if you are using the **color** prop on the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Reduces the input height */
-      dense?: boolean;
+      dense?: boolean
       /** Disable the input */
-      disabled?: boolean;
+      disabled?: boolean
       /** Puts the input in a manual error state */
-      error?: boolean;
+      error?: boolean
       /** The total number of errors that should display at once */
-      errorCount?: number | string;
+      errorCount?: number | string
       /** Puts the input in an error state and passes through custom error messages. Will be combined with any validations that occur from the **rules** prop. This field will not trigger validation */
-      errorMessages?: string | any[];
+      errorMessages?: string | any[]
       /** Applies the alternate filled input style */
-      filled?: boolean;
+      filled?: boolean
       /** Removes elevation (shadow) added to element when using the **solo** or **solo-inverted** props */
-      flat?: boolean;
+      flat?: boolean
       /** Designates input type as full-width */
-      fullWidth?: boolean;
+      fullWidth?: boolean
       /** Sets the height of the input */
-      height?: number | string;
+      height?: number | string
       /** Hides hint and validation errors. When set to `auto` messages will be rendered only if there's a message (hint, error message, counter value etc) to display */
-      hideDetails?: boolean | string;
+      hideDetails?: boolean | string
       /** Hides spin buttons on the input when type is set to `number`. */
-      hideSpinButtons?: boolean;
+      hideSpinButtons?: boolean
       /** Hint text */
-      hint?: string;
+      hint?: string
       /** Sets the DOM id on the component */
-      id?: string;
+      id?: string
       /** Sets input label */
-      label?: string;
+      label?: string
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Specifies the height of the loader */
-      loaderHeight?: number | string;
+      loaderHeight?: number | string
       /** Displays linear progress bar. Can either be a String which specifies which color is applied to the progress bar (any material color or theme color - **primary**, **secondary**, **success**, **info**, **warning**, **error**) or a Boolean which uses the component **color** (set by color prop - if it's supported by the component) or the primary color */
-      loading?: boolean | string;
+      loading?: boolean | string
       /** Displays a list of messages or message if using a string */
-      messages?: string | any[];
+      messages?: string | any[]
       /** Remove resize handle */
-      noResize?: boolean;
+      noResize?: boolean
       /** Applies the outlined style to the input */
-      outlined?: boolean;
+      outlined?: boolean
       /** Forces hint to always be visible */
-      persistentHint?: boolean;
+      persistentHint?: boolean
       /** Forces placeholder to always be visible */
-      persistentPlaceholder?: boolean;
+      persistentPlaceholder?: boolean
       /** Sets the input's placeholder text */
-      placeholder?: string;
+      placeholder?: string
       /** Displays prefix text */
-      prefix?: string;
+      prefix?: string
       /** Prepends an icon to the component, uses the same syntax as `v-icon` */
-      prependIcon?: string;
+      prependIcon?: string
       /** Prepends an icon inside the component's input, uses the same syntax as `v-icon` */
-      prependInnerIcon?: string;
+      prependInnerIcon?: string
       /** Puts input in readonly state */
-      readonly?: boolean;
+      readonly?: boolean
       /** Reverses the input orientation */
-      reverse?: boolean;
+      reverse?: boolean
       /** Adds a border radius to the input */
-      rounded?: boolean;
+      rounded?: boolean
       /** Height value for each row. Requires the use of the **auto-grow** prop. */
-      rowHeight?: number | string;
+      rowHeight?: number | string
       /** Default row count */
-      rows?: number | string;
+      rows?: number | string
       /** Accepts a mixed array of types `function`, `boolean` and `string`. Functions pass an input value as an argument and must return either `true` / `false` or a `string` containing an error message. The input field will enter an error state if a function returns (or any value in the array contains) `false` or is a `string` */
-      rules?: any[];
+      rules?: any[]
       /** Round if `outlined` and increase `border-radius` if `filled`. Must be used with either `outlined` or `filled` */
-      shaped?: boolean;
+      shaped?: boolean
       /** Label does not move on focus/dirty */
-      singleLine?: boolean;
+      singleLine?: boolean
       /** Changes the style of the input */
-      solo?: boolean;
+      solo?: boolean
       /** Reduces element opacity until focused */
-      soloInverted?: boolean;
+      soloInverted?: boolean
       /** Puts the input in a manual success state */
-      success?: boolean;
+      success?: boolean
       /** Puts the input in a success state and passes through custom success messages. */
-      successMessages?: string | any[];
+      successMessages?: string | any[]
       /** Displays suffix text */
-      suffix?: string;
+      suffix?: string
       /** Sets input type */
-      type?: string;
+      type?: string
       /** Delays validation until blur event */
-      validateOnBlur?: boolean;
+      validateOnBlur?: boolean
       /** The input's value */
-      value?: any;
-    }>;
+      value?: any
+    }>
     VTextField: DefineComponent<{
       /** Appends an icon to the component, uses the same syntax as `v-icon` */
-      appendIcon?: string;
+      appendIcon?: string
       /** Appends an icon to the outside the component's input, uses same syntax as `v-icon` */
-      appendOuterIcon?: string;
+      appendOuterIcon?: string
       /** Enables autofocus */
-      autofocus?: boolean;
+      autofocus?: boolean
       /** Changes the background-color of the input */
-      backgroundColor?: string;
+      backgroundColor?: string
       /** Applied when using **clearable** and the input is dirty */
-      clearIcon?: string;
+      clearIcon?: string
       /** Add input clear functionality, default icon is Material Design Icons **mdi-clear** */
-      clearable?: boolean;
+      clearable?: boolean
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Creates counter for input length; if no number is specified, it defaults to 25. Does not apply any validation. */
-      counter?: boolean | number | string;
-      counterValue?: Function;
+      counter?: boolean | number | string
+      counterValue?: Function
       /** Applies the dark theme variant to the component. This will default the components color to _white_ unless you've configured your [application theme](/customization/theme) to **dark** or if you are using the **color** prop on the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Reduces the input height */
-      dense?: boolean;
+      dense?: boolean
       /** Disable the input */
-      disabled?: boolean;
+      disabled?: boolean
       /** Puts the input in a manual error state */
-      error?: boolean;
+      error?: boolean
       /** The total number of errors that should display at once */
-      errorCount?: number | string;
+      errorCount?: number | string
       /** Puts the input in an error state and passes through custom error messages. Will be combined with any validations that occur from the **rules** prop. This field will not trigger validation */
-      errorMessages?: string | any[];
+      errorMessages?: string | any[]
       /** Applies the alternate filled input style */
-      filled?: boolean;
+      filled?: boolean
       /** Removes elevation (shadow) added to element when using the **solo** or **solo-inverted** props */
-      flat?: boolean;
+      flat?: boolean
       /** Designates input type as full-width */
-      fullWidth?: boolean;
+      fullWidth?: boolean
       /** Sets the height of the input */
-      height?: number | string;
+      height?: number | string
       /** Hides hint and validation errors. When set to `auto` messages will be rendered only if there's a message (hint, error message, counter value etc) to display */
-      hideDetails?: boolean | string;
+      hideDetails?: boolean | string
       /** Hides spin buttons on the input when type is set to `number`. */
-      hideSpinButtons?: boolean;
+      hideSpinButtons?: boolean
       /** Hint text */
-      hint?: string;
+      hint?: string
       /** Sets the DOM id on the component */
-      id?: string;
+      id?: string
       /** Sets input label */
-      label?: string;
+      label?: string
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Specifies the height of the loader */
-      loaderHeight?: number | string;
+      loaderHeight?: number | string
       /** Displays linear progress bar. Can either be a String which specifies which color is applied to the progress bar (any material color or theme color - **primary**, **secondary**, **success**, **info**, **warning**, **error**) or a Boolean which uses the component **color** (set by color prop - if it's supported by the component) or the primary color */
-      loading?: boolean | string;
+      loading?: boolean | string
       /** Displays a list of messages or message if using a string */
-      messages?: string | any[];
+      messages?: string | any[]
       /** Applies the outlined style to the input */
-      outlined?: boolean;
+      outlined?: boolean
       /** Forces hint to always be visible */
-      persistentHint?: boolean;
+      persistentHint?: boolean
       /** Forces placeholder to always be visible */
-      persistentPlaceholder?: boolean;
+      persistentPlaceholder?: boolean
       /** Sets the input’s placeholder text */
-      placeholder?: string;
+      placeholder?: string
       /** Displays prefix text */
-      prefix?: string;
+      prefix?: string
       /** Prepends an icon to the component, uses the same syntax as `v-icon` */
-      prependIcon?: string;
+      prependIcon?: string
       /** Prepends an icon inside the component's input, uses the same syntax as `v-icon` */
-      prependInnerIcon?: string;
+      prependInnerIcon?: string
       /** Puts input in readonly state */
-      readonly?: boolean;
+      readonly?: boolean
       /** Reverses the input orientation */
-      reverse?: boolean;
+      reverse?: boolean
       /** Adds a border radius to the input */
-      rounded?: boolean;
+      rounded?: boolean
       /** Accepts a mixed array of types `function`, `boolean` and `string`. Functions pass an input value as an argument and must return either `true` / `false` or a `string` containing an error message. The input field will enter an error state if a function returns (or any value in the array contains) `false` or is a `string` */
-      rules?: any[];
+      rules?: any[]
       /** Round if `outlined` and increase `border-radius` if `filled`. Must be used with either `outlined` or `filled` */
-      shaped?: boolean;
+      shaped?: boolean
       /** Label does not move on focus/dirty */
-      singleLine?: boolean;
+      singleLine?: boolean
       /** Changes the style of the input */
-      solo?: boolean;
+      solo?: boolean
       /** Reduces element opacity until focused */
-      soloInverted?: boolean;
+      soloInverted?: boolean
       /** Puts the input in a manual success state */
-      success?: boolean;
+      success?: boolean
       /** Puts the input in a success state and passes through custom success messages. */
-      successMessages?: string | any[];
+      successMessages?: string | any[]
       /** Displays suffix text */
-      suffix?: string;
+      suffix?: string
       /** Sets input type */
-      type?: string;
+      type?: string
       /** Delays validation until blur event */
-      validateOnBlur?: boolean;
+      validateOnBlur?: boolean
       /** The input's value */
-      value?: any;
-    }>;
+      value?: any
+    }>
     VThemeProvider: DefineComponent<{
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Use the current value of `$vuetify.theme.dark` as opposed to the provided one. */
-      root?: boolean;
-    }>;
+      root?: boolean
+    }>
     VTimeline: DefineComponent<{
       /** Align caret and dot of timeline items to the top */
-      alignTop?: boolean;
+      alignTop?: boolean
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Hide opposite slot content, and position all items to one side of timeline */
-      dense?: boolean;
+      dense?: boolean
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Reverse direction of timeline items */
-      reverse?: boolean;
-    }>;
+      reverse?: boolean
+    }>
     VTimelineItem: DefineComponent<{
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Remove padding from dot container */
-      fillDot?: boolean;
+      fillDot?: boolean
       /** Hide display of timeline dot */
-      hideDot?: boolean;
+      hideDot?: boolean
       /** Specify icon for dot container */
-      icon?: string;
+      icon?: string
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      iconColor?: string;
+      iconColor?: string
       /** Large size dot */
-      large?: boolean;
+      large?: boolean
       /** Explicitly set the item to a left orientation */
-      left?: boolean;
+      left?: boolean
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Explicitly set the item to a right orientation */
-      right?: boolean;
+      right?: boolean
       /** Small size dot */
-      small?: boolean;
-    }>;
+      small?: boolean
+    }>
     VTimePicker: DefineComponent<{
       /** Restricts which hours can be selected */
-      allowedHours?: Function | any[];
+      allowedHours?: Function | any[]
       /** Restricts which minutes can be selected */
-      allowedMinutes?: Function | any[];
+      allowedMinutes?: Function | any[]
       /** Restricts which seconds can be selected */
-      allowedSeconds?: Function | any[];
+      allowedSeconds?: Function | any[]
       /** Place AM/PM switch in title, not near the clock. */
-      ampmInTitle?: boolean;
+      ampmInTitle?: boolean
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** disables picker */
-      disabled?: boolean;
+      disabled?: boolean
       /** Designates an elevation applied to the component between 0 and 24. You can find more information on the [elevation page](/styles/elevation). */
-      elevation?: number | string;
+      elevation?: number | string
       /** Removes  elevation */
-      flat?: boolean;
+      flat?: boolean
       /** Defines the format of a time displayed in picker. Available options are `ampm` and `24hr`. */
-      format?: string;
+      format?: string
       /** Forces 100% width */
-      fullWidth?: boolean;
+      fullWidth?: boolean
       /** Defines the header color. If not specified it will use the color defined by <code>color</code> prop or the default picker color */
-      headerColor?: string;
+      headerColor?: string
       /** Orients picker horizontal */
-      landscape?: boolean;
+      landscape?: boolean
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Maximum allowed time */
-      max?: string;
+      max?: string
       /** Minimum allowed time */
-      min?: string;
+      min?: string
       /** Hide the picker title */
-      noTitle?: boolean;
+      noTitle?: boolean
       /** Puts picker in readonly state */
-      readonly?: boolean;
+      readonly?: boolean
       /** Allows changing hour/minute with mouse scroll */
-      scrollable?: boolean;
+      scrollable?: boolean
       /** Toggles the use of seconds in picker */
-      useSeconds?: boolean;
+      useSeconds?: boolean
       /** Time picker model (ISO 8601 format, 24hr hh:mm) */
-      value?: any;
+      value?: any
       /** Width of the picker */
-      width?: number | string;
-    }>;
+      width?: number | string
+    }>
     VToolbar: DefineComponent<{
-      /** Applies position: absolute to the component. */ absolute?: boolean;
+      /** Applies position: absolute to the component. */ absolute?: boolean
       /** Aligns the component towards the bottom. */
-      bottom?: boolean;
+      bottom?: boolean
       /** Puts the toolbar into a collapsed state reducing its maximum width. */
-      collapse?: boolean;
+      collapse?: boolean
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Reduces the height of the toolbar content to 48px (96px when using the **prominent** prop). */
-      dense?: boolean;
+      dense?: boolean
       /** Designates an elevation applied to the component between 0 and 24. You can find more information on the [elevation page](/styles/elevation). */
-      elevation?: number | string;
+      elevation?: number | string
       /** Use this prop to increase the height of the toolbar _without_ using the `extension` slot for adding content. May be used in conjunction with the **extension-height** prop, and any of the other props that affect the height of the toolbar, e.g. **prominent**, **dense**, etc., **WITH THE EXCEPTION** of **height**. */
-      extended?: boolean;
+      extended?: boolean
       /** Specify an explicit height for the `extension` slot.  */
-      extensionHeight?: number | string;
+      extensionHeight?: number | string
       /** Removes the toolbar's box-shadow. */
-      flat?: boolean;
+      flat?: boolean
       /** Applies **display: inline-flex** to the component. */
-      floating?: boolean;
+      floating?: boolean
       /** Designates a specific height for the toolbar. Overrides the heights imposed by other props, e.g. **prominent**, **dense**, **extended**, etc. */
-      height?: number | string;
+      height?: number | string
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Sets the maximum height for the component. */
-      maxHeight?: number | string;
+      maxHeight?: number | string
       /** Sets the maximum width for the component. */
-      maxWidth?: number | string;
+      maxWidth?: number | string
       /** Sets the minimum height for the component. */
-      minHeight?: number | string;
+      minHeight?: number | string
       /** Sets the minimum width for the component. */
-      minWidth?: number | string;
+      minWidth?: number | string
       /** Removes elevation (box-shadow) and adds a *thin* border. */
-      outlined?: boolean;
+      outlined?: boolean
       /** Increases the height of the toolbar content to 128px. */
-      prominent?: boolean;
+      prominent?: boolean
       /** Designates the **border-radius** applied to the component. You can find more information on the [Border Radius page](/styles/border-radius). */
-      rounded?: boolean | string;
+      rounded?: boolean | string
       /** Applies a large border radius on the top left and bottom right of the card. */
-      shaped?: boolean;
+      shaped?: boolean
       /** Reduce the height of the toolbar content to 56px (112px when using the **prominent** prop). */
-      short?: boolean;
+      short?: boolean
       /** Specifies a [v-img](/components/images) as the component's background. */
-      src?: string | object;
+      src?: string | object
       /** Specify a custom tag used on the root element. */
-      tag?: string;
+      tag?: string
       /** Removes the component's **border-radius**. */
-      tile?: boolean;
+      tile?: boolean
       /** Sets the width for the component. */
-      width?: number | string;
-    }>;
+      width?: number | string
+    }>
     VToolbarItems: DefineComponent<{
-      /** Specify a custom tag used on the root element. */ tag?: string;
-    }>;
+      /** Specify a custom tag used on the root element. */ tag?: string
+    }>
     VToolbarTitle: DefineComponent<{
-      /** Specify a custom tag used on the root element. */ tag?: string;
-    }>;
+      /** Specify a custom tag used on the root element. */ tag?: string
+    }>
     VTooltip: DefineComponent<{
       /** Applies **position: absolute** to the component. */
-      absolute?: boolean;
+      absolute?: boolean
       /** Designate a custom activator when the `activator` slot is not used. String can be any valid querySelector and Object can be any valid Node. */
-      activator?: any;
+      activator?: any
       /** Removes overflow re-positioning for the content */
-      allowOverflow?: boolean;
+      allowOverflow?: boolean
       /** Specifies which DOM element that this component should detach to. String can be any valid querySelector and Object can be any valid Node. This will attach to the root `v-app` component by default. */
-      attach?: any;
+      attach?: any
       /** Aligns the component towards the bottom. */
-      bottom?: boolean;
+      bottom?: boolean
       /** Delay (in ms) after which menu closes (when open-on-hover prop is set to true) */
-      closeDelay?: number | string;
+      closeDelay?: number | string
       /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
-      color?: string;
+      color?: string
       /** Applies a custom class to the detached element. This is useful because the content is moved to the beginning of the `v-app` component (unless the **attach** prop is provided) and is not targetable by classes passed directly on the component. */
-      contentClass?: string;
+      contentClass?: string
       /** Disables the tooltip */
-      disabled?: boolean;
+      disabled?: boolean
       /** Will force the components content to render on mounted. This is useful if you have content that will not be rendered in the DOM that you want crawled for SEO. */
-      eager?: boolean;
+      eager?: boolean
       /** Designates whether to use an internal activator */
-      internalActivator?: boolean;
+      internalActivator?: boolean
       /** Aligns the component towards the left. */
-      left?: boolean;
+      left?: boolean
       /** Sets the maximum width for the content */
-      maxWidth?: number | string;
+      maxWidth?: number | string
       /** Sets the minimum width for the content */
-      minWidth?: number | string;
+      minWidth?: number | string
       /** Nudge the content to the bottom */
-      nudgeBottom?: number | string;
+      nudgeBottom?: number | string
       /** Nudge the content to the left */
-      nudgeLeft?: number | string;
+      nudgeLeft?: number | string
       /** Nudge the content to the right */
-      nudgeRight?: number | string;
+      nudgeRight?: number | string
       /** Nudge the content to the top */
-      nudgeTop?: number | string;
+      nudgeTop?: number | string
       /** Nudge the content width */
-      nudgeWidth?: number | string;
+      nudgeWidth?: number | string
       /** Causes the component to flip to the opposite side when repositioned due to overflow */
-      offsetOverflow?: boolean;
+      offsetOverflow?: boolean
       /** Delay (in ms) after which tooltip opens (when `open-on-hover` prop is set to **true**) */
-      openDelay?: number | string;
+      openDelay?: number | string
       /** Designates whether the tooltip should open on activator click */
-      openOnClick?: boolean;
-      openOnFocus?: boolean;
+      openOnClick?: boolean
+      openOnFocus?: boolean
       /** Designates whether the tooltip should open on activator hover */
-      openOnHover?: boolean;
+      openOnHover?: boolean
       /** Used to position the content when not using an activator slot */
-      positionX?: number;
+      positionX?: number
       /** Used to position the content when not using an activator slot */
-      positionY?: number;
+      positionY?: number
       /** Aligns the component towards the right. */
-      right?: boolean;
+      right?: boolean
       /** Specifies a custom tag for the activator wrapper */
-      tag?: string;
+      tag?: string
       /** Aligns the content towards the top. */
-      top?: boolean;
+      top?: boolean
       /** Sets the component transition. Can be one of the [built in transitions](/styles/transitions) or one your own. */
-      transition?: string;
+      transition?: string
       /** Controls whether the component is visible or hidden. */
-      value?: any;
+      value?: any
       /** The z-index used for the component */
-      zIndex?: number | string;
-    }>;
+      zIndex?: number | string
+    }>
     VTreeview: DefineComponent<{
       /** Allows user to mark a node as active by clicking on it */
-      activatable?: boolean;
+      activatable?: boolean
       /** Syncable prop that allows one to control which nodes are active. The array consists of the `item-key` of each active item. */
-      active?: any[];
+      active?: any[]
       /** The class applied to the node when active */
-      activeClass?: string;
+      activeClass?: string
       /** Sets the color of the active node */
-      color?: string;
+      color?: string
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Decreases the height of the items */
-      dense?: boolean;
+      dense?: boolean
       /** Prevents disabling children nodes */
-      disablePerNode?: boolean;
+      disablePerNode?: boolean
       /** Disables selection for all nodes */
-      disabled?: boolean;
+      disabled?: boolean
       /** Icon used to indicate that a node can be expanded */
-      expandIcon?: string;
+      expandIcon?: string
       /** Custom item filtering function. By default it will use case-insensitive search in item's label. */
-      filter?: Function;
+      filter?: Function
       /** Applies a hover class when mousing over nodes */
-      hoverable?: boolean;
+      hoverable?: boolean
       /** Icon used when node is in an indeterminate state. Only visible when `selectable` is `true`. */
-      indeterminateIcon?: string;
+      indeterminateIcon?: string
       /** Property on supplied `items` that contains its children */
-      itemChildren?: string;
+      itemChildren?: string
       /** Property on supplied `items` that contains the disabled state of the item */
-      itemDisabled?: string;
+      itemDisabled?: string
       /** Property on supplied `items` used to keep track of node state. The value of this property has to be unique among all items. */
-      itemKey?: string;
+      itemKey?: string
       /** Property on supplied `items` that contains its label text */
-      itemText?: string;
+      itemText?: string
       /** An array of items used to build the treeview */
-      items?: any[];
+      items?: any[]
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** A function used when dynamically loading children. If this prop is set, then the supplied function will be run if expanding an item that has a `item-children` property that is an empty array. Supports returning a Promise. */
-      loadChildren?: Function;
+      loadChildren?: Function
       /** Icon used when node is in a loading state */
-      loadingIcon?: string;
+      loadingIcon?: string
       /** When `true`, allows user to have multiple active nodes at the same time */
-      multipleActive?: boolean;
+      multipleActive?: boolean
       /** Icon used when node is not selected. Only visible when `selectable` is `true`. */
-      offIcon?: string;
+      offIcon?: string
       /** Icon used when leaf node is selected or when a branch node is fully selected. Only visible when `selectable` is `true`. */
-      onIcon?: string;
+      onIcon?: string
       /** Syncable prop that allows one to control which nodes are open. The array consists of the `item-key` of each open item. */
-      open?: any[];
+      open?: any[]
       /** When `true` will cause all branch nodes to be opened when component is mounted */
-      openAll?: boolean;
+      openAll?: boolean
       /** When `true` will cause nodes to be opened by clicking anywhere on it, instead of only opening by clicking on expand icon. When using this prop with `activatable` you will be unable to mark nodes with children as active. */
-      openOnClick?: boolean;
+      openOnClick?: boolean
       /** When `true` will make `v-model`, `active.sync` and `open.sync` return the complete object instead of just the key */
-      returnObject?: boolean;
+      returnObject?: boolean
       /** Provides an alternative active style for `v-treeview` node. Only visible when `activatable` is `true` and should not be used in conjunction with the `shaped` prop. */
-      rounded?: boolean;
+      rounded?: boolean
       /** The search model for filtering results */
-      search?: string;
+      search?: string
       /** Will render a checkbox next to each node allowing them to be selected */
-      selectable?: boolean;
+      selectable?: boolean
       /** The color of the selection checkbox */
-      selectedColor?: string;
+      selectedColor?: string
       /** Controls how the treeview selects nodes. There are two modes available: 'leaf' and 'independent' */
-      selectionType?: string;
+      selectionType?: string
       /** Provides an alternative active style for `v-treeview` node. Only visible when `activatable` is `true` and should not be used in conjunction with the `rounded` prop. */
-      shaped?: boolean;
+      shaped?: boolean
       /** Applies a transition when nodes are opened and closed */
-      transition?: boolean;
+      transition?: boolean
       /** Allows one to control which nodes are selected. The array consists of the `item-key` of each selected item. Is used with `@input` event to allow for `v-model` binding. */
-      value?: any[];
-    }>;
+      value?: any[]
+    }>
     VVirtualScroll: DefineComponent<{
       /** The number of items **outside** the user view that are rendered (even if they are **not** viewable); to help prevent empty white space when scrolling *fast*. */
-      bench?: number | string;
+      bench?: number | string
       /** Height of the component as a css value */
-      height?: number | string;
+      height?: number | string
       /** Height in pixels of the items to display */
-      itemHeight?: number | string;
+      itemHeight?: number | string
       /** The array of items to display */
-      items?: any[];
+      items?: any[]
       /** Sets the maximum height for the component. */
-      maxHeight?: number | string;
+      maxHeight?: number | string
       /** Sets the maximum width for the component. */
-      maxWidth?: number | string;
+      maxWidth?: number | string
       /** Sets the minimum height for the component. */
-      minHeight?: number | string;
+      minHeight?: number | string
       /** Sets the minimum width for the component. */
-      minWidth?: number | string;
+      minWidth?: number | string
       /** Sets the width for the component. */
-      width?: number | string;
-    }>;
+      width?: number | string
+    }>
     VWindow: DefineComponent<{
       /** The **active-class** applied to children when they are activated. */
-      activeClass?: string;
+      activeClass?: string
       /** If `true`, window will "wrap around" from the last item to the first, and from the first item to the last */
-      continuous?: boolean;
+      continuous?: boolean
       /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-      dark?: boolean;
+      dark?: boolean
       /** Applies the light theme variant to the component. */
-      light?: boolean;
+      light?: boolean
       /** Icon used for the "next" button if `show-arrows` is `true` */
-      nextIcon?: boolean | string;
+      nextIcon?: boolean | string
       /** Icon used for the "prev" button if `show-arrows` is `true` */
-      prevIcon?: boolean | string;
+      prevIcon?: boolean | string
       /** Reverse the normal transition direction. */
-      reverse?: boolean;
+      reverse?: boolean
       /** Display the "next" and "prev" buttons */
-      showArrows?: boolean;
+      showArrows?: boolean
       /** Display the "next" and "prev" buttons on hover. `show-arrows` MUST ALSO be set. */
-      showArrowsOnHover?: boolean;
+      showArrowsOnHover?: boolean
       /** Specify a custom tag used on the root element. */
-      tag?: string;
+      tag?: string
       /** Provide a custom **left** and **right** function when swiped left or right. */
-      touch?: object;
+      touch?: object
       /** Disable touch support. */
-      touchless?: boolean;
+      touchless?: boolean
       /** The designated model value for the component. */
-      value?: any;
+      value?: any
       /** Apply a custom value comparator function */
-      valueComparator?: Function;
+      valueComparator?: Function
       /** Uses a vertical transition when changing windows. */
-      vertical?: boolean;
-    }>;
+      vertical?: boolean
+    }>
     VWindowItem: DefineComponent<{
       /** Configure the active CSS class applied when the link is active. You can find more information about the [**active-class** prop](https://router.vuejs.org/api/#active-class) on the vue-router documentation. */
-      activeClass?: string;
+      activeClass?: string
       /** Prevents the item from becoming active when using the "next" and "prev" buttons or the `toggle` method */
-      disabled?: boolean;
+      disabled?: boolean
       /** Will force the components content to render on mounted. This is useful if you have content that will not be rendered in the DOM that you want crawled for SEO. */
-      eager?: boolean;
+      eager?: boolean
       /** Sets the reverse transition */
-      reverseTransition?: boolean | string;
+      reverseTransition?: boolean | string
       /** The transition used when the component progressing through items. Can be one of the [built in transitions](/styles/transitions) or one your own. */
-      transition?: boolean | string;
+      transition?: boolean | string
       /** The value used when the component is selected in a group. If not provided, the index will be used. */
-      value?: any;
-    }>;
+      value?: any
+    }>
     VCarouselTransition: DefineComponent<{
       /** Creates a `transition-group` component. [vue docs](https://vuejs.org/v2/api/#transition-group) */
-      group?: boolean;
+      group?: boolean
       /** Hides the leaving element (no exit animation) */
-      hideOnLeave?: boolean;
+      hideOnLeave?: boolean
       /** Absolutely positions the leaving element (useful for [FLIP](https://aerotwist.com/blog/flip-your-animations/)) */
-      leaveAbsolute?: boolean;
+      leaveAbsolute?: boolean
       /** Sets the transition mode (does not apply to transition-group). You can find more information on the Vue documentation [for transition modes](https://vuejs.org/v2/api/#transition). */
-      mode?: string;
+      mode?: string
       /** Sets the transition origin on the element. You can find more information on the MDN documentation [for transition origin](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin). */
-      origin?: string;
-    }>;
+      origin?: string
+    }>
     VCarouselReverseTransition: DefineComponent<{
       /** Creates a `transition-group` component. [vue docs](https://vuejs.org/v2/api/#transition-group) */
-      group?: boolean;
+      group?: boolean
       /** Hides the leaving element (no exit animation) */
-      hideOnLeave?: boolean;
+      hideOnLeave?: boolean
       /** Absolutely positions the leaving element (useful for [FLIP](https://aerotwist.com/blog/flip-your-animations/)) */
-      leaveAbsolute?: boolean;
+      leaveAbsolute?: boolean
       /** Sets the transition mode (does not apply to transition-group). You can find more information on the Vue documentation [for transition modes](https://vuejs.org/v2/api/#transition). */
-      mode?: string;
+      mode?: string
       /** Sets the transition origin on the element. You can find more information on the MDN documentation [for transition origin](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin). */
-      origin?: string;
-    }>;
+      origin?: string
+    }>
     VTabTransition: DefineComponent<{
       /** Creates a `transition-group` component. [vue docs](https://vuejs.org/v2/api/#transition-group) */
-      group?: boolean;
+      group?: boolean
       /** Hides the leaving element (no exit animation) */
-      hideOnLeave?: boolean;
+      hideOnLeave?: boolean
       /** Absolutely positions the leaving element (useful for [FLIP](https://aerotwist.com/blog/flip-your-animations/)) */
-      leaveAbsolute?: boolean;
+      leaveAbsolute?: boolean
       /** Sets the transition mode (does not apply to transition-group). You can find more information on the Vue documentation [for transition modes](https://vuejs.org/v2/api/#transition). */
-      mode?: string;
+      mode?: string
       /** Sets the transition origin on the element. You can find more information on the MDN documentation [for transition origin](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin). */
-      origin?: string;
-    }>;
+      origin?: string
+    }>
     VTabReverseTransition: DefineComponent<{
       /** Creates a `transition-group` component. [vue docs](https://vuejs.org/v2/api/#transition-group) */
-      group?: boolean;
+      group?: boolean
       /** Hides the leaving element (no exit animation) */
-      hideOnLeave?: boolean;
+      hideOnLeave?: boolean
       /** Absolutely positions the leaving element (useful for [FLIP](https://aerotwist.com/blog/flip-your-animations/)) */
-      leaveAbsolute?: boolean;
+      leaveAbsolute?: boolean
       /** Sets the transition mode (does not apply to transition-group). You can find more information on the Vue documentation [for transition modes](https://vuejs.org/v2/api/#transition). */
-      mode?: string;
+      mode?: string
       /** Sets the transition origin on the element. You can find more information on the MDN documentation [for transition origin](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin). */
-      origin?: string;
-    }>;
+      origin?: string
+    }>
     VMenuTransition: DefineComponent<{
       /** Creates a `transition-group` component. [vue docs](https://vuejs.org/v2/api/#transition-group) */
-      group?: boolean;
+      group?: boolean
       /** Hides the leaving element (no exit animation) */
-      hideOnLeave?: boolean;
+      hideOnLeave?: boolean
       /** Absolutely positions the leaving element (useful for [FLIP](https://aerotwist.com/blog/flip-your-animations/)) */
-      leaveAbsolute?: boolean;
+      leaveAbsolute?: boolean
       /** Sets the transition mode (does not apply to transition-group). You can find more information on the Vue documentation [for transition modes](https://vuejs.org/v2/api/#transition). */
-      mode?: string;
+      mode?: string
       /** Sets the transition origin on the element. You can find more information on the MDN documentation [for transition origin](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin). */
-      origin?: string;
-    }>;
+      origin?: string
+    }>
     VFabTransition: DefineComponent<{
       /** Creates a `transition-group` component. [vue docs](https://vuejs.org/v2/api/#transition-group) */
-      group?: boolean;
+      group?: boolean
       /** Hides the leaving element (no exit animation) */
-      hideOnLeave?: boolean;
+      hideOnLeave?: boolean
       /** Absolutely positions the leaving element (useful for [FLIP](https://aerotwist.com/blog/flip-your-animations/)) */
-      leaveAbsolute?: boolean;
+      leaveAbsolute?: boolean
       /** Sets the transition mode (does not apply to transition-group). You can find more information on the Vue documentation [for transition modes](https://vuejs.org/v2/api/#transition). */
-      mode?: string;
+      mode?: string
       /** Sets the transition origin on the element. You can find more information on the MDN documentation [for transition origin](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin). */
-      origin?: string;
-    }>;
+      origin?: string
+    }>
     VDialogTransition: DefineComponent<{
       /** Creates a `transition-group` component. [vue docs](https://vuejs.org/v2/api/#transition-group) */
-      group?: boolean;
+      group?: boolean
       /** Hides the leaving element (no exit animation) */
-      hideOnLeave?: boolean;
+      hideOnLeave?: boolean
       /** Absolutely positions the leaving element (useful for [FLIP](https://aerotwist.com/blog/flip-your-animations/)) */
-      leaveAbsolute?: boolean;
+      leaveAbsolute?: boolean
       /** Sets the transition mode (does not apply to transition-group). You can find more information on the Vue documentation [for transition modes](https://vuejs.org/v2/api/#transition). */
-      mode?: string;
+      mode?: string
       /** Sets the transition origin on the element. You can find more information on the MDN documentation [for transition origin](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin). */
-      origin?: string;
-    }>;
+      origin?: string
+    }>
     VDialogBottomTransition: DefineComponent<{
       /** Creates a `transition-group` component. [vue docs](https://vuejs.org/v2/api/#transition-group) */
-      group?: boolean;
+      group?: boolean
       /** Hides the leaving element (no exit animation) */
-      hideOnLeave?: boolean;
+      hideOnLeave?: boolean
       /** Absolutely positions the leaving element (useful for [FLIP](https://aerotwist.com/blog/flip-your-animations/)) */
-      leaveAbsolute?: boolean;
+      leaveAbsolute?: boolean
       /** Sets the transition mode (does not apply to transition-group). You can find more information on the Vue documentation [for transition modes](https://vuejs.org/v2/api/#transition). */
-      mode?: string;
+      mode?: string
       /** Sets the transition origin on the element. You can find more information on the MDN documentation [for transition origin](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin). */
-      origin?: string;
-    }>;
+      origin?: string
+    }>
     VDialogTopTransition: DefineComponent<{
       /** Creates a `transition-group` component. [vue docs](https://vuejs.org/v2/api/#transition-group) */
-      group?: boolean;
+      group?: boolean
       /** Hides the leaving element (no exit animation) */
-      hideOnLeave?: boolean;
+      hideOnLeave?: boolean
       /** Absolutely positions the leaving element (useful for [FLIP](https://aerotwist.com/blog/flip-your-animations/)) */
-      leaveAbsolute?: boolean;
+      leaveAbsolute?: boolean
       /** Sets the transition mode (does not apply to transition-group). You can find more information on the Vue documentation [for transition modes](https://vuejs.org/v2/api/#transition). */
-      mode?: string;
+      mode?: string
       /** Sets the transition origin on the element. You can find more information on the MDN documentation [for transition origin](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin). */
-      origin?: string;
-    }>;
+      origin?: string
+    }>
     VFadeTransition: DefineComponent<{
       /** Creates a `transition-group` component. [vue docs](https://vuejs.org/v2/api/#transition-group) */
-      group?: boolean;
+      group?: boolean
       /** Hides the leaving element (no exit animation) */
-      hideOnLeave?: boolean;
+      hideOnLeave?: boolean
       /** Absolutely positions the leaving element (useful for [FLIP](https://aerotwist.com/blog/flip-your-animations/)) */
-      leaveAbsolute?: boolean;
+      leaveAbsolute?: boolean
       /** Sets the transition mode (does not apply to transition-group). You can find more information on the Vue documentation [for transition modes](https://vuejs.org/v2/api/#transition). */
-      mode?: string;
+      mode?: string
       /** Sets the transition origin on the element. You can find more information on the MDN documentation [for transition origin](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin). */
-      origin?: string;
-    }>;
+      origin?: string
+    }>
     VScaleTransition: DefineComponent<{
       /** Creates a `transition-group` component. [vue docs](https://vuejs.org/v2/api/#transition-group) */
-      group?: boolean;
+      group?: boolean
       /** Hides the leaving element (no exit animation) */
-      hideOnLeave?: boolean;
+      hideOnLeave?: boolean
       /** Absolutely positions the leaving element (useful for [FLIP](https://aerotwist.com/blog/flip-your-animations/)) */
-      leaveAbsolute?: boolean;
+      leaveAbsolute?: boolean
       /** Sets the transition mode (does not apply to transition-group). You can find more information on the Vue documentation [for transition modes](https://vuejs.org/v2/api/#transition). */
-      mode?: string;
+      mode?: string
       /** Sets the transition origin on the element. You can find more information on the MDN documentation [for transition origin](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin). */
-      origin?: string;
-    }>;
+      origin?: string
+    }>
     VScrollXTransition: DefineComponent<{
       /** Creates a `transition-group` component. [vue docs](https://vuejs.org/v2/api/#transition-group) */
-      group?: boolean;
+      group?: boolean
       /** Hides the leaving element (no exit animation) */
-      hideOnLeave?: boolean;
+      hideOnLeave?: boolean
       /** Absolutely positions the leaving element (useful for [FLIP](https://aerotwist.com/blog/flip-your-animations/)) */
-      leaveAbsolute?: boolean;
+      leaveAbsolute?: boolean
       /** Sets the transition mode (does not apply to transition-group). You can find more information on the Vue documentation [for transition modes](https://vuejs.org/v2/api/#transition). */
-      mode?: string;
+      mode?: string
       /** Sets the transition origin on the element. You can find more information on the MDN documentation [for transition origin](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin). */
-      origin?: string;
-    }>;
+      origin?: string
+    }>
     VScrollXReverseTransition: DefineComponent<{
       /** Creates a `transition-group` component. [vue docs](https://vuejs.org/v2/api/#transition-group) */
-      group?: boolean;
+      group?: boolean
       /** Hides the leaving element (no exit animation) */
-      hideOnLeave?: boolean;
+      hideOnLeave?: boolean
       /** Absolutely positions the leaving element (useful for [FLIP](https://aerotwist.com/blog/flip-your-animations/)) */
-      leaveAbsolute?: boolean;
+      leaveAbsolute?: boolean
       /** Sets the transition mode (does not apply to transition-group). You can find more information on the Vue documentation [for transition modes](https://vuejs.org/v2/api/#transition). */
-      mode?: string;
+      mode?: string
       /** Sets the transition origin on the element. You can find more information on the MDN documentation [for transition origin](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin). */
-      origin?: string;
-    }>;
+      origin?: string
+    }>
     VScrollYTransition: DefineComponent<{
       /** Creates a `transition-group` component. [vue docs](https://vuejs.org/v2/api/#transition-group) */
-      group?: boolean;
+      group?: boolean
       /** Hides the leaving element (no exit animation) */
-      hideOnLeave?: boolean;
+      hideOnLeave?: boolean
       /** Absolutely positions the leaving element (useful for [FLIP](https://aerotwist.com/blog/flip-your-animations/)) */
-      leaveAbsolute?: boolean;
+      leaveAbsolute?: boolean
       /** Sets the transition mode (does not apply to transition-group). You can find more information on the Vue documentation [for transition modes](https://vuejs.org/v2/api/#transition). */
-      mode?: string;
+      mode?: string
       /** Sets the transition origin on the element. You can find more information on the MDN documentation [for transition origin](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin). */
-      origin?: string;
-    }>;
+      origin?: string
+    }>
     VScrollYReverseTransition: DefineComponent<{
       /** Creates a `transition-group` component. [vue docs](https://vuejs.org/v2/api/#transition-group) */
-      group?: boolean;
+      group?: boolean
       /** Hides the leaving element (no exit animation) */
-      hideOnLeave?: boolean;
+      hideOnLeave?: boolean
       /** Absolutely positions the leaving element (useful for [FLIP](https://aerotwist.com/blog/flip-your-animations/)) */
-      leaveAbsolute?: boolean;
+      leaveAbsolute?: boolean
       /** Sets the transition mode (does not apply to transition-group). You can find more information on the Vue documentation [for transition modes](https://vuejs.org/v2/api/#transition). */
-      mode?: string;
+      mode?: string
       /** Sets the transition origin on the element. You can find more information on the MDN documentation [for transition origin](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin). */
-      origin?: string;
-    }>;
+      origin?: string
+    }>
     VSlideXTransition: DefineComponent<{
       /** Creates a `transition-group` component. [vue docs](https://vuejs.org/v2/api/#transition-group) */
-      group?: boolean;
+      group?: boolean
       /** Hides the leaving element (no exit animation) */
-      hideOnLeave?: boolean;
+      hideOnLeave?: boolean
       /** Absolutely positions the leaving element (useful for [FLIP](https://aerotwist.com/blog/flip-your-animations/)) */
-      leaveAbsolute?: boolean;
+      leaveAbsolute?: boolean
       /** Sets the transition mode (does not apply to transition-group). You can find more information on the Vue documentation [for transition modes](https://vuejs.org/v2/api/#transition). */
-      mode?: string;
+      mode?: string
       /** Sets the transition origin on the element. You can find more information on the MDN documentation [for transition origin](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin). */
-      origin?: string;
-    }>;
+      origin?: string
+    }>
     VSlideXReverseTransition: DefineComponent<{
       /** Creates a `transition-group` component. [vue docs](https://vuejs.org/v2/api/#transition-group) */
-      group?: boolean;
+      group?: boolean
       /** Hides the leaving element (no exit animation) */
-      hideOnLeave?: boolean;
+      hideOnLeave?: boolean
       /** Absolutely positions the leaving element (useful for [FLIP](https://aerotwist.com/blog/flip-your-animations/)) */
-      leaveAbsolute?: boolean;
+      leaveAbsolute?: boolean
       /** Sets the transition mode (does not apply to transition-group). You can find more information on the Vue documentation [for transition modes](https://vuejs.org/v2/api/#transition). */
-      mode?: string;
+      mode?: string
       /** Sets the transition origin on the element. You can find more information on the MDN documentation [for transition origin](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin). */
-      origin?: string;
-    }>;
+      origin?: string
+    }>
     VSlideYTransition: DefineComponent<{
       /** Creates a `transition-group` component. [vue docs](https://vuejs.org/v2/api/#transition-group) */
-      group?: boolean;
+      group?: boolean
       /** Hides the leaving element (no exit animation) */
-      hideOnLeave?: boolean;
+      hideOnLeave?: boolean
       /** Absolutely positions the leaving element (useful for [FLIP](https://aerotwist.com/blog/flip-your-animations/)) */
-      leaveAbsolute?: boolean;
+      leaveAbsolute?: boolean
       /** Sets the transition mode (does not apply to transition-group). You can find more information on the Vue documentation [for transition modes](https://vuejs.org/v2/api/#transition). */
-      mode?: string;
+      mode?: string
       /** Sets the transition origin on the element. You can find more information on the MDN documentation [for transition origin](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin). */
-      origin?: string;
-    }>;
+      origin?: string
+    }>
     VSlideYReverseTransition: DefineComponent<{
       /** Creates a `transition-group` component. [vue docs](https://vuejs.org/v2/api/#transition-group) */
-      group?: boolean;
+      group?: boolean
       /** Hides the leaving element (no exit animation) */
-      hideOnLeave?: boolean;
+      hideOnLeave?: boolean
       /** Absolutely positions the leaving element (useful for [FLIP](https://aerotwist.com/blog/flip-your-animations/)) */
-      leaveAbsolute?: boolean;
+      leaveAbsolute?: boolean
       /** Sets the transition mode (does not apply to transition-group). You can find more information on the Vue documentation [for transition modes](https://vuejs.org/v2/api/#transition). */
-      mode?: string;
+      mode?: string
       /** Sets the transition origin on the element. You can find more information on the MDN documentation [for transition origin](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin). */
-      origin?: string;
-    }>;
+      origin?: string
+    }>
     VExpandTransition: DefineComponent<{
       /** Sets the transition mode (does not apply to transition-group). You can find more information on the Vue documentation [for transition modes](https://vuejs.org/v2/api/#transition). */
-      mode?: string;
-    }>;
+      mode?: string
+    }>
     VExpandXTransition: DefineComponent<{
       /** Sets the transition mode (does not apply to transition-group). You can find more information on the Vue documentation [for transition modes](https://vuejs.org/v2/api/#transition). */
-      mode?: string;
-    }>;
+      mode?: string
+    }>
   }
 }
 
-export {};
+export {}

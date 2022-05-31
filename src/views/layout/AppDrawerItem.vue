@@ -80,17 +80,15 @@ export default defineComponent({
       :to="resolvePath(indexItem.path)"
       active-class="primary white--text"
     >
-      <v-list-item-icon
-        v-if="text"
-        class="v-list-item__icon--text"
-        v-text="abbr"
-      />
+      <v-list-item-icon v-if="text" class="v-list-item__icon--text">
+        {{ abbr }}
+      </v-list-item-icon>
       <v-list-item-icon v-else-if="icon">
-        <v-icon v-text="icon" />
+        <v-icon>{{ icon }}</v-icon>
       </v-list-item-icon>
       <v-list-item-content v-if="title || subtitle">
-        <v-list-item-title v-text="title" />
-        <v-list-item-subtitle v-text="subtitle" />
+        <v-list-item-title>{{ title }}</v-list-item-title>
+        <v-list-item-subtitle>{{ subtitle }}</v-list-item-subtitle>
       </v-list-item-content>
     </v-list-item>
     <v-list-group
@@ -102,7 +100,7 @@ export default defineComponent({
         <v-list-item-title>{{ title }}</v-list-item-title>
       </template>
       <AppDrawerItem
-        v-for="(child, i) in visibleChildren"
+        v-for="child in visibleChildren"
         :key="child.name"
         :item="child"
         :base-path="resolvePath(item.path)"

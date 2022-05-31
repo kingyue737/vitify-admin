@@ -22,7 +22,8 @@ export const useUserStore = defineStore('user', {
   },
   actions: {
     async login(userInfo: { username: string; password: string }) {
-      let { username, password } = userInfo
+      let { username } = userInfo
+      const { password } = userInfo
       username = username.trim()
       const { data } = await login({ username, password })
       Object.entries({
