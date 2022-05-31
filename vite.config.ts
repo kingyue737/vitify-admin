@@ -11,6 +11,7 @@ import Components from 'unplugin-vue-components/vite'
 import { VuetifyResolver } from 'unplugin-vue-components/resolvers'
 import { createSvgPlugin } from 'vite-plugin-vue2-svg'
 import { splitVendorChunkPlugin } from 'vite'
+import Inspect from 'vite-plugin-inspect'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -52,6 +53,7 @@ export default defineConfig({
     }),
     createSvgPlugin(),
     splitVendorChunkPlugin(),
+    Inspect(),
   ],
   css: {
     devSourcemap: true,
