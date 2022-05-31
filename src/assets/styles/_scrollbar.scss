@@ -1,0 +1,17 @@
+::-webkit-scrollbar {
+  width: 13px;
+  height: 13px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(149, 149, 149, 0.4);
+  background-clip: content-box;
+  min-height: 28px;
+  border: 5px solid transparent;
+
+  &:hover {
+    background-color: rgba(149, 149, 149, 0.4);
+    border: 3px solid transparent;
+    border-radius: 6px;
+  }
+}
