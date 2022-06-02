@@ -29,6 +29,9 @@ const errHandler = async (error: AxiosError) => {
         Message.error('资源不存在')
         break
     }
+    if (!response.headers['content-type'].includes('text/html')) {
+      throw response.data
+    }
   }
   throw error
 }

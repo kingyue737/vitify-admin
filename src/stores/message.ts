@@ -1,5 +1,4 @@
 import { defineStore } from 'pinia'
-import Axios from 'axios'
 
 interface Message {
   show: boolean
@@ -44,11 +43,6 @@ export const Message = {
     let text = ''
     if (typeof val === 'string') {
       text = val
-    } else if (
-      Axios.isAxiosError(val) &&
-      !val.response?.headers['content-type'].includes('text/html')
-    ) {
-      text = val.response?.data as string
     } else if (val instanceof Error) {
       text = val.message
     }
