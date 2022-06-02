@@ -2,32 +2,32 @@ import * as echarts from 'echarts/core'
 
 import {
   LineChart,
-  LineSeriesOption,
+  type LineSeriesOption,
   BarChart,
-  BarSeriesOption,
+  type BarSeriesOption,
   EffectScatterChart,
-  EffectScatterSeriesOption,
+  type EffectScatterSeriesOption,
   ScatterChart,
-  ScatterSeriesOption,
+  type ScatterSeriesOption,
 } from 'echarts/charts'
 import { CanvasRenderer } from 'echarts/renderers'
 import {
   DataZoomComponent,
-  DataZoomComponentOption,
+  type DataZoomComponentOption,
   LegendComponent,
-  LegendComponentOption,
+  type LegendComponentOption,
   TooltipComponent,
-  TooltipComponentOption,
+  type TooltipComponentOption,
   ToolboxComponent,
-  ToolboxComponentOption,
+  type ToolboxComponentOption,
   GridComponent,
-  GridComponentOption,
+  type GridComponentOption,
   TitleComponent,
-  TitleComponentOption,
+  type TitleComponentOption,
   MarkPointComponent,
-  MarkPointComponentOption,
+  type MarkPointComponentOption,
   DatasetComponent,
-  DatasetComponentOption,
+  type DatasetComponentOption,
 } from 'echarts/components'
 
 echarts.use([

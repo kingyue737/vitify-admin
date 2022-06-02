@@ -1,5 +1,5 @@
 <script lang="ts">
-import { VForm } from '@/utils/types'
+import type { VForm } from '@/utils/types'
 import Axios from 'axios'
 
 export default defineComponent({

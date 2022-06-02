@@ -1,5 +1,5 @@
 import request from '@/utils/request'
-import { IUserData } from '@/api/types'
+import type { IUserData } from '@/api/types'
 
 export const getUsers = () =>
   request({

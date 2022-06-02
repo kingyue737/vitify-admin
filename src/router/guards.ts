@@ -1,5 +1,5 @@
 import router from './index'
-import { Route, RouteConfig } from 'vue-router'
+import type { Route, RouteConfig } from 'vue-router'
 import i18n from '@/locales'
 
 const whiteList = ['/login']

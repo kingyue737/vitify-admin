@@ -10,7 +10,7 @@
     "test:e2e:ci": "start-server-and-test preview http://127.0.0.1:5050/ 'cypress run'",
     "test:unit": "vitest",
     "coverage": "vitest run --coverage",
-    "typecheck": "vue-tsc --noEmit",
+    "typecheck": "vue-tsc --noEmit -p tsconfig.app.json --composite false",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "supportedBrowsers": "(echo export default && browserslist-useragent-regexp --allowHigherVersions) > ./src/supportedBrowsers.ts",
     "type:vuetify": "node ./scripts/vuetify-type.mjs > ./src/vuetify2.d.ts"

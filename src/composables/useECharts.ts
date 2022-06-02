@@ -1,4 +1,4 @@
-import { PropType, provide, computed } from '@vue/composition-api'
+import type { PropType } from '@vue/composition-api'
 import type { ECOption } from '@/plugins/echarts'
 import { INIT_OPTIONS_KEY, THEME_KEY } from 'vue-echarts'
 import { merge } from 'lodash'
