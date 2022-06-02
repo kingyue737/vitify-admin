@@ -77,9 +77,9 @@ export default defineConfig({
     globals: true,
     include: ['test/**/*.test.ts', 'src/**/__tests__/*'],
     environment: 'jsdom',
-    // deps: {
-    //   inline: ['@vue', '@vueuse'],
-    // },
+    deps: {
+      inline: ['vuetify', '@vueuse'],
+    },
     setupFiles: ['./test/vitest.setup.ts'],
   },
 })
