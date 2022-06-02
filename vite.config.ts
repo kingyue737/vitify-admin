@@ -73,4 +73,13 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
+  test: {
+    globals: true,
+    include: ['test/**/*.test.ts', 'src/**/__tests__/*'],
+    environment: 'jsdom',
+    // deps: {
+    //   inline: ['@vue', '@vueuse'],
+    // },
+    setupFiles: ['./test/vitest.setup.ts'],
+  },
 })
