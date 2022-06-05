@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Vuetify from 'vuetify/lib'
 import i18n from '@/locales'
 import icons from './icons'
-import { getCurrentInstance } from '@vue/composition-api'
 import type { VuetifyParsedTheme } from 'vuetify/types/services/theme'
 import { Ripple, Resize, Scroll } from 'vuetify/lib/directives'
 Vue.use(Vuetify, {

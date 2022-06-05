@@ -1,7 +1,6 @@
 <script lang="ts">
 import { selfResetPassword } from '@/api/users'
 import type { VForm } from '@/utils/types'
-import { defineComponent, ref, computed } from '@vue/composition-api'
 
 export default defineComponent({
   setup(props, { root }) {

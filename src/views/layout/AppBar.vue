@@ -1,5 +1,4 @@
 <script lang="ts">
-import { defineComponent } from '@vue/composition-api'
 import { mapWritableState } from 'pinia'
 import ButtonFullScreen from './ButtonFullScreen.vue'
 import AppBreadcrumbs from './AppBreadcrumbs.vue'

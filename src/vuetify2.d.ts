@@ -1,4 +1,4 @@
-import type { DefineComponent } from 'vue'
+import type { DefineComponent } from '@vue/runtime-dom'
 import type { DataTableHeader, DataOptions } from 'vuetify'
 
 declare module '@vue/runtime-dom' {
