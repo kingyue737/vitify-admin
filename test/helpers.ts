@@ -1,40 +1,18 @@
 import { createLocalVue, mount, shallowMount } from '@vue/test-utils'
-import Vue from 'vue'
 import Vuetify from 'vuetify'
 
-type RelaxedVue = Vue & { [key: string]: any }
-
-export interface MountResult<R> {
-  composable: R
-  vm: Vue
-}
-
-export interface MountOptions {
-  provider?: () => void
-}
-
-export function mountComposable<R>(
-  composable: () => R,
-  options?: MountOptions
-): MountResult<R> {
-  const app = new Vue({
+export function mountComposable(composable: () => any) {
+  let result: ReturnType<typeof composable>
+  const app = createApp({
     setup() {
-      options?.provider?.()
-
-      const result = composable()
-      const wrapper = () => result
-      return { wrapper }
+      result = composable()
+      return () => {}
     },
-
-    render(createElement) {
-      return createElement('div')
-    },
-  }) as RelaxedVue
-
-  app.$mount()
+  })
+  app.mount(document.createElement('div'))
 
   return {
-    composable: app.wrapper(),
+    composable: result,
     vm: app,
   }
 }
@@ -48,8 +26,8 @@ export function createWrapper(
   const vuetify = new Vuetify()
   const mountOptions = { vuetify, localVue, ...options }
   if (!shallow) {
-    return mount<RelaxedVue>(component, mountOptions)
+    return mount(component, mountOptions)
   } else {
-    return shallowMount<RelaxedVue>(component, mountOptions)
+    return shallowMount(component, mountOptions)
   }
 }

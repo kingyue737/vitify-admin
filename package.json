@@ -35,7 +35,9 @@
   "devDependencies": {
     "@cypress/vite-dev-server": "^2.2.3",
     "@cypress/vue": "^2.2.4",
+    "@pinia/testing": "^0.0.12",
     "@rushstack/eslint-patch": "^1.1.0",
+    "@testing-library/vue": "^5.8.3",
     "@types/js-cookie": "^3.0.1",
     "@types/lodash": "^4.14.182",
     "@types/node": "^16.11.25",
@@ -50,6 +52,7 @@
     "eslint": "^8.16.0",
     "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-vue": "^9.1.0",
+    "flush-promises": "^1.0.2",
     "jsdom": "^19.0.0",
     "prettier": "^2.6.2",
     "sass": "~1.32.12",
@@ -75,4 +78,3 @@
     "not ie>0"
   ]
 }
-

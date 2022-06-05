@@ -6,8 +6,8 @@ export default defineComponent({
   name: 'LoginPage',
   data: () => ({
     loginShowed: false,
-    username: 'admin',
-    password: 'admin',
+    username: '',
+    password: '',
     waiting: false,
     showPassword: false,
     valid: true,
@@ -74,7 +74,7 @@ export default defineComponent({
       <v-container fill-height>
         <v-row align="center" justify="center">
           <v-col cols="12">
-            <v-head-card light class="px-5 py-3 mx-auto login-card mt-0">
+            <v-head-card class="px-5 py-3 mx-auto login-card mt-0">
               <template #heading>
                 <v-icon>$mdi-login</v-icon>
                 用户登录
