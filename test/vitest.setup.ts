@@ -1,4 +1,6 @@
 import Vue from 'vue'
+Vue.config.devtools = false
+Vue.config.productionTip = false
 import VueCompositionAPI from '@vue/composition-api'
 import Vuetify from 'vuetify'
 // import { config } from '@vue/test-utils'

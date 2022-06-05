@@ -13,6 +13,7 @@ import i18n from '@/locales'
 import '@/assets/styles/index.scss'
 
 Vue.use(VueCompositionAPI)
+Vue.config.productionTip = false
 
 const app = createApp({
   router,
@@ -21,6 +22,6 @@ const app = createApp({
   vuetify,
   render: () => h(App),
 })
-app.component('VHeadCard', VHeadCard).component('VChart', VChart as any)
-
-app.mount('#app')
+  .component('VHeadCard', VHeadCard)
+  .component('VChart', VChart as any)
+  .mount('#app')
