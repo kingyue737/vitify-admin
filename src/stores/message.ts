@@ -19,7 +19,7 @@ export const useMessageStore = defineStore('message', {
   actions: {
     addMessage(text: string, type: Message['type'] = 'info') {
       this.messages.push({
-        id: ++this.messageCount,
+        id: this.messageCount++,
         text: text,
         type: type,
         time: new Date(),
