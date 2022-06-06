@@ -14,7 +14,7 @@ const errHandler = async (error: AxiosError) => {
   if (response) {
     switch (response.status) {
       case 403:
-        await Message.error('Forbidden')
+        Message.error('Forbidden')
         break
       case 401:
         if (userStore.token) {
@@ -22,7 +22,7 @@ const errHandler = async (error: AxiosError) => {
             return service(error.response!.config)
           })
         } else {
-          await Message.error('Unauthorized')
+          Message.error('Unauthorized')
         }
         break
       case 404:
