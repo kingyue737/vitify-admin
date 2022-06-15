@@ -45,6 +45,8 @@ export const Message = {
       text = val
     } else if (val instanceof Error) {
       text = val.message
+    } else {
+      text = JSON.stringify(val)
     }
     useMessageStore().addMessage(text, 'error')
   },

@@ -1,18 +1,22 @@
 import { createLocalVue, mount, shallowMount } from '@vue/test-utils'
 import Vuetify from 'vuetify'
+import { PiniaVuePlugin } from 'pinia'
+import { createTestingPinia } from '@pinia/testing'
 
-export function mountComposable(composable: () => any) {
-  let result: ReturnType<typeof composable>
+export function mountComposable<T>(composable: () => T) {
+  let result: T | undefined
   const app = createApp({
+    pinia: createTestingPinia(),
     setup() {
       result = composable()
       return () => {}
     },
   })
+  app.use(PiniaVuePlugin)
   app.mount(document.createElement('div'))
 
   return {
-    composable: result,
+    composable: result!,
     vm: app,
   }
 }
@@ -31,3 +35,4 @@ export function createWrapper(
     return shallowMount(component, mountOptions)
   }
 }
+

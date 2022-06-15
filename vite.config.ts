@@ -8,7 +8,6 @@ import vueTemplateBabelCompiler from 'vue-template-babel-compiler'
 import scriptSetup from 'unplugin-vue2-script-setup/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
-import { VuetifyResolver } from 'unplugin-vue-components/resolvers'
 import { createSvgPlugin } from 'vite-plugin-vue2-svg'
 import { splitVendorChunkPlugin } from 'vite'
 import Inspect from 'vite-plugin-inspect'
@@ -31,21 +30,31 @@ export default defineConfig({
     scriptSetup(),
     legacy({
       // Plugin does not use browserslistrc https://github.com/vitejs/vite/issues/2476
-      modernPolyfills: ['web.structured-clone', 'es.array.at'],
+      modernPolyfills: ['es.array.at'],
       renderLegacyChunks: false,
       // ignoreBrowserslistConfig: true,
     }),
     Components({
-      resolvers: [VuetifyResolver()],
+      resolvers: [
+        {
+          type: 'component',
+          resolve: (name: string) => {
+            const blackList = ['VChart', 'VHeadCard']
+            if (name.match(/^V[A-Z]/) && !blackList.includes(name))
+              return { name, from: 'vuetify/lib' }
+          },
+        },
+      ],
       dts: false,
       types: [],
     }),
     AutoImport({
       imports: [
         '@vue/composition-api',
-        'vue-router',
         'pinia',
-        // "vue-i18n",
+        {
+          'vue2-helpers/vue-router': ['useRoute', 'useRouter'],
+        },
       ],
       dts: 'src/auto-imports.d.ts',
       dirs: ['src/composables', 'src/stores'],
@@ -86,7 +95,7 @@ export default defineConfig({
     include: ['test/**/*.test.ts', 'src/**/__tests__/*'],
     environment: 'jsdom',
     deps: {
-      inline: ['vuetify', '@vueuse'],
+      inline: ['vuetify', '@vueuse', 'echarts'],
     },
     setupFiles: ['./test/vitest.setup.ts'],
   },

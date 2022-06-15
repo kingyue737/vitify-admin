@@ -4,7 +4,7 @@ import { defineComponent, computed } from '@vue/composition-api'
 import { useVuetify } from '@/plugins/vuetify'
 import { mapState } from 'pinia'
 import AppDrawerItem from './AppDrawerItem.vue'
-import type { RouteConfig } from 'vue-router/types/router'
+import type { RouteConfig } from 'vue-router'
 export default defineComponent({
   components: { AppDrawerItem },
   setup() {

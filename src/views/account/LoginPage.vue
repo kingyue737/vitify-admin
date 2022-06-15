@@ -1,10 +1,12 @@
 <script lang="ts">
 import type { VForm } from '@/utils/types'
 import Axios from 'axios'
+import background from '@/assets/images/drawer/1.jpg'
 
 export default defineComponent({
   name: 'LoginPage',
   data: () => ({
+    background,
     loginShowed: false,
     username: '',
     password: '',
@@ -55,7 +57,7 @@ export default defineComponent({
 <template>
   <v-main>
     <v-img
-      src="src/assets/images/drawer/1.jpg"
+      :src="background"
       gradient="to top, rgba(0,0,0,.5), rgba(0,0,0,.5)"
       style="min-height: 100vh; height: 100vh"
     >

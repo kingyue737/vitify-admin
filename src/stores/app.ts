@@ -4,7 +4,7 @@ export const useAppStore = defineStore('app', {
   state: () => {
     return {
       drawer: true,
-      drawerImage: '1.jpg',
+      drawerImage: '占位',
       drawerImageShow: true,
     }
   },

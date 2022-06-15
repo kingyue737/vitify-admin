@@ -3,7 +3,8 @@ import { selfResetPassword } from '@/api/users'
 import type { VForm } from '@/utils/types'
 
 export default defineComponent({
-  setup(props, { root }) {
+  setup() {
+    const router = useRouter()
     const userStore = useUserStore()
     const showCurrent = ref(false)
     const showNew = ref(false)
@@ -27,7 +28,7 @@ export default defineComponent({
         await selfResetPassword(userStore.name, current.value, password.value)
         Message.success('密码已更新')
         await userStore.logOut()
-        root.$router.push({ name: 'login' })
+        router.push({ name: 'login' })
       }
     }
     return {

@@ -22,6 +22,6 @@ const app = createApp({
   vuetify,
   render: () => h(App),
 })
-  .component('VHeadCard', VHeadCard)
-  .component('VChart', VChart as any)
-  .mount('#app')
+app.component('VHeadCard', VHeadCard).component('VChart', VChart as any)
+
+app.mount('#app')

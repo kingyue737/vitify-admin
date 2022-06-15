@@ -1,6 +1,5 @@
 <script lang="ts">
 import { useVuetify } from '@/plugins/vuetify'
-import { storeToRefs } from 'pinia'
 import drawer1 from '@/assets/images/drawer/1.jpg'
 import drawer2 from '@/assets/images/drawer/2.jpg'
 import drawer3 from '@/assets/images/drawer/3.jpg'
