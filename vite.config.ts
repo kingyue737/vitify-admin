@@ -63,14 +63,6 @@ export default defineConfig({
     createSvgPlugin(),
     splitVendorChunkPlugin(),
     Inspect(),
-    process.env.VITEST
-      ? {
-          enforce: 'pre',
-          transform(code, id) {
-            if (/\.(css|sass|scss)$/.test(id)) return { code: '' }
-          },
-        }
-      : undefined,
   ],
   css: {
     devSourcemap: true,

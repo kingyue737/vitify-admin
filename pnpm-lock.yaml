@@ -44,7 +44,7 @@ specifiers:
   vite-plugin-inspect: ^0.5.0
   vite-plugin-vue2: ^2.0.1
   vite-plugin-vue2-svg: ^0.1.8
-  vitest: ^0.15.0
+  vitest: ^0.15.1
   vue: ^2.6.14
   vue-echarts: 6.0.3
   vue-i18n: ^8.27.1
@@ -107,7 +107,7 @@ devDependencies:
   vite-plugin-inspect: 0.5.0_vite@2.9.12
   vite-plugin-vue2: 2.0.1_4zqcew25tbmzxugzc4vmswizhu
   vite-plugin-vue2-svg: 0.1.8_2nlzfgy5bcfkium5ggrnddvlo4
-  vitest: 0.15.0_jsdom@19.0.0+sass@1.32.13
+  vitest: 0.15.1_jsdom@19.0.0+sass@1.32.13
   vue-template-babel-compiler: 1.2.0_ev5jzj74xu2fombjvobqpq452a
   vue-template-compiler: 2.6.14
   vue-tsc: 0.37.8_typescript@4.7.3
@@ -5684,8 +5684,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitest/0.15.0_jsdom@19.0.0+sass@1.32.13:
-    resolution: {integrity: sha512-ofXZ8tBYAkVJpTpkaGruBh9nG6lO9cs04IdFpneDblCwBpncnlpEgZvlF3XWF4lSsklPe9le4MO8+j90DnsX+g==}
+  /vitest/0.15.1_jsdom@19.0.0+sass@1.32.13:
+    resolution: {integrity: sha512-NaNFi93JKSuvV4YGnfQ0l0GKYxH0EsLcTrrXaCzd6qfVEZM/RJpjwSevg6waNFqu2DyN6e0aHHdrCZW5/vh5NA==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
     peerDependencies:
