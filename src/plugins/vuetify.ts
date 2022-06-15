@@ -51,10 +51,14 @@ export default new Vuetify({
 })
 
 export function useVuetify() {
-  return getCurrentInstance()?.proxy.$vuetify
+  const instance = getCurrentInstance()
+  if (!instance) {
+    throw new Error(`useVuetify should be called in setup().`)
+  }
+  return instance.proxy.$vuetify
 }
 
 export function useParsedTheme() {
   // parsedTheme is only for internal usage and not typed in vuetify
-  return (useVuetify()?.theme as any).parsedTheme as VuetifyParsedTheme
+  return (useVuetify().theme as any).parsedTheme as VuetifyParsedTheme
 }

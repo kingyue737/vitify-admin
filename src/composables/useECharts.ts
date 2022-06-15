@@ -35,12 +35,12 @@ export function useDefaultOption(option: ECOption, toolbox: boolean): ECOption {
         dataZoom: { filterMode: 'none' },
         restore: {},
         saveAsImage: {
-          backgroundColor: useVuetify()?.theme.dark ? '#100C2A' : 'auto',
+          backgroundColor: useVuetify().theme.dark ? '#100C2A' : 'auto',
           excludeComponents: ['toolbox', 'dataZoom'],
         },
       },
       iconStyle: {
-        borderColor: useVuetify()?.theme.currentTheme.primary as string,
+        borderColor: useVuetify().theme.currentTheme.primary as string,
       },
     },
   }

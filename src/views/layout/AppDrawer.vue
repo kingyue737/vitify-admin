@@ -11,7 +11,7 @@ export default defineComponent({
     const appStore = useAppStore()
     const drawer = computed({
       get() {
-        return appStore.drawer || !useVuetify()!.breakpoint.mobile
+        return appStore.drawer || !useVuetify().breakpoint.mobile
       },
       set(val: boolean) {
         appStore.drawer = val
@@ -23,7 +23,7 @@ export default defineComponent({
     ...mapState(useAppStore, {
       drawerImage: 'drawerImage',
       drawerImageShow: 'drawerImageShow',
-      mini: (store) => !store.drawer && !useVuetify()!.breakpoint.mobile,
+      mini: (store) => !store.drawer && !useVuetify().breakpoint.mobile,
     }),
     ...mapState(usePermissionStore, ['routes']),
     permissionRoutes() {
