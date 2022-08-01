@@ -16,7 +16,6 @@ const now = useNow()
     height="30"
     color="primary darken-2"
     class="font-weight-light"
-    style="z-index: 203"
   >
     <v-icon small class="ml-3 mr-1"> $mdi-clock-outline </v-icon>
     <span>

@@ -70,7 +70,7 @@ export default defineComponent({
           contain
         ></v-img>
         <v-app-bar-title class="font-weight-bold">
-          核星科技<span class="primary--text">NuStar</span>前端框架
+          Vitify <span class="primary--text">Admin</span>
         </v-app-bar-title>
       </v-app-bar>
       <v-container fill-height>
@@ -130,11 +130,12 @@ export default defineComponent({
       </v-container>
       <v-footer absolute color="transparent" dark>
         <v-col class="text-center" cols="12">
-          &copy; Copyright 2021
+          &copy; Copyright 2022
+          <a href="https://github.com/kingyue737" target="blank">Yue JIN</a>
+          <span> & </span>
           <a href="http://www.nustarnuclear.com/" target="blank"
-            ><v-icon>$nustar</v-icon>NuStar</a
+            ><v-icon class="mt-n1">$nustar</v-icon>NuStar Nuclear</a
           >
-          All Right Reserved
         </v-col>
       </v-footer>
     </v-img>
@@ -150,6 +151,11 @@ export default defineComponent({
 </template>
 
 <style lang="scss" scoped>
+.v-app-bar-title {
+  ::v-deep .v-app-bar-title__content {
+    text-overflow: clip !important;
+  }
+}
 .login-card {
   max-width: 300px;
   background-color: rgba(255, 255, 255, 0.85) !important;

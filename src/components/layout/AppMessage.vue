@@ -109,7 +109,7 @@ export default defineComponent({
 }
 .message-card {
   position: fixed;
-  z-index: 300;
+  z-index: 210;
   right: 15px;
   bottom: calc(#{$footer-height} + 5px);
   max-height: 100vh;

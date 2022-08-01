@@ -6,6 +6,7 @@
     padding-right: 20px;
   }
   > .d-contents,
+  > .d-fake > .d-fake,
   > .d-fake {
     > .container--fluid {
       padding-left: 20px;
@@ -140,4 +141,8 @@ html {
 
 .v-icon__component {
   fill: currentColor;
+}
+
+.v-form {
+  display: contents;
 }

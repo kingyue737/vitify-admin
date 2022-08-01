@@ -40,7 +40,7 @@ defineProps({
 
         <div
           v-else-if="title && !icon"
-          class="text-h3 font-weight-bold"
+          class="text-h5 font-weight-bold"
           v-text="title"
         />
 
@@ -52,7 +52,7 @@ defineProps({
       </v-sheet>
       <div
         v-if="icon && title"
-        class="ml-2 text-h3 font-weight-light v-head-card__title"
+        class="ml-2 text-h5 font-weight-light v-head-card__title"
         v-text="title"
       />
       <div
