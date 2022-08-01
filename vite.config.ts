@@ -1,5 +1,4 @@
-import { fileURLToPath } from 'url'
-
+import path from 'path'
 import { defineConfig } from 'vite'
 import { createVuePlugin } from 'vite-plugin-vue2'
 import legacy from '@vitejs/plugin-legacy'
@@ -10,13 +9,14 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { createSvgPlugin } from 'vite-plugin-vue2-svg'
 import { splitVendorChunkPlugin } from 'vite'
+import Pages from 'vite-plugin-pages'
+import Layouts from 'vite-plugin-vue-layouts'
 import Inspect from 'vite-plugin-inspect'
+import VueI18n from '@intlify/unplugin-vue-i18n/vite'
+import SupportedBrowsers from 'vite-plugin-browserslist-useragent'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  // build: {
-  //   target: 'chrome88',
-  // },
   server: {
     port: 9527,
   },
@@ -27,12 +27,13 @@ export default defineConfig({
         compiler: vueTemplateBabelCompiler,
       },
     }),
+    Pages(),
+    Layouts(),
     scriptSetup(),
     legacy({
       // Plugin does not use browserslistrc https://github.com/vitejs/vite/issues/2476
-      modernPolyfills: ['es.array.at'],
+      modernPolyfills: true,
       renderLegacyChunks: false,
-      // ignoreBrowserslistConfig: true,
     }),
     Components({
       resolvers: [
@@ -53,15 +54,24 @@ export default defineConfig({
         '@vue/composition-api',
         'pinia',
         {
+          'vue-i18n-bridge': ['useI18n', 'createI18n'],
           'vue2-helpers/vue-router': ['useRoute', 'useRouter'],
         },
       ],
       dts: 'src/auto-imports.d.ts',
-      dirs: ['src/composables', 'src/stores'],
+      dirs: ['src/stores'],
       vueTemplate: false,
     }),
     createSvgPlugin(),
     splitVendorChunkPlugin(),
+    VueI18n({
+      runtimeOnly: false,
+      compositionOnly: true,
+      fullInstall: false,
+      bridge: true,
+      include: [path.resolve(__dirname, 'src/locales/**')],
+    }),
+    SupportedBrowsers(),
     Inspect(),
   ],
   css: {
@@ -79,7 +89,10 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url)),
+      '@': path.resolve(__dirname, 'src'),
+      'vue-echarts': 'vue-echarts/dist/index.esm.min.js',
+      'vue-i18n-bridge':
+        'vue-i18n-bridge/dist/vue-i18n-bridge.runtime.esm-bundler.js',
     },
   },
   test: {

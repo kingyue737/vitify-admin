@@ -66,7 +66,7 @@ defineProps({
     </div>
 
     <div
-      class="flex-grow-1 v-head-card__content"
+      class="flex-grow-1 v-head-card__content fill-height"
       style="position: relative; min-height: 0"
     >
       <slot />

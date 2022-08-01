@@ -5,6 +5,8 @@ module.exports = {
   root: true,
   rules: {
     'no-undef': 'off', // TypeScript already checked
+    'vue/valid-v-slot': ['error', { allowModifiers: true }],
+    'vue/multi-word-component-names': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
     '@typescript-eslint/ban-types': 'off',
     '@typescript-eslint/no-explicit-any': 'off',

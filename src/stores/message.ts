@@ -1,5 +1,3 @@
-import { defineStore } from 'pinia'
-
 interface Message {
   show: boolean
   type: 'info' | 'error' | 'success' | 'warning'

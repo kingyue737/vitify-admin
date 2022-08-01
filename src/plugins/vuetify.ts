@@ -1,9 +1,14 @@
 import Vue from 'vue'
 import Vuetify from 'vuetify/lib'
-import i18n from '@/locales'
-import icons from './icons'
 import type { VuetifyParsedTheme } from 'vuetify/types/services/theme'
 import { Ripple, Resize, Scroll } from 'vuetify/lib/directives'
+import icons from './icons'
+import { useDark } from '@vueuse/core'
+// @ts-expect-error the lib is not typed
+import en from 'vuetify/lib/locale/en'
+// @ts-expect-error the lib is not typed
+import zh from 'vuetify/lib/locale/zh-Hans'
+
 Vue.use(Vuetify, {
   directives: {
     Ripple,
@@ -13,24 +18,35 @@ Vue.use(Vuetify, {
 })
 
 const theme = {
-  primary: '#0096C7',
+  primary: localStorage.getItem('theme-primary') || '#0096C7',
   secondary: '#03A9F4',
   accent: '#9C27b0',
   info: '#00CAE3',
 }
 
-Vue.observable(theme)
 export default new Vuetify({
   lang: {
-    t: (key: string, ...params: (string | number)[]) =>
-      i18n.t(key, params) as string,
+    locales: { zh, en },
+    current: 'zh',
   },
   theme: {
+    dark: useDark().value,
     themes: {
       dark: theme,
       light: theme,
     },
-    options: { customProperties: true },
+    options: {
+      themeCache: {
+        // https://vuetifyjs.com/features/theme/#section-30ad30e330c330b730e5
+        get: (key: VuetifyParsedTheme) => {
+          return localStorage.getItem(`parsed-theme-${key.primary.base}`)
+        },
+        set: (key: VuetifyParsedTheme, value: string) => {
+          localStorage.setItem(`parsed-theme-${key.primary.base}`, value)
+        },
+      },
+      customProperties: true,
+    },
   },
   icons: {
     iconfont: 'mdiSvg',
@@ -45,20 +61,7 @@ export default new Vuetify({
       md: 1280,
       lg: 1920,
     },
-    mobileBreakpoint: 'xs',
+    mobileBreakpoint: 'sm',
     scrollBarWidth: 0,
   },
 })
-
-export function useVuetify() {
-  const instance = getCurrentInstance()
-  if (!instance) {
-    throw new Error(`useVuetify should be called in setup().`)
-  }
-  return instance.proxy.$vuetify
-}
-
-export function useParsedTheme() {
-  // parsedTheme is only for internal usage and not typed in vuetify
-  return (useVuetify().theme as any).parsedTheme as VuetifyParsedTheme
-}

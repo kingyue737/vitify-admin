@@ -1,6 +1,6 @@
 {
   "extends": "./tsconfig.app.json",
-  "include": ["vite.config.*"],
+  "include": ["vite.config.*", "postcss.config.ts"],
   "compilerOptions": {
     "composite": true,
     "types": ["node", "vitest"]

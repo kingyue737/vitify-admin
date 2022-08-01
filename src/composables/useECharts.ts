@@ -1,20 +1,12 @@
-import type { PropType } from '@vue/composition-api'
 import type { ECOption } from '@/plugins/echarts'
 import { INIT_OPTIONS_KEY, THEME_KEY } from 'vue-echarts'
 import { merge } from 'lodash'
-import { useVuetify, useParsedTheme } from '@/plugins/vuetify'
-export const defaultProps = {
-  dataset: {
-    type: Array as PropType<any[][]>,
-    required: false,
-    default: null,
-  },
-}
+import { useVuetify, useParsedTheme } from '@/composables/useVuetify'
 
 export function useDefaultOption(option: ECOption, toolbox: boolean): ECOption {
   const defaultOption: ECOption = {
     backgroundColor: 'transparent',
-    // color: [getParsedTheme().primary.darken1],
+    // color: [useParsedTheme().primary.darken1],
     title: {
       show: false,
       left: 'center',
@@ -98,9 +90,13 @@ export function defaultAxis(): ECOption['xAxis'] & ECOption['yAxis'] {
 
 export function useChartGlobalOption() {
   const vuetify = useVuetify()
+  const { locale } = useI18n()
   provide(
     THEME_KEY,
     computed(() => (vuetify?.theme.dark ? 'dark' : undefined))
   )
-  // provide(INIT_OPTIONS_KEY)
+  provide(
+    INIT_OPTIONS_KEY,
+    computed(() => ({ locale: locale.value.toUpperCase() }))
+  )
 }

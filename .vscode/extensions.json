@@ -3,7 +3,7 @@
     "vue.volar",
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
-    "editorconfig.editorconfig"
+    "editorconfig.editorconfig",
+    "lokalise.i18n-ally"
   ]
 }
-

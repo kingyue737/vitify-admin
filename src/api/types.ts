@@ -14,4 +14,6 @@ export interface IUserData {
   last_name: string
   email: string
   groups: number[]
+  date_joined: string
+  last_login: string
 }

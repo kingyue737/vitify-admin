@@ -21,7 +21,11 @@
     },
     // No `ScriptHost` as dropping support for IE
     "lib": ["esnext", "DOM", "DOM.iterable"],
-    "types": [],
+    "types": [
+      "vite-plugin-pages/client",
+      "vite-plugin-vue-layouts/client",
+      "vite-plugin-browserslist-useragent/client"
+    ],
     "skipLibCheck": true
   },
   "vueCompilerOptions": {
