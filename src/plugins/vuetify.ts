@@ -4,9 +4,7 @@ import type { VuetifyParsedTheme } from 'vuetify/types/services/theme'
 import { Ripple, Resize, Scroll } from 'vuetify/lib/directives'
 import icons from './icons'
 import { useDark } from '@vueuse/core'
-// @ts-expect-error the lib is not typed
 import en from 'vuetify/lib/locale/en'
-// @ts-expect-error the lib is not typed
 import zh from 'vuetify/lib/locale/zh-Hans'
 
 Vue.use(Vuetify, {
