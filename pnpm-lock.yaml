@@ -15,6 +15,7 @@ specifiers:
   '@types/lodash': ^4.14.182
   '@types/node': ^16.11.40
   '@types/nprogress': ^0.2.0
+  '@types/postcss-preset-env': ^7.7.0
   '@vitejs/plugin-legacy': ^2.0.0
   '@vue/composition-api': ^1.6.2
   '@vue/eslint-config-prettier': ^7.0.0
@@ -94,6 +95,7 @@ devDependencies:
   '@types/lodash': 4.14.182
   '@types/node': 16.11.40
   '@types/nprogress': 0.2.0
+  '@types/postcss-preset-env': 7.7.0
   '@vitejs/plugin-legacy': 2.0.0_terser@5.14.2+vite@3.0.4
   '@vue/eslint-config-prettier': 7.0.0_po3yoeeutu52wwqsoi2mwzccke
   '@vue/eslint-config-typescript': 11.0.0_nc7nknup3hbyc67gcp5ycg4lby
@@ -1174,6 +1176,13 @@ packages:
 
   /@types/nprogress/0.2.0:
     resolution: {integrity: sha512-1cYJrqq9GezNFPsWTZpFut/d4CjpZqA0vhqDUPFWYKF1oIyBz5qnoYMzR+0C/T96t3ebLAC1SSnwrVOm5/j74A==}
+    dev: true
+
+  /@types/postcss-preset-env/7.7.0:
+    resolution: {integrity: sha512-biD8MwSiZo1Nztn1cIBPMcKNKzgFyU05AB96HIF9y3G4f9vdx2O60DHCSpWXChTp6mOEGu15fqIw2DetVVjghw==}
+    dependencies:
+      autoprefixer: 10.4.8_postcss@8.4.14
+      postcss: 8.4.14
     dev: true
 
   /@types/sinonjs__fake-timers/8.1.1:
@@ -6171,7 +6180,7 @@ packages:
       webpack:
         optional: true
     dependencies:
-      acorn: 8.7.1
+      acorn: 8.8.0
       chokidar: 3.5.3
       vite: 3.0.4_sass@1.32.13+terser@5.14.2
       webpack-sources: 3.2.3
