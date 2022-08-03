@@ -1,45 +1,31 @@
-<script lang="ts">
-import { storeToRefs } from 'pinia'
+<script setup lang="ts">
 import AppMessageItem from './AppMessageItem.vue'
+import { formatTime } from '@/utils/date'
 
-export default defineComponent({
-  components: { AppMessageItem },
-  setup() {
-    const messageStore = useMessageStore()
-    const { messages } = storeToRefs(messageStore)
-    const messagesShown = computed(() =>
-      messages.value.filter((message) => message.show)
-    )
-    const showAll = ref(false)
-    const timeout = ref(5000)
-    function deleteMessage(id: number) {
-      messageStore.delMessage(id)
-    }
-    function emptyMessages() {
-      messageStore.$reset()
-    }
-    function toggleAll() {
-      showAll.value = !showAll.value
-      messages.value.forEach((m) => {
-        m.show = showAll.value
-      })
-      if (showAll.value) {
-        timeout.value = -1
-      } else {
-        timeout.value = 5000
-      }
-    }
-    return {
-      deleteMessage,
-      emptyMessages,
-      toggleAll,
-      messages,
-      messagesShown,
-      showAll,
-      timeout,
-    }
-  },
-})
+const messageStore = useMessageStore()
+const { messages } = storeToRefs(messageStore)
+const messagesShown = computed(() =>
+  messages.value.filter((message) => message.show)
+)
+const showAll = ref(false)
+const timeout = ref(5000)
+function deleteMessage(id: number) {
+  messageStore.delMessage(id)
+}
+function emptyMessages() {
+  messageStore.$reset()
+}
+function toggleAll() {
+  showAll.value = !showAll.value
+  messages.value.forEach((m) => {
+    m.show = showAll.value
+  })
+  if (showAll.value) {
+    timeout.value = -1
+  } else {
+    timeout.value = 5000
+  }
+}
 </script>
 
 <template>
@@ -54,7 +40,7 @@ export default defineComponent({
       </template>
       <span>通知</span>
     </v-tooltip>
-    <v-theme-provider root>
+    <Portal to="app">
       <v-card
         elevation="6"
         width="300"
@@ -91,14 +77,14 @@ export default defineComponent({
             :elevation="showAll ? 0 : 10"
             @close="deleteMessage(message.id)"
           >
-            <small>{{ message.time.toLocaleString() }}</small>
+            <small>{{ formatTime(message.time) }}</small>
             <div>
               {{ message.text }}
             </div>
           </AppMessageItem>
         </v-slide-y-reverse-transition>
       </v-card>
-    </v-theme-provider>
+    </Portal>
   </div>
 </template>
 

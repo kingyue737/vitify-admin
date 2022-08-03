@@ -1,10 +1,11 @@
 import { createLocalVue, mount, shallowMount } from '@vue/test-utils'
-import Vuetify from 'vuetify'
+import Vuetify from 'vuetify/lib'
 import { PiniaVuePlugin } from 'pinia'
 import { createTestingPinia } from '@pinia/testing'
 import { render } from '@testing-library/vue'
 import Router from 'vue-router'
 import VueI18n from 'vue-i18n'
+import Vue from 'vue'
 import { createI18n, castToVueI18n } from 'vue-i18n-bridge'
 import en from '@/locales/en.json'
 import zh from '@/locales/zh.json'
@@ -12,15 +13,15 @@ import zh from '@/locales/zh.json'
 const messages = { zh, en }
 export function mountComposable<T>(composable: () => T) {
   let result: T | undefined
-  const app = createApp({
+  const app = new Vue({
     pinia: createTestingPinia(),
     setup() {
       result = composable()
       return () => {}
     },
   })
-  app.use(PiniaVuePlugin)
-  app.mount(document.createElement('div'))
+  Vue.use(PiniaVuePlugin)
+  app.$mount(document.createElement('div'))
 
   return {
     composable: result!,

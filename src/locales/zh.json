@@ -1,5 +1,7 @@
 {
   "fullscreen": "全屏",
   "userManagement": "用户管理",
-  "dashboard": "主页"
+  "dashboard": "主页",
+  "username": "用户名",
+  "password": "密码"
 }

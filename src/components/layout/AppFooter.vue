@@ -35,11 +35,13 @@ const now = useNow()
   span {
     font-size: 14px;
   }
-  ::v-deep > .v-btn,
-  ::v-deep > .d-contents > .v-btn {
+  > :deep(.v-btn),
+  > :deep(.d-contents) > .v-btn {
     height: 100% !important;
     min-width: 0 !important;
     width: 30px;
+    font-size: 14px;
+    font-weight: 300;
     .v-icon svg {
       height: 18px;
     }

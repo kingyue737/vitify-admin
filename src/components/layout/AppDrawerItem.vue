@@ -1,6 +1,6 @@
 <script lang="ts">
 import type { RouteConfig } from 'vue-router'
-import type { PropType } from '@vue/composition-api'
+import type { PropType } from 'vue'
 
 export default defineComponent({
   name: 'AppDrawerItem',

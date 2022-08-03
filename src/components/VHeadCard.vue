@@ -99,7 +99,7 @@ defineProps({
     z-index: 3;
     border-radius: 4px;
   }
-  ::v-deep #after-heading > * {
+  :deep(#after-heading) > * {
     margin-left: 1em;
   }
 }

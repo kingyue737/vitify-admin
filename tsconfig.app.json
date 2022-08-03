@@ -29,7 +29,7 @@
     "skipLibCheck": true
   },
   "vueCompilerOptions": {
-    "target": 2
+    "target": 2.7
   },
   "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
   "exclude": ["src/**/__tests__/*"]

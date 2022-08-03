@@ -1,11 +1,9 @@
 import Vue from 'vue'
 Vue.config.devtools = false
 Vue.config.productionTip = false
-import VueCompositionAPI from '@vue/composition-api'
-import Vuetify from 'vuetify'
+import Vuetify from 'vuetify/lib'
 
 Vue.use(Vuetify)
-Vue.use(VueCompositionAPI)
 
 // mock window.matchMedia which not implemented by jsdom
 Object.defineProperty(window, 'matchMedia', {

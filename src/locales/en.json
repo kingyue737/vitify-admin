@@ -1,5 +1,7 @@
 {
   "fullscreen": "Fullscreen",
   "userManagement": "User Management",
-  "dashboard": "Dashboard"
+  "dashboard": "Dashboard",
+  "username": "Username",
+  "password": "Password"
 }

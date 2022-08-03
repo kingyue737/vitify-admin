@@ -1,10 +1,12 @@
 <script lang="ts">
 import type { VForm } from '@/utils/types'
-import Axios from 'axios'
 import background from '@/assets/images/drawer/1.jpg'
 
 export default defineComponent({
-  name: 'LoginPage',
+  setup() {
+    const { t } = useI18n()
+    return { t }
+  },
   data: () => ({
     background,
     loginShowed: false,
@@ -37,14 +39,13 @@ export default defineComponent({
           await useUserStore().login(loginForm)
           await this.$router.push({ path: '/' }).catch(() => {})
         } catch (e) {
-          if (Axios.isAxiosError(e)) {
-            if (e.response?.status === 401) {
-              this.snackMessage = '用户名或密码错误'
-              this.snackbar = true
-            }
+          const err = JSON.stringify(e)
+          if (err?.includes('credential')) {
+            this.snackMessage = '用户名或密码错误'
           } else {
-            throw e
+            this.snackMessage = err ?? '未知错误'
           }
+          this.snackbar = true
         } finally {
           this.waiting = false
         }
@@ -89,7 +90,7 @@ export default defineComponent({
                         v-model="username"
                         :counter="15"
                         :rules="nameRules"
-                        label="用户名"
+                        :label="t('username')"
                         prepend-icon="$mdi-account-outline"
                         required
                         @keydown.enter.prevent="onSubmit"
@@ -102,7 +103,7 @@ export default defineComponent({
                         "
                         :type="showPassword ? 'text' : 'password'"
                         :rules="passwordRules"
-                        label="密码"
+                        :label="t('password')"
                         required
                         autocomplete="on"
                         @click:append="showPassword = !showPassword"
@@ -152,14 +153,14 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .v-app-bar-title {
-  ::v-deep .v-app-bar-title__content {
+  :deep(.v-app-bar-title__content) {
     text-overflow: clip !important;
   }
 }
 .login-card {
   max-width: 300px;
   background-color: rgba(255, 255, 255, 0.85) !important;
-  ::v-deep .v-head-card__heading {
+  :deep(.v-head-card__heading) {
     width: 100%;
     margin-bottom: -12px !important;
     padding: 24px !important;

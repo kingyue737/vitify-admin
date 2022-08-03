@@ -1,10 +1,7 @@
 import path from 'path'
 import { defineConfig } from 'vite'
-import { createVuePlugin } from 'vite-plugin-vue2'
+import vue2 from '@vitejs/plugin-vue2'
 import legacy from '@vitejs/plugin-legacy'
-// @ts-ignore
-import vueTemplateBabelCompiler from 'vue-template-babel-compiler'
-import scriptSetup from 'unplugin-vue2-script-setup/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { createSvgPlugin } from 'vite-plugin-vue2-svg'
@@ -21,15 +18,9 @@ export default defineConfig({
     port: 9527,
   },
   plugins: [
-    createVuePlugin({
-      jsx: true,
-      vueTemplateOptions: {
-        compiler: vueTemplateBabelCompiler,
-      },
-    }),
+    vue2(),
     Pages(),
     Layouts(),
-    scriptSetup(),
     legacy({
       // Plugin does not use browserslistrc https://github.com/vitejs/vite/issues/2476
       modernPolyfills: true,
@@ -51,7 +42,7 @@ export default defineConfig({
     }),
     AutoImport({
       imports: [
-        '@vue/composition-api',
+        'vue',
         'pinia',
         {
           'vue-i18n-bridge': ['useI18n', 'createI18n'],
@@ -68,7 +59,6 @@ export default defineConfig({
       runtimeOnly: false,
       compositionOnly: true,
       fullInstall: false,
-      bridge: true,
       include: [path.resolve(__dirname, 'src/locales/**')],
     }),
     SupportedBrowsers(),
@@ -96,6 +86,7 @@ export default defineConfig({
     },
   },
   test: {
+    alias: { vue: 'vue/dist/vue.runtime.mjs' },
     globals: true,
     include: ['test/**/*.test.ts', 'src/**/__tests__/*'],
     environment: 'jsdom',
