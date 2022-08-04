@@ -1,4 +1,4 @@
-import type { Role } from '@/api/types'
+import type { Role } from '@/api/users'
 
 export function isPermitted(
   allowedRoles: Role[],

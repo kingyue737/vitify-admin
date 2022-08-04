@@ -1,6 +1,11 @@
-import { login, getUserByName, refreshToken, getGroup } from '@/api/users'
+import {
+  login,
+  getUserByName,
+  refreshToken,
+  getGroup,
+  type Role,
+} from '@/api/users'
 import { setToken, removeToken } from '@/utils/cookies'
-import type { Role } from '@/api/types'
 
 const auth = import.meta.env.VITE_AUTH === 'true'
 

@@ -5,9 +5,11 @@ import {
   getUsers,
   updateUser,
   getGroups,
+  type Group,
+  type IUserData,
+  type Role,
 } from '@/api/users'
 import type { DataTableHeader } from 'vuetify'
-import type { Group, IUserData, Role } from '@/api/types'
 import { formatTime } from '@/utils/date'
 
 const headers: DataTableHeader[] = [

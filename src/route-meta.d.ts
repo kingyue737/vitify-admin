@@ -1,7 +1,7 @@
 export {}
 
 import 'vue-router'
-import type { Role } from '@/api/types'
+import type { Role } from '@/api/users'
 
 declare module 'vue-router' {
   interface RouteMeta {
