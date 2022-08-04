@@ -21,5 +21,12 @@
   "form": {
     "LTE": "{input}必须小于等于{limit}",
     "LT": "{input}必须小于{limit}"
-  }
+  },
+  "image": "图片",
+  "drawerBackground": "侧边栏背景",
+  "notification": "通知",
+  "darkMode": "暗模式",
+  "interfaceSettings": "界面设置",
+  "themeColor": "主题色",
+  "hide": "隐藏"
 }

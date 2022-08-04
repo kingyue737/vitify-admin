@@ -7,6 +7,7 @@ import drawer2 from '@/assets/images/drawer/2.jpg'
 import drawer3 from '@/assets/images/drawer/3.jpg'
 
 const appStore = useAppStore()
+const { t } = useI18n()
 const { drawerImage, drawerImageShow } = storeToRefs(appStore)
 if (drawerImage.value) {
   drawerImage.value = drawer1
@@ -58,12 +59,12 @@ const toggleDark = useToggle(isDark)
             <v-icon>$mdi-palette-outline</v-icon>
           </v-btn>
         </template>
-        <span>界面设置</span>
+        <span>{{ t('interfaceSettings') }}</span>
       </v-tooltip>
     </template>
     <v-card class="text-center mb-0" width="300">
       <v-card-text>
-        <strong class="mb-3 d-inline-block">主题色</strong>
+        <strong class="mb-3 d-inline-block">{{ t('themeColor') }}</strong>
         <v-color-picker
           v-model="color"
           show-swatches
@@ -71,7 +72,7 @@ const toggleDark = useToggle(isDark)
         ></v-color-picker>
         <v-divider class="my-3" />
         <v-row align="center" no-gutters>
-          <v-col cols="auto">暗模式</v-col>
+          <v-col cols="auto">{{ t('darkMode') }}</v-col>
           <v-spacer />
           <v-col cols="auto">
             <v-switch
@@ -85,7 +86,7 @@ const toggleDark = useToggle(isDark)
         </v-row>
         <v-divider class="my-3" />
         <v-row align="center" no-gutters>
-          <v-col cols="auto">侧边栏背景</v-col>
+          <v-col cols="auto">{{ t('drawerBackground') }}</v-col>
           <v-spacer />
           <v-col cols="auto">
             <v-switch
@@ -99,7 +100,7 @@ const toggleDark = useToggle(isDark)
 
         <v-divider class="my-3" />
 
-        <strong class="mb-3 d-inline-block">图片</strong>
+        <strong class="mb-3 d-inline-block">{{ t('image') }}</strong>
         <v-card :disabled="!drawerImageShow" flat>
           <v-item-group
             v-model="drawerImage"

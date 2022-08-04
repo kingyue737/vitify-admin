@@ -2,6 +2,7 @@
 import AppMessageItem from './AppMessageItem.vue'
 import { formatTime } from '@/utils/date'
 
+const { t } = useI18n()
 const messageStore = useMessageStore()
 const { messages } = storeToRefs(messageStore)
 const messagesShown = computed(() =>
@@ -38,7 +39,7 @@ function toggleAll() {
           }}</v-icon>
         </v-btn>
       </template>
-      <span>通知</span>
+      <span>{{ t('notification') }}</span>
     </v-tooltip>
     <Portal to="app">
       <v-card
@@ -48,14 +49,14 @@ function toggleAll() {
         :class="{ 'message-card--open': showAll }"
       >
         <v-toolbar flat dense>
-          <v-toolbar-title
-            >{{ messages.length ? '' : '没有新的' }}通知</v-toolbar-title
-          >
+          <v-toolbar-title class="font-weight-light text-body-1">{{
+            t(messages.length ? 'notification' : 'noNew')
+          }}</v-toolbar-title>
           <v-spacer />
-          <v-btn small icon title="清除所有通知" @click="emptyMessages">
+          <v-btn small icon :title="t('clearAll')" @click="emptyMessages">
             <v-icon>$mdi-bell-remove</v-icon>
           </v-btn>
-          <v-btn small icon title="隐藏" @click="toggleAll">
+          <v-btn small icon :title="t('hide')" @click="toggleAll">
             <v-icon>$expand</v-icon>
           </v-btn>
         </v-toolbar>
@@ -131,3 +132,12 @@ function toggleAll() {
   }
 }
 </style>
+
+<i18n lang="yaml">
+zh:
+  noNew: 没有新的通知
+  clearAll: 清除所有通知
+en:
+  noNew: No New Notifications
+  clearAll: Clear All Notifications
+</i18n>

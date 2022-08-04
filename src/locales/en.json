@@ -21,5 +21,11 @@
   "form": {
     "LTE": "{input} must less than or equal to {limit}",
     "LT": "{input} must less than {limit}"
-  }
+  },
+  "darkMode": "Dark Mode",
+  "drawerBackground": "Drawer Background",
+  "image": "Image",
+  "interfaceSettings": "Interface Settings",
+  "notification": "Notifications",
+  "themeColor": "Theme Color"
 }
