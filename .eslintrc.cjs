@@ -28,5 +28,9 @@ module.exports = {
       files: ['cypress/integration/**.spec.{js,ts,jsx,tsx}'],
       extends: ['plugin:cypress/recommended'],
     },
+    {
+      files: ['*.mts'],
+      parser: require.resolve('@typescript-eslint/parser'),
+    },
   ],
 }
