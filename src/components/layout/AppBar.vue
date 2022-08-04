@@ -1,31 +1,10 @@
-<script lang="ts">
-import { mapWritableState } from 'pinia'
-import ButtonFullScreen from './ButtonFullScreen.vue'
+<script setup lang="ts">
 import AppBreadcrumbs from './AppBreadcrumbs.vue'
+import ButtonFullScreen from './ButtonFullScreen.vue'
 import ButtonLocale from './ButtonLocale.vue'
+import ButtonUser from './ButtonUser.vue'
 
-export default defineComponent({
-  components: {
-    ButtonFullScreen,
-    ButtonLocale,
-    AppBreadcrumbs,
-  },
-  computed: {
-    ...mapWritableState(useAppStore, ['drawer']),
-    userName() {
-      return useUserStore().name
-    },
-  },
-  methods: {
-    async logOut() {
-      await useUserStore().logOut()
-      this.$router.push('/login')
-    },
-    resetPassword() {
-      this.$router.push({ name: 'selfResetPassword' })
-    },
-  },
-})
+const { drawer } = storeToRefs(useAppStore())
 </script>
 
 <template>
@@ -37,46 +16,10 @@ export default defineComponent({
     </v-btn>
     <AppBreadcrumbs />
     <v-spacer />
-    <slot name="heading" />
+    <PortalTarget name="app-bar" class="d-contents" />
     <ButtonFullScreen />
     <ButtonLocale />
-    <v-menu
-      bottom
-      left
-      offset-y
-      origin="top right"
-      transition="scale-transition"
-    >
-      <template #activator="{ attrs, on: menu }">
-        <v-tooltip bottom>
-          <template #activator="{ on: toolTip }">
-            <v-btn
-              min-width="0"
-              text
-              v-bind="attrs"
-              v-on="{ ...toolTip, ...menu }"
-            >
-              <v-icon>$mdi-account</v-icon>
-            </v-btn>
-          </template>
-          <span>{{ userName }}</span>
-        </v-tooltip>
-      </template>
-      <v-list>
-        <v-list-item @click="resetPassword">
-          <v-list-item-icon class="mr-2">
-            <v-icon> $mdi-key-variant </v-icon>
-          </v-list-item-icon>
-          <v-list-item-title link> 重置密码 </v-list-item-title>
-        </v-list-item>
-        <v-list-item @click="logOut">
-          <v-list-item-icon class="mr-2">
-            <v-icon> $mdi-logout </v-icon>
-          </v-list-item-icon>
-          <v-list-item-title link> 注销 </v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-menu>
+    <ButtonUser />
   </v-app-bar>
 </template>
 
