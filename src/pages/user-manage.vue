@@ -12,30 +12,39 @@ import {
 import type { DataTableHeader } from 'vuetify'
 import { formatTime } from '@/utils/date'
 
+const { t } = useI18n()
 const headers: DataTableHeader[] = [
-  { text: '用户名', value: 'username' },
-  { text: '用户组', value: 'group' },
-  { text: '姓名', value: 'name' },
-  { text: '邮箱', value: 'email' },
-  { text: '注册时间', value: 'dateJoined' },
-  { text: '最后登录', value: 'lastLogin' },
+  { text: t('username'), value: 'username' },
+  { text: t('group'), value: 'group' },
+  { text: t('name'), value: 'name' },
+  { text: t('email'), value: 'email' },
+  { text: t('joiningDate'), value: 'joiningDate' },
+  { text: t('lastLogin'), value: 'lastLogin' },
 ]
 
-const rawUsers = ref<IUserData[]>([])
+const users = ref<
+  {
+    username: string
+    name: string
+    email: string
+    joiningDate: string
+    lastLogin: string
+    group: number[]
+  }[]
+>([])
 const groups = ref<Group[]>([])
 getGroups().then((promise) => (groups.value = promise.data))
-getUsers().then((promise) => (rawUsers.value = promise.data))
-
-const users = computed(() => {
-  return rawUsers.value.map((user) => ({
-    username: user.username,
-    name: user.first_name + user.last_name,
-    email: user.email,
-    dateJoined: formatTime(user.date_joined),
-    lastLogin: formatTime(user.last_login),
-    group: user.groups.reverse(),
-  }))
-})
+getUsers().then(
+  (promise) =>
+    (users.value = promise.data.map((user) => ({
+      username: user.username,
+      name: user.first_name + user.last_name,
+      email: user.email,
+      joiningDate: formatTime(user.date_joined),
+      lastLogin: formatTime(user.last_login),
+      group: user.groups.reverse(),
+    })))
+)
 
 function groupColor(id: number) {
   const name = groupName(id)
@@ -59,7 +68,7 @@ function groupName(id: number) {
   <v-container fluid>
     <v-row>
       <v-col cols="12">
-        <v-head-card title="用户列表" icon="$mdi-view-list">
+        <v-head-card :title="t('listOf', [t('user')])" icon="$mdi-view-list">
           <v-data-table :headers="headers" :items="users" fixed-header>
             <template #item.group="{ item }">
               <v-chip

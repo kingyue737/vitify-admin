@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const router = useRouter()
+const { t } = useI18n()
 const userStore = useUserStore()
 const { name } = storeToRefs(userStore)
 const logOut = async () => {
@@ -29,13 +30,13 @@ const logOut = async () => {
         <v-list-item-icon class="mr-2">
           <v-icon> $mdi-key-variant </v-icon>
         </v-list-item-icon>
-        <v-list-item-title link> 重置密码 </v-list-item-title>
+        <v-list-item-title link> {{ t('resetPassword') }} </v-list-item-title>
       </v-list-item>
       <v-list-item @click="logOut">
         <v-list-item-icon class="mr-2">
           <v-icon> $mdi-logout </v-icon>
         </v-list-item-icon>
-        <v-list-item-title link> 注销 </v-list-item-title>
+        <v-list-item-title link> {{ t('logout') }} </v-list-item-title>
       </v-list-item>
     </v-list>
   </v-menu>

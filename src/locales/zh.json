@@ -3,5 +3,23 @@
   "userManagement": "用户管理",
   "dashboard": "主页",
   "username": "用户名",
-  "password": "密码"
+  "user": "用户",
+  "group": "用户组",
+  "lastLogin": "最后登录",
+  "joiningDate": "注册时间",
+  "name": "姓名",
+  "password": "密码",
+  "resetPassword": "重置密码",
+  "language": "语言",
+  "login": "登录",
+  "logout": "注销",
+  "email": "邮箱",
+  "listOf": "{0}列表",
+  "userLogin": "@:user@:login",
+  "pleaseEnter": "请填写{0}",
+  "lengthOf": "{0}长度",
+  "form": {
+    "LTE": "{input}必须小于等于{limit}",
+    "LT": "{input}必须小于{limit}"
+  }
 }

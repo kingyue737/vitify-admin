@@ -1,4 +1,5 @@
 import request from '@/utils/request'
+import type { AxiosPromise } from 'axios'
 export const ROLES = ['developer', 'admin', 'staff', 'guest'] as const
 export type Role = typeof ROLES[number]
 export type Group = {
@@ -19,7 +20,7 @@ export interface IUserData {
   last_login: string
 }
 
-export const getUsers = () =>
+export const getUsers = (): AxiosPromise<IUserData[]> =>
   request({
     url: '/users',
     method: 'get',

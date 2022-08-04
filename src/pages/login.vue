@@ -1,58 +1,52 @@
-<script lang="ts">
+<script setup lang="ts">
 import type { VForm } from '@/utils/types'
 import background from '@/assets/images/drawer/1.jpg'
-
-export default defineComponent({
-  setup() {
-    const { t } = useI18n()
-    return { t }
-  },
-  data: () => ({
-    background,
-    loginShowed: false,
-    username: '',
-    password: '',
-    waiting: false,
-    showPassword: false,
-    valid: true,
-    snackbar: false,
-    snackMessage: '',
-    timeout: 3000,
-    nameRules: [
-      (v: string) => !!v || '请填写用户名',
-      (v: string) => v.length <= 15 || '用户名必须小于等于15个字符',
-    ],
-    passwordRules: [(v: string) => !!v || '请填写密码'],
-  }),
-  mounted() {
-    this.loginShowed = true
-  },
-  methods: {
-    async onSubmit() {
-      if ((this.$refs.form as VForm).validate()) {
-        try {
-          this.waiting = true
-          const loginForm = {
-            username: this.username,
-            password: this.password,
-          }
-          await useUserStore().login(loginForm)
-          await this.$router.push({ path: '/' }).catch(() => {})
-        } catch (e) {
-          const err = JSON.stringify(e)
-          if (err?.includes('credential')) {
-            this.snackMessage = '用户名或密码错误'
-          } else {
-            this.snackMessage = err ?? '未知错误'
-          }
-          this.snackbar = true
-        } finally {
-          this.waiting = false
-        }
-      }
-    },
-  },
+const { t } = useI18n()
+const router = useRouter()
+const userStore = useUserStore()
+const form = ref<VForm | null>(null)
+const loginShowed = ref(false)
+const username = ref('')
+const password = ref('')
+const waiting = ref(false)
+const showPassword = ref(false)
+const valid = ref(true)
+const snackbar = ref(false)
+const snackMessage = ref('')
+const timeout = ref(3000)
+const nameRules = [
+  (v: string) => !!v || t('pleaseEnter', [t('username')]),
+  (v: string) =>
+    v.length <= 15 ||
+    t('form.LTE', { input: t('lengthOf', [t('username')]), limit: 15 }),
+]
+const passwordRules = [(v: string) => !!v || t('pleaseEnter', [t('password')])]
+onMounted(() => {
+  loginShowed.value = true
 })
+async function onSubmit() {
+  if (form.value?.validate()) {
+    try {
+      waiting.value = true
+      const loginForm = {
+        username: username.value,
+        password: password.value,
+      }
+      await userStore.login(loginForm)
+      await router.push({ path: '/' }).catch(() => {})
+    } catch (e) {
+      const err = JSON.stringify(e)
+      if (err?.includes('credential')) {
+        snackMessage.value = t('errMessage')
+      } else {
+        snackMessage.value = err ?? t('unknownErr')
+      }
+      snackbar.value = true
+    } finally {
+      waiting.value = false
+    }
+  }
+}
 </script>
 
 <template>
@@ -80,7 +74,7 @@ export default defineComponent({
             <v-head-card class="px-5 py-3 mx-auto login-card mt-0">
               <template #heading>
                 <v-icon>$mdi-login</v-icon>
-                用户登录
+                {{ t('userLogin') }}
               </template>
               <v-expand-transition>
                 <v-row v-show="loginShowed" align="center" justify="center">
@@ -122,7 +116,7 @@ export default defineComponent({
                   :loading="waiting"
                   @click="onSubmit"
                 >
-                  登录
+                  {{ t('login') }}
                 </v-btn>
               </template>
             </v-head-card>
@@ -144,7 +138,7 @@ export default defineComponent({
       {{ snackMessage }}
       <template #action="{ attrs }">
         <v-btn icon small v-bind="attrs" class="ml-4" @click="snackbar = false">
-          <v-icon>$vuetify.icons.cancel</v-icon>
+          <v-icon>$cancel</v-icon>
         </v-btn>
       </template>
     </v-snackbar>
@@ -175,3 +169,16 @@ a {
 meta:
   layout: empty
 </route>
+
+<i18n lang="json">
+{
+  "en": {
+    "errMessage": "Username or password is wrong",
+    "unknownErr": "Unkown Error"
+  },
+  "zh": {
+    "errMessage": "用户名或密码错误",
+    "unknownErr": "未知错误"
+  }
+}
+</i18n>

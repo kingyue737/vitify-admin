@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useVuetify } from '@/composables/useVuetify'
 
-const { locale } = useI18n()
+const { locale, t } = useI18n()
 const vuetify = useVuetify()
 const setLang = (lang: string) => {
   locale.value = lang
@@ -23,7 +23,7 @@ const setLang = (lang: string) => {
             <v-icon>$mdi-translate</v-icon>
           </v-btn>
         </template>
-        <span>语言</span>
+        <span>{{ t('language') }}</span>
       </v-tooltip>
     </template>
     <v-list>

@@ -3,5 +3,23 @@
   "userManagement": "User Management",
   "dashboard": "Dashboard",
   "username": "Username",
-  "password": "Password"
+  "name": "Name",
+  "user": "User",
+  "password": "Password",
+  "resetPassword": "Reset Password",
+  "language": "Language",
+  "login": "Login",
+  "logout": "Logout",
+  "email": "Email",
+  "group": "Group",
+  "joiningDate": "Joining Date",
+  "lastLogin": "Last Login",
+  "listOf": "{0} List",
+  "userLogin": "@:user @:login",
+  "pleaseEnter": "Please enter {0}",
+  "lengthOf": "Length of {0}",
+  "form": {
+    "LTE": "{input} must less than or equal to {limit}",
+    "LT": "{input} must less than {limit}"
+  }
 }
