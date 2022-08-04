@@ -2,10 +2,12 @@
 import { mapWritableState } from 'pinia'
 import ButtonFullScreen from './ButtonFullScreen.vue'
 import AppBreadcrumbs from './AppBreadcrumbs.vue'
+import ButtonLocale from './ButtonLocale.vue'
 
 export default defineComponent({
   components: {
     ButtonFullScreen,
+    ButtonLocale,
     AppBreadcrumbs,
   },
   computed: {
@@ -37,6 +39,7 @@ export default defineComponent({
     <v-spacer />
     <slot name="heading" />
     <ButtonFullScreen />
+    <ButtonLocale />
     <v-menu
       bottom
       left
