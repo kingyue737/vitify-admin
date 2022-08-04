@@ -14,6 +14,7 @@ const i18n = castToVueI18n(
       locale: 'zh',
       messages: { zh, en },
       missingWarn: false,
+      fallbackWarn: false,
     },
     VueI18n
   )
