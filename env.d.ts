@@ -2,7 +2,6 @@
 /// <reference types="unplugin-vue2-script-setup/shims" />
 
 interface ImportMetaEnv {
-  readonly VITE_AUTH: string
   readonly VITE_API_URL: string
   readonly VITE_MOCK: string
 }

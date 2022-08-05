@@ -6,7 +6,7 @@ const url = (path: string) => {
 
 export const worker = setupWorker(
   rest.get(url('/users/:username'), (req, res, ctx) => {
-    return res(ctx.json({ id: 99, groups: [0] }))
+    return res(ctx.json({ id: 99, groups: [5] }))
   }),
   rest.post(url('/token'), (req, res, ctx) => {
     return res(

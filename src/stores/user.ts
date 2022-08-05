@@ -7,8 +7,6 @@ import {
 } from '@/api/users'
 import { setToken, removeToken } from '@/utils/cookies'
 
-const auth = import.meta.env.VITE_AUTH === 'true'
-
 export const useUserStore = defineStore('user', {
   state: () => {
     const roles: Role[] = []
@@ -16,7 +14,7 @@ export const useUserStore = defineStore('user', {
       name: localStorage.getItem('username') || '',
       id: parseInt(localStorage.getItem('id') || '-1'),
       email: '',
-      token: auth ? localStorage.getItem('access') || '' : 'admin',
+      token: localStorage.getItem('access') || '',
       roles,
     }
   },
@@ -41,30 +39,25 @@ export const useUserStore = defineStore('user', {
       this.roles = []
     },
     async getUserInfo() {
-      if (auth) {
-        if (this.token === '') {
-          throw Error('getUserInfo: token is undefined!')
-        }
-        const { data: user } = await getUserByName(this.name)
-        if (!user) {
-          throw Error('Verification failed, please Login again.')
-        }
-        const { groups } = user
-        // roles must be a non-empty array
-        if (!groups || groups.length <= 0) {
-          throw Error('getUserInfo: roles must be a non-null array!')
-        }
-        const roles: Role[] = []
-        for (const id of groups) {
-          roles.push((await getGroup(id)).data.name)
-        }
-        this.roles = roles
-        const { id } = user
-        this.id = id
-      } else {
-        this.name = 'no-auth-admin'
-        this.roles = ['developer']
+      if (this.token === '') {
+        throw Error('getUserInfo: token is undefined!')
       }
+      const { data: user } = await getUserByName(this.name)
+      if (!user) {
+        throw Error('Verification failed, please Login again.')
+      }
+      const { groups } = user
+      // roles must be a non-empty array
+      if (!groups || groups.length <= 0) {
+        throw Error('getUserInfo: roles must be a non-null array!')
+      }
+      const roles: Role[] = []
+      for (const id of groups) {
+        roles.push((await getGroup(id)).data.name)
+      }
+      this.roles = roles
+      const { id } = user
+      this.id = id
     },
     async logOut() {
       ;['access', 'refresh', 'username'].forEach((k) =>
