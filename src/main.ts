@@ -9,6 +9,14 @@ import './plugins/portal-vue'
 import i18n from './plugins/i18n'
 import '@/assets/styles/index.scss'
 
+if (import.meta.env.VITE_MOCK) {
+  import('./mocks').then((module) =>
+    module.worker.start({
+      onUnhandledRequest: 'bypass',
+    })
+  )
+}
+
 Vue.config.productionTip = false
 const app = new Vue({
   router,

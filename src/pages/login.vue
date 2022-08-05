@@ -65,13 +65,13 @@ async function onSubmit() {
           contain
         ></v-img>
         <v-app-bar-title class="font-weight-bold">
-          Vitify <span class="primary--text">Admin</span>
+          Vitify <span class="primary--text text--lighten-2">Admin</span>
         </v-app-bar-title>
       </v-app-bar>
       <v-container fill-height>
         <v-row align="center" justify="center">
           <v-col cols="12">
-            <v-head-card class="px-5 py-3 mx-auto login-card mt-0">
+            <v-head-card light class="px-5 py-3 mx-auto login-card mt-0">
               <template #heading>
                 <v-icon>$mdi-login</v-icon>
                 {{ t('userLogin') }}

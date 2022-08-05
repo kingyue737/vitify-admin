@@ -42,7 +42,6 @@ export const useUserStore = defineStore('user', {
     },
     async getUserInfo() {
       if (auth) {
-        // TODO(bao) 2020/06/01: complete user info profile in backend or re-orgnize
         if (this.token === '') {
           throw Error('getUserInfo: token is undefined!')
         }

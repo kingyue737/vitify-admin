@@ -19,6 +19,10 @@ export interface IUserData {
   date_joined: string
   last_login: string
 }
+export type LoginForm = {
+  username: string
+  password: string
+}
 
 export const getUsers = (): AxiosPromise<IUserData[]> =>
   request({
@@ -59,7 +63,7 @@ export const deleteUser = (user: IUserData) =>
     method: 'delete',
   })
 
-export const login = (data: any) =>
+export const login = (data: LoginForm) =>
   request({
     url: '/token',
     method: 'post',

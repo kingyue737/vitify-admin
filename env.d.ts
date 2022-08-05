@@ -4,6 +4,7 @@
 interface ImportMetaEnv {
   readonly VITE_AUTH: string
   readonly VITE_API_URL: string
+  readonly VITE_MOCK: string
 }
 
 interface ImportMeta {

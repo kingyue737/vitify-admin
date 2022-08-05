@@ -54,6 +54,7 @@
     "eslint-plugin-vue": "^9.3.0",
     "flush-promises": "^1.0.2",
     "jsdom": "^20.0.0",
+    "msw": "^0.44.2",
     "postcss-load-config": "^4.0.1",
     "postcss-preset-env": "^7.7.2",
     "prettier": "^2.7.1",
@@ -85,5 +86,8 @@
     "patchedDependencies": {
       "vuetify@2.6.8": "patches/vuetify@2.6.8.patch"
     }
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }
