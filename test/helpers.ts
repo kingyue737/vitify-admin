@@ -4,13 +4,9 @@ import { PiniaVuePlugin } from 'pinia'
 import { createTestingPinia } from '@pinia/testing'
 import { render } from '@testing-library/vue'
 import Router from 'vue-router'
-import VueI18n from 'vue-i18n'
 import Vue from 'vue'
-import { createI18n, castToVueI18n } from 'vue-i18n-bridge'
-import en from '@/locales/en.json'
-import zh from '@/locales/zh.json'
+import { install as installI18n } from '@/plugins/i18n'
 
-const messages = { zh, en }
 export function mountComposable<T>(composable: () => T) {
   let result: T | undefined
   const app = new Vue({
@@ -35,15 +31,8 @@ export function createWrapper(
   shallow = false
 ) {
   const localVue = createLocalVue()
-  localVue.use(VueI18n, { bridge: true })
+  const i18n = installI18n(localVue)
   const vuetify = new Vuetify()
-  const i18n = castToVueI18n(
-    createI18n(
-      { legacy: false, locale: 'zh', messages, missingWarn: false },
-      VueI18n
-    )
-  )
-  localVue.use(i18n)
   const mountOptions = { vuetify, localVue, i18n, ...options }
   if (!shallow) {
     return mount(component, mountOptions)
@@ -52,7 +41,10 @@ export function createWrapper(
   }
 }
 
-export function renderWithVuetify(component: Parameters<typeof render>[0]) {
+export function renderWithVuetify(
+  component: Parameters<typeof render>[0],
+  options: Parameters<typeof render>[1] = {}
+) {
   const root = document.createElement('div')
   root.setAttribute('data-app', 'true')
   return render(
@@ -63,17 +55,10 @@ export function renderWithVuetify(component: Parameters<typeof render>[0]) {
       pinia: createTestingPinia(),
       router: new Router(),
       stubs: ['Portal'],
+      ...options,
     },
     (vue) => {
-      vue.use(PiniaVuePlugin)
-      vue.use(VueI18n, { bridge: true })
-      const i18n = castToVueI18n(
-        createI18n(
-          { legacy: false, locale: 'zh', messages, missingWarn: false },
-          VueI18n
-        )
-      )
-      vue.use(i18n)
+      const i18n = installI18n(vue)
       return { i18n }
     }
   )
