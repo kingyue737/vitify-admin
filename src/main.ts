@@ -4,15 +4,13 @@ import '@/assets/styles/index.scss'
 import { filename } from './utils/string'
 import type { InstallPlugin } from './utils/types'
 
-if (import.meta.env.VITE_MOCK) {
-  import('./mocks').then((module) =>
-    module.worker.start({
-      onUnhandledRequest: 'bypass',
-    })
-  )
+Vue.config.productionTip = false
+if (import.meta.env.VITE_MOCK && import.meta.env.DEV) {
+  ;(await import('./mocks')).worker.start({
+    onUnhandledRequest: 'bypass',
+  })
 }
 
-Vue.config.productionTip = false
 const app = new Vue({
   ...Object.fromEntries(
     Object.entries(
