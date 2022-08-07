@@ -9,14 +9,14 @@ describe('Example Test', () => {
       .then((id) => {
         cy.get('#' + id)
       })
-      .type('admin')
+      .type('your-username')
 
     cy.contains('label', '密码')
       .invoke('attr', 'for')
       .then((id) => {
         cy.get('#' + id)
       })
-      .type('admin123{Enter}')
+      .type('your-password{Enter}')
       .url()
       .should('eq', 'http://localhost:5050/')
   })
