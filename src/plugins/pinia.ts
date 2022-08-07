@@ -1,6 +1,7 @@
 import { createPinia, PiniaVuePlugin } from 'pinia'
-import Vue from 'vue'
+import type { InstallPlugin } from '@/utils/types'
 
-Vue.use(PiniaVuePlugin)
-
-export default createPinia()
+export const install: InstallPlugin = (vue) => {
+  vue.use(PiniaVuePlugin)
+  return createPinia()
+}

@@ -1,13 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
-import pinia from './plugins/pinia'
-import router from './plugins/router'
-import './plugins/components'
-import vuetify from './plugins/vuetify'
-import './plugins/echarts'
-import './plugins/portal-vue'
-import i18n from './plugins/i18n'
 import '@/assets/styles/index.scss'
+import { filename } from './utils/string'
+import type { InstallPlugin } from './utils/types'
 
 if (import.meta.env.VITE_MOCK) {
   import('./mocks').then((module) =>
@@ -19,10 +14,15 @@ if (import.meta.env.VITE_MOCK) {
 
 Vue.config.productionTip = false
 const app = new Vue({
-  router,
-  pinia,
-  i18n,
-  vuetify,
+  ...Object.fromEntries(
+    Object.entries(
+      import.meta.glob<{ install: InstallPlugin }>('./plugins/*.ts', {
+        eager: true,
+      })
+    )
+      .map(([k, v]) => [filename(k), v.install?.(Vue)] as [string, any])
+      .filter((entry) => entry[1])
+  ),
   render: (h) => h(App),
 })
 app.$mount('#app')

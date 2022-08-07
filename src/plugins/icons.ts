@@ -1,5 +1,6 @@
 import { mapKeys, kebabCase } from 'lodash'
-import type { VuetifyIcon } from 'vuetify/types/services/icons.js'
+import { filename } from '@/utils/string'
+import type { Component } from 'vue'
 
 import {
   mdiAlert,
@@ -100,17 +101,11 @@ mdIcons['error'] = mdiAlertOctagon
 
 const svgIcons = Object.fromEntries(
   Object.entries(
-    import.meta.glob('@/assets/icons/*.svg', {
+    import.meta.glob<Component>('@/assets/icons/*.svg', {
       eager: true,
       import: 'default',
     })
-  ).map(([k, v]) => [
-    k
-      .split(/(\\|\/)/g)
-      .pop()!
-      .replace(/\.[^/.]+$/, ''),
-    { component: v } as VuetifyIcon,
-  ])
+  ).map(([k, v]) => [filename(k), { component: v }])
 )
 
 export default {

@@ -1,4 +1,7 @@
 /* Replace this component by Vue 3 built-in Teleport in the future */
-import Vue from 'vue'
 import PortalVue from 'portal-vue'
-Vue.use(PortalVue)
+import type { InstallPlugin } from '@/utils/types'
+
+export const install: InstallPlugin = (vue) => {
+  vue.use(PortalVue)
+}

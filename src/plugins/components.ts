@@ -1,6 +1,8 @@
-import Vue from 'vue'
 import VChart from 'vue-echarts'
 import VHeadCard from '@/components/VHeadCard.vue'
+import type { InstallPlugin } from '@/utils/types'
 
-Vue.component('VHeadCard', VHeadCard)
-Vue.component('VChart', VChart)
+export const install: InstallPlugin = (vue) => {
+  vue.component('VHeadCard', VHeadCard)
+  vue.component('VChart', VChart)
+}
