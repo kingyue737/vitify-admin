@@ -7,3 +7,4 @@ node_modules
 
 /coverage
 /public/docs
+/cypress/videos/*

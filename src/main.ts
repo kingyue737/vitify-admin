@@ -5,7 +5,7 @@ import { filename } from './utils/string'
 import type { InstallPlugin } from './utils/types'
 
 Vue.config.productionTip = false
-if (import.meta.env.VITE_MOCK && import.meta.env.DEV) {
+if (import.meta.env.VITE_MOCK) {
   ;(await import('./mocks')).worker.start({
     onUnhandledRequest: 'bypass',
   })
