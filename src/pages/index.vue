@@ -3,6 +3,6 @@
 </template>
 <route lang="json">
 {
-  "redirect": "dashboard"
+  "redirect": "homepage"
 }
 </route>

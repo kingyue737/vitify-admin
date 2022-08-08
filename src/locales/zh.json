@@ -1,7 +1,8 @@
 {
+  "homepage": "主页",
   "fullscreen": "全屏",
   "userManagement": "用户管理",
-  "dashboard": "主页",
+  "dashboard": "仪表板",
   "username": "用户名",
   "user": "用户",
   "group": "用户组",
@@ -28,5 +29,7 @@
   "darkMode": "暗模式",
   "interfaceSettings": "界面设置",
   "themeColor": "主题色",
+  "confirm": "确认",
+  "cancel": "取消",
   "hide": "隐藏"
 }

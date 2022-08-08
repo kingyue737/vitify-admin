@@ -18,6 +18,6 @@ describe('Example Test', () => {
       })
       .type('your-password{Enter}')
       .url()
-      .should('eq', 'http://localhost:5050/')
+      .should('eq', 'http://localhost:5050/homepage/')
   })
 })

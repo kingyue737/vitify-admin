@@ -12,7 +12,7 @@
   "meta": {
     "title": "dashboard",
     "icon": "$mdi-monitor-dashboard",
-    "drawerIndex": 0
+    "drawerIndex": 1
   }
 }
 </route>
