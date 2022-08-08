@@ -42,6 +42,10 @@
 
 - 🤡 Mock API in dev and testing with [Mock Service Worker](https://github.com/mswjs/msw)
 
+- 🔔 Notification store
+
+- 🧑‍💼 Route authority based on user role
+
 - 📉 Data visualization with [vue-echarts](https://github.com/ecomfe/vue-echarts)
 
 - 🔗 Communicate with backend with REST API powered by [axios](https://github.com/axios/axios)
@@ -60,18 +64,19 @@
 - [Pinia](https://pinia.esm.dev) - Intuitive, type safe, light and flexible Store for Vue using the Composition API
 - [`unplugin-vue-components`](https://github.com/antfu/unplugin-vue-components) - Auto import Vuetify 2 components
 - [`unplugin-auto-import`](https://github.com/antfu/unplugin-auto-import) - Directly use Vue Composition API and others without importing
+- [PortalVue](https://github.com/linusborg/portal-vue) - Use `<Teleport />` of Vue 3 in Vue 2
 - [Vue I18n](https://github.com/intlify/vue-i18n-next) - Internationalization
   - [`vue-i18n-bridge`](https://github.com/intlify/vue-i18n-next/tree/master/packages/vue-i18n-bridge#readme) - Backport Composition API and message format syntax to Vue 2
   - [`unplugin-vue-i18n`](https://github.com/intlify/bundle-tools/tree/main/packages/unplugin-vue-i18n) - Prebundle Vue I18n messages and support SFC i18n custom block
 - [VueUse](https://github.com/antfu/vueuse) - Collection of useful composition APIs
 - [Mock Service Worker](https://github.com/mswjs/msw) - Seamless REST/GraphQL API mocking library for browser and Node.js
-- [vite-plugin-vue2-svg](https://github.com/pakholeung37/vite-plugin-vue2-svg) - Load SVG files as Vue components, and auto register as Vuetify `v-icon`s
-- [vite-plugin-browserslist-useragent](https://github.com/kingyue737/vite-plugin-browserslist-useragent) - Compile browserslist query to a RegExp to test browser useragent
+- [`vite-plugin-vue2-svg`](https://github.com/pakholeung37/vite-plugin-vue2-svg) - Load SVG files as Vue components, and auto register as Vuetify `v-icon`s
+- [`vite-plugin-browserslist-useragent`](https://github.com/kingyue737/vite-plugin-browserslist-useragent) - Compile browserslist query to a RegExp to test browser useragent
 
 ### Compability
 
-- [@vitejs/plugin-legacy](https://github.com/vitejs/vite/tree/main/packages/plugin-legacy) - Generate polyfills with `@babel/preset-env` in production bundle
-- [postcss-preset-env](https://github.com/csstools/postcss-plugins/tree/main/plugin-packs/postcss-preset-env) - Convert modern CSS into what most browsers understand, determining polyfills based on `browserslist`
+- [`@vitejs/plugin-legacy`](https://github.com/vitejs/vite/tree/main/packages/plugin-legacy) - Generate polyfills with `@babel/preset-env` in production bundle
+- [`postcss-preset-env`](https://github.com/csstools/postcss-plugins/tree/main/plugin-packs/postcss-preset-env) - Convert modern CSS into what most browsers understand, determining polyfills based on `browserslist`
 
 ### Coding Style
 
@@ -166,9 +171,7 @@ pnpm test:e2e
 
 ### Acknowledgement
 
-Inspired by [vitesse](https://github.com/antfu/vitesse) and [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)
-
-Thanks for every developper for making frontend community better.
+Inspired by [vitesse](https://github.com/antfu/vitesse) and [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin) 💖. Thanks for every developper for making frontend community better.
 
 I made this starter template for promptly scaffolding admin projects of my company, along with some good practices I've learned during making these apps.
 
