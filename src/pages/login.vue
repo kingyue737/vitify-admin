@@ -65,7 +65,7 @@ async function onSubmit() {
           contain
         ></v-img>
         <v-app-bar-title class="font-weight-bold">
-          Vitify <span class="primary--text text--lighten-2">Admin</span>
+          Vitify <span class="primary--text text--lighten-1">Admin</span>
         </v-app-bar-title>
       </v-app-bar>
       <v-container fill-height>

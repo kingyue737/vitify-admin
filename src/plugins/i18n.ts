@@ -12,7 +12,7 @@ export const install: InstallPlugin = (vue) => {
     createI18n(
       {
         legacy: false,
-        locale: 'zh',
+        locale: 'en',
         messages: { zh, en },
         missingWarn: false,
         fallbackWarn: false,
