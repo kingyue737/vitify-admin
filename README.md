@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="Vitify - Opinionated Vuetify Admin Starter Template" src="public/favicon.svg" width=300px/>
+  <img alt="Vitify - Opinionated Vuetify Admin Starter Template" src="public/favicon.svg" width=200px/>
 </p>
 <h1 align="center">Vitify Admin</h1>
 
