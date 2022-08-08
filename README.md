@@ -73,7 +73,7 @@
 - [`vite-plugin-vue2-svg`](https://github.com/pakholeung37/vite-plugin-vue2-svg) - Load SVG files as Vue components, and auto register as Vuetify `v-icon`s
 - [`vite-plugin-browserslist-useragent`](https://github.com/kingyue737/vite-plugin-browserslist-useragent) - Compile browserslist query to a RegExp to test browser useragent
 
-### Compability
+### Compatibility
 
 - [`@vitejs/plugin-legacy`](https://github.com/vitejs/vite/tree/main/packages/plugin-legacy) - Generate polyfills with `@babel/preset-env` in production bundle
 - [`postcss-preset-env`](https://github.com/csstools/postcss-plugins/tree/main/plugin-packs/postcss-preset-env) - Convert modern CSS into what most browsers understand, determining polyfills based on `browserslist`
