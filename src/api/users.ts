@@ -11,10 +11,8 @@ export type Group = {
 export interface IUserData {
   id: number
   username: string
-  password: string
-  first_name: string
-  last_name: string
-  email: string
+  name?: string
+  email?: string
   groups: number[]
   date_joined: string
   last_login: string
