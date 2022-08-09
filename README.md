@@ -3,6 +3,18 @@
 </p>
 <h1 align="center">Vitify Admin</h1>
 
+<p align="center">
+  <a href="https://github.com/vuejs/vue">
+    <img src="https://img.shields.io/badge/vue-2.7.8-brightgreen.svg" alt="vue">
+  </a>
+  <a href="https://github.com/vuetifyjs/vuetify">
+    <img src="https://img.shields.io/badge/vuetify-2.6.8-blue.svg" alt="vuetify">
+  </a>
+  <a href="https://github.com/kingyue737/vitify-admin/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license">
+  </a>
+</p>
+
 <p align='center'>
 <b>Vite</b> + <b>Vuetify</b>, Opinionated Admin Starter Template<br>
 </p>
@@ -49,6 +61,8 @@
 - 📉 Data visualization with [vue-echarts](https://github.com/ecomfe/vue-echarts)
 
 - 🔗 Communicate with backend with REST API powered by [axios](https://github.com/axios/axios)
+
+- 🎨 Theme color customization and dark mode
 
 ## Pre-packed
 
