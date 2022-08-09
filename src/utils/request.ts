@@ -3,7 +3,7 @@ import axios, { AxiosError } from 'axios'
 const service = axios.create({
   baseURL:
     import.meta.env.VITE_API_URL ||
-    `http://${window.location.hostname}:9529/api/v1`,
+    `${window.location.protocol}//${window.location.hostname}:9529/api/v1`,
   timeout: 120000,
   // withCredentials: true // send cookies when cross-domain requests
 })

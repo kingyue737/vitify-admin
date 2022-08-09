@@ -3,7 +3,7 @@ import type { IUserData } from '@/api/users'
 
 const baseURL =
   import.meta.env.VITE_API_URL ||
-  `http://${window.location.hostname}:9529/api/v1`
+  `${window.location.protocol}//${window.location.hostname}:9529/api/v1`
 const url = (path: string) => {
   return baseURL + path
 }
