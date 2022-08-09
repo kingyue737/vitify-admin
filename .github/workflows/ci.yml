@@ -66,6 +66,13 @@ jobs:
 
   test-e2e:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.15.1]
+        os: [ubuntu-latest]
+      fail-fast: false
+
     steps:
       - uses: actions/checkout@v3
       - uses: actions/cache@v3
@@ -94,3 +101,12 @@ jobs:
           install-command: echo
           build: pnpm run build
           start: pnpm run preview
+          record: true
+          command-prefix: '--'
+        env:
+          # pass the Dashboard record key as an environment variable
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          # pass GitHub token to allow accurately detecting a build vs a re-run build
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # pass the project ID from the secrets through environment variable
+          CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
