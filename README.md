@@ -113,7 +113,7 @@
 
 ## Try it now!
 
-> Vitify Admin requires Node >=14.18
+> Vitify Admin requires Node >=16.6.0
 
 ### GitHub Template
 
