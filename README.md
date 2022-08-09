@@ -20,7 +20,7 @@
 </p>
 
 <p align='center'>
-<a>Live Demo<sup><em>(coming soon)</em></sup><br></a>
+<a href="https://vitify-admin.netlify.app/">Live Demo<sup><em>(WIP)</em></sup><br></a>
 <a>Documentation<sup><em>(coming soon)</em></sup><br></a>
 </p>
 
