@@ -81,7 +81,7 @@ async function onSubmit() {
                   <v-col>
                     <v-form ref="form" v-model="valid" lazy-validation>
                       <v-text-field
-                        v-model="username"
+                        v-model.trim="username"
                         :counter="15"
                         :rules="nameRules"
                         :label="t('username')"
