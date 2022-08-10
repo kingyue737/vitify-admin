@@ -46,8 +46,14 @@ import {
   mdiBellRemove,
   mdiBellBadgeOutline,
   mdiBellOutline,
+  mdiBell,
   mdiMonitorDashboard,
   mdiViewList,
+  mdiGithub,
+  mdiCurrencyCny,
+  mdiRss,
+  mdiSend,
+  mdiWeb,
 } from '@mdi/js'
 
 const mdi = {
@@ -92,8 +98,14 @@ const mdi = {
   mdiBellRemove,
   mdiBellBadgeOutline,
   mdiBellOutline,
+  mdiBell,
   mdiMonitorDashboard,
   mdiViewList,
+  mdiGithub,
+  mdiCurrencyCny,
+  mdiRss,
+  mdiSend,
+  mdiWeb,
 }
 
 const mdIcons = mapKeys(mdi, (v, k) => kebabCase(k))

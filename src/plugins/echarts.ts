@@ -9,6 +9,10 @@ import {
   type EffectScatterSeriesOption,
   ScatterChart,
   type ScatterSeriesOption,
+  PieChart,
+  type PieSeriesOption,
+  RadarChart,
+  type RadarSeriesOption,
 } from 'echarts/charts'
 import { CanvasRenderer } from 'echarts/renderers'
 import {
@@ -28,11 +32,15 @@ import {
   type MarkPointComponentOption,
   DatasetComponent,
   type DatasetComponentOption,
+  VisualMapComponent,
+  type VisualMapComponentOption,
 } from 'echarts/components'
 
 echarts.use([
   LineChart,
   BarChart,
+  PieChart,
+  RadarChart,
   EffectScatterChart,
   ScatterChart,
   CanvasRenderer,
@@ -44,11 +52,14 @@ echarts.use([
   TitleComponent,
   MarkPointComponent,
   DatasetComponent,
+  VisualMapComponent,
 ])
 
 export type ECOption = echarts.ComposeOption<
   | LineSeriesOption
   | BarSeriesOption
+  | PieSeriesOption
+  | RadarSeriesOption
   | EffectScatterSeriesOption
   | ScatterSeriesOption
   | DataZoomComponentOption
@@ -59,6 +70,7 @@ export type ECOption = echarts.ComposeOption<
   | TitleComponentOption
   | MarkPointComponentOption
   | DatasetComponentOption
+  | VisualMapComponentOption
 >
 
 export default echarts
