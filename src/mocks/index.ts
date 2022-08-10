@@ -31,6 +31,15 @@ export const worker = setupWorker(
         },
         {
           id: 2,
+          groups: [1],
+          username: 'lodgepole',
+          name: 'Ada Zhang',
+          email: '',
+          date_joined: '2021-04-08T23:45:09.709Z',
+          last_login: '2022-07-02T00:13:29.709Z',
+        },
+        {
+          id: 3,
           groups: [2],
           username: 'fuant',
           name: 'Antony Fu',
@@ -38,7 +47,7 @@ export const worker = setupWorker(
           last_login: '2022-08-08T12:18:11.709Z',
         },
         {
-          id: 1,
+          id: 4,
           groups: [2],
           name: 'Ivan You',
           username: 'xiaoyouyou',
@@ -46,7 +55,7 @@ export const worker = setupWorker(
           last_login: '2022-08-08T12:35:09.709Z',
         },
         {
-          id: 1,
+          id: 5,
           groups: [2],
           name: 'Johnny Leider',
           username: 'johnnyleider',
