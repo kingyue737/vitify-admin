@@ -8,7 +8,7 @@
     <img src="https://img.shields.io/badge/vue-2.7.8-brightgreen.svg" alt="vue">
   </a>
   <a href="https://github.com/vuetifyjs/vuetify">
-    <img src="https://img.shields.io/badge/vuetify-2.6.8-blue.svg" alt="vuetify">
+    <img src="https://img.shields.io/badge/vuetify-2.6.9-blue.svg" alt="vuetify">
   </a>
   <a href="https://github.com/kingyue737/vitify-admin/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license">
@@ -16,12 +16,12 @@
 </p>
 
 <p align='center'>
-<b>Vite</b> + <b>Vuetify</b>, Opinionated Admin Starter Template<br>
+<b>Vite</b> + <b>Vuetify</b>, Opinionated Admin Starter Template<br><br>
 </p>
 
 <p align='center'>
-<a href="https://vitify-admin.netlify.app/">Live Demo<sup><em>(WIP)</em></sup><br></a>
-<a>Documentation<sup><em>(coming soon)</em></sup><br></a>
+<a href="https://vitify-admin.netlify.app/">Live Demo<sup><em>(WIP)</em></sup><br><br></a>
+<a>Documentation<sup><em>(coming soon)</em></sup><br><br></a>
 </p>
 
 
@@ -63,6 +63,8 @@
 - 🔗 Communicate with backend with REST API powered by [axios](https://github.com/axios/axios)
 
 - 🎨 Theme color customization and dark mode
+
+- 📱 Responsive layout
 
 ## Pre-packed
 
