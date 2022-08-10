@@ -16,6 +16,14 @@ const { drawer } = storeToRefs(useAppStore())
     </v-btn>
     <AppBreadcrumbs />
     <v-spacer />
+    <v-btn
+      text
+      min-width="0"
+      href="https://github.com/kingyue737/vitify-admin"
+      target="_blank"
+    >
+      <v-icon>$mdi-github</v-icon>
+    </v-btn>
     <PortalTarget name="app-bar" class="d-contents" />
     <ButtonFullScreen />
     <ButtonLocale />
