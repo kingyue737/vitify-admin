@@ -31,5 +31,6 @@
   "themeColor": "主题色",
   "confirm": "确认",
   "cancel": "取消",
-  "hide": "隐藏"
+  "hide": "隐藏",
+  "nestedRoutes": "嵌套路由"
 }

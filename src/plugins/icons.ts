@@ -54,6 +54,7 @@ import {
   mdiRss,
   mdiSend,
   mdiWeb,
+  mdiAnimation,
 } from '@mdi/js'
 
 const mdi = {
@@ -106,6 +107,7 @@ const mdi = {
   mdiRss,
   mdiSend,
   mdiWeb,
+  mdiAnimation,
 }
 
 const mdIcons = mapKeys(mdi, (v, k) => kebabCase(k))
