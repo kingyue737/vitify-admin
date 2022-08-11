@@ -5,14 +5,14 @@
   </defs>
   <g class="logo-inner">
     <use xlink:href="#inner-pie" />
-    <use transform="rotate(90, 28, 28)" xlink:href="#inner-pie" />
-    <use transform="rotate(180, 28, 28)" xlink:href="#inner-pie" />
-    <use transform="rotate(270, 28, 28)" xlink:href="#inner-pie" />
+    <use xlink:href="#inner-pie" transform="rotate(90, 28, 28)" />
+    <use xlink:href="#inner-pie" transform="rotate(180, 28, 28)" />
+    <use xlink:href="#inner-pie" transform="rotate(270, 28, 28)" />
   </g>
   <g class="logo-outer">
     <use xlink:href="#outer-ring" />
-    <use transform="rotate(90, 28, 28)" xlink:href="#outer-ring" />
-    <use transform="rotate(180, 28, 28)" xlink:href="#outer-ring" />
-    <use transform="rotate(270, 28, 28)" xlink:href="#outer-ring" />
+    <use xlink:href="#outer-ring" transform="rotate(90, 28, 28)" />
+    <use xlink:href="#outer-ring" transform="rotate(180, 28, 28)" />
+    <use xlink:href="#outer-ring" transform="rotate(270, 28, 28)" />
   </g>
 </svg>
