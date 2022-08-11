@@ -21,7 +21,7 @@
     "js-cookie": "^3.0.1",
     "lodash": "^4.17.21",
     "nprogress": "^0.2.0",
-    "pinia": "^2.0.17",
+    "pinia": "^2.0.18",
     "portal-vue": "^2.1.7",
     "screenfull": "^6.0.2",
     "vue": "^2.7.8",
@@ -73,7 +73,7 @@
     "vite-plugin-vue2-svg": "^0.3.0",
     "vitest": "^0.21.1",
     "vue-template-compiler": "^2.7.8",
-    "vue-tsc": "^0.40.0"
+    "vue-tsc": "^0.40.1"
   },
   "browserslist": [
     "> 1%",
