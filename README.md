@@ -130,7 +130,7 @@ npx degit kingyue737/vitify-admin my-vitify-app
 cd my-vitify-app
 pnpm i
 ```
-> Vitify Admin requires [`pnpm patch`](https://pnpm.io/cli/patch) to fix bugs in dependencies before maintainers release them. If you are using `yarn`, you can use [`yarn patch`](https://yarnpkg.com/cli/patch). For `npm` users, [`patch-package`](https://github.com/ds300/patch-package) is required as `npm` has no built-in patching functionality.
+> Vitify Admin requires [`pnpm patch`](https://pnpm.io/cli/patch) for bug fixing in dependencies before maintainers release them. If you are using `yarn`, you can use [`yarn patch`](https://yarnpkg.com/cli/patch). For `npm` users, [`patch-package`](https://github.com/ds300/patch-package) is required as `npm` has no built-in patching functionality.
 
 ## Checklist
 
@@ -187,9 +187,11 @@ pnpm test:e2e
 
 ### Acknowledgement
 
-Inspired by [vitesse](https://github.com/antfu/vitesse) and [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin) 💖. Thanks for every developper for making frontend community better.
+Inspired by [vitesse](https://github.com/antfu/vitesse) and [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin) 💖. Thanks for every developer for making frontend community better.
 
 I made this starter template for promptly scaffolding admin projects of my company, along with some good practices I've learned during making these apps.
 
 Currently, plenty of awesome Vue 2 librarys have not migrated to Vue 3 ecosystem, maybe never 😭. There is still a long way to go before the release of version Vuetify v3.1 which includes all components of Vuetify 2. So I struggle with bridging perfect DX of Vue 3 to my Vuetify 2 projects.
 It's strongly opinionated, but hope it can help you to avoid detours.
+
+Don't hesitate to open an issue or a discussion, if you meet any problem. The documentations will be ready soon!
