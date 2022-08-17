@@ -42,7 +42,9 @@
 
 - 📥 [APIs auto importing](https://github.com/antfu/unplugin-auto-import) - use Composition API and others directly
 
-- 🧪 Unit/Component Testing with [Vitest](https://github.com/vitest-dev/vitest) + [Testing Library](https://github.com/testing-library/vue-testing-library), E2E Testing with [Cypress](https://cypress.io/)
+- ☁️ Deploy on Netlify, zero-config
+
+- 🧪 Unit/Component Testing with [Vitest](https://github.com/vitest-dev/vitest) + [Testing Library](https://github.com/testing-library/vue-testing-library), E2E Testing with [Cypress](https://cypress.io/) on [GitHub Actions](https://github.com/features/actions)
 
 <br>
 
@@ -105,6 +107,7 @@
 - [Vitest](https://github.com/vitest-dev/vitest) - Unit testing powered by Vite
 - [Cypress](https://cypress.io/) - E2E testing
 - [pnpm](https://pnpm.js.org/) - Fast, disk space efficient package manager
+- [Netlify](https://www.netlify.com/) - zero-config deployment
 - [VS Code Extensions](./.vscode/extensions.json)
   - [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) - TypeScript support inside Vue SFCs
   - [i18n Ally](https://marketplace.visualstudio.com/items?itemName=lokalise.i18n-ally) - All in one i18n support
@@ -143,6 +146,7 @@ When you use this template, try follow the checklist to update your info properl
 - [ ] Clean up the `README` and remove routes
 - [ ] Change the copyright in navigation drawer and login page
 - [ ] Change default locale of `vue-i18n`
+- [ ] Change or remove [Cypress Dashboard](https://dashboard.cypress.io/) related ID in [ci.yml](https://github.com/kingyue737/vitify-admin/blob/main/.github/workflows/ci.yml)
 
 And, enjoy :)
 
@@ -184,6 +188,34 @@ For E2E test, you need to build the project first
 pnpm build
 pnpm test:e2e
 ```
+
+### Record on Cypress Dashboard
+
+Go to [Cypress Dashboard](https://dashboard.cypress.io/), create a new project and add its `projectId` as `${CYPRESS_PROJECT_ID}`, its `record key` as `$CYPRESS_RECORD_KEY` in your repositry secrets (https://github.com/your-name/project-name/settings/secrets/actions).
+
+If you don't want to use Cypress Dashboard, remove `record: true` and the entire `env` block from [`.github/workflows/ci.yml`](https://github.com/kingyue737/vitify-admin/blob/main/.github/workflows/ci.yml):
+
+```yml
+- name: Cypress
+  uses: cypress-io/github-action@v4
+  with:
+    install-command: echo
+    build: pnpm run build
+    start: pnpm run preview
+    record: true
+    command-prefix: '--'
+  env:
+    # pass the Dashboard record key as an environment variable
+    CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+    # pass GitHub token to allow accurately detecting a build vs a re-run build
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    # pass the project ID from the secrets through environment variable
+    CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
+```
+
+### Deploy on Netlify
+
+Go to [Netlify](https://app.netlify.com/start) and select your clone, `OK` along the way, and your App will be live in a minute.
 
 ### Acknowledgement
 
