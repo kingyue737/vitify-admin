@@ -15,7 +15,7 @@ specifiers:
   '@rushstack/eslint-patch': ^1.1.4
   '@testing-library/vue': ^5.8.3
   '@types/js-cookie': ^3.0.2
-  '@types/lodash': ^4.14.182
+  '@types/lodash': ^4.14.183
   '@types/node': ^16.11.49
   '@types/nprogress': ^0.2.0
   '@types/postcss-preset-env': ^7.7.0
@@ -27,7 +27,7 @@ specifiers:
   '@vue/test-utils': ^1.3.0
   '@vueuse/core': ^9.1.0
   axios: ^0.27.2
-  cypress: ^10.4.0
+  cypress: ^10.6.0
   echarts: ^5.3.3
   eslint: ^8.22.0
   eslint-plugin-cypress: ^2.12.1
@@ -93,7 +93,7 @@ devDependencies:
   '@rushstack/eslint-patch': 1.1.4
   '@testing-library/vue': 5.8.3_7unolrgjwxngstwwllrtmolbmm
   '@types/js-cookie': 3.0.2
-  '@types/lodash': 4.14.182
+  '@types/lodash': 4.14.183
   '@types/node': 16.11.49
   '@types/nprogress': 0.2.0
   '@types/postcss-preset-env': 7.7.0
@@ -103,7 +103,7 @@ devDependencies:
   '@vue/eslint-config-typescript': 11.0.0_4py5zxx5ck6utobkmozwvrmyiy
   '@vue/runtime-dom': 3.2.37
   '@vue/test-utils': 1.3.0_7unolrgjwxngstwwllrtmolbmm
-  cypress: 10.4.0
+  cypress: 10.6.0
   eslint: 8.22.0
   eslint-plugin-cypress: 2.12.1_eslint@8.22.0
   eslint-plugin-vue: 9.3.0_eslint@8.22.0
@@ -670,7 +670,7 @@ packages:
       pinia: '>=2.0.17'
     dependencies:
       pinia: 2.0.18_typescript@4.7.4+vue@2.7.8
-      vue-demi: 0.13.7_vue@2.7.8
+      vue-demi: 0.13.8_vue@2.7.8
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
@@ -812,8 +812,8 @@ packages:
     resolution: {integrity: sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ==}
     dev: true
 
-  /@types/lodash/4.14.182:
-    resolution: {integrity: sha512-/THyiqyQAP9AfARo4pF+aCGcyiQ94tX/Is2I7HofNRqoYLgN1PBoOWu2/zTA5zMxzP5EFutMtWtGAFRKUe961Q==}
+  /@types/lodash/4.14.183:
+    resolution: {integrity: sha512-UXavyuxzXKMqJPEpFPri6Ku5F9af6ZJXUneHhvQJxavrEjuHkFp2YnDWHcxJiG7hk8ZkWqjcyNeW1s/smZv5cw==}
     dev: true
 
   /@types/ms/0.7.31:
@@ -1267,7 +1267,7 @@ packages:
       '@types/web-bluetooth': 0.0.15
       '@vueuse/metadata': 9.1.0
       '@vueuse/shared': 9.1.0_vue@2.7.8
-      vue-demi: 0.13.7_vue@2.7.8
+      vue-demi: 0.13.8_vue@2.7.8
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
@@ -1278,7 +1278,7 @@ packages:
   /@vueuse/shared/9.1.0_vue@2.7.8:
     resolution: {integrity: sha512-pB/3njQu4tfJJ78ajELNda0yMG6lKfpToQW7Soe09CprF1k3QuyoNi1tBNvo75wBDJWD+LOnr+c4B5HZ39jY/Q==}
     dependencies:
-      vue-demi: 0.13.7_vue@2.7.8
+      vue-demi: 0.13.8_vue@2.7.8
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
@@ -1602,7 +1602,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001377
-      electron-to-chromium: 1.4.221
+      electron-to-chromium: 1.4.222
       node-releases: 2.0.6
       update-browserslist-db: 1.0.5_browserslist@4.21.3
     dev: true
@@ -2134,8 +2134,8 @@ packages:
   /csstype/3.1.0:
     resolution: {integrity: sha512-uX1KG+x9h5hIJsaKR9xHUeUraxf8IODOwq9JLNPq6BwB04a/xgpq3rcx47l5BZu5zBPlgD342tdke3Hom/nJRA==}
 
-  /cypress/10.4.0:
-    resolution: {integrity: sha512-OM7F8MRE01SHQRVVzunid1ZK1m90XTxYnl+7uZfIrB4CYqUDCrZEeSyCXzIbsS6qcaijVCAhqDL60SxG8N6hew==}
+  /cypress/10.6.0:
+    resolution: {integrity: sha512-6sOpHjostp8gcLO34p6r/Ci342lBs8S5z9/eb3ZCQ22w2cIhMWGUoGKkosabPBfKcvRS9BE4UxybBtlIs8gTQA==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     requiresBuild: true
@@ -2280,7 +2280,7 @@ packages:
       isarray: 2.0.5
       object-is: 1.1.5
       object-keys: 1.1.1
-      object.assign: 4.1.3
+      object.assign: 4.1.4
       regexp.prototype.flags: 1.4.3
       side-channel: 1.0.4
       which-boxed-primitive: 1.0.2
@@ -2407,8 +2407,8 @@ packages:
       sigmund: 1.0.1
     dev: true
 
-  /electron-to-chromium/1.4.221:
-    resolution: {integrity: sha512-aWg2mYhpxZ6Q6Xvyk7B2ziBca4YqrCDlXzmcD7wuRs65pVEVkMT1u2ifdjpAQais2O2o0rW964ZWWWYRlAL/kw==}
+  /electron-to-chromium/1.4.222:
+    resolution: {integrity: sha512-gEM2awN5HZknWdLbngk4uQCVfhucFAfFzuchP3wM3NN6eow1eDU0dFy2kts43FB20ZfhVFF0jmFSTb1h5OhyIg==}
     dev: true
 
   /emoji-regex/8.0.0:
@@ -2459,7 +2459,7 @@ packages:
       is-weakref: 1.0.2
       object-inspect: 1.12.2
       object-keys: 1.1.1
-      object.assign: 4.1.3
+      object.assign: 4.1.4
       regexp.prototype.flags: 1.4.3
       string.prototype.trimend: 1.0.5
       string.prototype.trimstart: 1.0.5
@@ -3344,8 +3344,8 @@ packages:
     resolution: {integrity: sha512-bzh50DW9kTPM00T8y4o8vQg89Di9oLJVLW/KaOGIXJWP/iqCN6WKYkbNOF04vFLJhwcpYUh9ydh/+5vpOqV4YQ==}
     dev: true
 
-  /graphql/16.5.0:
-    resolution: {integrity: sha512-qbHgh8Ix+j/qY+a/ZcJnFQ+j8ezakqPiHwPiZhV/3PgGlgf96QMBB5/f2rkiC9sgLoy/xvT6TSiaf2nTHJh5iA==}
+  /graphql/16.6.0:
+    resolution: {integrity: sha512-KPIBPDlW7NxrbT/eh4qPXz5FiFdL5UbaA0XUNz2Rp3Z3hqBSkbj0GVjwFDztsWVauZUWsbKHgMg++sk8UX0bkw==}
     engines: {node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0}
     dev: true
 
@@ -3537,7 +3537,7 @@ packages:
     engines: {node: '>=12.0.0'}
     dependencies:
       ansi-escapes: 4.3.2
-      chalk: 4.1.2
+      chalk: 4.1.1
       cli-cursor: 3.1.0
       cli-width: 3.0.0
       external-editor: 3.1.0
@@ -4184,7 +4184,7 @@ packages:
       chalk: 4.1.1
       chokidar: 3.5.3
       cookie: 0.4.2
-      graphql: 16.5.0
+      graphql: 16.6.0
       headers-polyfill: 3.0.10
       inquirer: 8.2.4
       is-node-process: 1.0.1
@@ -4291,8 +4291,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /object.assign/4.1.3:
-    resolution: {integrity: sha512-ZFJnX3zltyjcYJL0RoCJuzb+11zWGyaDbjgxZbdV7rFEcHQuYxrZqhow67aA7xpes6LhojyFDaBKAFfogQrikA==}
+  /object.assign/4.1.4:
+    resolution: {integrity: sha512-1mxKf0e58bvyjSCtKYY4sRe9itRk3PJpquJOjeIkz885CczcI4IvJJDLPS72oowuSh+pBxUFROpX+TU++hxhZQ==}
     engines: {node: '>= 0.4'}
     dependencies:
       call-bind: 1.0.2
@@ -4343,7 +4343,7 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       bl: 4.1.0
-      chalk: 4.1.2
+      chalk: 4.1.1
       cli-cursor: 3.1.0
       cli-spinners: 2.7.0
       is-interactive: 1.0.0
@@ -4491,7 +4491,7 @@ packages:
       '@vue/devtools-api': 6.2.1
       typescript: 4.7.4
       vue: 2.7.8
-      vue-demi: 0.13.7_vue@2.7.8
+      vue-demi: 0.13.8_vue@2.7.8
 
   /pkg-types/0.3.3:
     resolution: {integrity: sha512-6AJcCMnjUQPQv/Wk960w0TOmjhdjbeaQJoSKWRQv9N3rgkessCu6J0Ydsog/nw1MbpnxHuPzYbfOn2KmlZO1FA==}
@@ -6026,8 +6026,8 @@ packages:
       - terser
     dev: true
 
-  /vue-demi/0.13.7_vue@2.7.8:
-    resolution: {integrity: sha512-hbhlvpx1gFW3TB5HxJ0mNxyA9Jh5iQt409taOs6zkhpvfJ7YzLs1rsLufJmDsjH5PI1cOyfikY1fE/meyHfU5A==}
+  /vue-demi/0.13.8_vue@2.7.8:
+    resolution: {integrity: sha512-Vy1zbZhCOdsmvGR6tJhAvO5vhP7eiS8xkbYQSoVa7o6KlIy3W8Rc53ED4qI4qpeRDjv3mLfXSEpYU6Yq4pgXRg==}
     engines: {node: '>=12'}
     hasBin: true
     requiresBuild: true
@@ -6054,7 +6054,7 @@ packages:
       echarts: 5.3.3
       resize-detector: 0.3.0
       vue: 2.7.8
-      vue-demi: 0.13.7_vue@2.7.8
+      vue-demi: 0.13.8_vue@2.7.8
     dev: false
     patched: true
 
@@ -6089,7 +6089,7 @@ packages:
       '@intlify/shared': 9.2.2
       '@intlify/vue-devtools': 9.2.2
       '@vue/devtools-api': 6.2.1
-      vue-demi: 0.13.7_vue@2.7.8
+      vue-demi: 0.13.8_vue@2.7.8
     transitivePeerDependencies:
       - vue
     dev: false
