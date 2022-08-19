@@ -4,5 +4,5 @@ import type { InstallPlugin } from '@/utils/types'
 
 export const install: InstallPlugin = (vue) => {
   vue.component('VHeadCard', VHeadCard)
-  vue.component('VChart', VChart as any)
+  vue.component('VChart', VChart)
 }
