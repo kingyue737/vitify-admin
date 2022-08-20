@@ -5,7 +5,7 @@
 
 <p align="center">
   <a href="https://github.com/vuejs/vue">
-    <img src="https://img.shields.io/badge/vue-2.7.8-brightgreen.svg" alt="vue">
+    <img src="https://img.shields.io/badge/vue-2.7.9-brightgreen.svg" alt="vue">
   </a>
   <a href="https://github.com/vuetifyjs/vuetify">
     <img src="https://img.shields.io/badge/vuetify-2.6.9-blue.svg" alt="vuetify">
@@ -226,4 +226,4 @@ I made this starter template for promptly scaffolding admin projects of my compa
 Currently, plenty of awesome Vue 2 librarys have not migrated to Vue 3 ecosystem, maybe never 😭. There is still a long way to go before the release of version Vuetify v3.1 which includes all components of Vuetify 2. So I struggle with bridging perfect DX of Vue 3 to my Vuetify 2 projects.
 It's strongly opinionated, but hope it can help you to avoid detours.
 
-Don't hesitate to open an issue or a discussion, if you meet any problem. The documentations will be ready soon!
+Don't hesitate to open an issue or a discussion, if you meet any problem.
