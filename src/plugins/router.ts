@@ -38,6 +38,7 @@ export const install: InstallPlugin = (vue) => {
           next()
           return
         }
+        // Redirect to 404 error page(TODO) if not permitted
         next({ name: 'all' })
       }
     } else {
