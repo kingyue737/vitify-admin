@@ -93,7 +93,11 @@ export default defineConfig({
     },
   },
   test: {
-    alias: { vue: 'vue/dist/vue.runtime.mjs' },
+    alias: {
+      vue: 'vue/dist/vue.runtime.mjs',
+      'vue-router/composables': 'vue-router/dist/composables.mjs',
+      'vue-router': 'vue-router/dist/vue-router.esm.js',
+    },
     globals: true,
     include: ['test/**/*.test.ts', 'src/**/__tests__/*'],
     environment: 'jsdom',
