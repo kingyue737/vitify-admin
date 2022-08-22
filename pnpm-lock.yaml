@@ -58,10 +58,9 @@ specifiers:
   vue-echarts: ^6.2.3
   vue-i18n: 8.27.2
   vue-i18n-bridge: ^9.2.2
-  vue-router: ^3.5.4
+  vue-router: ^3.6.0
   vue-template-compiler: ^2.7.9
   vue-tsc: ^0.40.1
-  vue2-helpers: ^2.0.1
   vuetify: ^2.6.9
 
 dependencies:
@@ -79,8 +78,7 @@ dependencies:
   vue-echarts: 6.2.3_echarts@5.3.3+vue@2.7.9
   vue-i18n: 8.27.2_vue@2.7.9
   vue-i18n-bridge: 9.2.2_vue@2.7.9
-  vue-router: 3.5.4_vue@2.7.9
-  vue2-helpers: 2.0.1_vue-router@3.5.4
+  vue-router: 3.6.0_vue@2.7.9
   vuetify: 2.6.9_vue@2.7.9
 
 devDependencies:
@@ -119,7 +117,7 @@ devDependencies:
   vite-plugin-browserslist-useragent: 0.0.3_vite@3.0.9
   vite-plugin-inspect: 0.6.0_vite@3.0.9
   vite-plugin-pages: 0.25.0_vite@3.0.9
-  vite-plugin-vue-layouts: 0.7.0_a3kbo36rindkqkpj3emapp4oju
+  vite-plugin-vue-layouts: 0.7.0_vw6p7n5oaaytvrbs2bk4rofb6m
   vite-plugin-vue2-svg: 0.3.0_z3lmmfp3kurxi67ey4tirfqh6i
   vitest: 0.22.1_iayl32zf355npl3jzbnsjtz4hq
   vue-template-compiler: 2.7.9
@@ -5852,7 +5850,7 @@ packages:
       - supports-color
     dev: true
 
-  /vite-plugin-vue-layouts/0.7.0_a3kbo36rindkqkpj3emapp4oju:
+  /vite-plugin-vue-layouts/0.7.0_vw6p7n5oaaytvrbs2bk4rofb6m:
     resolution: {integrity: sha512-k5XDmRNFo4M/GmUjhbRXj2WmJiFcGoVI8l/uZ72RHyRDQr4wE/6Zq/KFq0lqXomWQxTSzakQRUswzNwtvZLE8A==}
     peerDependencies:
       vite: ^2.5.0 || ^3.0.0-0
@@ -5864,7 +5862,7 @@ packages:
       fast-glob: 3.2.11
       vite: 3.0.9_sass@1.32.13+terser@5.14.2
       vue: 2.7.9
-      vue-router: 3.5.4_vue@2.7.9
+      vue-router: 3.6.0_vue@2.7.9
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -6076,8 +6074,8 @@ packages:
     dependencies:
       vue: 2.7.9
 
-  /vue-router/3.5.4_vue@2.7.9:
-    resolution: {integrity: sha512-x+/DLAJZv2mcQ7glH2oV9ze8uPwcI+H+GgTgTmb5I55bCgY3+vXWIsqbYUzbBSZnwFHEJku4eoaH/x98veyymQ==}
+  /vue-router/3.6.0_vue@2.7.9:
+    resolution: {integrity: sha512-pcU/wpHhsCMNkRyBKWbutP1D9+i4XlRy4dZbxb0L2MCrlbivSaea1o++wBECsK4b+dog/B0p9lajx3tUMf4UtQ==}
     peerDependencies:
       vue: ^2
     dependencies:
@@ -6110,21 +6108,6 @@ packages:
     dependencies:
       '@vue/compiler-sfc': 2.7.9
       csstype: 3.1.0
-
-  /vue2-helpers/2.0.1_vue-router@3.5.4:
-    resolution: {integrity: sha512-tWANBDop/JRCDI28TpClcDLrtWduY6zOqGiEOrpZR8BlOEx0fMX9YVTbQTfrUQ9h6nsPZacjR9Fb+o1TjyuGTA==}
-    peerDependencies:
-      vue-router: ^3
-      vuex: ^3
-    peerDependenciesMeta:
-      vue-router:
-        optional: true
-      vuex:
-        optional: true
-    dependencies:
-      vue: 2.7.9
-      vue-router: 3.5.4_vue@2.7.9
-    dev: false
 
   /vuetify/2.6.9_vue@2.7.9:
     resolution: {integrity: sha512-f4jy/DWCwyrkgbbArg0ugSX70aHfv7oO3zz2nuXqoD3W0X8AgunrakzKkt0H+BnuZgesoit9NzLoJNj1GY5DWw==}

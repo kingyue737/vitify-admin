@@ -5,7 +5,7 @@ import AppView from '@/components/layout/AppView.vue'
 import AppFooter from '@/components/layout/AppFooter.vue'
 import { useTitle } from '@vueuse/core'
 
-const route = useRoute()!
+const route = useRoute()
 const { t } = useI18n()
 const title = computed(() => {
   const title = t(route.meta?.title || route.matched[0].meta?.title || '')
