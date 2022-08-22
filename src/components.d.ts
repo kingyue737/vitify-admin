@@ -1,6 +1,6 @@
 import type { DefineComponent } from 'vue'
 
-declare module '@vue/runtime-dom' {
+declare module 'vue' {
   export interface GlobalComponents {
     VChart: typeof import('vue-echarts')['default']
     VHeadCard: typeof import('@/components/VheadCard.vue')['default']

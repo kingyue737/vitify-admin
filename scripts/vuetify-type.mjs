@@ -108,7 +108,7 @@ import type { DefineComponent, VNode } from 'vue'
 import type { DataTableHeader, DataOptions } from 'vuetify'
 type eventHandler = Function
 
-declare module '@vue/runtime-dom' {
+declare module 'vue' {
   export interface GlobalComponents {
     ${types}
   }
