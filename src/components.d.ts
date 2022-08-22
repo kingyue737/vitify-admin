@@ -1,4 +1,4 @@
-import type { DefineComponent } from '@vue/runtime-dom'
+import type { DefineComponent } from 'vue'
 
 declare module '@vue/runtime-dom' {
   export interface GlobalComponents {
