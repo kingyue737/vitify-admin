@@ -24,11 +24,11 @@
     "pinia": "^2.0.20",
     "portal-vue": "^2.1.7",
     "screenfull": "^6.0.2",
-    "vue": "^2.7.9",
+    "vue": "^2.7.10",
     "vue-echarts": "^6.2.3",
     "vue-i18n": "8.27.2",
     "vue-i18n-bridge": "^9.2.2",
-    "vue-router": "^3.6.0",
+    "vue-router": "^3.6.2",
     "vuetify": "^2.6.9"
   },
   "devDependencies": {
@@ -38,7 +38,7 @@
     "@testing-library/vue": "^5.8.3",
     "@types/js-cookie": "^3.0.2",
     "@types/lodash": "^4.14.184",
-    "@types/node": "^16.11.52",
+    "@types/node": "^16.11.54",
     "@types/nprogress": "^0.2.0",
     "@types/postcss-preset-env": "^7.7.0",
     "@vitejs/plugin-legacy": "^2.0.1",
@@ -49,7 +49,7 @@
     "cypress": "^10.6.0",
     "eslint": "^8.22.0",
     "eslint-plugin-cypress": "^2.12.1",
-    "eslint-plugin-vue": "^9.3.0",
+    "eslint-plugin-vue": "^9.4.0",
     "flush-promises": "^1.0.2",
     "jsdom": "^20.0.0",
     "msw": "^0.45.0",
@@ -70,7 +70,7 @@
     "vite-plugin-vue-layouts": "^0.7.0",
     "vite-plugin-vue2-svg": "^0.3.0",
     "vitest": "^0.22.1",
-    "vue-template-compiler": "^2.7.9",
+    "vue-template-compiler": "^2.7.10",
     "vue-tsc": "^0.40.1"
   },
   "browserslist": [
