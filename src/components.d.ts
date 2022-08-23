@@ -4,6 +4,8 @@ declare module 'vue' {
   export interface GlobalComponents {
     VChart: typeof import('vue-echarts')['default']
     VHeadCard: typeof import('@/components/VheadCard.vue')['default']
+    RouterView: typeof import('vue-router')['RouterView']
+    RouterLink: typeof import('vue-router')['RouterLink']
     Portal: DefineComponent<{
       disabled?: boolean
       name?: string
