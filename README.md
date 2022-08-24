@@ -21,7 +21,7 @@
 
 <p align='center'>
 <a href="https://vitify-admin.netlify.app/">Live Demo<br><br></a>
-<a href="https://kingyue737.github.io/vitify-docs/">Documentation<sup><em>(WIP)</em></sup><br><br></a>
+<a href="https://kingyue737.github.io/vitify-docs/">Documentation<br><br></a>
 </p>
 
 
