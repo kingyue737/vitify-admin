@@ -32,5 +32,6 @@
   "confirm": "确认",
   "cancel": "取消",
   "hide": "隐藏",
+  "documentation": "文档",
   "nestedRoutes": "嵌套路由"
 }

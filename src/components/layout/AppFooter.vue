@@ -3,6 +3,7 @@ import ButtonSettings from './ButtonSettings.vue'
 import AppMessage from './AppMessage.vue'
 import { useNow } from '@vueuse/core'
 
+const { t } = useI18n()
 const now = useNow()
 </script>
 
@@ -23,6 +24,23 @@ const now = useNow()
     </span>
 
     <v-spacer />
+    <v-tooltip top>
+      <template #activator="{ on }">
+        <v-btn
+          text
+          tile
+          small
+          width="40"
+          href="https://kingyue737.github.io/vitify-docs/"
+          target="_blank"
+          v-on="on"
+        >
+          <v-icon>$mdi-book-outline</v-icon>
+          <v-icon size="12">$mdi-open-in-new</v-icon>
+        </v-btn>
+      </template>
+      <span>{{ t('documentation') }}</span>
+    </v-tooltip>
     <AppMessage />
     <ButtonSettings />
     <div class="ml-2" />

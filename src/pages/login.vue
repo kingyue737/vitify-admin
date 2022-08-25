@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { VForm } from '@/utils/types'
 import background from '@/assets/images/drawer/1.jpg'
+import ButtonLocale from '@/components/layout/ButtonLocale.vue'
 const { t } = useI18n()
 const router = useRouter()
 const userStore = useUserStore()
@@ -67,6 +68,23 @@ async function onSubmit() {
         <v-app-bar-title class="font-weight-bold">
           Vitify <span class="primary--text text--lighten-1">Admin</span>
         </v-app-bar-title>
+        <v-spacer />
+        <v-tooltip bottom>
+          <template #activator="{ on }">
+            <v-btn
+              dark
+              text
+              min-width="0"
+              href="https://kingyue737.github.io/vitify-docs/"
+              target="_blank"
+              v-on="on"
+            >
+              <v-icon>$mdi-book-outline</v-icon>
+            </v-btn>
+          </template>
+          <span>{{ t('documentation') }}</span>
+        </v-tooltip>
+        <ButtonLocale />
       </v-app-bar>
       <v-container fill-height>
         <v-row align="center" justify="center">

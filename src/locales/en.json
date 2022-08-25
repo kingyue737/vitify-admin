@@ -31,5 +31,6 @@
   "confirm": "Confirm",
   "cancel": "Cancel",
   "themeColor": "Theme Color",
+  "documentation": "Documentation",
   "nestedRoutes": "Nested Routes"
 }
