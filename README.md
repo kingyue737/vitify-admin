@@ -217,6 +217,12 @@ If you don't want to use Cypress Dashboard, remove `record: true` and the entire
 
 Go to [Netlify](https://app.netlify.com/start) and select your clone, `OK` along the way, and your App will be live in a minute.
 
+### Documentation
+
+The [documentation](https://kingyue737.github.io/vitify-docs/) of this template is powered by [VitePress](https://vitepress.vuejs.org/) and [DocSearch](https://docsearch.algolia.com/)
+
+Repo: https://github.com/kingyue737/vitify-docs
+
 ### Acknowledgement
 
 Inspired by [vitesse](https://github.com/antfu/vitesse) and [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin) 💖. Thanks for every developer for making frontend community better.
