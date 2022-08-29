@@ -42,7 +42,7 @@
 
 - 📥 [APIs auto importing](https://github.com/antfu/unplugin-auto-import) - use Composition API and others directly
 
-- ☁️ Deploy on Netlify, zero-config
+- ☁️ Deploy on [Netlify](https://www.netlify.com/), zero-config
 
 - 🧪 Unit/Component Testing with [Vitest](https://github.com/vitest-dev/vitest) + [Testing Library](https://github.com/testing-library/vue-testing-library), E2E Testing with [Cypress](https://cypress.io/) on [GitHub Actions](https://github.com/features/actions)
 
@@ -82,7 +82,7 @@
 - [Pinia](https://pinia.esm.dev) - Intuitive, type safe, light and flexible Store for Vue using the Composition API
 - [`unplugin-vue-components`](https://github.com/antfu/unplugin-vue-components) - Auto import Vuetify 2 components
 - [`unplugin-auto-import`](https://github.com/antfu/unplugin-auto-import) - Directly use Vue Composition API and others without importing
-- [PortalVue](https://github.com/linusborg/portal-vue) - Use `<Teleport />` of Vue 3 in Vue 2
+- [PortalVue](https://github.com/linusborg/portal-vue) - Use [`<Teleport>`](https://vuejs.org/guide/built-ins/teleport.html) of Vue 3 in Vue 2
 - [Vue I18n](https://github.com/intlify/vue-i18n-next) - Internationalization
   - [`vue-i18n-bridge`](https://github.com/intlify/vue-i18n-next/tree/master/packages/vue-i18n-bridge#readme) - Backport Composition API and message format syntax to Vue 2
   - [`unplugin-vue-i18n`](https://github.com/intlify/bundle-tools/tree/main/packages/unplugin-vue-i18n) - Prebundle Vue I18n messages and support SFC i18n custom block
