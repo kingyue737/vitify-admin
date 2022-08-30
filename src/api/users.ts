@@ -1,5 +1,4 @@
-import request from '@/utils/request'
-import type { AxiosPromise } from 'axios'
+import service from '@/utils/request'
 export const ROLES = ['developer', 'admin', 'staff', 'guest'] as const
 export type Role = typeof ROLES[number]
 export type Group = {
@@ -22,85 +21,33 @@ export type LoginForm = {
   password: string
 }
 
-export const getUsers = (): AxiosPromise<IUserData[]> =>
-  request({
-    url: '/users',
-    method: 'get',
-  })
-
-export const getUserInfo = (data: any) =>
-  request({
-    url: '/users/info',
-    method: 'post',
-    data,
-  })
+export const getUsers = () => service.get<IUserData[]>('/users')
 
 export const getUserByName = (username: string) =>
-  request({
-    url: `/users/${username}`,
-    method: 'get',
-  })
+  service.get<IUserData>(`/users/${username}`)
 
-export const createUser = (user: IUserData) =>
-  request({
-    url: '/users',
-    method: 'post',
-    data: user,
-  })
+export const createUser = (user: IUserData) => service.post('/users', user)
 
 export const updateUser = (user: IUserData) =>
-  request({
-    url: `/users/${user.username}`,
-    method: 'patch',
-    data: user,
-  })
+  service.patch(`/users/${user.username}`, user)
 
 export const deleteUser = (user: IUserData) =>
-  request({
-    url: `/users/${user.username}`,
-    method: 'delete',
-  })
+  service.delete(`/users/${user.username}`)
 
-export const login = (data: LoginForm) =>
-  request({
-    url: '/token',
-    method: 'post',
-    data,
-  })
+export const login = (data: LoginForm) => service.post('/token', data)
 
-export const logout = () =>
-  request({
-    url: '/users/logout',
-    method: 'post',
-  })
+export const logout = () => service.post('/users/logout')
 
-export const refreshToken = (data: any) =>
-  request({
-    url: '/token/refresh',
-    method: 'post',
-    data,
-  })
+export const refreshToken = (data: any) => service.post('/token/refresh', data)
 
-export const getGroup = (id: number) =>
-  request({
-    url: `/groups/${id}`,
-    method: 'get',
-  })
+export const getGroup = (id: number) => service.get(`/groups/${id}`)
 
-export const getGroups = () =>
-  request({
-    url: '/groups',
-    method: 'get',
-  })
+export const getGroups = () => service.get<Group[]>('/groups')
 
 export const resetPassword = (username: string, password: string) =>
-  request({
-    url: `/users/${username}/alter_user_password/`,
-    method: 'post',
-    data: {
-      username,
-      password,
-    },
+  service.post(`/users/${username}/alter_user_password/`, {
+    username,
+    password,
   })
 
 export const selfResetPassword = (
@@ -108,11 +55,7 @@ export const selfResetPassword = (
   old_password: string,
   new_password: string
 ) =>
-  request({
-    url: `/users/${username}/set_password/`,
-    method: 'post',
-    data: {
-      old_password,
-      new_password,
-    },
+  service.post(`/users/${username}/alter_user_password/`, {
+    old_password,
+    new_password,
   })
