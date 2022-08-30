@@ -10,11 +10,12 @@ import Pages from 'vite-plugin-pages'
 import Layouts from 'vite-plugin-vue-layouts'
 import Inspect from 'vite-plugin-inspect'
 import VueI18n from '@intlify/unplugin-vue-i18n/vite'
+import browserslistToEsbuild from 'browserslist-to-esbuild'
 import SupportedBrowsers from 'vite-plugin-browserslist-useragent'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  build: { target: 'chrome90' },
+  build: { target: browserslistToEsbuild() },
   server: {
     port: 9527,
   },
