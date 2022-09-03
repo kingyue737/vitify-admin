@@ -67,7 +67,7 @@
     "vite": "^3.0.9",
     "vite-plugin-browserslist-useragent": "^0.0.3",
     "vite-plugin-inspect": "^0.6.1",
-    "vite-plugin-pages": "^0.25.0",
+    "vite-plugin-pages": "^0.26.0",
     "vite-plugin-vue-layouts": "^0.7.0",
     "vite-plugin-vue2-svg": "^0.3.0",
     "vitest": "^0.22.1",

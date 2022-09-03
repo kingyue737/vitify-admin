@@ -6,11 +6,6 @@ import type { InstallPlugin } from '@/utils/types'
 
 export const routes = setupLayouts(generatedRoutes)
 
-// https://github.com/hannoeru/vite-plugin-pages/issues/277
-if (routes[0]?.children[0]?.name === 'all') {
-  routes.push(routes.shift())
-}
-
 export const install: InstallPlugin = (vue) => {
   vue.use(Router)
 
