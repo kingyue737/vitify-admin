@@ -1,6 +1,7 @@
 export {}
 
 import 'vue-router'
+import type { RouteConfig } from 'vue-router'
 import type { Role } from '@/api/users'
 
 declare module 'vue-router' {
@@ -15,4 +16,5 @@ declare module 'vue-router' {
     hidden?: boolean // hide this route in drawer if truthy
     breadcrumb?: 'hidden' | 'disabled' // default is enabled
   }
+  type RouteRecordRaw = RouteConfig // shim plugins for vue-router v4
 }

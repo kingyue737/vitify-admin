@@ -2,7 +2,6 @@
 import { groupBy } from 'lodash'
 import { useVuetify } from '@/composables/useVuetify'
 import AppDrawerItem from './AppDrawerItem.vue'
-import type { RouteConfig } from 'vue-router'
 import { routes } from '@/plugins/router'
 import { isPermitted } from '@/utils/permission'
 export default defineComponent({
@@ -28,7 +27,7 @@ export default defineComponent({
     }),
     groupedRoutes() {
       const routes = groupBy(
-        this.routes.map((c: RouteConfig) => c.children![0]),
+        this.routes.map((c) => c.children![0]),
         'meta.drawerGroup'
       )
       return Object.values(routes)
