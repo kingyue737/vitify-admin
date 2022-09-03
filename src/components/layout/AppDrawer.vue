@@ -27,14 +27,13 @@ export default defineComponent({
       drawerImageShow: 'drawerImageShow',
     }),
     groupedRoutes() {
-      const _routes = this.routes.map((c: RouteConfig) => c.children![0])
-      const routes: { [key: string]: RouteConfig[] } = groupBy(
-        _routes as RouteConfig[],
+      const routes = groupBy(
+        this.routes.map((c: RouteConfig) => c.children![0]),
         'meta.drawerGroup'
       )
-      Object.keys(routes).forEach(
-        (key) =>
-          (routes[key] = routes[key]
+      return Object.values(routes)
+        .map((rs) =>
+          rs
             .filter(
               (r) =>
                 r.meta?.icon && (!r.meta?.roles || isPermitted(r.meta.roles))
@@ -42,9 +41,9 @@ export default defineComponent({
             .sort(
               (a, b) =>
                 (a.meta?.drawerIndex ?? 99) - (b.meta?.drawerIndex ?? 98)
-            ))
-      )
-      return routes
+            )
+        )
+        .reverse()
     },
   },
   mounted() {
@@ -94,7 +93,7 @@ export default defineComponent({
     </template>
 
     <v-list expand nav>
-      <template v-for="(routesInGroup, keyGroup, i) in groupedRoutes">
+      <template v-for="(routesInGroup, i) in groupedRoutes">
         <v-divider
           v-if="routesInGroup.length && i !== 0"
           :key="`item-divider-${i}`"
