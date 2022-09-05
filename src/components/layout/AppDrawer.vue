@@ -4,6 +4,7 @@ import { useVuetify } from '@/composables/useVuetify'
 import AppDrawerItem from './AppDrawerItem.vue'
 import { routes } from '@/plugins/router'
 import { isPermitted } from '@/utils/permission'
+import type { RouteConfig } from 'vue-router'
 export default defineComponent({
   components: { AppDrawerItem },
   setup() {
@@ -25,7 +26,7 @@ export default defineComponent({
       drawerImage: 'drawerImage',
       drawerImageShow: 'drawerImageShow',
     }),
-    groupedRoutes() {
+    groupedRoutes(): RouteConfig[][] {
       const routes = groupBy(
         this.routes.map((c) => c.children![0]),
         'meta.drawerGroup'
