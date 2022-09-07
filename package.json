@@ -28,7 +28,7 @@
     "vue-echarts": "^6.2.3",
     "vue-i18n": "8.27.2",
     "vue-i18n-bridge": "^9.2.2",
-    "vue-router": "^3.6.4",
+    "vue-router": "^3.6.5",
     "vuetify": "^2.6.9"
   },
   "devDependencies": {
@@ -44,7 +44,7 @@
     "@vitejs/plugin-legacy": "^2.1.0",
     "@vitejs/plugin-vue2": "^1.1.2",
     "@vue/eslint-config-prettier": "^7.0.0",
-    "@vue/eslint-config-typescript": "^11.0.0",
+    "@vue/eslint-config-typescript": "^11.0.1",
     "@vue/test-utils": "^1.3.0",
     "browserslist-to-esbuild": "^1.2.0",
     "cypress": "^10.7.0",
@@ -55,7 +55,7 @@
     "jsdom": "^20.0.0",
     "msw": "^0.47.0",
     "postcss-load-config": "^4.0.1",
-    "postcss-preset-env": "^7.8.0",
+    "postcss-preset-env": "^7.8.1",
     "prettier": "^2.7.1",
     "sass": "~1.32.13",
     "start-server-and-test": "^1.14.0",
@@ -66,13 +66,13 @@
     "unplugin-vue-components": "^0.22.4",
     "vite": "^3.1.0",
     "vite-plugin-browserslist-useragent": "^0.1.0",
-    "vite-plugin-inspect": "^0.6.1",
+    "vite-plugin-inspect": "^0.7.1",
     "vite-plugin-pages": "^0.26.0",
     "vite-plugin-vue-layouts": "^0.7.0",
     "vite-plugin-vue2-svg": "^0.3.0",
-    "vitest": "^0.22.1",
+    "vitest": "^0.23.1",
     "vue-template-compiler": "^2.7.10",
-    "vue-tsc": "^0.40.9"
+    "vue-tsc": "^0.40.10"
   },
   "browserslist": [
     "> 1.3%",
