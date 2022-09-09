@@ -19,7 +19,14 @@ export default defineComponent({
       },
     })
     const mini = computed(() => !appStore.drawer && !vuetify.breakpoint.mobile)
-    return { drawer, routes, mini }
+    // gradient="to bottom, rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)"
+    const dark = computed(() => vuetify.theme.dark)
+    const gradient = computed(() =>
+      dark.value
+        ? 'to bottom, rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)'
+        : 'to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, .7)'
+    )
+    return { drawer, routes, mini, gradient }
   },
   computed: {
     ...mapState(useAppStore, {
@@ -60,7 +67,6 @@ export default defineComponent({
   <v-navigation-drawer
     id="app-navigation-drawer"
     v-model="drawer"
-    dark
     :expand-on-hover="mini"
     :src="drawerImageShow ? drawerImage : ''"
     :mini-variant="mini"
@@ -69,11 +75,7 @@ export default defineComponent({
     mini-variant-width="72"
   >
     <template #img="props">
-      <v-img
-        v-show="drawerImageShow"
-        gradient="to bottom, rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)"
-        v-bind="props"
-      />
+      <v-img v-show="drawerImageShow" :gradient="gradient" v-bind="props" />
     </template>
     <template #prepend>
       <v-list dense nav>
@@ -175,7 +177,7 @@ export default defineComponent({
     margin-left: 12px;
   }
   &.v-navigation-drawer--open-on-hover:not(.v-navigation-drawer--mini-variant) {
-    box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 0px 6px 2px rgba(100, 100, 100, 0.6);
   }
   .v-navigation-drawer__content {
     overflow-y: overlay;
