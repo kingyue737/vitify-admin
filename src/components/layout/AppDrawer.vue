@@ -139,9 +139,7 @@ export default defineComponent({
 
 <style lang="scss">
 #app-navigation-drawer {
-  background-color: var(--v-primary-darken2);
   transition-property: transform, visibility, width, box-shadow;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
   .v-list-item--active:hover::before,
   .v-list-item--active::before {
     opacity: 0;
