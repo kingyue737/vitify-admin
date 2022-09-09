@@ -11,11 +11,9 @@ const now = useNow()
   <v-footer
     id="app-footer"
     app
-    dark
     inset
     padless
     height="30"
-    color="primary darken-2"
     class="font-weight-light"
   >
     <v-icon small class="ml-3 mr-1"> $mdi-clock-outline </v-icon>
@@ -64,5 +62,8 @@ const now = useNow()
       height: 18px;
     }
   }
+}
+.theme--light.v-footer {
+  background-color: #d4dee8;
 }
 </style>
