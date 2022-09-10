@@ -79,7 +79,6 @@
     "last 2 versions",
     "not dead",
     "not op_mini all",
-    "not ios>0",
     "not ie>0"
   ],
   "pnpm": {
