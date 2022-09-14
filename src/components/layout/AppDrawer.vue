@@ -19,7 +19,6 @@ export default defineComponent({
       },
     })
     const mini = computed(() => !appStore.drawer && !vuetify.breakpoint.mobile)
-    // gradient="to bottom, rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)"
     const dark = computed(() => vuetify.theme.dark)
     const gradient = computed(() =>
       dark.value
