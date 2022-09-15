@@ -53,7 +53,7 @@
     "eslint-plugin-vue": "^9.4.0",
     "flush-promises": "^1.0.2",
     "jsdom": "^20.0.0",
-    "msw": "^0.47.2",
+    "msw": "^0.47.3",
     "postcss-load-config": "^4.0.1",
     "postcss-preset-env": "^7.8.2",
     "prettier": "^2.7.1",
@@ -88,8 +88,7 @@
       "vuetify@2.6.10": "patches/vuetify@2.6.10.patch"
     },
     "overrides": {
-      "useragent": "npm:@kingyue/useragent@^2.4.0",
-      "headers-polyfill": "3.0.10"
+      "useragent": "npm:@kingyue/useragent@^2.4.0"
     }
   },
   "msw": {
