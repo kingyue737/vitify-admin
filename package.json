@@ -88,7 +88,8 @@
       "vuetify@2.6.10": "patches/vuetify@2.6.10.patch"
     },
     "overrides": {
-      "useragent": "npm:@kingyue/useragent@^2.4.0"
+      "useragent": "npm:@kingyue/useragent@^2.4.0",
+      "headers-polyfill": "3.0.10"
     }
   },
   "msw": {
