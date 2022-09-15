@@ -10,6 +10,9 @@ patchedDependencies:
   svgo@2.8.0:
     hash: 4lg5s6jdz5l4zubi6maaapuqiu
     path: patches/svgo@2.8.0.patch
+  vuetify@2.6.10:
+    hash: z46xwyg5txwyyqp3ofjm7skugy
+    path: patches/vuetify@2.6.10.patch
 
 specifiers:
   '@intlify/unplugin-vue-i18n': ^0.5.0
@@ -86,7 +89,7 @@ dependencies:
   vue-i18n: 8.27.2_vue@2.7.10
   vue-i18n-bridge: 9.2.2_vue@2.7.10
   vue-router: 3.6.5_vue@2.7.10
-  vuetify: 2.6.10_vue@2.7.10
+  vuetify: 2.6.10_z46xwyg5txwyyqp3ofjm7skugy_vue@2.7.10
 
 devDependencies:
   '@intlify/unplugin-vue-i18n': 0.5.0_vite@3.1.1+vue-i18n@8.27.2
@@ -6116,13 +6119,14 @@ packages:
       '@vue/compiler-sfc': 2.7.10
       csstype: 3.1.1
 
-  /vuetify/2.6.10_vue@2.7.10:
+  /vuetify/2.6.10_z46xwyg5txwyyqp3ofjm7skugy_vue@2.7.10:
     resolution: {integrity: sha512-fgUeRDDCwYkwu6WGEEKGe7IdfzOsXJCZGrqkn1pcS2ycuoDL8mR2/dejH5iFNnBY6MnsT365PAGn0J+9otjfQg==}
     peerDependencies:
       vue: ^2.6.4
     dependencies:
       vue: 2.7.10
     dev: false
+    patched: true
 
   /w3c-hr-time/1.0.2:
     resolution: {integrity: sha512-z8P5DvDNjKDoFIHK7q8r8lackT6l+jo/Ye3HOle7l9nICP9lf1Ci25fy9vHd0JOWewkIFzXIEig3TdKT7JQ5fQ==}

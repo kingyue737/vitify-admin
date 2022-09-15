@@ -2229,8 +2229,6 @@ declare module 'vue' {
       {
         $scopedSlots: Readonly<{
           /** The default slot. Use this to render your items */
-          default: undefined
-          /** The default slot. Use this to render your items */
           default: (args: {
             items: any[]
             originalItemsLength: number
