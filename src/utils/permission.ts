@@ -32,10 +32,9 @@ export function isPermitted(
 const rolesChain: {
   [k in Role]: number
 } = {
-  developer: 100,
+  superuser: 100,
   admin: 90,
-  staff: 80,
-  guest: 0,
+  staff: 60,
 }
 
 export function isSubGroup(role1: Role, role2: Role): boolean {
