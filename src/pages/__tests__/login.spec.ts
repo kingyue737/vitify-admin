@@ -10,12 +10,12 @@ describe('login page', () => {
     await fireEvent.update(userInput, 'admin')
 
     const passwordInput = getByLabelText('Password')
-    await fireEvent.update(passwordInput, 'admin')
+    await fireEvent.update(passwordInput, 'admin123')
 
     const button = getByText('Login')
     await fireEvent.click(button)
 
     const store = useUserStore()
-    expect(store.login).toBeCalledWith({ username: 'admin', password: 'admin' })
+    expect(store.login).toBeCalledWith('admin', 'admin123')
   })
 })
