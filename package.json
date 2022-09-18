@@ -84,10 +84,10 @@
   "pnpm": {
     "patchedDependencies": {
       "strict-event-emitter@0.2.4": "patches/strict-event-emitter@0.2.4.patch",
-      "svgo@2.8.0": "patches/svgo@2.8.0.patch",
       "vuetify@2.6.10": "patches/vuetify@2.6.10.patch"
     },
     "overrides": {
+      "svgo": "npm:@kingyue/svgo@^2.9.0",
       "useragent": "npm:@kingyue/useragent@^2.4.0"
     }
   },
