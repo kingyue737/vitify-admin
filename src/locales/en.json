@@ -13,15 +13,18 @@
   "logout": "Logout",
   "email": "Email",
   "group": "Group",
-  "joiningDate": "Joining Date",
-  "lastLogin": "Last Login",
+  "joinDate": "Joining Date",
+  "actions": "Actions",
+  "submit": "Submit",
   "listOf": "{0} List",
   "userLogin": "@:user @:login",
   "pleaseEnter": "Please enter {0}",
-  "lengthOf": "Length of {0}",
+  "lengthOf": "{0} length",
   "form": {
-    "LTE": "{input} must less than or equal to {limit}",
-    "LT": "{input} must less than {limit}"
+    "LTE": "{input} must be less than or equal to {limit}",
+    "LT": "{input} must be less than {limit}",
+    "GTE": "{input} must be greater than or equal to {limit}",
+    "GT": "{input} must be greater than {limit}"
   },
   "darkMode": "Dark Mode",
   "drawerBackground": "Drawer Background",

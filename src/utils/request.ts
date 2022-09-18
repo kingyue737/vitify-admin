@@ -5,7 +5,6 @@ const service = axios.create({
     import.meta.env.VITE_API_URL ||
     `${window.location.protocol}//${window.location.hostname}:9529/api/v1`,
   timeout: 120000,
-  // withCredentials: true // send cookies when cross-domain requests
 })
 
 const errHandler = async (error: AxiosError) => {
@@ -13,20 +12,12 @@ const errHandler = async (error: AxiosError) => {
   const userStore = useUserStore()
   if (response) {
     switch (response.status) {
-      case 403:
-        Message.error('Forbidden')
-        break
       case 401:
         if (userStore.token) {
           return userStore.refreshToken().then((resp) => {
             return service(error.response!.config)
           })
-        } else {
-          Message.error('Unauthorized')
         }
-        break
-      case 404:
-        Message.error('资源不存在')
         break
     }
     if (!response.headers['content-type'].includes('text/html')) {
@@ -46,7 +37,7 @@ service.interceptors.request.use(
     }
     return config
   }
-  // errHandler,
+  // Add Error Handler Below
 )
 
 // Response interceptors

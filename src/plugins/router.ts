@@ -28,7 +28,7 @@ export const install: InstallPlugin = (vue) => {
             await userStore.getUserInfo()
           } catch (e) {
             // Remove token and redirect to login page
-            userStore.resetToken()
+            userStore.logOut()
             Message.error(e)
             next('/login')
             return

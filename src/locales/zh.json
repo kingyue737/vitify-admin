@@ -6,8 +6,9 @@
   "username": "用户名",
   "user": "用户",
   "group": "用户组",
-  "lastLogin": "最后登录",
-  "joiningDate": "注册时间",
+  "actions": "动作",
+  "joinDate": "注册时间",
+  "submit": "提交",
   "name": "姓名",
   "password": "密码",
   "resetPassword": "重置密码",
@@ -21,7 +22,9 @@
   "lengthOf": "{0}长度",
   "form": {
     "LTE": "{input}必须小于等于{limit}",
-    "LT": "{input}必须小于{limit}"
+    "LT": "{input}必须小于{limit}",
+    "GTE": "{input}必须大于等于{limit}",
+    "GT": "{input}必须大于{limit}"
   },
   "image": "图片",
   "drawerBackground": "侧边栏背景",

@@ -29,19 +29,10 @@ async function onSubmit() {
   if (form.value?.validate()) {
     try {
       waiting.value = true
-      const loginForm = {
-        username: username.value,
-        password: password.value,
-      }
-      await userStore.login(loginForm)
+      await userStore.login(username.value, password.value)
       await router.push({ path: '/' }).catch(() => {})
     } catch (e) {
-      const err = JSON.stringify(e)
-      if (err?.includes('credential')) {
-        snackMessage.value = t('errMessage')
-      } else {
-        snackMessage.value = err ?? t('unknownErr')
-      }
+      snackMessage.value = JSON.stringify(e)
       snackbar.value = true
     } finally {
       waiting.value = false
@@ -187,16 +178,3 @@ a {
 meta:
   layout: empty
 </route>
-
-<i18n lang="json">
-{
-  "en": {
-    "errMessage": "Username or password is wrong",
-    "unknownErr": "Unkown Error"
-  },
-  "zh": {
-    "errMessage": "用户名或密码错误",
-    "unknownErr": "未知错误"
-  }
-}
-</i18n>

@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import {
-  createUser,
-  deleteUser,
   getUsers,
-  updateUser,
   getGroups,
+  updateUser,
+  deleteUser,
   type Group,
   type IUserData,
   type Role,
@@ -15,34 +14,25 @@ import { formatTime } from '@/utils/date'
 const { t } = useI18n()
 const headers: DataTableHeader[] = [
   { text: t('username'), value: 'username' },
-  { text: t('group'), value: 'group' },
+  { text: t('group'), value: 'groups' },
   { text: t('name'), value: 'name' },
   { text: t('email'), value: 'email' },
-  { text: t('joiningDate'), value: 'joiningDate' },
-  { text: t('lastLogin'), value: 'lastLogin' },
+  { text: t('joinDate'), value: 'joinDate' },
+  { text: t('actions'), value: 'actions', sortable: false, align: 'end' },
 ]
 const loading = ref(true)
 
-const users = ref<
-  {
-    username: string
-    name: string
-    email: string
-    joiningDate: string
-    lastLogin: string
-    group: number[]
-  }[]
->([])
+const users = ref<IUserData[]>([])
 const groups = ref<Group[]>([])
 getGroups().then((promise) => (groups.value = promise.data))
 getUsers().then((promise) => {
   users.value = promise.data.map((user) => ({
+    id: user.id,
     username: user.username,
     name: user.name || '',
     email: user.email || '',
-    joiningDate: formatTime(user.date_joined),
-    lastLogin: formatTime(user.last_login),
-    group: user.groups.reverse(),
+    joinDate: formatTime(user.joinDate),
+    groups: user.groups,
   }))
   loading.value = false
 })
@@ -50,11 +40,11 @@ getUsers().then((promise) => {
 function groupColor(id: number) {
   const name = groupName(id)
   switch (name) {
+    case 'superuser':
+      return 'accent'
     case 'admin':
       return 'primary darken-3'
     case 'staff':
-      return 'primary'
-    case 'guest':
       return 'primary lighten-1'
     default:
       return ''
@@ -76,14 +66,22 @@ function groupName(id: number) {
             fixed-header
             :loading="loading"
           >
-            <template #item.group="{ item }">
+            <template #item.groups="{ item }">
               <v-chip
-                v-for="(groupId, i) in item.group"
+                v-for="(groupId, i) in item.groups"
                 :key="i"
                 :color="groupColor(groupId)"
               >
                 {{ groupName(groupId) }}
               </v-chip>
+            </template>
+            <template #item.actions="{ item }">
+              <v-icon class="mr-1" size="20" title="编辑" @click="() => {}">
+                $mdi-pencil
+              </v-icon>
+              <v-icon size="20" title="删除" @click.stop="() => {}">
+                $mdi-delete
+              </v-icon>
             </template>
           </v-data-table>
         </v-head-card>
