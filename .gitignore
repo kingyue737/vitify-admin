@@ -4,6 +4,7 @@ node_modules
 *.local
 *.log
 .idea
+/.vite-inspect
 
 /coverage
 /public/docs
