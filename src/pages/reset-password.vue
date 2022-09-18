@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { selfResetPassword } from '@/api/users'
+import { resetPassword } from '@/api/users'
 import type { VForm } from '@/utils/types'
 
+const { t } = useI18n()
 const router = useRouter()
 const userStore = useUserStore()
 const showCurrent = ref(false)
@@ -12,21 +13,29 @@ const password = ref('')
 const current = ref('')
 const valid = ref(true)
 const rules = [
-  (v: string) => !!v || '请填写密码',
-  (v: string) => v.length <= 20 || '密码长度必须小于等于20个字符',
-  (v: string) => v.length >= 5 || '密码长度必须大于等于5个字符',
+  (v: string) => !!v || t('pleaseEnter', [t('password')]),
+  (v: string) =>
+    v.length <= 20 ||
+    t('form.LTE', { input: t('lengthOf', [t('password')]), limit: 20 }),
+  (v: string) =>
+    v.length >= 5 ||
+    t('form.GTE', { input: t('lengthOf', [t('password')]), limit: 5 }),
 ]
 const confirmedRules = computed(() => [
   ...rules,
-  password.value === confirm.value || '与新密码不匹配，请重新输入',
+  password.value === confirm.value || t('notEqualErr'),
 ])
 const form = ref<VForm | null>(null)
 async function submit() {
   if (form.value!.validate()) {
-    await selfResetPassword(userStore.name, current.value, password.value)
-    Message.success('密码已更新')
-    await userStore.logOut()
-    router.push({ name: 'login' })
+    try {
+      await resetPassword(password.value, current.value)
+      Message.success(t('passwordUpdated'))
+      userStore.logOut()
+      router.push({ name: 'login' }).catch()
+    } catch (e) {
+      Message.error(e)
+    }
   }
 }
 </script>
@@ -38,17 +47,16 @@ async function submit() {
         <v-head-card
           class="mx-auto"
           style="max-width: 350px; position: relative; top: -100px"
-          title="重设密码"
         >
           <template #heading>
             <v-icon>$mdi-key-variant</v-icon>
-            重设密码
+            {{ t('resetPassword') }}
           </template>
           <v-container>
             <v-form ref="form" v-model="valid" lazy-validation>
               <v-text-field
                 v-model="current"
-                label="当前密码"
+                :label="t('currentPassword')"
                 :counter="20"
                 :append-icon="showCurrent ? '$mdi-eye' : '$mdi-eye-off'"
                 :type="showCurrent ? 'text' : 'password'"
@@ -59,7 +67,7 @@ async function submit() {
               />
               <v-text-field
                 v-model="password"
-                label="新密码"
+                :label="t('newPassword')"
                 :counter="20"
                 :append-icon="showNew ? '$mdi-eye' : '$mdi-eye-off'"
                 :type="showNew ? 'text' : 'password'"
@@ -70,7 +78,7 @@ async function submit() {
               />
               <v-text-field
                 v-model="confirm"
-                label="确认密码"
+                :label="t('confirmPassword')"
                 :counter="20"
                 :append-icon="showConfirm ? '$mdi-eye' : '$mdi-eye-off'"
                 :type="showConfirm ? 'text' : 'password'"
@@ -84,7 +92,7 @@ async function submit() {
           <template #actions>
             <v-spacer />
             <v-btn color="primary" :disabled="!valid" @click="submit">
-              提交
+              {{ t('submit') }}
             </v-btn>
           </template>
         </v-head-card>
@@ -92,3 +100,22 @@ async function submit() {
     </v-row>
   </v-container>
 </template>
+
+<i18n lang="json">
+{
+  "en": {
+    "passwordUpdated": "Password Updated",
+    "currentPassword": "Current Password",
+    "confirmPassword": "Confirm Password",
+    "newPassword": "New Password",
+    "notEqualErr": "Must be the same as New Password"
+  },
+  "zh": {
+    "passwordUpdated": "密码已更新",
+    "currentPassword": "当前密码",
+    "confirmPassword": "确认密码",
+    "newPassword": "新密码",
+    "notEqualErr": "与新密码不匹配，请重新输入"
+  }
+}
+</i18n>

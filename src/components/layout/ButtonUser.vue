@@ -3,8 +3,8 @@ const router = useRouter()
 const { t } = useI18n()
 const userStore = useUserStore()
 const { name } = storeToRefs(userStore)
-const logOut = async () => {
-  await userStore.logOut()
+const logOut = () => {
+  userStore.logOut()
   router.push('/login')
 }
 </script>

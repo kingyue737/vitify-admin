@@ -1,11 +1,10 @@
 import {
-  login,
-  getUserByName,
+  getToken,
+  getUser,
   refreshToken,
   getGroup,
   type Role,
 } from '@/api/users'
-import { setToken, removeToken } from '@/utils/cookies'
 
 export const useUserStore = defineStore('user', {
   state: () => {
@@ -13,39 +12,25 @@ export const useUserStore = defineStore('user', {
     return {
       name: localStorage.getItem('username') || '',
       id: parseInt(localStorage.getItem('id') || '-1'),
-      email: '',
       token: localStorage.getItem('access') || '',
       roles,
     }
   },
   actions: {
-    async login(userInfo: { username: string; password: string }) {
-      let { username } = userInfo
-      const { password } = userInfo
-      username = username.trim()
-      const { data } = await login({ username, password })
+    async login(username: string, password: string) {
+      const { data } = await getToken(username, password)
       Object.entries({
-        access: data.access,
-        refresh: data.refresh,
-        username: username,
+        access: data.accessToken,
+        refresh: data.refreshToken,
+        username,
       }).map(([k, v]: [string, string]) => localStorage.setItem(k, v))
-      this.token = data.access
+      this.token = data.accessToken
       this.name = username
+      await this.getUserInfo()
       useMessageStore().$reset()
     },
-    resetToken() {
-      removeToken()
-      this.token = ''
-      this.roles = []
-    },
     async getUserInfo() {
-      if (this.token === '') {
-        throw Error('getUserInfo: token is undefined!')
-      }
-      const { data: user } = await getUserByName(this.name)
-      if (!user) {
-        throw Error('Verification failed, please Login again.')
-      }
+      const { data: user } = await getUser(this.id)
       const { groups } = user
       // roles must be a non-empty array
       if (!groups || groups.length <= 0) {
@@ -56,25 +41,20 @@ export const useUserStore = defineStore('user', {
         roles.push((await getGroup(id)).data.name)
       }
       this.roles = roles
-      const { id } = user
-      this.id = id
+      localStorage.setItem('id', user.id.toString())
+      this.id = user.id
     },
-    async logOut() {
+    logOut() {
       ;['access', 'refresh', 'username'].forEach((k) =>
         localStorage.removeItem(k)
       )
-      this.token = ''
-      this.roles = []
-      return Promise.resolve('Logout')
+      this.$reset()
     },
     async refreshToken() {
-      localStorage.removeItem('access')
-      this.token = ''
-      const response = await refreshToken({
-        refresh: localStorage.getItem('refresh'),
-      })
-      localStorage.setItem('access', response.data.access)
-      this.token = response.data.access
+      const response = await refreshToken(localStorage.getItem('refresh')!)
+      localStorage.setItem('access', response.data.accessToken)
+      localStorage.setItem('fresh', response.data.refreshToken)
+      this.token = response.data.accessToken
       return response
     },
   },
