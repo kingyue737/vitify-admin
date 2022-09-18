@@ -1,5 +1,9 @@
 <script lang="ts">
 export default defineComponent({
+  setup() {
+    const { t } = useI18n()
+    return { t }
+  },
   data: () => ({
     dialog: false,
     confirmed: false,
@@ -39,14 +43,18 @@ export default defineComponent({
 <template>
   <v-dialog v-model="dialog" max-width="400px">
     <v-card style="z-index: -1">
-      <v-card-title class="text-h4 font-weight-bold">
+      <v-card-title class="font-weight-bold d-flex justify-center">
         <v-icon class="mr-2" color="warning">$warning</v-icon>
         <span style="line-height: 24px">{{ message }}</span>
       </v-card-title>
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn color="primary darken-1" text @click="cancel">取消</v-btn>
-        <v-btn color="primary darken-1" text @click="confirm">确定</v-btn>
+        <v-btn color="primary darken-1" text @click="cancel">{{
+          t('cancel')
+        }}</v-btn>
+        <v-btn color="primary darken-1" text @click="confirm">{{
+          t('confirm')
+        }}</v-btn>
         <v-spacer></v-spacer>
       </v-card-actions>
     </v-card>

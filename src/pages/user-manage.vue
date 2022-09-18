@@ -6,10 +6,10 @@ import {
   deleteUser,
   type Group,
   type IUserData,
-  type Role,
 } from '@/api/users'
 import type { DataTableHeader } from 'vuetify'
 import { formatTime } from '@/utils/date'
+import DialogConfirm from '../components/DialogConfirm.vue'
 
 const { t } = useI18n()
 const headers: DataTableHeader[] = [
@@ -25,17 +25,13 @@ const loading = ref(true)
 const users = ref<IUserData[]>([])
 const groups = ref<Group[]>([])
 getGroups().then((promise) => (groups.value = promise.data))
-getUsers().then((promise) => {
-  users.value = promise.data.map((user) => ({
-    id: user.id,
-    username: user.username,
-    name: user.name || '',
-    email: user.email || '',
-    joinDate: formatTime(user.joinDate),
-    groups: user.groups,
-  }))
-  loading.value = false
-})
+getUsers()
+  .then((promise) => {
+    users.value = promise.data
+  })
+  .finally(() => {
+    loading.value = false
+  })
 
 function groupColor(id: number) {
   const name = groupName(id)
@@ -52,6 +48,21 @@ function groupColor(id: number) {
 }
 function groupName(id: number) {
   return groups.value.find((group) => group.id === id)?.name || ''
+}
+
+const dialogDelete = ref<InstanceType<typeof DialogConfirm> | null>(null)
+function showDialogDelete(id: number) {
+  dialogDelete.value?.open(t('confirmMsg')).then(async (confirmed: boolean) => {
+    if (confirmed) {
+      try {
+        await deleteUser(id)
+        Message.success(t('deleted'))
+        users.value = (await getUsers()).data
+      } catch (e) {
+        Message.error(e)
+      }
+    }
+  })
 }
 </script>
 
@@ -75,15 +86,28 @@ function groupName(id: number) {
                 {{ groupName(groupId) }}
               </v-chip>
             </template>
+            <template #item.joinDate="{ item }">{{
+              formatTime(item.joinDate)
+            }}</template>
             <template #item.actions="{ item }">
-              <v-icon class="mr-1" size="20" title="编辑" @click="() => {}">
+              <v-icon
+                class="mr-1"
+                size="20"
+                :title="t('edit')"
+                @click="() => {}"
+              >
                 $mdi-pencil
               </v-icon>
-              <v-icon size="20" title="删除" @click.stop="() => {}">
+              <v-icon
+                size="20"
+                :title="t('delete')"
+                @click.stop="showDialogDelete(item.id)"
+              >
                 $mdi-delete
               </v-icon>
             </template>
           </v-data-table>
+          <DialogConfirm ref="dialogDelete" />
         </v-head-card>
       </v-col>
     </v-row>
@@ -101,3 +125,14 @@ function groupName(id: number) {
   }
 }
 </route>
+
+<i18n lang="json">
+{
+  "en": {
+    "confirmMsg": "Are you sure to delete this user?"
+  },
+  "zh": {
+    "confirmMsg": "你确定要删除此用户吗？"
+  }
+}
+</i18n>
