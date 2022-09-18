@@ -59,6 +59,7 @@ export function renderWithVuetify(
     },
     (vue) => {
       const i18n = installI18n(vue)
+      vue.use(PiniaVuePlugin)
       return { i18n }
     }
   )
