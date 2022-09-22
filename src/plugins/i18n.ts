@@ -1,5 +1,5 @@
 import VueI18n from 'vue-i18n'
-import { castToVueI18n } from 'vue-i18n-bridge'
+import { castToVueI18n, createI18n } from 'vue-i18n-bridge'
 
 import en from '@/locales/en.json'
 import zh from '@/locales/zh.json'

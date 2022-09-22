@@ -47,7 +47,7 @@ export default defineConfig({
         'vue',
         'pinia',
         {
-          'vue-i18n-bridge': ['useI18n', 'createI18n'],
+          'vue-i18n-bridge': ['useI18n'],
           'vue-router/composables': [
             'useRoute',
             'useRouter',
