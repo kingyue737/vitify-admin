@@ -39,6 +39,7 @@ export default defineConfig({
           },
         },
       ],
+      dirs: [],
       dts: false,
       types: [],
     }),
