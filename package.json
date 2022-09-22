@@ -39,7 +39,7 @@
     "@types/node": "^16.11.59",
     "@types/nprogress": "^0.2.0",
     "@types/postcss-preset-env": "^7.7.0",
-    "@vitejs/plugin-legacy": "^2.2.0",
+    "@vitejs/plugin-legacy": "~2.1.0",
     "@vitejs/plugin-vue2": "^2.0.0",
     "@vue/eslint-config-prettier": "^7.0.0",
     "@vue/eslint-config-typescript": "^11.0.2",

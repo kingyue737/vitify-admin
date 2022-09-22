@@ -22,7 +22,7 @@ specifiers:
   '@types/node': ^16.11.59
   '@types/nprogress': ^0.2.0
   '@types/postcss-preset-env': ^7.7.0
-  '@vitejs/plugin-legacy': ^2.2.0
+  '@vitejs/plugin-legacy': ~2.1.0
   '@vitejs/plugin-vue2': ^2.0.0
   '@vue/eslint-config-prettier': ^7.0.0
   '@vue/eslint-config-typescript': ^11.0.2
@@ -95,7 +95,7 @@ devDependencies:
   '@types/node': 16.11.59
   '@types/nprogress': 0.2.0
   '@types/postcss-preset-env': 7.7.0
-  '@vitejs/plugin-legacy': 2.2.0_terser@5.15.0+vite@3.1.3
+  '@vitejs/plugin-legacy': 2.1.0_terser@5.15.0+vite@3.1.3
   '@vitejs/plugin-vue2': 2.0.0_vite@3.1.3+vue@2.7.10
   '@vue/eslint-config-prettier': 7.0.0_lpvhfrfofky3e6gkwtrv5gvhfa
   '@vue/eslint-config-typescript': 11.0.2_gnlabotg3lsxoktlidc4utufzq
@@ -1035,8 +1035,8 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@vitejs/plugin-legacy/2.2.0_terser@5.15.0+vite@3.1.3:
-    resolution: {integrity: sha512-xkSXZl2LNk0KKyo5CJknNW84mSlmHIClFzsBuFXkX3yBt+Lr8UO/n4QOg2X7+jvurgBRies9FRn3ZvMem+TmIg==}
+  /@vitejs/plugin-legacy/2.1.0_terser@5.15.0+vite@3.1.3:
+    resolution: {integrity: sha512-en3h0L7okBonSYKJx81bU8AVFPjSCiUSz8xUDAW8J0CxskfxSt/VJKbZO6G9yCVgZLywGoO8PNAfOQWVLUWZ2A==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       terser: ^5.4.0
