@@ -13,11 +13,12 @@ const errHandler = async (error: AxiosError) => {
   if (response) {
     switch (response.status) {
       case 401:
-        if (userStore.token) {
-          return userStore.refreshToken().then((resp) => {
-            return service(error.response!.config)
-          })
-        }
+        // TODO: refresh token according to your backend
+        // if (userStore.token) {
+        //   return userStore.refreshToken().then((resp) => {
+        //     return service(error.response!.config)
+        //   })
+        // }
         break
     }
     if (!response.headers['content-type'].includes('text/html')) {
