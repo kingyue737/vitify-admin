@@ -1,5 +1,7 @@
 #nprogress {
   pointer-events: none;
+  position: relative;
+  z-index: 1031;
 }
 
 #nprogress .bar {
