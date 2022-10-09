@@ -1,9 +1,9 @@
 diff --git a/lib/StrictEventEmitter.d.ts b/lib/StrictEventEmitter.d.ts
-index a32b22b3fa5cf132c4a2b526196689b03bbd78af..a89b61b0ea6d64a29c7e1081dfdccd8c55d8fae1 100644
+index 12e28cfbc7012e39447ead05ecb3afe86df9da19..5acf9e2576d6e4b9cfb0ec53f403ffce608bdbff 100644
 --- a/lib/StrictEventEmitter.d.ts
 +++ b/lib/StrictEventEmitter.d.ts
 @@ -1,4 +1,3 @@
 -/// <reference types="node" />
  import { EventEmitter } from 'events';
- export declare type EventMapType = Record<string | symbol, any>;
+ export declare type EventMapType = Record<string | symbol | number, any>;
  export declare class StrictEventEmitter<EventMap extends EventMapType> extends EventEmitter {
