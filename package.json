@@ -20,7 +20,7 @@
     "echarts": "^5.4.0",
     "lodash": "^4.17.21",
     "nprogress": "^0.2.0",
-    "pinia": "^2.0.22",
+    "pinia": "^2.0.23",
     "portal-vue": "^2.1.7",
     "screenfull": "^6.0.2",
     "vue": "^2.7.10",
@@ -28,7 +28,7 @@
     "vue-i18n": "8.27.2",
     "vue-i18n-bridge": "^9.2.2",
     "vue-router": "^3.6.5",
-    "vuetify": "^2.6.10"
+    "vuetify": "^2.6.11"
   },
   "devDependencies": {
     "@intlify/unplugin-vue-i18n": "^0.7.0",
@@ -81,8 +81,7 @@
   ],
   "pnpm": {
     "patchedDependencies": {
-      "strict-event-emitter@0.2.4": "patches/strict-event-emitter@0.2.4.patch",
-      "vuetify@2.6.10": "patches/vuetify@2.6.10.patch"
+      "strict-event-emitter@0.2.4": "patches/strict-event-emitter@0.2.4.patch"
     },
     "overrides": {
       "svgo": "npm:@kingyue/svgo@^2.9.0",
