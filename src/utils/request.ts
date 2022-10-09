@@ -21,7 +21,7 @@ const errHandler = async (error: AxiosError) => {
         // }
         break
     }
-    if (!response.headers['content-type'].includes('text/html')) {
+    if (!response.headers['content-type']?.includes('text/html')) {
       throw response.data
     }
   }
