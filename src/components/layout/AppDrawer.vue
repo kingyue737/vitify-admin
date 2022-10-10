@@ -1,64 +1,53 @@
-<script lang="ts">
+<script setup lang="ts">
 import { groupBy } from 'lodash'
 import { useVuetify } from '@/composables/useVuetify'
 import AppDrawerItem from './AppDrawerItem.vue'
 import { routes } from '@/plugins/router'
 import { isPermitted } from '@/utils/permission'
-import type { RouteConfig } from 'vue-router'
-export default defineComponent({
-  components: { AppDrawerItem },
-  setup() {
-    const appStore = useAppStore()
-    const vuetify = useVuetify()
-    const drawer = computed({
-      get() {
-        return appStore.drawer || !vuetify.breakpoint.mobile
-      },
-      set(val: boolean) {
-        appStore.drawer = val
-      },
-    })
-    const mini = computed(() => !appStore.drawer && !vuetify.breakpoint.mobile)
-    const dark = computed(() => vuetify.theme.dark)
-    const gradient = computed(() =>
-      dark.value
-        ? 'to bottom, rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)'
-        : 'to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, .7)'
+
+const appStore = useAppStore()
+const {
+  drawer: drawerStored,
+  drawerImage,
+  drawerImageShow,
+} = storeToRefs(appStore)
+const vuetify = useVuetify()
+const drawer = computed({
+  get() {
+    return drawerStored.value || !vuetify.breakpoint.mobile
+  },
+  set(val: boolean) {
+    drawerStored.value = val
+  },
+})
+const mini = computed(() => !drawerStored.value && !vuetify.breakpoint.mobile)
+const gradient = computed(() =>
+  vuetify.theme.dark
+    ? 'to bottom, rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)'
+    : 'to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, .7)'
+)
+
+const groupedRoutes = computed(() =>
+  Object.values(
+    groupBy(
+      routes.map((c) => c.children![0]),
+      'meta.drawerGroup'
     )
-    return { drawer, routes, mini, gradient }
-  },
-  computed: {
-    ...mapState(useAppStore, {
-      drawerImage: 'drawerImage',
-      drawerImageShow: 'drawerImageShow',
-    }),
-    groupedRoutes(): RouteConfig[][] {
-      const routes = groupBy(
-        this.routes.map((c) => c.children![0]),
-        'meta.drawerGroup'
-      )
-      return Object.values(routes)
-        .map((rs) =>
-          rs
-            .filter(
-              (r) =>
-                r.meta?.icon && (!r.meta?.roles || isPermitted(r.meta.roles))
-            )
-            .sort(
-              (a, b) =>
-                (a.meta?.drawerIndex ?? 99) - (b.meta?.drawerIndex ?? 98)
-            )
+  )
+    .map((rs) =>
+      rs
+        .filter(
+          (r) => r.meta?.icon && (!r.meta?.roles || isPermitted(r.meta.roles))
         )
-        .reverse()
-    },
-  },
-  mounted() {
-    this.$nextTick(() => {
-      this.drawer =
-        this.$vuetify.breakpoint.lgAndUp &&
-        this.$vuetify.breakpoint.width !== 1280
-    })
-  },
+        .sort(
+          (a, b) => (a.meta?.drawerIndex ?? 99) - (b.meta?.drawerIndex ?? 98)
+        )
+    )
+    .reverse()
+)
+nextTick(() => {
+  drawerStored.value =
+    vuetify.breakpoint.lgAndUp && vuetify.breakpoint.width !== 1280
 })
 </script>
 
