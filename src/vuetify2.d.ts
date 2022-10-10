@@ -2382,284 +2382,248 @@ declare module 'vue' {
         }>
       }
     >
-    VDataTable: DefineComponent<
-      {
-        /** Enables calculation of column widths. `widths` property will be available in select scoped slots */
-        calculateWidths?: boolean
-        /** Set the caption (using `<caption>`) */
-        caption?: string
-        /** Set the color of the checkboxes (showSelect must be used) */
-        checkboxColor?: string
-        /** Function to filter items */
-        customFilter?: Function
-        /** Function used to group items */
-        customGroup?: Function
-        /** Function used to sort items */
-        customSort?: Function
-        /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
-        dark?: boolean
-        /** Decreases the height of rows */
-        dense?: boolean
-        /** Disables filtering completely */
-        disableFiltering?: boolean
-        /** Disables pagination completely */
-        disablePagination?: boolean
-        /** Disables sorting completely */
-        disableSort?: boolean
-        /** Icon used for expand toggle button. */
-        expandIcon?: string
-        /** Array of expanded items. Can be used with `.sync` modifier */
-        expanded?: any[]
-        /** Fixed header to top of table. **NOTE:** Does not work in IE11 */
-        fixedHeader?: boolean
-        /** See the [`v-data-footer`](/api/v-data-footer) API for more information */
-        footerProps?: object
-        /** Changes which item property should be used for grouping items. Currently only supports a single grouping in the format: `group` or `['group']`. When using an array, only the first element is considered. Can be used with `.sync` modifier */
-        groupBy?: string | any[]
-        /** Changes which direction grouping is done. Can be used with `.sync` modifier */
-        groupDesc?: boolean | any[]
-        /** Pass props to the default header. See [`v-data-table-header` API](/api/v-data-table-header) for more information */
-        headerProps?: object
-        /** An array of objects that each describe a header column. See the example below for a definition of all properties */
-        headers?: DataTableHeader[]
-        /** Can be used in combination with `hide-default-header` to specify the number of columns in the table to allow expansion rows and loading bar to function properly */
-        headersLength?: number
-        /** Set an explicit height of table */
-        height?: number | string
-        /** Hides default footer */
-        hideDefaultFooter?: boolean
-        /** Hide the default headers */
-        hideDefaultHeader?: boolean
-        /** Property on supplied `items` that contains item's row class or function that takes an item as an argument and returns the class of corresponding row */
-        itemClass?: string | Function
-        /** The property on each item that is used as a unique key */
-        itemKey?: string
-        /** The array of items to display */
-        items?: any[]
-        /** Changes how many items per page should be visible. Can be used with `.sync` modifier. Setting this prop to `-1` will display all items on the page */
-        itemsPerPage?: number
-        /** Applies the light theme variant to the component. */
-        light?: boolean
-        /** Specifies the height of the loader */
-        loaderHeight?: number | string
-        /** If `true` and no items are provided, then a loading text will be shown */
-        loading?: boolean | string
-        /** Text shown when `loading` is true and no items are provided */
-        loadingText?: string
-        /** Sets the locale used for sorting. This is passed into [`Intl.Collator()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Collator/Collator) in the default `customSort` function */
-        locale?: string
-        /** Used to set when to toggle between regular table and mobile view */
-        mobileBreakpoint?: number | string
-        /** If `true` then one can sort on multiple properties */
-        multiSort?: boolean
-        /** If `true` then one can not disable sorting, it will always switch between ascending and descending */
-        mustSort?: boolean
-        /** Text shown when no items are provided to the component */
-        noDataText?: string
-        /** Text shown when `search` prop is used and there are no results */
-        noResultsText?: string
-        options?: DataOptions
-        /** The current displayed page number (1-indexed) */
-        page?: number
-        /** Text input used to filter items */
-        search?: string
-        /** The property on each item that is used to determine if it is selectable or not */
-        selectableKey?: string
-        /** Used only when data is provided by a server. Should be set to the total amount of items available on server so that pagination works correctly */
-        serverItemsLength?: number
-        /** Shows the expand toggle in default rows */
-        showExpand?: boolean
-        /** Shows the group by toggle in the header and enables grouped rows */
-        showGroupBy?: boolean
-        /** Shows the select checkboxes in both the header and rows (if using default rows) */
-        showSelect?: boolean
-        /** Changes expansion mode to single expand */
-        singleExpand?: boolean
-        /** Changes selection mode to single select */
-        singleSelect?: boolean
-        /** Changes which item property (or properties) should be used for sort order. Can be used with `.sync` modifier */
-        sortBy?: string | any[]
-        /** Changes which direction sorting is done. Can be used with `.sync` modifier */
-        sortDesc?: boolean | any[]
-        /** Used for controlling selected rows */
-        value?: any[]
-      },
-      {
-        $scopedSlots: Readonly<{
-          /** Slot to replace the default table `<tbody>` */
-          body: (args: {
-            items: any[]
-            originalItemsLength: number
-            pagination: {
-              page: number
-              itemsPerPage: number
-              pageStart: number
-              pageStop: number
-              pageCount: number
-              itemsLength: number
-            }
-            options: {
-              page: number
-              itemsPerPage: number
-              sortBy: string[]
-              sortDesc: boolean[]
-              groupBy: string[]
-              groupDesc: boolean[]
-              multiSort: boolean
-              mustSort: boolean
-            }
-            groupedItems: Array<{ name: string; items: any[] }>
-            updateOptions: (obj: any) => void
-            sort: (value: string) => void
-            sortArray: (sortBy: string[]) => void
-            group: (value: string) => void
-            headers: DataTableHeader[]
-            isMobile: boolean
-            isSelected: (item: any) => boolean
-            select: (item: any, value: boolean) => void
-            isExpanded: (item: any) => boolean
-            expand: (item: any, value: boolean) => void
-          }) => VNode[]
-          /** Appends elements to the end of the default table `<tbody>` */
-          'body.append': (args: {
-            items: any[]
-            originalItemsLength: number
-            pagination: {
-              page: number
-              itemsPerPage: number
-              pageStart: number
-              pageStop: number
-              pageCount: number
-              itemsLength: number
-            }
-            options: {
-              page: number
-              itemsPerPage: number
-              sortBy: string[]
-              sortDesc: boolean[]
-              groupBy: string[]
-              groupDesc: boolean[]
-              multiSort: boolean
-              mustSort: boolean
-            }
-            groupedItems: Array<{ name: string; items: any[] }>
-            updateOptions: (obj: any) => void
-            sort: (value: string) => void
-            sortArray: (sortBy: string[]) => void
-            group: (value: string) => void
-            headers: DataTableHeader[]
-            isMobile: boolean
-            isSelected: (item: any) => boolean
-            select: (item: any, value: boolean) => void
-            isExpanded: (item: any) => boolean
-            expand: (item: any, value: boolean) => void
-          }) => VNode[]
-          /** Prepends elements to the start of the default table `<tbody>` */
-          'body.prepend': (args: {
-            items: any[]
-            originalItemsLength: number
-            pagination: {
-              page: number
-              itemsPerPage: number
-              pageStart: number
-              pageStop: number
-              pageCount: number
-              itemsLength: number
-            }
-            options: {
-              page: number
-              itemsPerPage: number
-              sortBy: string[]
-              sortDesc: boolean[]
-              groupBy: string[]
-              groupDesc: boolean[]
-              multiSort: boolean
-              mustSort: boolean
-            }
-            groupedItems: Array<{ name: string; items: any[] }>
-            updateOptions: (obj: any) => void
-            sort: (value: string) => void
-            sortArray: (sortBy: string[]) => void
-            group: (value: string) => void
-            headers: DataTableHeader[]
-            isMobile: boolean
-            isSelected: (item: any) => boolean
-            select: (item: any, value: boolean) => void
-            isExpanded: (item: any) => boolean
-            expand: (item: any, value: boolean) => void
-          }) => VNode[]
-          /** Slot to customize expanded rows */
-          'expanded-item': (args: {
-            isMobile: boolean
-            item: any
-            headers: DataTableHeader[]
-          }) => VNode[]
-          /** Slot to add a `<tfoot>` element after the `<tbody>`. Not to be confused with the `footer` slot */
-          foot: (args: {
-            items: any[]
-            originalItemsLength: number
-            pagination: {
-              page: number
-              itemsPerPage: number
-              pageStart: number
-              pageStop: number
-              pageCount: number
-              itemsLength: number
-            }
-            options: {
-              page: number
-              itemsPerPage: number
-              sortBy: string[]
-              sortDesc: boolean[]
-              groupBy: string[]
-              groupDesc: boolean[]
-              multiSort: boolean
-              mustSort: boolean
-            }
-            groupedItems: Array<{ name: string; items: any[] }>
-            updateOptions: (obj: any) => void
-            sort: (value: string) => void
-            sortArray: (sortBy: string[]) => void
-            group: (value: string) => void
-          }) => VNode[]
-          /** Slot to add a custom footer */
-          footer: (args: {
-            props: {
-              options: {
-                page: number
-                itemsPerPage: number
-                sortBy: string[]
-                sortDesc: boolean[]
-                groupBy: string[]
-                groupDesc: boolean[]
-                multiSort: boolean
-                mustSort: boolean
-              }
-              pagination: {
-                page: number
-                itemsPerPage: number
-                pageStart: number
-                pageStop: number
-                pageCount: number
-                itemsLength: number
-              }
-              itemsPerPageText: string
-            }
-            on: {}
-            headers: DataTableHeader[]
-            widths: []
-          }) => VNode[]
-          /** Slot to customize footer page text */
-          'footer.page-text': (args: {
+    VDataTable: new <T>(props: {
+      /** Enables calculation of column widths. `widths` property will be available in select scoped slots */
+      calculateWidths?: boolean
+      /** Set the caption (using `<caption>`) */
+      caption?: string
+      /** Set the color of the checkboxes (showSelect must be used) */
+      checkboxColor?: string
+      /** Function to filter items */
+      customFilter?: Function
+      /** Function used to group items */
+      customGroup?: Function
+      /** Function used to sort items */
+      customSort?: Function
+      /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
+      dark?: boolean
+      /** Decreases the height of rows */
+      dense?: boolean
+      /** Disables filtering completely */
+      disableFiltering?: boolean
+      /** Disables pagination completely */
+      disablePagination?: boolean
+      /** Disables sorting completely */
+      disableSort?: boolean
+      /** Icon used for expand toggle button. */
+      expandIcon?: string
+      /** Array of expanded items. Can be used with `.sync` modifier */
+      expanded?: any[]
+      /** Fixed header to top of table. **NOTE:** Does not work in IE11 */
+      fixedHeader?: boolean
+      /** See the [`v-data-footer`](/api/v-data-footer) API for more information */
+      footerProps?: object
+      /** Changes which item property should be used for grouping items. Currently only supports a single grouping in the format: `group` or `['group']`. When using an array, only the first element is considered. Can be used with `.sync` modifier */
+      groupBy?: string | any[]
+      /** Changes which direction grouping is done. Can be used with `.sync` modifier */
+      groupDesc?: boolean | any[]
+      /** Pass props to the default header. See [`v-data-table-header` API](/api/v-data-table-header) for more information */
+      headerProps?: object
+      /** An array of objects that each describe a header column. See the example below for a definition of all properties */
+      headers?: DataTableHeader[]
+      /** Can be used in combination with `hide-default-header` to specify the number of columns in the table to allow expansion rows and loading bar to function properly */
+      headersLength?: number
+      /** Set an explicit height of table */
+      height?: number | string
+      /** Hides default footer */
+      hideDefaultFooter?: boolean
+      /** Hide the default headers */
+      hideDefaultHeader?: boolean
+      /** Property on supplied `items` that contains item's row class or function that takes an item as an argument and returns the class of corresponding row */
+      itemClass?: string | Function
+      /** The property on each item that is used as a unique key */
+      itemKey?: string
+      /** The array of items to display */
+      items?: T[]
+      /** Changes how many items per page should be visible. Can be used with `.sync` modifier. Setting this prop to `-1` will display all items on the page */
+      itemsPerPage?: number
+      /** Applies the light theme variant to the component. */
+      light?: boolean
+      /** Specifies the height of the loader */
+      loaderHeight?: number | string
+      /** If `true` and no items are provided, then a loading text will be shown */
+      loading?: boolean | string
+      /** Text shown when `loading` is true and no items are provided */
+      loadingText?: string
+      /** Sets the locale used for sorting. This is passed into [`Intl.Collator()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Collator/Collator) in the default `customSort` function */
+      locale?: string
+      /** Used to set when to toggle between regular table and mobile view */
+      mobileBreakpoint?: number | string
+      /** If `true` then one can sort on multiple properties */
+      multiSort?: boolean
+      /** If `true` then one can not disable sorting, it will always switch between ascending and descending */
+      mustSort?: boolean
+      /** Text shown when no items are provided to the component */
+      noDataText?: string
+      /** Text shown when `search` prop is used and there are no results */
+      noResultsText?: string
+      options?: DataOptions
+      /** The current displayed page number (1-indexed) */
+      page?: number
+      /** Text input used to filter items */
+      search?: string
+      /** The property on each item that is used to determine if it is selectable or not */
+      selectableKey?: string
+      /** Used only when data is provided by a server. Should be set to the total amount of items available on server so that pagination works correctly */
+      serverItemsLength?: number
+      /** Shows the expand toggle in default rows */
+      showExpand?: boolean
+      /** Shows the group by toggle in the header and enables grouped rows */
+      showGroupBy?: boolean
+      /** Shows the select checkboxes in both the header and rows (if using default rows) */
+      showSelect?: boolean
+      /** Changes expansion mode to single expand */
+      singleExpand?: boolean
+      /** Changes selection mode to single select */
+      singleSelect?: boolean
+      /** Changes which item property (or properties) should be used for sort order. Can be used with `.sync` modifier */
+      sortBy?: string | any[]
+      /** Changes which direction sorting is done. Can be used with `.sync` modifier */
+      sortDesc?: boolean | any[]
+      /** Used for controlling selected rows */
+      value?: any[]
+    }) => {
+      $props: typeof props
+      $scopedSlots: Readonly<{
+        /** Slot to replace the default table `<tbody>` */
+        body: (args: {
+          items: T[]
+          originalItemsLength: number
+          pagination: {
+            page: number
+            itemsPerPage: number
             pageStart: number
             pageStop: number
+            pageCount: number
             itemsLength: number
-          }) => VNode[]
-          /** Adds content to the empty space in the footer */
-          'footer.prepend': undefined
-          /** Slot to replace the default rendering of grouped rows */
-          group: (args: {
-            group: string
+          }
+          options: {
+            page: number
+            itemsPerPage: number
+            sortBy: string[]
+            sortDesc: boolean[]
+            groupBy: string[]
+            groupDesc: boolean[]
+            multiSort: boolean
+            mustSort: boolean
+          }
+          groupedItems: Array<{ name: string; items: T[] }>
+          updateOptions: (obj: any) => void
+          sort: (value: string) => void
+          sortArray: (sortBy: string[]) => void
+          group: (value: string) => void
+          headers: DataTableHeader[]
+          isMobile: boolean
+          isSelected: (item: T) => boolean
+          select: (item: T, value: boolean) => void
+          isExpanded: (item: T) => boolean
+          expand: (item: T, value: boolean) => void
+        }) => VNode[]
+        /** Appends elements to the end of the default table `<tbody>` */
+        'body.append': (args: {
+          items: T[]
+          originalItemsLength: number
+          pagination: {
+            page: number
+            itemsPerPage: number
+            pageStart: number
+            pageStop: number
+            pageCount: number
+            itemsLength: number
+          }
+          options: {
+            page: number
+            itemsPerPage: number
+            sortBy: string[]
+            sortDesc: boolean[]
+            groupBy: string[]
+            groupDesc: boolean[]
+            multiSort: boolean
+            mustSort: boolean
+          }
+          groupedItems: Array<{ name: string; items: T[] }>
+          updateOptions: (obj: any) => void
+          sort: (value: string) => void
+          sortArray: (sortBy: string[]) => void
+          group: (value: string) => void
+          headers: DataTableHeader[]
+          isMobile: boolean
+          isSelected: (item: T) => boolean
+          select: (item: T, value: boolean) => void
+          isExpanded: (item: T) => boolean
+          expand: (item: T, value: boolean) => void
+        }) => VNode[]
+        /** Prepends elements to the start of the default table `<tbody>` */
+        'body.prepend': (args: {
+          items: T[]
+          originalItemsLength: number
+          pagination: {
+            page: number
+            itemsPerPage: number
+            pageStart: number
+            pageStop: number
+            pageCount: number
+            itemsLength: number
+          }
+          options: {
+            page: number
+            itemsPerPage: number
+            sortBy: string[]
+            sortDesc: boolean[]
+            groupBy: string[]
+            groupDesc: boolean[]
+            multiSort: boolean
+            mustSort: boolean
+          }
+          groupedItems: Array<{ name: string; items: T[] }>
+          updateOptions: (obj: any) => void
+          sort: (value: string) => void
+          sortArray: (sortBy: string[]) => void
+          group: (value: string) => void
+          headers: DataTableHeader[]
+          isMobile: boolean
+          isSelected: (item: T) => boolean
+          select: (item: T, value: boolean) => void
+          isExpanded: (item: T) => boolean
+          expand: (item: T, value: boolean) => void
+        }) => VNode[]
+        /** Slot to customize expanded rows */
+        'expanded-item': (args: {
+          isMobile: boolean
+          item: T
+          headers: DataTableHeader[]
+        }) => VNode[]
+        /** Slot to add a `<tfoot>` element after the `<tbody>`. Not to be confused with the `footer` slot */
+        foot: (args: {
+          items: T[]
+          originalItemsLength: number
+          pagination: {
+            page: number
+            itemsPerPage: number
+            pageStart: number
+            pageStop: number
+            pageCount: number
+            itemsLength: number
+          }
+          options: {
+            page: number
+            itemsPerPage: number
+            sortBy: string[]
+            sortDesc: boolean[]
+            groupBy: string[]
+            groupDesc: boolean[]
+            multiSort: boolean
+            mustSort: boolean
+          }
+          groupedItems: Array<{ name: string; items: T[] }>
+          updateOptions: (obj: any) => void
+          sort: (value: string) => void
+          sortArray: (sortBy: string[]) => void
+          group: (value: string) => void
+        }) => VNode[]
+        /** Slot to add a custom footer */
+        footer: (args: {
+          props: {
             options: {
               page: number
               itemsPerPage: number
@@ -2670,119 +2634,6 @@ declare module 'vue' {
               multiSort: boolean
               mustSort: boolean
             }
-            isMobile: boolean
-            items: any[]
-            headers: DataTableHeader[]
-          }) => VNode[]
-          /** Slot to customize the default rendering of group headers */
-          'group.header': (args: {
-            group: string
-            groupBy: string[]
-            isMobile: boolean
-            items: any[]
-            headers: DataTableHeader[]
-            isOpen: boolean
-            toggle: () => void
-            remove: () => void
-          }) => VNode[]
-          /** Slot to customize the default rendering of group summaries */
-          'group.summary': (args: {
-            group: string
-            groupBy: string[]
-            isMobile: boolean
-            items: any[]
-            headers: DataTableHeader[]
-            isOpen: boolean
-            toggle: () => void
-          }) => VNode[]
-          header: (args: {
-            isMobile: boolean
-            props: {
-              headers: DataTableHeader[]
-              options: {
-                page: number
-                itemsPerPage: number
-                sortBy: string[]
-                sortDesc: boolean[]
-                groupBy: string[]
-                groupDesc: boolean[]
-                multiSort: boolean
-                mustSort: boolean
-              }
-              mobile: boolean
-              showGroupBy: boolean
-              someItems: boolean
-              everyItem: boolean
-            }
-            on: {
-              sort: (value: string) => void
-              group: (value: string) => void
-              'toggle-select-all': (value: boolean) => void
-            }
-          }) => VNode[]
-          /** Slot to customize a specific header column */
-          [name: `header.${string}`]: (args: {
-            header: DataTableHeader
-          }) => VNode[]
-          /** Slot to replace the default `v-simple-checkbox` in header */
-          'header.data-table-select': (args: {
-            isMobile: boolean
-            props: { value: boolean; indeterminate: boolean }
-            on: { input: (value: boolean) => void }
-          }) => VNode[]
-          /** Slot to replace the default rendering of a row */
-          item: (args: {
-            expand: (v: boolean) => void
-            index: number
-            item: any
-            isExpanded: boolean
-            isMobile: boolean
-            isSelected: boolean
-            select: (v: boolean) => void
-            headers: DataTableHeader[]
-          }) => VNode[]
-          /** Slot to customize a specific column */
-          [name: `item.${string}`]: (args: {
-            isMobile: boolean
-            item: any
-            header: DataTableHeader
-            value: any
-            index: number
-          }) => VNode[]
-          /** Slot to replace the default `v-icon` used when expanding rows */
-          'item.data-table-expand': (args: {
-            expand: (v: boolean) => void
-            index: number
-            item: any
-            isExpanded: boolean
-            isMobile: boolean
-            isSelected: boolean
-            select: (v: boolean) => void
-            headers: DataTableHeader[]
-          }) => VNode[]
-          /** Slot to replace the default `v-simple-checkbox` used when selecting rows */
-          'item.data-table-select': (args: {
-            expand: (v: boolean) => void
-            index: number
-            item: any
-            isExpanded: boolean
-            isMobile: boolean
-            isSelected: boolean
-            select: (v: boolean) => void
-            headers: DataTableHeader[]
-          }) => VNode[]
-          /** Defines content for when `loading` is true and no items are provided */
-          loading: undefined
-          /** Defines content for when no items are provided */
-          'no-data': undefined
-          /** Defines content for when `search` is provided but no results are found */
-          'no-results': undefined
-          /** Slot to replace the default `<v-progress-linear>` component */
-          progress: undefined
-          /** Slot to add content above the table */
-          top: (args: {
-            items: any[]
-            originalItemsLength: number
             pagination: {
               page: number
               itemsPerPage: number
@@ -2791,6 +2642,62 @@ declare module 'vue' {
               pageCount: number
               itemsLength: number
             }
+            itemsPerPageText: string
+          }
+          on: {}
+          headers: DataTableHeader[]
+          widths: []
+        }) => VNode[]
+        /** Slot to customize footer page text */
+        'footer.page-text': (args: {
+          pageStart: number
+          pageStop: number
+          itemsLength: number
+        }) => VNode[]
+        /** Adds content to the empty space in the footer */
+        'footer.prepend': undefined
+        /** Slot to replace the default rendering of grouped rows */
+        group: (args: {
+          group: string
+          options: {
+            page: number
+            itemsPerPage: number
+            sortBy: string[]
+            sortDesc: boolean[]
+            groupBy: string[]
+            groupDesc: boolean[]
+            multiSort: boolean
+            mustSort: boolean
+          }
+          isMobile: boolean
+          items: T[]
+          headers: DataTableHeader[]
+        }) => VNode[]
+        /** Slot to customize the default rendering of group headers */
+        'group.header': (args: {
+          group: string
+          groupBy: string[]
+          isMobile: boolean
+          items: T[]
+          headers: DataTableHeader[]
+          isOpen: boolean
+          toggle: () => void
+          remove: () => void
+        }) => VNode[]
+        /** Slot to customize the default rendering of group summaries */
+        'group.summary': (args: {
+          group: string
+          groupBy: string[]
+          isMobile: boolean
+          items: T[]
+          headers: DataTableHeader[]
+          isOpen: boolean
+          toggle: () => void
+        }) => VNode[]
+        header: (args: {
+          isMobile: boolean
+          props: {
+            headers: DataTableHeader[]
             options: {
               page: number
               itemsPerPage: number
@@ -2801,16 +2708,107 @@ declare module 'vue' {
               multiSort: boolean
               mustSort: boolean
             }
-            groupedItems: Array<{ name: string; items: any[] }>
-            updateOptions: (obj: any) => void
+            mobile: boolean
+            showGroupBy: boolean
+            someItems: boolean
+            everyItem: boolean
+          }
+          on: {
             sort: (value: string) => void
-            sortArray: (sortBy: string[]) => void
             group: (value: string) => void
-            isMobile: boolean
-          }) => VNode[]
-        }>
-      }
-    >
+            'toggle-select-all': (value: boolean) => void
+          }
+        }) => VNode[]
+        /** Slot to customize a specific header column */
+        [name: `header.${string}`]: (args: {
+          header: DataTableHeader
+        }) => VNode[]
+        /** Slot to replace the default `v-simple-checkbox` in header */
+        'header.data-table-select': (args: {
+          isMobile: boolean
+          props: { value: boolean; indeterminate: boolean }
+          on: { input: (value: boolean) => void }
+        }) => VNode[]
+        /** Slot to replace the default rendering of a row */
+        item: (args: {
+          expand: (v: boolean) => void
+          index: number
+          item: T
+          isExpanded: boolean
+          isMobile: boolean
+          isSelected: boolean
+          select: (v: boolean) => void
+          headers: DataTableHeader[]
+        }) => VNode[]
+        /** Slot to customize a specific column */
+        [name: `item.${string}`]: (args: {
+          isMobile: boolean
+          item: T
+          header: DataTableHeader
+          value: any
+          index: number
+        }) => VNode[]
+        /** Slot to replace the default `v-icon` used when expanding rows */
+        'item.data-table-expand': (args: {
+          expand: (v: boolean) => void
+          index: number
+          item: T
+          isExpanded: boolean
+          isMobile: boolean
+          isSelected: boolean
+          select: (v: boolean) => void
+          headers: DataTableHeader[]
+        }) => VNode[]
+        /** Slot to replace the default `v-simple-checkbox` used when selecting rows */
+        'item.data-table-select': (args: {
+          expand: (v: boolean) => void
+          index: number
+          item: T
+          isExpanded: boolean
+          isMobile: boolean
+          isSelected: boolean
+          select: (v: boolean) => void
+          headers: DataTableHeader[]
+        }) => VNode[]
+        /** Defines content for when `loading` is true and no items are provided */
+        loading: undefined
+        /** Defines content for when no items are provided */
+        'no-data': undefined
+        /** Defines content for when `search` is provided but no results are found */
+        'no-results': undefined
+        /** Slot to replace the default `<v-progress-linear>` component */
+        progress: undefined
+        /** Slot to add content above the table */
+        top: (args: {
+          items: T[]
+          originalItemsLength: number
+          pagination: {
+            page: number
+            itemsPerPage: number
+            pageStart: number
+            pageStop: number
+            pageCount: number
+            itemsLength: number
+          }
+          options: {
+            page: number
+            itemsPerPage: number
+            sortBy: string[]
+            sortDesc: boolean[]
+            groupBy: string[]
+            groupDesc: boolean[]
+            multiSort: boolean
+            mustSort: boolean
+          }
+          groupedItems: Array<{ name: string; items: T[] }>
+          updateOptions: (obj: any) => void
+          sort: (value: string) => void
+          sortArray: (sortBy: string[]) => void
+          group: (value: string) => void
+          isMobile: boolean
+        }) => VNode[]
+      }>
+    }
     VEditDialog: DefineComponent<
       {
         /** Sets the default text for the cancel button when using the **large** prop */
