@@ -63,7 +63,7 @@
     "unplugin-auto-import": "^0.11.2",
     "unplugin-vue-components": "^0.22.8",
     "vite": "^3.1.8",
-    "vite-plugin-browserslist-useragent": "^0.1.0",
+    "vite-plugin-browserslist-useragent": "^0.2.0",
     "vite-plugin-inspect": "^0.7.5",
     "vite-plugin-pages": "^0.26.0",
     "vite-plugin-vue-layouts": "^0.7.0",
@@ -81,8 +81,7 @@
   ],
   "pnpm": {
     "overrides": {
-      "svgo": "npm:@kingyue/svgo@^2.9.0",
-      "useragent": "npm:@kingyue/useragent@^2.4.0"
+      "svgo": "npm:@kingyue/svgo@^2.9.0"
     }
   },
   "msw": {

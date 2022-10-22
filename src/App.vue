@@ -1,12 +1,11 @@
 <script setup lang="ts">
-import { browsersRegexp } from 'virtual:supported-browsers'
+import { browsersRegex } from 'virtual:supported-browsers'
 import { useChartGlobalOption } from '@/composables/useECharts'
-import { useI18n } from 'vue-i18n-bridge'
 
 const { t } = useI18n()
 useChartGlobalOption()
 const isValidBrowser = ref(true)
-isValidBrowser.value = browsersRegexp.test(navigator.userAgent)
+isValidBrowser.value = browsersRegex.test(navigator.userAgent)
 </script>
 
 <template>
