@@ -5,10 +5,10 @@
 
 <p align="center">
   <a href="https://github.com/vuejs/vue">
-    <img src="https://img.shields.io/badge/vue-2.7.10-brightgreen.svg" alt="vue">
+    <img src="https://img.shields.io/badge/vue-2.7.13-brightgreen.svg" alt="vue">
   </a>
   <a href="https://github.com/vuetifyjs/vuetify">
-    <img src="https://img.shields.io/badge/vuetify-2.6.10-blue.svg" alt="vuetify">
+    <img src="https://img.shields.io/badge/vuetify-2.6.12-blue.svg" alt="vuetify">
   </a>
   <a href="https://github.com/kingyue737/vitify-admin/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license">
@@ -24,8 +24,8 @@
 <a href="https://kingyue737.github.io/vitify-docs/">Documentation<br><br></a>
 </p>
 
-
 ## Features
+
 - 🦾 Full [TypeScript Support and intellisense](https://github.com/vuetifyjs/vuetify/issues/14798#issuecomment-1139788615) for [Vuetify 2](https://vuetifyjs.com/) components, powered by [Volar](https://github.com/johnsoncodehk/volar/tree/master/extensions/vscode-vue-language-features)
 
 - 🖖 [Vue 2.7](https://github.com/vuejs/vue) - Composition API and `<script setup>`
@@ -115,7 +115,6 @@
   - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) - Code formatter
   - [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
 
-
 ## Try it now!
 
 > Vitify Admin requires Node >=16.6.0
@@ -133,6 +132,7 @@ npx degit kingyue737/vitify-admin my-vitify-app
 cd my-vitify-app
 pnpm i
 ```
+
 > Vitify Admin requires [`pnpm patch`](https://pnpm.io/cli/patch) for bug fixing in dependencies before maintainers release them. If you are using `yarn`, you can use [`yarn patch`](https://yarnpkg.com/cli/patch). For `npm` users, [`patch-package`](https://github.com/ds300/patch-package) is required as `npm` has no built-in patching functionality.
 
 ## Checklist
