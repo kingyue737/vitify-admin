@@ -2,7 +2,6 @@ lockfileVersion: 5.4
 
 overrides:
   svgo: npm:@kingyue/svgo@^2.9.0
-  useragent: npm:@kingyue/useragent@^2.4.0
 
 specifiers:
   '@intlify/unplugin-vue-i18n': ^0.7.0
@@ -46,7 +45,7 @@ specifiers:
   unplugin-auto-import: ^0.11.2
   unplugin-vue-components: ^0.22.8
   vite: ^3.1.8
-  vite-plugin-browserslist-useragent: ^0.1.0
+  vite-plugin-browserslist-useragent: ^0.2.0
   vite-plugin-inspect: ^0.7.5
   vite-plugin-pages: ^0.26.0
   vite-plugin-vue-layouts: ^0.7.0
@@ -111,7 +110,7 @@ devDependencies:
   unplugin-auto-import: 0.11.2_@vueuse+core@9.3.1
   unplugin-vue-components: 0.22.8_vue@2.7.13
   vite: 3.1.8_sass@1.32.13+terser@5.15.1
-  vite-plugin-browserslist-useragent: 0.1.0_vite@3.1.8
+  vite-plugin-browserslist-useragent: 0.2.0_vite@3.1.8
   vite-plugin-inspect: 0.7.5_vite@3.1.8
   vite-plugin-pages: 0.26.0_vite@3.1.8
   vite-plugin-vue-layouts: 0.7.0_7bcyolklpscdhhamhbynyqdo6a
@@ -621,18 +620,6 @@ packages:
       css-tree: 1.1.3
       csso: 4.2.0
       picocolors: 1.0.0
-    dev: true
-
-  /@kingyue/useragent/2.4.0:
-    resolution: {integrity: sha512-ZjnkxQ+cmlLzDQIJp3MO9tT1700A56tJ902ucsvzxya9Yuf919YAtS1TaztKzC8JaEDY8ARyB7UuDwSNp4vSbA==}
-    dependencies:
-      axios: 0.27.2
-      lru-cache: 4.1.5
-      semver: 5.5.1
-      tmp: 0.0.33
-      yamlparser: 0.0.2
-    transitivePeerDependencies:
-      - debug
     dev: true
 
   /@mdi/js/7.0.96:
@@ -1434,9 +1421,9 @@ packages:
     resolution: {integrity: sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==}
     dev: true
 
-  /argue-cli/1.2.1:
-    resolution: {integrity: sha512-Em3HDMlqiVLNOgXUCYz5NG1mx/44aijsxUOO8elmfvAN4/3ar1S3WPTua7WGhsMbeQm8clOwpDZ09sN7C2FnOg==}
-    engines: {node: '>=6.0.0'}
+  /argue-cli/2.1.0:
+    resolution: {integrity: sha512-dgojXfc4SiqmNwe38PnbT3zJasrz7g62dLAPD+VFT5RJb8W7LGRqw2IFd2ES+plnhsp4HYNJmFqMU1tCThdCww==}
+    engines: {node: '>=14.0.0'}
     dev: true
 
   /aria-query/4.2.2:
@@ -1521,15 +1508,6 @@ packages:
       - debug
     dev: true
 
-  /axios/0.27.2:
-    resolution: {integrity: sha512-t+yRIyySRTp/wua5xEr+z1q60QmLq8ABsS5O9Me1AsE5dfKqgnCFzwiCZZ/cGNd1lq4/7akDWMxdhVlucjmnOQ==}
-    dependencies:
-      follow-redirects: 1.15.2
-      form-data: 4.0.0
-    transitivePeerDependencies:
-      - debug
-    dev: true
-
   /axios/1.1.3:
     resolution: {integrity: sha512-00tXVRwKx/FZr/IDVFt4C+f9FYairX517WoGCL6dpOntqLkZofjhu43F/Xl44UOpqa+9sLFDrG/XAnFsUYgkDA==}
     dependencies:
@@ -1606,19 +1584,18 @@ packages:
       browserslist: 4.21.4
     dev: true
 
-  /browserslist-useragent-regexp/3.0.2:
-    resolution: {integrity: sha512-hOvTo9ObY+2PvCLxydvam5WD9hlvWB4bFzRLxc/M5OdJfzjgfsQ9wEF7EpJJP7UJUAnKJdJK28XsSrl5d1DfoA==}
-    engines: {node: '>=12.0.0'}
+  /browserslist-useragent-regexp/4.0.0-beta.0_browserslist@4.21.4:
+    resolution: {integrity: sha512-ayR58lRcfbVV/LilqFoORzRI+qfBctgJq3Gb48obI5flc5pglXoLWI5gr2ovq+qvxZNL557TZKDtewhQtoKzPg==}
+    engines: {node: '>=14.0.0'}
     hasBin: true
+    peerDependencies:
+      browserslist: '>=4.0.0'
     dependencies:
-      '@types/node': 16.11.68
-      argue-cli: 1.2.1
+      argue-cli: 2.1.0
       browserslist: 4.21.4
-      chalk: 4.1.2
       easy-table: 1.2.0
-      useragent: /@kingyue/useragent/2.4.0
-    transitivePeerDependencies:
-      - debug
+      picocolors: 1.0.0
+      ua-regexes-lite: 1.1.2
     dev: true
 
   /browserslist/4.21.4:
@@ -5133,11 +5110,6 @@ packages:
     resolution: {integrity: sha512-zIvPdjOH8fv8CgrPT5eqtxHQXmPNnV/vHJYffZhE43KZkvULvpCTvOt1HPlFaCZx287INL9qaqrZg34e8NgI4g==}
     dev: true
 
-  /semver/5.5.1:
-    resolution: {integrity: sha512-PqpAxfrEhlSUWge8dwIp4tZnQ25DIOthpiaHNIthsjEFQD6EvqUKUDM7L8O2rShkFccYo1VjJR0coWfNkCubRw==}
-    hasBin: true
-    dev: true
-
   /semver/5.7.1:
     resolution: {integrity: sha512-sauaDf/PZdVgrLTNYHRtpXa1iRiKcaebiKQ1BJdpQlWH2lCvexQdX55snPFyK7QzpudqbCI0qXFfOasHdyNDGQ==}
     hasBin: true
@@ -5580,6 +5552,11 @@ packages:
     engines: {node: '>=4.2.0'}
     hasBin: true
 
+  /ua-regexes-lite/1.1.2:
+    resolution: {integrity: sha512-M3pvr17vJ24xaugR12y/Gh5QJBrpnKRl2O3c6mB2nE0tmze7xRpc2Mwpqz3a9lwFiWEIQ/ekDuEpNzXGhawkUw==}
+    engines: {node: '>=14'}
+    dev: true
+
   /ufo/0.8.6:
     resolution: {integrity: sha512-fk6CmUgwKCfX79EzcDQQpSCMxrHstvbLswFChHS0Vump+kFkw7nJBfTZoC1j0bOGoY9I7R3n2DGek5ajbcYnOw==}
     dev: true
@@ -5755,16 +5732,15 @@ packages:
       extsprintf: 1.3.0
     dev: true
 
-  /vite-plugin-browserslist-useragent/0.1.0_vite@3.1.8:
-    resolution: {integrity: sha512-3MPLU/T75B5CM81CVLhLNhgzJQ6C+BSL31QDgkgIh1ZsnzS8bbZCF7ksvzd/GA4TBCxHu9/e5BFVY+LrZ7U9Ww==}
+  /vite-plugin-browserslist-useragent/0.2.0_vite@3.1.8:
+    resolution: {integrity: sha512-mn5ej8ZVR9SwxQ9osYqxQMcrxBGvWhDOHUXFSf28VeQndDb3NbztIJxlcLCPmFJUXiqZWXqxwZbZJ/ckw8mGpQ==}
     engines: {node: '>=14'}
     peerDependencies:
       vite: ^2.5.0 || ^3.0.0
     dependencies:
-      browserslist-useragent-regexp: 3.0.2
+      browserslist: 4.21.4
+      browserslist-useragent-regexp: 4.0.0-beta.0_browserslist@4.21.4
       vite: 3.1.8_sass@1.32.13+terser@5.15.1
-    transitivePeerDependencies:
-      - debug
     dev: true
 
   /vite-plugin-inspect/0.7.5_vite@3.1.8:
@@ -6272,10 +6248,6 @@ packages:
   /yaml/2.1.3:
     resolution: {integrity: sha512-AacA8nRULjKMX2DvWvOAdBZMOfQlypSFkjcOcu9FalllIDJ1kvlREzcdIZmidQUqqeMv7jorHjq2HlLv/+c2lg==}
     engines: {node: '>= 14'}
-    dev: true
-
-  /yamlparser/0.0.2:
-    resolution: {integrity: sha512-Cou9FCGblEENtn1/8La5wkDM/ISMh2bzu5Wh7dYzCzA0o9jD4YGyLkUJxe84oPBGoB92f+Oy4ZjVhA8S0C2wlQ==}
     dev: true
 
   /yargs-parser/21.1.1:
