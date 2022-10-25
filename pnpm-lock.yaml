@@ -51,6 +51,7 @@ specifiers:
   vite-plugin-vue-layouts: ^0.7.0
   vite-plugin-vue2-svg: ^0.3.0
   vitest: ^0.24.3
+  volar-plugin-vue-router: ^0.0.2
   vue: ^2.7.13
   vue-echarts: ^6.2.3
   vue-i18n: 8.27.2
@@ -116,6 +117,7 @@ devDependencies:
   vite-plugin-vue-layouts: 0.7.0_7bcyolklpscdhhamhbynyqdo6a
   vite-plugin-vue2-svg: 0.3.0_ouqacza277bgdo2pekwpiqgoqy
   vitest: 0.24.3_5hykiqrnvbjw73mdyh3dmjec2a
+  volar-plugin-vue-router: 0.0.2
   vue-template-compiler: 2.7.13
   vue-tsc: 1.0.8_typescript@4.8.4
 
@@ -1815,6 +1817,11 @@ packages:
   /commander/7.2.0:
     resolution: {integrity: sha512-QrWXB+ZQSVPmIWIhtEO9H+gwHaMGYiF5ChvoJ+K9ZGHG/sVsa6yiesAD1GC/x46sET00Xlwo1u49RVVVzvcSkw==}
     engines: {node: '>= 10'}
+    dev: true
+
+  /commander/9.4.1:
+    resolution: {integrity: sha512-5EEkTNyHNGFPD2H+c/dXXfQZYa/scCKasxWcXJaWnNJ99pnQN9Vnmqow+p+PlFPE63Q6mThaZws1T+HxfpgtPw==}
+    engines: {node: ^12.20.0 || >=14}
     dev: true
 
   /common-tags/1.8.2:
@@ -5083,6 +5090,11 @@ packages:
       is-regex: 1.1.4
     dev: true
 
+  /safe-stable-stringify/2.4.1:
+    resolution: {integrity: sha512-dVHE6bMtS/bnL2mwualjc6IxEv1F+OCUpA46pKUj6F8uDbUM0jCCulPqRNPSnWwGNKx5etqMjZYdXtrm5KJZGA==}
+    engines: {node: '>=10'}
+    dev: true
+
   /safer-buffer/2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
     dev: true
@@ -5449,6 +5461,20 @@ packages:
     engines: {node: '>=12'}
     dependencies:
       punycode: 2.1.1
+    dev: true
+
+  /ts-json-schema-generator/1.1.2:
+    resolution: {integrity: sha512-XMnxvndJFJEYv3NBmW7Po5bGajKdK2qH8Q078eDy60srK9+nEvbT9nLCRKd2IV/RQ7a+oc5FNylvZWveqh7jeQ==}
+    engines: {node: '>=10.0.0'}
+    hasBin: true
+    dependencies:
+      '@types/json-schema': 7.0.11
+      commander: 9.4.1
+      glob: 8.0.3
+      json5: 2.2.1
+      normalize-path: 3.0.0
+      safe-stable-stringify: 2.4.1
+      typescript: 4.8.4
     dev: true
 
   /ts-node/10.9.1_qz5pgscfesxhf7rldkrewqhv5y:
@@ -5934,6 +5960,53 @@ packages:
       - stylus
       - supports-color
       - terser
+    dev: true
+
+  /volar-plugin-vue-router/0.0.2:
+    resolution: {integrity: sha512-eURyG9e3smSoFHrcc3yYW2R8xGzWNva2coBaOeJXh7ma1gWv1MGbAPi8dqdQmeFDjJEEBBp2DT8Rk23cqhSlRg==}
+    dependencies:
+      ts-json-schema-generator: 1.1.2
+      vscode-json-languageservice: 5.1.1
+      vscode-languageserver-protocol: 3.17.2
+      vscode-languageserver-textdocument: 1.0.7
+    dev: true
+
+  /vscode-json-languageservice/5.1.1:
+    resolution: {integrity: sha512-EtAcTD6MOfyf8+MokDsAHNM7ttuZvCo077w9aMtJiyps41gkOcoBThAbXDk6Y0Oi6ki5aDs8lgY4KxYiVW/lxA==}
+    dependencies:
+      jsonc-parser: 3.2.0
+      vscode-languageserver-textdocument: 1.0.7
+      vscode-languageserver-types: 3.17.2
+      vscode-nls: 5.2.0
+      vscode-uri: 3.0.6
+    dev: true
+
+  /vscode-jsonrpc/8.0.2:
+    resolution: {integrity: sha512-RY7HwI/ydoC1Wwg4gJ3y6LpU9FJRZAUnTYMXthqhFXXu77ErDd/xkREpGuk4MyYkk4a+XDWAMqe0S3KkelYQEQ==}
+    engines: {node: '>=14.0.0'}
+    dev: true
+
+  /vscode-languageserver-protocol/3.17.2:
+    resolution: {integrity: sha512-8kYisQ3z/SQ2kyjlNeQxbkkTNmVFoQCqkmGrzLH6A9ecPlgTbp3wDTnUNqaUxYr4vlAcloxx8zwy7G5WdguYNg==}
+    dependencies:
+      vscode-jsonrpc: 8.0.2
+      vscode-languageserver-types: 3.17.2
+    dev: true
+
+  /vscode-languageserver-textdocument/1.0.7:
+    resolution: {integrity: sha512-bFJH7UQxlXT8kKeyiyu41r22jCZXG8kuuVVA33OEJn1diWOZK5n8zBSPZFHVBOu8kXZ6h0LIRhf5UnCo61J4Hg==}
+    dev: true
+
+  /vscode-languageserver-types/3.17.2:
+    resolution: {integrity: sha512-zHhCWatviizPIq9B7Vh9uvrH6x3sK8itC84HkamnBWoDFJtzBf7SWlpLCZUit72b3os45h6RWQNC9xHRDF8dRA==}
+    dev: true
+
+  /vscode-nls/5.2.0:
+    resolution: {integrity: sha512-RAaHx7B14ZU04EU31pT+rKz2/zSl7xMsfIZuo8pd+KZO6PXtQmpevpq3vxvWNcrGbdmhM/rr5Uw5Mz+NBfhVng==}
+    dev: true
+
+  /vscode-uri/3.0.6:
+    resolution: {integrity: sha512-fmL7V1eiDBFRRnu+gfRWTzyPpNIHJTc4mWnFkwBUmO9U3KPgJAmTx7oxi2bl/Rh6HLdU7+4C9wlj0k2E4AdKFQ==}
     dev: true
 
   /vue-demi/0.13.11_vue@2.7.13:

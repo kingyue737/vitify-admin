@@ -6,15 +6,24 @@ import type { Role } from '@/api/users'
 
 declare module 'vue-router' {
   interface RouteMeta {
-    icon?: string // drawer item icon
-    drawerGroup?: 'admin' | 'PUC' // groups will be separated by divider line in drawer
-    drawerIndex?: number // determine the order of item in drawer
-    title?: string // drawer item and breadcrumb text
-    subtitle?: string // subtitle in drawer item
-    roles?: Role[] // authorized user groups
-    dataCy?: string // for cypress location
-    hidden?: boolean // hide this route in drawer if truthy
-    breadcrumb?: 'hidden' | 'disabled' // default is enabled
+    /** Drawer item icon */
+    icon?: string
+    /** Groups will be separated by divider line in drawer */
+    drawerGroup?: 'admin' | 'PUC'
+    /** Determine the order of item in drawer */
+    drawerIndex?: number
+    /** Drawer item and breadcrumb text */
+    title?: string
+    /** Subtitle in drawer item */
+    subtitle?: string
+    /** Authorized user groups */
+    roles?: Role[]
+    /** For cypress location */
+    dataCy?: string
+    /** Hide this route in drawer if truthy */
+    hidden?: boolean
+    /** Default is enabled */
+    breadcrumb?: 'hidden' | 'disabled'
   }
   type RouteRecordRaw = RouteConfig // shim plugins for vue-router v4
 }
