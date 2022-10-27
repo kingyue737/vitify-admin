@@ -1,2 +1,4 @@
 # Enforce Unix newlines
 * text=auto eol=lf
+
+public/mockServiceWorker.js linguist-vendored=true
