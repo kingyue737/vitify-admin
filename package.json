@@ -1,6 +1,6 @@
 {
   "private": true,
-  "packageManager": "pnpm@7.14.1",
+  "packageManager": "pnpm@7.16.0",
   "scripts": {
     "dev": "vite --open --host",
     "build": "vite build",
@@ -32,6 +32,7 @@
   },
   "devDependencies": {
     "@intlify/unplugin-vue-i18n": "^0.7.3",
+    "@kingyue/vite-plugin-vue2-svg": "^0.4.0",
     "@pinia/testing": "^0.0.14",
     "@rushstack/eslint-patch": "^1.2.0",
     "@testing-library/vue": "^5.8.3",
@@ -67,7 +68,6 @@
     "vite-plugin-inspect": "^0.7.8",
     "vite-plugin-pages": "^0.27.1",
     "vite-plugin-vue-layouts": "^0.7.0",
-    "vite-plugin-vue2-svg": "^0.3.0",
     "vitest": "^0.25.2",
     "volar-plugin-vue-router": "^0.0.2",
     "vue-template-compiler": "^2.7.14",
@@ -80,11 +80,6 @@
     "not op_mini all",
     "not ie>0"
   ],
-  "pnpm": {
-    "overrides": {
-      "svgo": "npm:@kingyue/svgo@^2.9.0"
-    }
-  },
   "msw": {
     "workerDirectory": "public"
   }
