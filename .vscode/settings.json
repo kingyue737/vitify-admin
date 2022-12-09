@@ -7,5 +7,6 @@
       "fileMatch": ["/.prettierrc"],
       "url": "https://json.schemastore.org/prettierrc.json"
     }
-  ]
+  ],
+  "volar.completion.preferredTagNameCase": "auto-kebab"
 }
