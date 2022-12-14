@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@intlify/unplugin-vue-i18n": "^0.8.1",
-    "@kingyue/vite-plugin-vue2-svg": "^0.4.0",
+    "@kingyue/vite-plugin-vue2-svg": "^0.5.0",
     "@pinia/testing": "^0.0.14",
     "@rushstack/eslint-patch": "^1.2.0",
     "@testing-library/vue": "^5.8.3",
