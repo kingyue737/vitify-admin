@@ -48,8 +48,7 @@
 .v-text-field.v-text-field--solo:not(.v-text-field--solo-flat)
   > .v-input__control
   > .v-input__slot {
-  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14), 0 0 0 0 transparent,
-    0 0 0 0 transparent;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
 }
 .v-select:not(.v-select--is-multiple) {
   .v-chip {
@@ -67,8 +66,7 @@
     }
   }
   &.v-sheet:not(.v-sheet--outlined, .v-card--flat, [class*=' elevation-']) {
-    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14), 0 0 0 0 transparent,
-      0 0 0 0 transparent !important;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14) !important;
   }
 }
 .v-application .d-contents {
@@ -100,7 +98,6 @@ html {
   }
 }
 .v-menu__content {
-  z-index: 203 !important;
   overflow-y: overlay;
 }
 .v-data-table--dense {
