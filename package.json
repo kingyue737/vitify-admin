@@ -1,6 +1,6 @@
 {
   "private": true,
-  "packageManager": "pnpm@7.18.1",
+  "packageManager": "pnpm@7.19.0",
   "scripts": {
     "dev": "vite --open --host",
     "build": "vite build",
@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@mdi/js": "^7.1.96",
-    "@vueuse/core": "^9.6.0",
+    "@vueuse/core": "^9.8.2",
     "axios": "^1.2.1",
     "echarts": "^5.4.1",
     "lodash": "^4.17.21",
@@ -24,7 +24,7 @@
     "portal-vue": "^2.1.7",
     "screenfull": "^6.0.2",
     "vue": "^2.7.14",
-    "vue-echarts": "^6.2.4",
+    "vue-echarts": "^6.3.3",
     "vue-i18n": "8.27.2",
     "vue-i18n-bridge": "^9.2.2",
     "vue-router": "^3.6.5",
@@ -37,7 +37,7 @@
     "@rushstack/eslint-patch": "^1.2.0",
     "@testing-library/vue": "^5.8.3",
     "@types/lodash": "^4.14.191",
-    "@types/node": "^16.18.9",
+    "@types/node": "^16.18.10",
     "@types/nprogress": "^0.2.0",
     "@types/postcss-preset-env": "^7.7.0",
     "@vitejs/plugin-legacy": "^3.0.1",
@@ -47,7 +47,7 @@
     "@vue/test-utils": "^1.3.3",
     "browserslist-to-esbuild": "^1.2.0",
     "cypress": "^10.11.0",
-    "eslint": "^8.29.0",
+    "eslint": "^8.30.0",
     "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-vue": "^9.8.0",
     "flush-promises": "^1.0.2",
@@ -63,15 +63,15 @@
     "typescript": "^4.9.4",
     "unplugin-auto-import": "^0.12.1",
     "unplugin-vue-components": "^0.22.12",
-    "vite": "^4.0.1",
+    "vite": "^4.0.3",
     "vite-plugin-browserslist-useragent": "^0.2.2",
-    "vite-plugin-inspect": "^0.7.10",
+    "vite-plugin-inspect": "^0.7.11",
     "vite-plugin-pages": "^0.28.0",
     "vite-plugin-vue-layouts": "^0.7.0",
     "vitest": "^0.25.8",
     "volar-plugin-vue-router": "^0.0.2",
     "vue-template-compiler": "^2.7.14",
-    "vue-tsc": "^1.0.13"
+    "vue-tsc": "^1.0.16"
   },
   "browserslist": [
     "> 1.3%",
