@@ -32,7 +32,7 @@ export default defineConfig({
       resolvers: [
         {
           type: 'component',
-          resolve: (name: string) => {
+          resolve: (name) => {
             const blackList = ['VChart', 'VHeadCard']
             if (name.match(/^V[A-Z]/) && !blackList.includes(name))
               return { name, from: 'vuetify/lib' }
