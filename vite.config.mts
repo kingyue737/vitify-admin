@@ -46,16 +46,8 @@ export default defineConfig({
       imports: [
         'vue',
         'pinia',
-        {
-          'vue-i18n-bridge': ['useI18n'],
-          'vue-router/composables': [
-            'useRoute',
-            'useRouter',
-            'useLink',
-            'onBeforeRouteUpdate',
-            'onBeforeRouteLeave',
-          ],
-        },
+        'vue-router/composables',
+        { 'vue-i18n-bridge': ['useI18n'] },
       ],
       dts: 'src/auto-imports.d.ts',
       dirs: ['src/stores'],
