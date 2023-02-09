@@ -24,7 +24,6 @@ export default defineConfig({
     Pages(),
     Layouts(),
     legacy({
-      // Plugin does not use browserslistrc https://github.com/vitejs/vite/issues/2476
       modernPolyfills: true,
       renderLegacyChunks: false,
     }),
