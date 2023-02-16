@@ -47,7 +47,7 @@ specifiers:
   vite-plugin-pages: ^0.28.0
   vite-plugin-vue-layouts: ^0.7.0
   vitest: ^0.28.5
-  volar-plugin-vue-router: ^0.0.2
+  volar-plugin-vue-router: ^0.1.0
   vue: ^2.7.14
   vue-echarts: ^6.5.4
   vue-i18n: 8.27.2
@@ -112,7 +112,7 @@ devDependencies:
   vite-plugin-pages: 0.28.0_vite@4.1.1
   vite-plugin-vue-layouts: 0.7.0_kcqmy5ofbizywm7bbipqmo7flq
   vitest: 0.28.5_343oosvodicbgaw2yl5itdfy7u
-  volar-plugin-vue-router: 0.0.2
+  volar-plugin-vue-router: 0.1.0
   vue-template-compiler: 2.7.14
   vue-tsc: 1.1.0_typescript@4.9.5
 
@@ -7427,13 +7427,11 @@ packages:
       - terser
     dev: true
 
-  /volar-plugin-vue-router/0.0.2:
-    resolution: {integrity: sha512-eURyG9e3smSoFHrcc3yYW2R8xGzWNva2coBaOeJXh7ma1gWv1MGbAPi8dqdQmeFDjJEEBBp2DT8Rk23cqhSlRg==}
+  /volar-plugin-vue-router/0.1.0:
+    resolution: {integrity: sha512-ctSn7LXqZQditZaPcz3q3OaJbr+FC59+lPy0Nbg4ItfcVDGfRlCz6fttg2IsYISsHOTc5W8sEqeIFx9YyA2MkA==}
     dependencies:
       ts-json-schema-generator: 1.2.0
       vscode-json-languageservice: 5.3.0
-      vscode-languageserver-protocol: 3.17.3
-      vscode-languageserver-textdocument: 1.0.8
     dev: true
 
   /vscode-json-languageservice/5.3.0:
@@ -7444,18 +7442,6 @@ packages:
       vscode-languageserver-textdocument: 1.0.8
       vscode-languageserver-types: 3.17.3
       vscode-uri: 3.0.7
-    dev: true
-
-  /vscode-jsonrpc/8.1.0:
-    resolution: {integrity: sha512-6TDy/abTQk+zDGYazgbIPc+4JoXdwC8NHU9Pbn4UJP1fehUyZmM4RHp5IthX7A6L5KS30PRui+j+tbbMMMafdw==}
-    engines: {node: '>=14.0.0'}
-    dev: true
-
-  /vscode-languageserver-protocol/3.17.3:
-    resolution: {integrity: sha512-924/h0AqsMtA5yK22GgMtCYiMdCOtWTSGgUOkgEDX+wk2b0x4sAfLiO4NxBxqbiVtz7K7/1/RgVrVI0NClZwqA==}
-    dependencies:
-      vscode-jsonrpc: 8.1.0
-      vscode-languageserver-types: 3.17.3
     dev: true
 
   /vscode-languageserver-textdocument/1.0.8:

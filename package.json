@@ -68,7 +68,7 @@
     "vite-plugin-pages": "^0.28.0",
     "vite-plugin-vue-layouts": "^0.7.0",
     "vitest": "^0.28.5",
-    "volar-plugin-vue-router": "^0.0.2",
+    "volar-plugin-vue-router": "^0.1.0",
     "vue-template-compiler": "^2.7.14",
     "vue-tsc": "^1.1.0"
   },
