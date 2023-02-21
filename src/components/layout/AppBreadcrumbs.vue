@@ -3,6 +3,7 @@ const route = useRoute()
 const { t } = useI18n()
 const items = computed(() => {
   return route!.matched
+    .slice(1)
     .filter(
       (item) =>
         item.meta && item.meta.title && !(item.meta?.breadcrumb === 'hidden')
