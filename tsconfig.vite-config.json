@@ -3,6 +3,7 @@
   "include": ["vite.config.*", "postcss.config.ts"],
   "compilerOptions": {
     "composite": true,
-    "types": ["node", "vitest"]
+    "types": ["node", "vitest"],
+    "lib": []
   }
 }
