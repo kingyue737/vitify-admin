@@ -1,6 +1,6 @@
 {
   "private": true,
-  "packageManager": "pnpm@7.28.0",
+  "packageManager": "pnpm@7.29.0",
   "scripts": {
     "dev": "vite --open --host",
     "build": "vite build",
@@ -31,7 +31,7 @@
     "vuetify": "^2.6.14"
   },
   "devDependencies": {
-    "@intlify/unplugin-vue-i18n": "^0.8.2",
+    "@intlify/unplugin-vue-i18n": "^0.9.1",
     "@kingyue/vite-plugin-vue2-svg": "^0.5.0",
     "@pinia/testing": "^0.0.15",
     "@rushstack/eslint-patch": "^1.2.0",
