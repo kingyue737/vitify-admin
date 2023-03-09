@@ -6,7 +6,7 @@ const { t } = useI18n()
 const messageStore = useMessageStore()
 const { messages } = storeToRefs(messageStore)
 const messagesShown = computed(() =>
-  messages.value.filter((message) => message.show)
+  messages.value.filter((message) => message.show).reverse()
 )
 const showAll = ref(false)
 const timeout = ref(5000)
@@ -44,7 +44,7 @@ function toggleAll() {
     <Portal to="app">
       <v-card
         elevation="6"
-        width="300"
+        width="400"
         class="d-flex flex-column message-card"
         :class="{ 'message-card--open': showAll }"
       >
@@ -62,7 +62,7 @@ function toggleAll() {
         </v-toolbar>
         <v-slide-y-reverse-transition
           tag="div"
-          class="d-flex flex-column-reverse message-box"
+          class="d-flex flex-column message-box"
           group
           hide-on-leave
         >
@@ -70,6 +70,7 @@ function toggleAll() {
             v-for="message in messagesShown"
             :key="message.id"
             v-model="message.show"
+            class="message-item"
             :colored-border="showAll"
             border="left"
             :type="message.type"
@@ -101,9 +102,9 @@ function toggleAll() {
   bottom: calc(#{$footer-height} + 5px);
   max-height: 100vh;
   visibility: hidden;
-  transition: max-height 0.2s ease-out;
   &.message-card--open {
     visibility: visible;
+    overflow: hidden;
     max-height: calc(100vh - #{$footer-height} - #{$app-bar-height} - 10px);
     .message-box {
       justify-content: initial;
@@ -111,6 +112,7 @@ function toggleAll() {
       overflow-y: overlay;
       pointer-events: auto;
       .message-item {
+        transition: none !important;
         margin: 0;
         border-radius: 0;
         border-top: 1px solid #5656563d !important;
@@ -130,6 +132,9 @@ function toggleAll() {
     pointer-events: initial;
     user-select: initial;
   }
+}
+:deep(.v-alert__content) {
+  max-width: 300px;
 }
 </style>
 

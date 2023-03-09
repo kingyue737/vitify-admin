@@ -36,11 +36,16 @@ export default defineComponent({
 </script>
 
 <template>
-  <v-alert v-bind="$attrs" class="message-item" v-on="$listeners">
+  <v-alert v-bind="$attrs" v-on="$listeners">
     <slot />
     <template #close>
-      <v-btn icon small class="v-alert__dismissible" @click="$emit('close')">
-        <v-icon>$cancel</v-icon>
+      <v-btn
+        icon
+        small
+        class="v-alert__dismissible align-self-start mt-0"
+        @click="$emit('close')"
+      >
+        <v-icon small>$close</v-icon>
       </v-btn>
     </template>
   </v-alert>
