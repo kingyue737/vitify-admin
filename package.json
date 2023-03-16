@@ -63,7 +63,6 @@
     "unplugin-auto-import": "^0.15.1",
     "unplugin-vue-components": "^0.24.1",
     "vite": "^4.1.4",
-    "vite-plugin-browserslist-useragent": "^0.2.2",
     "vite-plugin-inspect": "^0.7.17",
     "vite-plugin-pages": "^0.29.0",
     "vite-plugin-vue-layouts": "^0.8.0",
