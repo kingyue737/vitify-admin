@@ -24,13 +24,18 @@
 <a href="https://kingyue737.github.io/vitify-docs/">Documentation<br><br></a>
 </p>
 
+## Variants
+
+- [vitify-next](https://github.com/kingyue737/vitify-next) - Lightweight Vue 3 version of this template
+- [vitify-electron](https://github.com/kingyue737/vitify-electron) - Vue 3 + Electron starter<super>
+
 ## Features
 
 - 🦾 Full [TypeScript Support and intellisense](https://github.com/vuetifyjs/vuetify/issues/14798#issuecomment-1139788615) for [Vuetify 2](https://vuetifyjs.com/) components, powered by [Volar](https://github.com/johnsoncodehk/volar/tree/master/extensions/vscode-vue-language-features)
 
 - 🖖 [Vue 2.7](https://github.com/vuejs/vue) - Composition API and `<script setup>`
 
-- ⚡️ [Vite 3](https://github.com/vitejs/vite), [pnpm](https://pnpm.io/), [ESBuild](https://github.com/evanw/esbuild) - born with fastness
+- ⚡️ [Vite 4](https://github.com/vitejs/vite), [pnpm](https://pnpm.io/), [ESBuild](https://github.com/evanw/esbuild) - born with fastness
 
 - 🗂️ [File based routing](./src/pages)
 
@@ -89,7 +94,7 @@
 - [VueUse](https://github.com/antfu/vueuse) - Collection of useful composition APIs
 - [Mock Service Worker](https://github.com/mswjs/msw) - Seamless REST/GraphQL API mocking library for browser and Node.js
 - [`vite-plugin-vue2-svg`](https://github.com/pakholeung37/vite-plugin-vue2-svg) - Load SVG files as Vue components, and auto register as Vuetify `v-icon`s
-- [`vite-plugin-browserslist-useragent`](https://github.com/kingyue737/vite-plugin-browserslist-useragent) - Compile browserslist query to a RegExp to test browser useragent
+- [`volar-plugin-vue-router`](https://github.com/kingyue737/volar-plugin-vue-router) - Intellisense in `<route>` custom block
 
 ### Compatibility
 
@@ -114,6 +119,7 @@
   - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) - Find and fix problems in your code
   - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) - Code formatter
   - [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
+  - [Material Design Icons Intellisense](https://marketplace.visualstudio.com/items?itemName=lukas-tr.materialdesignicons-intellisense)
 
 ## Try it now!
 
