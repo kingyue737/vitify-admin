@@ -56,7 +56,7 @@ const toggleDark = useToggle(isDark)
       <v-tooltip top>
         <template #activator="{ on: toolTip }">
           <v-btn text tile small v-bind="attrs" v-on="{ ...toolTip, ...menu }">
-            <v-icon>$mdi-palette-outline</v-icon>
+            <v-icon>mdi-palette-outline</v-icon>
           </v-btn>
         </template>
         <span>{{ t('interfaceSettings') }}</span>

@@ -50,7 +50,7 @@ function warning() {
 {
   "meta": {
     "title": "homepage",
-    "icon": "$mdi-home",
+    "icon": "mdi-home",
     "drawerIndex": 0
   }
 }

@@ -29,7 +29,7 @@ const onScroll = () => {
         style="z-index: 3; bottom: 40px"
         @click="toTop"
       >
-        <v-icon>$mdi-chevron-up</v-icon>
+        <v-icon>mdi-chevron-up</v-icon>
       </v-btn>
     </v-fab-transition>
   </v-main>

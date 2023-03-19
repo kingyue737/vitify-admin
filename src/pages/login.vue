@@ -70,7 +70,7 @@ async function onSubmit() {
               target="_blank"
               v-on="on"
             >
-              <v-icon>$mdi-book-outline</v-icon>
+              <v-icon>mdi-book-outline</v-icon>
             </v-btn>
           </template>
           <span>{{ t('documentation') }}</span>
@@ -82,7 +82,7 @@ async function onSubmit() {
           <v-col cols="12">
             <v-head-card light class="px-5 py-3 mx-auto login-card mt-0">
               <template #heading>
-                <v-icon>$mdi-login</v-icon>
+                <v-icon>mdi-login</v-icon>
                 {{ t('userLogin') }}
               </template>
               <v-expand-transition>
@@ -94,16 +94,14 @@ async function onSubmit() {
                         :counter="15"
                         :rules="nameRules"
                         :label="t('username')"
-                        prepend-icon="$mdi-account-outline"
+                        prepend-icon="mdi-account-outline"
                         required
                         @keydown.enter.prevent="onSubmit"
                       />
                       <v-text-field
                         v-model="password"
-                        prepend-icon="$mdi-lock-outline"
-                        :append-icon="
-                          showPassword ? '$mdi-eye' : '$mdi-eye-off'
-                        "
+                        prepend-icon="mdi-lock-outline"
+                        :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
                         :type="showPassword ? 'text' : 'password'"
                         :rules="passwordRules"
                         :label="t('password')"

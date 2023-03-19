@@ -16,7 +16,7 @@ const now = useNow()
     height="30"
     class="font-weight-light"
   >
-    <v-icon small class="ml-3 mr-1"> $mdi-clock-outline </v-icon>
+    <v-icon small class="ml-3 mr-1"> mdi-clock-outline </v-icon>
     <span>
       {{ now.toLocaleString() }}
     </span>
@@ -33,8 +33,8 @@ const now = useNow()
           target="_blank"
           v-on="on"
         >
-          <v-icon>$mdi-book-outline</v-icon>
-          <v-icon size="12">$mdi-open-in-new</v-icon>
+          <v-icon>mdi-book-outline</v-icon>
+          <v-icon size="12">mdi-open-in-new</v-icon>
         </v-btn>
       </template>
       <span>{{ t('documentation') }}</span>

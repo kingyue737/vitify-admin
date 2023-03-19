@@ -49,7 +49,7 @@ async function submit() {
           style="max-width: 350px; position: relative; top: -100px"
         >
           <template #heading>
-            <v-icon>$mdi-key-variant</v-icon>
+            <v-icon>mdi-key-variant</v-icon>
             {{ t('resetPassword') }}
           </template>
           <v-container>
@@ -58,7 +58,7 @@ async function submit() {
                 v-model="current"
                 :label="t('currentPassword')"
                 :counter="20"
-                :append-icon="showCurrent ? '$mdi-eye' : '$mdi-eye-off'"
+                :append-icon="showCurrent ? 'mdi-eye' : 'mdi-eye-off'"
                 :type="showCurrent ? 'text' : 'password'"
                 required
                 :rules="rules"
@@ -69,7 +69,7 @@ async function submit() {
                 v-model="password"
                 :label="t('newPassword')"
                 :counter="20"
-                :append-icon="showNew ? '$mdi-eye' : '$mdi-eye-off'"
+                :append-icon="showNew ? 'mdi-eye' : 'mdi-eye-off'"
                 :type="showNew ? 'text' : 'password'"
                 :rules="rules"
                 autocomplete="off"
@@ -80,7 +80,7 @@ async function submit() {
                 v-model="confirm"
                 :label="t('confirmPassword')"
                 :counter="20"
-                :append-icon="showConfirm ? '$mdi-eye' : '$mdi-eye-off'"
+                :append-icon="showConfirm ? 'mdi-eye' : 'mdi-eye-off'"
                 :type="showConfirm ? 'text' : 'password'"
                 :rules="confirmedRules"
                 autocomplete="off"

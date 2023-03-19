@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "vite --open --host",
     "build": "vite build",
-    "preview": "vite preview --port 5050 --host",
+    "preview": "vite preview --port 5050 --host --config vite.config.preview.ts",
     "test:e2e": "start-server-and-test preview http://127.0.0.1:5050/ 'cypress open'",
     "test:e2e:ci": "start-server-and-test preview http://127.0.0.1:5050/ 'cypress run'",
     "test:unit": "vitest",
@@ -34,6 +34,7 @@
     "@intlify/unplugin-vue-i18n": "^0.9.2",
     "@kingyue/vite-plugin-vue2-svg": "^0.5.0",
     "@pinia/testing": "^0.0.15",
+    "@rollup/plugin-replace": "^5.0.2",
     "@rushstack/eslint-patch": "^1.2.0",
     "@testing-library/vue": "^5.9.0",
     "@types/lodash": "^4.14.191",

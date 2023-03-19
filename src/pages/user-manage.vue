@@ -10,7 +10,7 @@ import RouterWrapper from '@/components/layout/RouterWrapper.vue'
 {
   "meta": {
     "title": "userManagement",
-    "icon": "$mdi-account-group",
+    "icon": "mdi-account-group",
     "roles": ["admin"],
     "drawerGroup": "admin",
     "dataCy": "userManage"

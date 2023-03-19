@@ -70,7 +70,7 @@ function showDialogDelete(id: number) {
   <v-container fluid>
     <v-row>
       <v-col cols="12">
-        <v-head-card :title="t('listOf', [t('user')])" icon="$mdi-view-list">
+        <v-head-card :title="t('listOf', [t('user')])" icon="mdi-view-list">
           <v-data-table
             :headers="headers"
             :items="users"
@@ -99,14 +99,14 @@ function showDialogDelete(id: number) {
                 :title="t('edit')"
                 @click="() => {}"
               >
-                $mdi-pencil
+                mdi-pencil
               </v-icon>
               <v-icon
                 size="20"
                 :title="t('delete')"
                 @click.stop="showDialogDelete(item.id)"
               >
-                $mdi-delete
+                mdi-delete
               </v-icon>
             </template>
           </v-data-table>

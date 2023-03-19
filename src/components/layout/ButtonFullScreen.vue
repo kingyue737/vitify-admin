@@ -30,7 +30,7 @@ function click() {
     <template #activator="{ on }">
       <v-btn id="fullScreen" text min-width="0" v-on="on" @click="click">
         <v-icon>
-          {{ isFullscreen ? '$mdi-fullscreen-exit' : '$mdi-fullscreen' }}
+          {{ isFullscreen ? 'mdi-fullscreen-exit' : 'mdi-fullscreen' }}
         </v-icon>
       </v-btn>
     </template>

@@ -6,7 +6,7 @@
 {
   "meta": {
     "title": "Menu 2-1",
-    "icon": "$mdi-animation"
+    "icon": "mdi-animation"
   }
 }
 </route>

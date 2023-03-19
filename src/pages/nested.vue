@@ -9,7 +9,7 @@ import RouterWrapper from '../components/layout/RouterWrapper.vue'
 {
   "meta": {
     "title": "nestedRoutes",
-    "icon": "$mdi-view-list",
+    "icon": "mdi-view-list",
     "breadcrumb": "disabled"
   }
 }

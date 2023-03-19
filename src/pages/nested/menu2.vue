@@ -8,7 +8,7 @@ import RouterWrapper from '../../components/layout/RouterWrapper.vue'
 {
   "meta": {
     "title": "Menu 2",
-    "icon": "$mdi-view-list"
+    "icon": "mdi-view-list"
   }
 }
 </route>

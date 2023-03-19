@@ -19,7 +19,7 @@ const logOut = () => {
             v-bind="attrs"
             v-on="{ ...toolTip, ...menu }"
           >
-            <v-icon>$mdi-account</v-icon>
+            <v-icon>mdi-account</v-icon>
           </v-btn>
         </template>
         <span>{{ name }}</span>
@@ -28,13 +28,13 @@ const logOut = () => {
     <v-list>
       <v-list-item @click="router.push({ name: 'reset-password' })">
         <v-list-item-icon class="mr-2">
-          <v-icon> $mdi-key-variant </v-icon>
+          <v-icon> mdi-key-variant </v-icon>
         </v-list-item-icon>
         <v-list-item-title link> {{ t('resetPassword') }} </v-list-item-title>
       </v-list-item>
       <v-list-item @click="logOut">
         <v-list-item-icon class="mr-2">
-          <v-icon> $mdi-logout </v-icon>
+          <v-icon> mdi-logout </v-icon>
         </v-list-item-icon>
         <v-list-item-title link> {{ t('logout') }} </v-list-item-title>
       </v-list-item>

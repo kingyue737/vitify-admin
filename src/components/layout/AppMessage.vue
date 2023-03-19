@@ -35,7 +35,7 @@ function toggleAll() {
       <template #activator="{ on }">
         <v-btn text tile small @click="toggleAll" v-on="on">
           <v-icon>{{
-            messages.length ? '$mdi-bell-badge-outline' : '$mdi-bell-outline'
+            messages.length ? 'mdi-bell-badge-outline' : 'mdi-bell-outline'
           }}</v-icon>
         </v-btn>
       </template>
@@ -54,7 +54,7 @@ function toggleAll() {
           }}</v-toolbar-title>
           <v-spacer />
           <v-btn small icon :title="t('clearAll')" @click="emptyMessages">
-            <v-icon>$mdi-bell-remove</v-icon>
+            <v-icon>mdi-bell-remove</v-icon>
           </v-btn>
           <v-btn small icon :title="t('hide')" @click="toggleAll">
             <v-icon>$expand</v-icon>

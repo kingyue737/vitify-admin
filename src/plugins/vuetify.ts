@@ -1,12 +1,21 @@
 import Vuetify from 'vuetify/lib'
 import type { VuetifyParsedTheme } from 'vuetify/types/services/theme'
 import { Ripple, Resize, Scroll } from 'vuetify/lib/directives'
-import icons from './icons'
 import { useDark } from '@vueuse/core'
 import en from 'vuetify/lib/locale/en'
 import zh from 'vuetify/lib/locale/zh-Hans'
 import type { InstallPlugin } from '@/utils/types'
+import { filename } from '@/utils/string'
+import type { Component } from 'vue'
 
+const svgIcons = Object.fromEntries(
+  Object.entries(
+    import.meta.glob<Component>('@/assets/icons/*.svg', {
+      eager: true,
+      import: 'default',
+    })
+  ).map(([k, v]) => [filename(k), { component: v }])
+)
 const theme = {
   primary: localStorage.getItem('theme-primary') || '#0096C7',
   secondary: '#03A9F4',
@@ -49,7 +58,7 @@ export const install: InstallPlugin = (vue) => {
     icons: {
       iconfont: 'mdiSvg',
       values: {
-        ...icons,
+        ...svgIcons,
       },
     },
     breakpoint: {

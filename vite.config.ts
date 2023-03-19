@@ -11,6 +11,9 @@ import Layouts from 'vite-plugin-vue-layouts'
 import Inspect from 'vite-plugin-inspect'
 import VueI18n from '@intlify/unplugin-vue-i18n/vite'
 import browserslistToEsbuild from 'browserslist-to-esbuild'
+import Replace from '@rollup/plugin-replace'
+import * as mdicons from '@mdi/js'
+import { mapKeys, kebabCase } from 'lodash'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -61,6 +64,12 @@ export default defineConfig({
       include: [path.resolve(__dirname, 'src/locales/**')],
     }),
     Inspect(),
+    Replace({
+      exclude: ['node_modules/**', 'src/plugins/vuetify.ts'],
+      values: mapKeys(mdicons, (v, k) => kebabCase(k)),
+      sourceMap: false,
+      preventAssignment: false,
+    }),
   ],
   css: {
     devSourcemap: true,

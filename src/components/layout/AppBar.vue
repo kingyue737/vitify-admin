@@ -11,7 +11,7 @@ const { drawer } = storeToRefs(useAppStore())
   <v-app-bar app color="transparent" elevate-on-scroll height="60px">
     <v-btn elevation="1" fab small style="z-index: 1" @click="drawer = !drawer">
       <v-icon>
-        {{ drawer ? '$mdi-backburger' : '$mdi-menu-open' }}
+        {{ drawer ? 'mdi-backburger' : 'mdi-menu-open' }}
       </v-icon>
     </v-btn>
     <AppBreadcrumbs />
@@ -22,7 +22,7 @@ const { drawer } = storeToRefs(useAppStore())
       href="https://github.com/kingyue737/vitify-admin"
       target="_blank"
     >
-      <v-icon>$mdi-github</v-icon>
+      <v-icon>mdi-github</v-icon>
     </v-btn>
     <PortalTarget name="app-bar" class="d-contents" />
     <ButtonFullScreen />

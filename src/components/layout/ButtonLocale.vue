@@ -20,7 +20,7 @@ const setLang = (lang: string) => {
             v-bind="attrs"
             v-on="{ ...toolTip, ...menu }"
           >
-            <v-icon>$mdi-translate</v-icon>
+            <v-icon>mdi-translate</v-icon>
           </v-btn>
         </template>
         <span>{{ t('language') }}</span>
@@ -32,7 +32,7 @@ const setLang = (lang: string) => {
         @click="setLang('zh')"
       >
         <v-list-item-icon class="mr-2">
-          <v-icon> $mdi-ideogram-cjk-variant </v-icon>
+          <v-icon> mdi-ideogram-cjk-variant </v-icon>
         </v-list-item-icon>
         <v-list-item-title link> 简体中文 </v-list-item-title>
       </v-list-item>
@@ -41,7 +41,7 @@ const setLang = (lang: string) => {
         @click="setLang('en')"
       >
         <v-list-item-icon class="mr-2">
-          <v-icon> $mdi-alphabetical-variant </v-icon>
+          <v-icon> mdi-alphabetical-variant </v-icon>
         </v-list-item-icon>
         <v-list-item-title link> English </v-list-item-title>
       </v-list-item>
