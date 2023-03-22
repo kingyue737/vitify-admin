@@ -27,7 +27,7 @@
 ## Variants
 
 - [vitify-next](https://github.com/kingyue737/vitify-next) - Lightweight Vue 3 version of this template
-- [vitify-electron](https://github.com/kingyue737/vitify-electron) - Vue 3 + Electron starter<super>
+- [vitify-electron](https://github.com/kingyue737/vitify-electron) - Vuetify 3 + Electron starter
 
 ## Features
 
