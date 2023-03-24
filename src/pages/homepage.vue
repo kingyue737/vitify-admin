@@ -33,9 +33,9 @@ function warning() {
 <style lang="scss" scoped>
 .wrapper {
   position: relative;
-  top: calc(50vh - 330px);
+  top: max(50vh - 300px, 0px);
   text-align: center;
-  opacity: 0.7;
+  opacity: 0.9;
 }
 .logo {
   font-size: 10em;
