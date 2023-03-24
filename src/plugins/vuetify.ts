@@ -17,7 +17,7 @@ const svgIcons = Object.fromEntries(
   ).map(([k, v]) => [filename(k), { component: v }])
 )
 const theme = {
-  primary: localStorage.getItem('theme-primary') || '#0096C7',
+  primary: localStorage.getItem('theme-primary') || '#3f51b5',
   secondary: '#03A9F4',
   accent: '#9C27b0',
   info: '#00CAE3',

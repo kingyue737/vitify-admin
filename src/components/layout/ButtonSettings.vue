@@ -28,6 +28,7 @@ const colors = [
   ['#4CAF50', '#FF5252'],
   ['#9C27b0', '#E91E63'],
   ['#304156', '#3f51b5'],
+  ['#002FA7', '#492d22'],
 ]
 const images = [drawer1, drawer2, drawer3]
 const menuShow = ref(false)
@@ -62,7 +63,7 @@ const toggleDark = useToggle(isDark)
         <span>{{ t('interfaceSettings') }}</span>
       </v-tooltip>
     </template>
-    <v-card class="text-center mb-0" width="300">
+    <v-card class="text-center mb-0" width="320">
       <v-card-text>
         <strong class="mb-3 d-inline-block">{{ t('themeColor') }}</strong>
         <v-color-picker
@@ -97,21 +98,17 @@ const toggleDark = useToggle(isDark)
             />
           </v-col>
         </v-row>
-
-        <v-divider class="my-3" />
-
-        <strong class="mb-3 d-inline-block">{{ t('image') }}</strong>
         <v-card :disabled="!drawerImageShow" flat>
           <v-item-group
             v-model="drawerImage"
-            class="d-flex justify-space-between mb-3"
+            class="d-flex justify-space-between my-3 mx-2"
             mandatory
           >
-            <v-item v-for="img in images" :key="img" :value="img" class="mx-1">
+            <v-item v-for="img in images" :key="img" :value="img">
               <template #default="{ active, toggle }">
                 <v-sheet
-                  :class="active && 'v-settings__item--active'"
                   class="d-inline-block v-settings__item"
+                  :class="active && 'v-settings__item--active'"
                   @click="toggle"
                 >
                   <v-img :src="img" height="100" width="50" />
@@ -131,24 +128,17 @@ const toggleDark = useToggle(isDark)
   .theme--dark.v-sheet {
     background-color: #272727;
   }
-  .v-card__text {
-    strong {
-      height: 30px;
-      line-height: 25px;
-      font-weight: 600;
-      text-align: center;
-    }
-  }
-  .v-item-group > * {
-    cursor: pointer;
-  }
   &__item {
+    cursor: pointer;
     border-width: 3px;
     border-style: solid;
-    border-color: transparent !important;
+    border-color: transparent;
     border-radius: 10px;
     &--active {
-      border-color: var(--v-primary-lighten1) !important;
+      border-color: var(--v-primary-base) !important;
+    }
+    &:hover {
+      border-color: var(--v-primary-lighten2);
     }
     .v-image {
       border-radius: 7px !important;
