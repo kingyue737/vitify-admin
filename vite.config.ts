@@ -55,7 +55,20 @@ export default defineConfig({
       dirs: ['src/stores'],
       vueTemplate: false,
     }),
-    createSvgPlugin(),
+    createSvgPlugin({
+      svgoConfig: {
+        plugins: [
+          'cleanupEnableBackground',
+          'removeDoctype',
+          'removeMetadata',
+          'removeComments',
+          'removeXMLNS',
+          'removeXMLProcInst',
+          'sortDefsChildren',
+          'convertTransform',
+        ],
+      },
+    }),
     splitVendorChunkPlugin(),
     VueI18n({
       runtimeOnly: false,

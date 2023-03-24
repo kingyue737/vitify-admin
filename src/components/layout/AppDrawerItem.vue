@@ -62,14 +62,12 @@ export default defineComponent({
 </script>
 
 <template>
-  <div
-    v-if="!item.meta || item.meta.icon"
-    :class="`${level ? 'sub-' : ''}bar-item`"
-  >
+  <div v-if="!item.meta || item.meta.icon" :class="level && 'sub-bar-item'">
     <v-list-item
       v-if="isItem"
       :to="{ name: item.name || visibleChildren?.[0].name }"
       active-class="primary white--text"
+      class="mb-1"
     >
       <v-list-item-icon>
         <v-icon>{{ icon }}</v-icon>
