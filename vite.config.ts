@@ -11,7 +11,8 @@ import Layouts from 'vite-plugin-vue-layouts'
 import Inspect from 'vite-plugin-inspect'
 import VueI18n from '@intlify/unplugin-vue-i18n/vite'
 import browserslistToEsbuild from 'browserslist-to-esbuild'
-import Replace from '@rollup/plugin-replace'
+// @ts-ignore next-line
+import Modify from 'rollup-plugin-modify'
 import * as mdicons from '@mdi/js'
 import { mapKeys, kebabCase } from 'lodash'
 
@@ -77,11 +78,11 @@ export default defineConfig({
       include: [path.resolve(__dirname, 'src/locales/**')],
     }),
     Inspect(),
-    Replace({
-      exclude: ['node_modules/**', 'src/plugins/vuetify.ts'],
-      values: mapKeys(mdicons, (v, k) => kebabCase(k)),
-      sourceMap: false,
-      preventAssignment: false,
+    Modify({
+      find: /\b(?<![/\w])(mdi-[\w-]+)\b(?!\.)/,
+      replace: (match: string) =>
+        mapKeys(mdicons, (v, k) => kebabCase(k))[match],
+      sourcemap: false,
     }),
   ],
   css: {
