@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@intlify/unplugin-vue-i18n': ^0.10.0
+  '@kingyue/rollup-plugin-modify': ^4.0.0
   '@kingyue/vite-plugin-vue2-svg': ^0.5.0
   '@mdi/js': ^7.2.96
   '@pinia/testing': ^0.0.15
@@ -33,7 +34,6 @@ specifiers:
   postcss-load-config: ^4.0.1
   postcss-preset-env: ^8.0.1
   prettier: ^2.8.7
-  rollup-plugin-modify: ^3.0.0
   sass: ~1.32.13
   screenfull: ^6.0.2
   start-server-and-test: ^2.0.0
@@ -76,6 +76,7 @@ dependencies:
 
 devDependencies:
   '@intlify/unplugin-vue-i18n': 0.10.0_nnezjlzhnrjozwdoyz6b4xf3p4
+  '@kingyue/rollup-plugin-modify': 4.0.0
   '@kingyue/vite-plugin-vue2-svg': 0.5.0
   '@pinia/testing': 0.0.15_pinia@2.0.33+vue@2.7.14
   '@rushstack/eslint-patch': 1.2.0
@@ -99,7 +100,6 @@ devDependencies:
   postcss-load-config: 4.0.1_aesdjsunmf4wiehhujt67my7tu
   postcss-preset-env: 8.0.1_postcss@8.4.21
   prettier: 2.8.7
-  rollup-plugin-modify: 3.0.0
   sass: 1.32.13
   start-server-and-test: 2.0.0
   terser: 5.16.6
@@ -2002,6 +2002,15 @@ packages:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.0
       '@jridgewell/sourcemap-codec': 1.4.14
+    dev: true
+
+  /@kingyue/rollup-plugin-modify/4.0.0:
+    resolution: {integrity: sha512-+Gm72Q8zdbKUiVhXIZnWyLg2ofEx4+aoj+t3R4PqhCEYJRWXn2mY02MjgzaTUmi0F2MWwtZ9VloSK7u3U3sA4w==}
+    dependencies:
+      '@rollup/pluginutils': 5.0.2
+      magic-string: 0.30.0
+    transitivePeerDependencies:
+      - rollup
     dev: true
 
   /@kingyue/vite-plugin-vue2-svg/0.5.0:
@@ -5044,12 +5053,6 @@ packages:
     hasBin: true
     dev: true
 
-  /magic-string/0.25.2:
-    resolution: {integrity: sha512-iLs9mPjh9IuTtRsqqhNGYcZXGei0Nh/A4xirrsqW7c+QhKVFL2vm7U09ru6cHRD22azaP/wMDgI+HCqbETMTtg==}
-    dependencies:
-      sourcemap-codec: 1.4.8
-    dev: true
-
   /magic-string/0.25.9:
     resolution: {integrity: sha512-RmF0AsMzgt25qzqqLc1+MbHmhdx0ojF2Fvs4XnOqz2ZOBXzzkEwc/dJQZCYHAn7v1jbVOjAZfK8msRn4BxO4VQ==}
     dependencies:
@@ -5362,13 +5365,6 @@ packages:
 
   /ospath/1.2.2:
     resolution: {integrity: sha512-o6E5qJV5zkAbIDNhGSIlyOhScKXgQrSRMilfph0clDfM0nEnBOlKlH4sWDmG95BW/CvwNz0vmm7dJVtU2KlMiA==}
-    dev: true
-
-  /ospec/3.1.0:
-    resolution: {integrity: sha512-+nGtjV3vlADp+UGfL51miAh/hB4awPBkQrArhcgG4trAaoA2gKt5bf9w0m9ch9zOr555cHWaCHZEDiBOkNZSxw==}
-    hasBin: true
-    dependencies:
-      glob: 7.2.3
     dev: true
 
   /outvariant/1.4.0:
@@ -6114,13 +6110,6 @@ packages:
     hasBin: true
     dependencies:
       glob: 7.2.3
-    dev: true
-
-  /rollup-plugin-modify/3.0.0:
-    resolution: {integrity: sha512-p/ffs0Y2jz2dEnWjq1oVC7SY37tuS+aP7whoNaQz1EAAOPg+k3vKJo8cMMWx6xpdd0NzhX4y2YF9o/NPu5YR0Q==}
-    dependencies:
-      magic-string: 0.25.2
-      ospec: 3.1.0
     dev: true
 
   /rollup/3.20.2:

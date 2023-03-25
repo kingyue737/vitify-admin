@@ -32,6 +32,7 @@
   },
   "devDependencies": {
     "@intlify/unplugin-vue-i18n": "^0.10.0",
+    "@kingyue/rollup-plugin-modify": "^4.0.0",
     "@kingyue/vite-plugin-vue2-svg": "^0.5.0",
     "@pinia/testing": "^0.0.15",
     "@rushstack/eslint-patch": "^1.2.0",
@@ -55,7 +56,6 @@
     "postcss-load-config": "^4.0.1",
     "postcss-preset-env": "^8.0.1",
     "prettier": "^2.8.7",
-    "rollup-plugin-modify": "^3.0.0",
     "sass": "~1.32.13",
     "start-server-and-test": "^2.0.0",
     "terser": "^5.16.6",
