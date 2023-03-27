@@ -85,7 +85,7 @@ nextTick(() => {
         <v-divider
           v-if="routesInGroup.length && i !== 0"
           :key="`item-divider-${i}`"
-          class="my-2"
+          class="mb-1"
         />
         <AppDrawerItem
           v-for="(route, j) in routesInGroup"
