@@ -152,7 +152,7 @@ When you use this template, try follow the checklist to update your info properl
 - [ ] Clean up the `README` and remove routes
 - [ ] Change the copyright in navigation drawer and login page
 - [ ] Change default locale of `vue-i18n`
-- [ ] Change or remove [Cypress Dashboard](https://dashboard.cypress.io/) related ID in [ci.yml](https://github.com/kingyue737/vitify-admin/blob/main/.github/workflows/ci.yml)
+- [ ] Change or remove [Cypress Cloud](https://cloud.cypress.io/) related ID in [ci.yml](https://github.com/kingyue737/vitify-admin/blob/main/.github/workflows/ci.yml)
 
 And, enjoy :)
 
@@ -195,11 +195,11 @@ pnpm build
 pnpm test:e2e
 ```
 
-### Record on Cypress Dashboard
+### Record on Cypress Cloud
 
-Go to [Cypress Dashboard](https://dashboard.cypress.io/), create a new project and add its `projectId` as `${CYPRESS_PROJECT_ID}`, its `record key` as `$CYPRESS_RECORD_KEY` in your repositry secrets (https://github.com/your-name/project-name/settings/secrets/actions).
+Go to [Cypress Cloud](https://cloud.cypress.io/), create a new project and add its `projectId` as `${CYPRESS_PROJECT_ID}`, its `record key` as `$CYPRESS_RECORD_KEY` in your repositry secrets (https://github.com/your-name/project-name/settings/secrets/actions).
 
-If you don't want to use Cypress Dashboard, remove `record: true` and the entire `env` block from [`.github/workflows/ci.yml`](https://github.com/kingyue737/vitify-admin/blob/main/.github/workflows/ci.yml):
+If you don't want to use Cypress Cloud, remove `record: true` and the entire `env` block from [`.github/workflows/ci.yml`](https://github.com/kingyue737/vitify-admin/blob/main/.github/workflows/ci.yml):
 
 ```yml
 - name: Cypress
