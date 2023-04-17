@@ -22,6 +22,13 @@ export default defineConfig({
     port: 9527,
   },
   plugins: [
+    Modify({
+      exclude: ['node_modules/**'],
+      find: /\b(?<![/\w])(mdi-[\w-]+)\b(?!\.)/,
+      replace: (match: string) =>
+        mapKeys(mdicons, (v, k) => kebabCase(k))[match],
+      sourcemap: false,
+    }),
     vue2(),
     Pages(),
     Layouts(),
@@ -77,13 +84,6 @@ export default defineConfig({
       include: [path.resolve(__dirname, 'src/locales/**')],
     }),
     Inspect(),
-    Modify({
-      exclude: ['node_modules/**'],
-      find: /\b(?<![/\w])(mdi-[\w-]+)\b(?!\.)/,
-      replace: (match: string) =>
-        mapKeys(mdicons, (v, k) => kebabCase(k))[match],
-      sourcemap: false,
-    }),
   ],
   css: {
     devSourcemap: true,
