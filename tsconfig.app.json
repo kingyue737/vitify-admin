@@ -5,16 +5,12 @@
     "useDefineForClassFields": true,
     "module": "esnext",
     "moduleResolution": "node",
-    "isolatedModules": true,
     "strict": true,
     "jsx": "preserve",
     "sourceMap": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    // For `<script setup>`
-    // See <https://devblogs.microsoft.com/typescript/announcing-typescript-4-5-beta/#preserve-value-imports>
-    "preserveValueImports": true,
-    "importsNotUsedAsValues": "error",
+    "verbatimModuleSyntax": true,
     "forceConsistentCasingInFileNames": true,
     "paths": {
       "@/*": ["src/*"]
@@ -25,8 +21,7 @@
     "skipLibCheck": true
   },
   "vueCompilerOptions": {
-    "target": 2.7,
-    "jsxTemplates": true
+    "target": 2.7
   },
   "include": ["src/**/*", "src/**/*.vue"],
   "exclude": ["src/**/__tests__/*"]
