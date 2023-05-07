@@ -157,8 +157,8 @@ devDependencies:
     specifier: ^0.31.0
     version: 0.31.0(jsdom@22.0.0)(sass@1.32.13)(terser@5.17.1)
   volar-plugin-vue-router:
-    specifier: ^0.1.0
-    version: 0.1.0
+    specifier: ^0.2.0
+    version: 0.2.0
   vue-template-compiler:
     specifier: ^2.7.14
     version: 2.7.14
@@ -1261,7 +1261,7 @@ packages:
       babel-plugin-polyfill-corejs2: 0.3.3(@babel/core@7.21.8)
       babel-plugin-polyfill-corejs3: 0.6.0(@babel/core@7.21.8)
       babel-plugin-polyfill-regenerator: 0.4.1(@babel/core@7.21.8)
-      core-js-compat: 3.30.1
+      core-js-compat: 3.30.2
       semver: 6.3.0
     transitivePeerDependencies:
       - supports-color
@@ -2510,7 +2510,7 @@ packages:
       '@babel/core': 7.21.8
       '@babel/preset-env': 7.21.5(@babel/core@7.21.8)
       browserslist: 4.21.5
-      core-js: 3.30.1
+      core-js: 3.30.2
       magic-string: 0.30.0
       regenerator-runtime: 0.13.11
       systemjs: 6.14.1
@@ -2733,7 +2733,7 @@ packages:
       eslint: 8.40.0
       eslint-plugin-vue: 9.11.0(eslint@8.40.0)
       typescript: 5.0.4
-      vue-eslint-parser: 9.2.0(eslint@8.40.0)
+      vue-eslint-parser: 9.2.1(eslint@8.40.0)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -3003,7 +3003,7 @@ packages:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.21.5
-      caniuse-lite: 1.0.30001485
+      caniuse-lite: 1.0.30001486
       fraction.js: 4.2.0
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -3063,7 +3063,7 @@ packages:
     dependencies:
       '@babel/core': 7.21.8
       '@babel/helper-define-polyfill-provider': 0.3.3(@babel/core@7.21.8)
-      core-js-compat: 3.30.1
+      core-js-compat: 3.30.2
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -3154,7 +3154,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001485
+      caniuse-lite: 1.0.30001486
       electron-to-chromium: 1.4.385
       node-releases: 2.0.10
       update-browserslist-db: 1.0.11(browserslist@4.21.5)
@@ -3197,8 +3197,8 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /caniuse-lite@1.0.30001485:
-    resolution: {integrity: sha512-8aUpZ7sjhlOyiNsg+pgcrTTPUXKh+rg544QYHSvQErljVEKJzvkYkCR/hUFeeVoEfTToUtY9cUKNRC7+c45YkA==}
+  /caniuse-lite@1.0.30001486:
+    resolution: {integrity: sha512-uv7/gXuHi10Whlj0pp5q/tsK/32J2QSqVRKQhs2j8VsDCjgyruAh/eEXHF822VqO9yT6iZKw3nRwZRSPBE9OQg==}
     dev: true
 
   /caseless@0.12.0:
@@ -3427,14 +3427,14 @@ packages:
     engines: {node: '>= 0.6'}
     dev: true
 
-  /core-js-compat@3.30.1:
-    resolution: {integrity: sha512-d690npR7MC6P0gq4npTl5n2VQeNAmUrJ90n+MHiKS7W2+xno4o3F5GDEuylSdi6EJ3VssibSGXOa1r3YXD3Mhw==}
+  /core-js-compat@3.30.2:
+    resolution: {integrity: sha512-nriW1nuJjUgvkEjIot1Spwakz52V9YkYHZAQG6A1eCgC8AA1p0zngrQEP9R0+V6hji5XilWKG1Bd0YRppmGimA==}
     dependencies:
       browserslist: 4.21.5
     dev: true
 
-  /core-js@3.30.1:
-    resolution: {integrity: sha512-ZNS5nbiSwDTq4hFosEDqm65izl2CWmLz0hARJMyNQBgkUZMIF51cQiMvIQKA6hvuaeWxQDP3hEedM1JZIgTldQ==}
+  /core-js@3.30.2:
+    resolution: {integrity: sha512-uBJiDmwqsbJCWHAwjrx3cvjbMXP7xD72Dmsn5LOJpiRmE3WbBbN5rCqQ2Qh6Ek6/eOrjlWngEynBWo4VxerQhg==}
     requiresBuild: true
     dev: true
 
@@ -3944,7 +3944,7 @@ packages:
       nth-check: 2.1.1
       postcss-selector-parser: 6.0.12
       semver: 7.5.0
-      vue-eslint-parser: 9.2.0(eslint@8.40.0)
+      vue-eslint-parser: 9.2.1(eslint@8.40.0)
       xml-name-validator: 4.0.0
     transitivePeerDependencies:
       - supports-color
@@ -7153,8 +7153,8 @@ packages:
       - terser
     dev: true
 
-  /volar-plugin-vue-router@0.1.0:
-    resolution: {integrity: sha512-ctSn7LXqZQditZaPcz3q3OaJbr+FC59+lPy0Nbg4ItfcVDGfRlCz6fttg2IsYISsHOTc5W8sEqeIFx9YyA2MkA==}
+  /volar-plugin-vue-router@0.2.0:
+    resolution: {integrity: sha512-oz3kGP2M5TKXdsbJeC+Rb1Vd3jTUDGt1s1a2KtrsB7yK+Xi5pp7b7dlGDNOHxSKly5hf+f3jFOeewA6B8D2SRg==}
     dependencies:
       ts-json-schema-generator: 1.2.0
       vscode-json-languageservice: 5.3.4
@@ -7227,8 +7227,8 @@ packages:
       vue-demi: 0.13.11(vue@2.7.14)
     dev: false
 
-  /vue-eslint-parser@9.2.0(eslint@8.40.0):
-    resolution: {integrity: sha512-aFXipsUbKU4TzgP9OU6cXIm2Nnp9ryKJc2mzY0s2xzwfjHg6WDT33LUAQRGR9K0NFncBgUEZ2njdrS3Lj/sOLw==}
+  /vue-eslint-parser@9.2.1(eslint@8.40.0):
+    resolution: {integrity: sha512-tPOex4n6jit4E7h68auOEbDMwE58XiP4dylfaVTCOVCouR45g+QFDBjgIdEU52EXJxKyjgh91dLfN2rxUcV0bQ==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: '>=6.0.0'
