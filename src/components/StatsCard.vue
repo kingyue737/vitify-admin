@@ -14,7 +14,7 @@ withDefaults(
     value: null,
     unit: '',
     formatter: (v: number) => v.toString(),
-  }
+  },
 )
 </script>
 

@@ -4,7 +4,7 @@
 import { readFileSync } from 'fs'
 import prettier from 'prettier'
 const webTypes = JSON.parse(
-  readFileSync('./node_modules/vuetify/dist/json/web-types.json')
+  readFileSync('./node_modules/vuetify/dist/json/web-types.json'),
 )
 
 const blackList = ['VFlex', 'VLayout'] // Components not to define in global
@@ -68,8 +68,8 @@ const types = webTypes.contributions.html.tags
             (attr) =>
               getDescription(attr) +
               `${attr.name.replace(/-./g, (x) =>
-                x[1].toUpperCase()
-              )}?: ${getType(attr.value.type)}`
+                x[1].toUpperCase(),
+              )}?: ${getType(attr.value.type)}`,
           )
           .join('\n') +
         '}' +
@@ -85,18 +85,18 @@ const types = webTypes.contributions.html.tags
                         slot['vue-properties']
                           .map(
                             (prop) =>
-                              prop.name + ':' + getSlotPropType(prop.type)
+                              prop.name + ':' + getSlotPropType(prop.type),
                           )
                           .join('\n') +
                         '}) => VNode[]'
                       : 'undefined'
-                  }`
+                  }`,
               )
               .join('\n') +
             '}>}\n'
           : '') +
         '>'
-      : ''
+      : '',
   )
   .join('\n')
 
@@ -115,7 +115,7 @@ declare module 'vue' {
 }
 
 export {}`,
-      { ...options, parser: 'typescript' }
-    )
+      { ...options, parser: 'typescript' },
+    ),
   )
 })

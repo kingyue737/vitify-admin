@@ -17,8 +17,8 @@ export const install: InstallPlugin = (vue) => {
         missingWarn: false,
         fallbackWarn: false,
       },
-      VueI18n
-    )
+      VueI18n,
+    ),
   )
   vue.use(i18n)
   return i18n

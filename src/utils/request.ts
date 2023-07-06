@@ -37,7 +37,7 @@ service.interceptors.request.use(
       config.headers!.Authorization = `Bearer ${token}`
     }
     return config
-  }
+  },
   // Add Error Handler Below
 )
 

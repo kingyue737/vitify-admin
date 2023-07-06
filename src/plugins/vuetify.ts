@@ -13,8 +13,8 @@ const svgIcons = Object.fromEntries(
     import.meta.glob<Component>('@/assets/icons/*.svg', {
       eager: true,
       import: 'default',
-    })
-  ).map(([k, v]) => [filename(k), { component: v }])
+    }),
+  ).map(([k, v]) => [filename(k), { component: v }]),
 )
 const theme = {
   primary: localStorage.getItem('theme-primary') || '#3f51b5',
