@@ -2,7 +2,7 @@
 // import webTypes from 'vuetify/dist/json/web-types.json' assert { type: 'json' }
 
 import { readFileSync } from 'fs'
-import prettier from 'prettier'
+import { format, resolveConfig } from 'prettier'
 const webTypes = JSON.parse(
   readFileSync('./node_modules/vuetify/dist/json/web-types.json'),
 )
@@ -100,10 +100,9 @@ const types = webTypes.contributions.html.tags
   )
   .join('\n')
 
-prettier.resolveConfig('./.prettierrc').then((options) => {
-  console.log(
-    prettier.format(
-      `
+resolveConfig('./.prettierrc').then((options) => {
+  format(
+    `
 import type { DefineComponent, VNode } from 'vue'
 import type { DataTableHeader, DataOptions } from 'vuetify'
 type eventHandler = Function
@@ -115,7 +114,6 @@ declare module 'vue' {
 }
 
 export {}`,
-      { ...options, parser: 'typescript' },
-    ),
-  )
+    { ...options, parser: 'typescript' },
+  ).then((v) => console.log(v))
 })
