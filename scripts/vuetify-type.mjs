@@ -1,10 +1,10 @@
-// uncomment next line once import assert enter stage 4
-// import webTypes from 'vuetify/dist/json/web-types.json' assert { type: 'json' }
+// uncomment next line once import attribute enter stage 4
+// import webTypes from 'vuetify/dist/json/web-types.json' with { type: 'json' }
 
 import { readFileSync } from 'fs'
-import prettier from 'prettier'
+import { format, resolveConfig } from 'prettier'
 const webTypes = JSON.parse(
-  readFileSync('./node_modules/vuetify/dist/json/web-types.json')
+  readFileSync('./node_modules/vuetify/dist/json/web-types.json'),
 )
 
 const blackList = ['VFlex', 'VLayout'] // Components not to define in global
@@ -68,8 +68,8 @@ const types = webTypes.contributions.html.tags
             (attr) =>
               getDescription(attr) +
               `${attr.name.replace(/-./g, (x) =>
-                x[1].toUpperCase()
-              )}?: ${getType(attr.value.type)}`
+                x[1].toUpperCase(),
+              )}?: ${getType(attr.value.type)}`,
           )
           .join('\n') +
         '}' +
@@ -85,25 +85,24 @@ const types = webTypes.contributions.html.tags
                         slot['vue-properties']
                           .map(
                             (prop) =>
-                              prop.name + ':' + getSlotPropType(prop.type)
+                              prop.name + ':' + getSlotPropType(prop.type),
                           )
                           .join('\n') +
                         '}) => VNode[]'
                       : 'undefined'
-                  }`
+                  }`,
               )
               .join('\n') +
             '}>}\n'
           : '') +
         '>'
-      : ''
+      : '',
   )
   .join('\n')
 
-prettier.resolveConfig('./.prettierrc').then((options) => {
-  console.log(
-    prettier.format(
-      `
+resolveConfig('./.prettierrc').then((options) => {
+  format(
+    `
 import type { DefineComponent, VNode } from 'vue'
 import type { DataTableHeader, DataOptions } from 'vuetify'
 type eventHandler = Function
@@ -115,7 +114,6 @@ declare module 'vue' {
 }
 
 export {}`,
-      { ...options, parser: 'typescript' }
-    )
-  )
+    { ...options, parser: 'typescript' },
+  ).then((v) => console.log(v))
 })

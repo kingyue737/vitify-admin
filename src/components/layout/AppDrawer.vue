@@ -24,26 +24,26 @@ const mini = computed(() => !drawerStored.value && !vuetify.breakpoint.mobile)
 const gradient = computed(() =>
   vuetify.theme.dark
     ? 'to bottom, rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)'
-    : 'to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, .7)'
+    : 'to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, .7)',
 )
 
 const groupedRoutes = computed(() =>
   Object.values(
     groupBy(
       routes.map((c) => c.children![0]),
-      'meta.drawerGroup'
-    )
+      'meta.drawerGroup',
+    ),
   )
     .map((rs) =>
       rs
         .filter(
-          (r) => r.meta?.icon && (!r.meta?.roles || isPermitted(r.meta.roles))
+          (r) => r.meta?.icon && (!r.meta?.roles || isPermitted(r.meta.roles)),
         )
         .sort(
-          (a, b) => (a.meta?.drawerIndex ?? 99) - (b.meta?.drawerIndex ?? 98)
-        )
+          (a, b) => (a.meta?.drawerIndex ?? 99) - (b.meta?.drawerIndex ?? 98),
+        ),
     )
-    .reverse()
+    .reverse(),
 )
 nextTick(() => {
   drawerStored.value =
