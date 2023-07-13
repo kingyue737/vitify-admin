@@ -69,7 +69,7 @@ export const worker = setupWorker(
       ctx.json<Token>({
         accessToken: 'admin',
         refreshToken: 'admin',
-      }),
+      })
     )
   }),
   rest.get(url('/groups'), (req, res, ctx) => {
@@ -77,5 +77,5 @@ export const worker = setupWorker(
   }),
   rest.get(url('/groups/:id'), (req, res, ctx) => {
     return res(ctx.json(groups.find((g) => g.id === Number(req.params.id))))
-  }),
+  })
 )

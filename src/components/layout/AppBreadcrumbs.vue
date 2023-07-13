@@ -6,7 +6,7 @@ const items = computed(() => {
     .slice(1)
     .filter(
       (item) =>
-        item.meta && item.meta.title && !(item.meta?.breadcrumb === 'hidden'),
+        item.meta && item.meta.title && !(item.meta?.breadcrumb === 'hidden')
     )
     .map((route) => ({
       text: t(route.meta.title!),

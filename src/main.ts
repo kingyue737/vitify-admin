@@ -16,10 +16,10 @@ const app = new Vue({
     Object.entries(
       import.meta.glob<{ install: InstallPlugin }>('./plugins/*.ts', {
         eager: true,
-      }),
+      })
     )
       .map(([k, v]) => [filename(k), v.install?.(Vue)] as [string, any])
-      .filter((entry) => entry[1]),
+      .filter((entry) => entry[1])
   ),
   render: (h) => h(App),
 })

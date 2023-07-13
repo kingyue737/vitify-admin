@@ -93,10 +93,10 @@ export function useChartGlobalOption() {
   const { locale } = useI18n()
   provide(
     THEME_KEY,
-    computed(() => (vuetify?.theme.dark ? 'dark' : undefined)),
+    computed(() => (vuetify?.theme.dark ? 'dark' : undefined))
   )
   provide(
     INIT_OPTIONS_KEY,
-    computed(() => ({ locale: locale.value.toUpperCase() })),
+    computed(() => ({ locale: locale.value.toUpperCase() }))
   )
 }

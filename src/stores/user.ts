@@ -46,7 +46,7 @@ export const useUserStore = defineStore('user', {
     },
     logOut() {
       ;['access', 'refresh', 'username'].forEach((k) =>
-        localStorage.removeItem(k),
+        localStorage.removeItem(k)
       )
       this.$reset()
     },

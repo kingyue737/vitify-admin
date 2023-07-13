@@ -1019,7 +1019,7 @@ declare module 'vue' {
                 past: boolean
                 present: boolean
                 future: boolean
-              },
+              }
             ]
             category: string | null
           }) => VNode[]
@@ -1042,7 +1042,7 @@ declare module 'vue' {
                 past: boolean
                 present: boolean
                 future: boolean
-              },
+              }
             ]
             date: string
             time: string
@@ -1075,10 +1075,10 @@ declare module 'vue' {
             future: boolean
             timeToY: (
               time: string | number | { hour: number; minute: number },
-              clamp: boolean = false,
+              clamp: boolean = false
             ) => number | false
             timeDelta: (
-              time: string | number | { hour: number; minute: number },
+              time: string | number | { hour: number; minute: number }
             ) => number | false
             minutesToPixels: (minutes: number) => number
             week: [
@@ -1096,7 +1096,7 @@ declare module 'vue' {
                 past: boolean
                 present: boolean
                 future: boolean
-              },
+              }
             ]
           }) => VNode[]
           /** The content that is placed in a `day` view in the top container. The day & time object is passed through this slots scope. */
@@ -1116,10 +1116,10 @@ declare module 'vue' {
             future: boolean
             timeToY: (
               time: string | number | { hour: number; minute: number },
-              clamp: boolean = false,
+              clamp: boolean = false
             ) => number | false
             timeDelta: (
-              time: string | number | { hour: number; minute: number },
+              time: string | number | { hour: number; minute: number }
             ) => number | false
             minutesToPixels: (minutes: number) => number
             week: [
@@ -1137,7 +1137,7 @@ declare module 'vue' {
                 past: boolean
                 present: boolean
                 future: boolean
-              },
+              }
             ]
           }) => VNode[]
           /** The content that is placed in the day of the month space in the `custom-weekly` or `month` view. The day & time object is passed through this slots scope. */
@@ -1249,7 +1249,7 @@ declare module 'vue' {
                   past: boolean
                   present: boolean
                   future: boolean
-                },
+                }
               ]
               date: string
               time: string
@@ -1292,10 +1292,10 @@ declare module 'vue' {
             future: boolean
             timeToY: (
               time: string | number | { hour: number; minute: number },
-              clamp: boolean = false,
+              clamp: boolean = false
             ) => number | false
             timeDelta: (
-              time: string | number | { hour: number; minute: number },
+              time: string | number | { hour: number; minute: number }
             ) => number | false
             minutesToPixels: (minutes: number) => number
             week: [
@@ -1313,7 +1313,7 @@ declare module 'vue' {
                 past: boolean
                 present: boolean
                 future: boolean
-              },
+              }
             ]
           }) => VNode[]
         }>

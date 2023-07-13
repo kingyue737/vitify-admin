@@ -44,7 +44,7 @@ export default defineComponent({
       return this.item.children
         ?.filter((child) => child.meta?.icon)
         .sort(
-          (a, b) => (a.meta?.drawerIndex ?? 99) - (b.meta?.drawerIndex ?? 98),
+          (a, b) => (a.meta?.drawerIndex ?? 99) - (b.meta?.drawerIndex ?? 98)
         )
     },
     visibleChildrenNum() {

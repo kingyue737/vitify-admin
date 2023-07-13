@@ -29,7 +29,7 @@ export function mountComposable<T>(composable: () => T) {
 export function createWrapper(
   component: Parameters<typeof mount>[0],
   options: Parameters<typeof mount>[1] = {},
-  shallow = false,
+  shallow = false
 ) {
   const localVue = createLocalVue()
   installComponents(localVue)
@@ -45,7 +45,7 @@ export function createWrapper(
 
 export function renderWithVuetify(
   component: Parameters<typeof render>[0],
-  options: Parameters<typeof render>[1] = {},
+  options: Parameters<typeof render>[1] = {}
 ) {
   const root = document.createElement('div')
   root.setAttribute('data-app', 'true')
@@ -64,6 +64,6 @@ export function renderWithVuetify(
       const i18n = installI18n(vue)
       vue.use(PiniaVuePlugin)
       return { i18n }
-    },
+    }
   )
 }

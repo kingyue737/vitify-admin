@@ -2,7 +2,7 @@ import type { Role } from '@/api/users'
 
 export function isPermitted(
   allowedRoles: Role[],
-  roles: Role[] = useUserStore().roles,
+  roles: Role[] = useUserStore().roles
 ): boolean {
   if (roles.some((role) => allowedRoles.includes(role))) {
     return true

@@ -41,7 +41,7 @@ export const deleteUser = (userId: number) => service.delete(`/users/${userId}`)
 export const getToken = (username: string, password: string) =>
   service.post<Token>(
     '/auth/access-token',
-    new URLSearchParams({ username, password }),
+    new URLSearchParams({ username, password })
   )
 
 export const refreshToken = (refreshToken: string) =>

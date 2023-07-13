@@ -6,7 +6,7 @@ const { t } = useI18n()
 const messageStore = useMessageStore()
 const { messages } = storeToRefs(messageStore)
 const messagesShown = computed(() =>
-  messages.value.filter((message) => message.show).reverse(),
+  messages.value.filter((message) => message.show).reverse()
 )
 const showAll = ref(false)
 const timeout = ref(5000)
