@@ -204,7 +204,6 @@ declare module 'vue' {
     >
     VAutocomplete: DefineComponent<
       {
-        /** Allow the menu to overflow off the screen */ allowOverflow?: boolean
         /** Appends an icon to the component, uses the same syntax as `v-icon` */
         appendIcon?: string
         /** Appends an icon to the outside the component's input, uses same syntax as `v-icon` */
@@ -250,7 +249,7 @@ declare module 'vue' {
         errorMessages?: string | any[]
         /** Applies the alternate filled input style */
         filled?: boolean
-        /** The filtering algorithm used when searching. [example](https://github.com/vuetifyjs/vuetify/blob/master/packages/vuetify/src/components/VAutocomplete/VAutocomplete.ts#L40) */
+        /** The filtering algorithm used when searching. [example](https://github.com/vuetifyjs/vuetify/blob/v2-stable/packages/vuetify/src/components/VAutocomplete/VAutocomplete.ts#L40) */
         filter?: Function
         /** Removes elevation (shadow) added to element when using the **solo** or **solo-inverted** props */
         flat?: boolean
@@ -262,10 +261,8 @@ declare module 'vue' {
         hideDetails?: boolean | string
         /** Hides the menu when there are no options to show.  Useful for preventing the menu from opening before results are fetched asynchronously.  Also has the effect of opening the menu when the `items` array changes if not already open. */
         hideNoData?: boolean
-        /** Do not display in the select menu items that are already selected */
+        /** Do not display in the select menu items that are already selected. Also removes checkboxes from the list when multiple */
         hideSelected?: boolean
-        /** Hides spin buttons on the input when type is set to `number`. */
-        hideSpinButtons?: boolean
         /** Hint text */
         hint?: string
         /** Sets the DOM id on the component */
@@ -342,13 +339,11 @@ declare module 'vue' {
         successMessages?: string | any[]
         /** Displays suffix text */
         suffix?: string
-        /** Sets input type */
-        type?: string
         /** Delays validation until blur event */
         validateOnBlur?: boolean
         /** The input's value */
         value?: any
-        /** The comparison algorithm used for values. [More info](https://github.com/vuetifyjs/vuetify/blob/master/packages/vuetify/src/util/helpers.ts) */
+        /** The comparison algorithm used for values. [More info](https://github.com/vuetifyjs/vuetify/blob/v2-stable/packages/vuetify/src/util/helpers.ts) */
         valueComparator?: Function
       },
       {
@@ -606,7 +601,7 @@ declare module 'vue' {
         activator?: any
         /** Specifies which DOM element that this component should detach to. String can be any valid querySelector and Object can be any valid Node. This will attach to the root `v-app` component by default. */
         attach?: any
-        /** Milliseconds to wait before closing component. */
+        /** Milliseconds to wait before closing component. Only applies to hover and focus events. */
         closeDelay?: number | string
         /** Applies a custom class to the detached element. This is useful because the content is moved to the beginning of the `v-app` component (unless the **attach** prop is provided) and is not targetable by classes passed directly on the component. */
         contentClass?: string
@@ -630,12 +625,10 @@ declare module 'vue' {
         maxWidth?: string | number
         /** Disables the bounce effect when clicking outside of a `v-dialog`'s content when using the **persistent** prop. */
         noClickAnimation?: boolean
-        /** Milliseconds to wait before opening component. */
+        /** Milliseconds to wait before opening component. Only applies to hover and focus events. */
         openDelay?: number | string
         openOnClick?: boolean
         openOnFocus?: boolean
-        /** Designates whether component should activate when its activator is hovered. */
-        openOnHover?: boolean
         /** Sets the transition origin on the element. You can find more information on the MDN documentation [for transition origin](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin). */
         origin?: string
         /** Sets the overlay color. */
@@ -1718,8 +1711,6 @@ declare module 'vue' {
         falseValue?: any
         /** Hides hint and validation errors. When set to `auto` messages will be rendered only if there's a message (hint, error message, counter value etc) to display */
         hideDetails?: boolean | string
-        /** Hides spin buttons on the input when type is set to `number`. */
-        hideSpinButtons?: boolean
         /** Hint text */
         hint?: string
         /** Sets the DOM id on the component */
@@ -1960,7 +1951,6 @@ declare module 'vue' {
     }>
     VCombobox: DefineComponent<
       {
-        /** Allow the menu to overflow off the screen */ allowOverflow?: boolean
         /** Appends an icon to the component, uses the same syntax as `v-icon` */
         appendIcon?: string
         /** Appends an icon to the outside the component's input, uses same syntax as `v-icon` */
@@ -2008,7 +1998,7 @@ declare module 'vue' {
         errorMessages?: string | any[]
         /** Applies the alternate filled input style */
         filled?: boolean
-        /** The filtering algorithm used when searching. [example](https://github.com/vuetifyjs/vuetify/blob/master/packages/vuetify/src/components/VAutocomplete/VAutocomplete.ts#L40) */
+        /** The function used for filtering items */
         filter?: Function
         /** Removes elevation (shadow) added to element when using the **solo** or **solo-inverted** props */
         flat?: boolean
@@ -2020,10 +2010,8 @@ declare module 'vue' {
         hideDetails?: boolean | string
         /** Hides the menu when there are no options to show.  Useful for preventing the menu from opening before results are fetched asynchronously.  Also has the effect of opening the menu when the `items` array changes if not already open. */
         hideNoData?: boolean
-        /** Do not display in the select menu items that are already selected */
+        /** Do not display in the select menu items that are already selected. Also removes checkboxes from the list when multiple */
         hideSelected?: boolean
-        /** Hides spin buttons on the input when type is set to `number`. */
-        hideSpinButtons?: boolean
         /** Hint text */
         hint?: string
         /** Sets the DOM id on the component */
@@ -2082,7 +2070,7 @@ declare module 'vue' {
         rounded?: boolean
         /** Accepts a mixed array of types `function`, `boolean` and `string`. Functions pass an input value as an argument and must return either `true` / `false` or a `string` containing an error message. The input field will enter an error state if a function returns (or any value in the array contains) `false` or is a `string` */
         rules?: any[]
-        /** Search value. Can be used with `.sync` modifier. */
+        /** Use the **.sync** modifier to catch user input from the search input */
         searchInput?: string
         /** Round if `outlined` and increase `border-radius` if `filled`. Must be used with either `outlined` or `filled` */
         shaped?: boolean
@@ -2100,13 +2088,11 @@ declare module 'vue' {
         successMessages?: string | any[]
         /** Displays suffix text */
         suffix?: string
-        /** Sets input type */
-        type?: string
         /** Delays validation until blur event */
         validateOnBlur?: boolean
         /** The input's value */
         value?: any
-        /** The comparison algorithm used for values. [More info](https://github.com/vuetifyjs/vuetify/blob/master/packages/vuetify/src/util/helpers.ts) */
+        /** The comparison algorithm used for values. [More info](https://github.com/vuetifyjs/vuetify/blob/v2-stable/packages/vuetify/src/util/helpers.ts) */
         valueComparator?: Function
       },
       {
@@ -2410,6 +2396,11 @@ declare module 'vue' {
         expandIcon?: string
         /** Array of expanded items. Can be used with `.sync` modifier */
         expanded?: any[]
+        /** Controls how how custom column filters are combined with the default filtering. Both modes only apply the default filter to columns not specified in `customKeyFilter`.
+
+- **union**: There is at least one match from the default filter, OR all custom column filters match.
+- **intersection**: There is at least one match from the default filter, AND all custom column filters match. */
+        filterMode?: string
         /** Fixed header to top of table. **NOTE:** Does not work in IE11 */
         fixedHeader?: boolean
         /** See the [`v-data-footer`](/api/v-data-footer) API for more information */
@@ -2434,6 +2425,7 @@ declare module 'vue' {
         itemClass?: string | Function
         /** The property on each item that is used as a unique key */
         itemKey?: string
+        itemStyle?: string | Function
         /** The array of items to display */
         items?: any[]
         /** Changes how many items per page should be visible. Can be used with `.sync` modifier. Setting this prop to `-1` will display all items on the page */
@@ -2740,6 +2732,12 @@ declare module 'vue' {
             isSelected: boolean
             select: (v: boolean) => void
             headers: DataTableHeader[]
+            on: {
+              click: (event: MouseEvent) => void
+              contextmenu: (event: MouseEvent) => void
+              dblclick: (event: MouseEvent) => void
+            }
+            attrs: { class: { [key: keyof any]: any } }
           }) => VNode[]
           /** Slot to customize a specific column */
           [name: `item.${string}`]: (args: {
@@ -2759,6 +2757,12 @@ declare module 'vue' {
             isSelected: boolean
             select: (v: boolean) => void
             headers: DataTableHeader[]
+            on: {
+              click: (event: MouseEvent) => void
+              contextmenu: (event: MouseEvent) => void
+              dblclick: (event: MouseEvent) => void
+            }
+            attrs: { class: { [key: keyof any]: any } }
           }) => VNode[]
           /** Slot to replace the default `v-simple-checkbox` used when selecting rows */
           'item.data-table-select': (args: {
@@ -2770,6 +2774,12 @@ declare module 'vue' {
             isSelected: boolean
             select: (v: boolean) => void
             headers: DataTableHeader[]
+            on: {
+              click: (event: MouseEvent) => void
+              contextmenu: (event: MouseEvent) => void
+              dblclick: (event: MouseEvent) => void
+            }
+            attrs: { class: { [key: keyof any]: any } }
           }) => VNode[]
           /** Defines content for when `loading` is true and no items are provided */
           loading: undefined
@@ -2985,7 +2995,7 @@ declare module 'vue' {
         activator?: any
         /** Specifies which DOM element that this component should detach to. String can be any valid querySelector and Object can be any valid Node. This will attach to the root `v-app` component by default. */
         attach?: any
-        /** Milliseconds to wait before closing component. */
+        /** Milliseconds to wait before closing component. Only applies to hover and focus events. */
         closeDelay?: number | string
         /** Applies a custom class to the detached element. This is useful because the content is moved to the beginning of the `v-app` component (unless the **attach** prop is provided) and is not targetable by classes passed directly on the component. */
         contentClass?: string
@@ -3007,12 +3017,10 @@ declare module 'vue' {
         maxWidth?: string | number
         /** Disables the bounce effect when clicking outside of a `v-dialog`'s content when using the **persistent** prop. */
         noClickAnimation?: boolean
-        /** Milliseconds to wait before opening component. */
+        /** Milliseconds to wait before opening component. Only applies to hover and focus events. */
         openDelay?: number | string
         openOnClick?: boolean
         openOnFocus?: boolean
-        /** Designates whether component should activate when its activator is hovered. */
-        openOnHover?: boolean
         /** Sets the transition origin on the element. You can find more information on the MDN documentation [for transition origin](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin). */
         origin?: string
         /** Sets the overlay color. */
@@ -3116,7 +3124,7 @@ declare module 'vue' {
       {
         $scopedSlots: Readonly<{
           /** Expansion header actions */
-          actions: undefined
+          actions: (args: { open: boolean }) => VNode[]
           /** The default Vue slot. */
           default: (args: { open: boolean }) => VNode[]
         }>
@@ -3132,7 +3140,7 @@ declare module 'vue' {
       {
         $scopedSlots: Readonly<{
           /** The default Vue slot. */
-          default: undefined
+          default: (args: { open: boolean }) => VNode[]
         }>
       }
     >
@@ -3185,8 +3193,6 @@ declare module 'vue' {
         hideDetails?: boolean | string
         /** Display the icon only without the input (file names) */
         hideInput?: boolean
-        /** Hides spin buttons on the input when type is set to `number`. */
-        hideSpinButtons?: boolean
         /** Hint text */
         hint?: string
         /** Sets the DOM id on the component */
@@ -3243,8 +3249,6 @@ declare module 'vue' {
         suffix?: string
         /** The length of a filename before it is truncated with ellipsis */
         truncateLength?: number | string
-        /** Sets input type */
-        type?: string
         /** Delays validation until blur event */
         validateOnBlur?: boolean
         /** A single or array of [File objects](https://developer.mozilla.org/en-US/docs/Web/API/File). */
@@ -3470,11 +3474,11 @@ declare module 'vue' {
 
     VHover: DefineComponent<
       {
-        /** Milliseconds to wait before closing component. */
+        /** Milliseconds to wait before closing component. Only applies to hover and focus events. */
         closeDelay?: number | string
         /** Turns off hover functionality */
         disabled?: boolean
-        /** Milliseconds to wait before opening component. */
+        /** Milliseconds to wait before opening component. Only applies to hover and focus events. */
         openDelay?: number | string
         /** Controls whether the component is visible or hidden. */
         value?: boolean
@@ -4019,6 +4023,8 @@ Use [vuetify-loader](https://github.com/vuetifyjs/vuetify-loader) to generate au
         closeOnContentClick?: boolean
         /** Applies a custom class to the detached element. This is useful because the content is moved to the beginning of the `v-app` component (unless the **attach** prop is provided) and is not targetable by classes passed directly on the component. */
         contentClass?: string
+        /** Applies props/attributes to the detached menu. This is useful because the content is moved to the beginning of the `v-app` component (unless the attach prop is provided) and is not targetable by classes passed directly on the component. You could use this for example for applying a `data-cy` for cypress testing purposes. */
+        contentProps?: object
         /** Applies the dark theme variant to the component. You can find more information on the Material Design documentation for [dark themes](https://material.io/design/color/dark-theme.html). */
         dark?: boolean
         /** Removes all keyboard interaction */
@@ -4179,8 +4185,6 @@ Use [vuetify-loader](https://github.com/vuetifyjs/vuetify-loader) to generate au
       dark?: boolean
       /** Disable the input */
       disabled?: boolean
-      /** Hides spin buttons on the input when type is set to `number`. */
-      hideSpinButtons?: boolean
       /** Sets the DOM id on the component */
       id?: string
       /** The OTP field's length */
@@ -4196,7 +4200,6 @@ Use [vuetify-loader](https://github.com/vuetifyjs/vuetify-loader) to generate au
     }>
     VOverflowBtn: DefineComponent<
       {
-        /** Allow the menu to overflow off the screen */ allowOverflow?: boolean
         /** Appends an icon to the component, uses the same syntax as `v-icon` */
         appendIcon?: string
         /** Appends an icon to the outside the component's input, uses same syntax as `v-icon` */
@@ -4244,7 +4247,7 @@ Use [vuetify-loader](https://github.com/vuetifyjs/vuetify-loader) to generate au
         errorMessages?: string | any[]
         /** Applies the alternate filled input style */
         filled?: boolean
-        /** The filtering algorithm used when searching. [example](https://github.com/vuetifyjs/vuetify/blob/master/packages/vuetify/src/components/VAutocomplete/VAutocomplete.ts#L40) */
+        /** The function used for filtering items */
         filter?: Function
         /** Removes elevation (shadow) added to element when using the **solo** or **solo-inverted** props */
         flat?: boolean
@@ -4256,10 +4259,8 @@ Use [vuetify-loader](https://github.com/vuetifyjs/vuetify-loader) to generate au
         hideDetails?: boolean | string
         /** Hides the menu when there are no options to show.  Useful for preventing the menu from opening before results are fetched asynchronously.  Also has the effect of opening the menu when the `items` array changes if not already open. */
         hideNoData?: boolean
-        /** Do not display in the select menu items that are already selected */
+        /** Do not display in the select menu items that are already selected. Also removes checkboxes from the list when multiple */
         hideSelected?: boolean
-        /** Hides spin buttons on the input when type is set to `number`. */
-        hideSpinButtons?: boolean
         /** Hint text */
         hint?: string
         /** Sets the DOM id on the component */
@@ -4318,7 +4319,7 @@ Use [vuetify-loader](https://github.com/vuetifyjs/vuetify-loader) to generate au
         rounded?: boolean
         /** Accepts a mixed array of types `function`, `boolean` and `string`. Functions pass an input value as an argument and must return either `true` / `false` or a `string` containing an error message. The input field will enter an error state if a function returns (or any value in the array contains) `false` or is a `string` */
         rules?: any[]
-        /** Search value. Can be used with `.sync` modifier. */
+        /** Use the **.sync** modifier to catch user input from the search input */
         searchInput?: string
         /** Creates a segmented button */
         segmented?: boolean
@@ -4338,13 +4339,11 @@ Use [vuetify-loader](https://github.com/vuetifyjs/vuetify-loader) to generate au
         successMessages?: string | any[]
         /** Displays suffix text */
         suffix?: string
-        /** Sets input type */
-        type?: string
         /** Delays validation until blur event */
         validateOnBlur?: boolean
         /** The input's value */
         value?: any
-        /** The comparison algorithm used for values. [More info](https://github.com/vuetifyjs/vuetify/blob/master/packages/vuetify/src/util/helpers.ts) */
+        /** The comparison algorithm used for values. [More info](https://github.com/vuetifyjs/vuetify/blob/v2-stable/packages/vuetify/src/util/helpers.ts) */
         valueComparator?: Function
       },
       {
@@ -4431,6 +4430,8 @@ Use [vuetify-loader](https://github.com/vuetifyjs/vuetify-loader) to generate au
       length?: number
       /** Applies the light theme variant to the component. */
       light?: boolean
+      navigationColor?: string
+      navigationTextColor?: string
       nextAriaLabel?: string
       /** Specify the icon to use for the next icon */
       nextIcon?: string
@@ -4596,8 +4597,6 @@ Use [vuetify-loader](https://github.com/vuetifyjs/vuetify-loader) to generate au
         errorMessages?: string | any[]
         /** Hides hint and validation errors. When set to `auto` messages will be rendered only if there's a message (hint, error message, counter value etc) to display */
         hideDetails?: boolean | string
-        /** Hides spin buttons on the input when type is set to `number`. */
-        hideSpinButtons?: boolean
         /** Hint text */
         hint?: string
         /** Sets the DOM id on the component */
@@ -4641,11 +4640,15 @@ Use [vuetify-loader](https://github.com/vuetifyjs/vuetify-loader) to generate au
       },
       {
         $scopedSlots: Readonly<{
+          /** Adds an item inside the input and after input content */
+          append: undefined
           /** The default Vue slot. */
           default: undefined
           /** Replaces the default label */
           label: undefined
           message: (args: { key: number; message: string }) => VNode[]
+          /** Adds an item outside the input and before input content */
+          prepend: undefined
         }>
       }
     >
@@ -4712,8 +4715,6 @@ Use [vuetify-loader](https://github.com/vuetifyjs/vuetify-loader) to generate au
         height?: number | string
         /** Hides hint and validation errors. When set to `auto` messages will be rendered only if there's a message (hint, error message, counter value etc) to display */
         hideDetails?: boolean | string
-        /** Hides spin buttons on the input when type is set to `number`. */
-        hideSpinButtons?: boolean
         /** Hint text */
         hint?: string
         /** Sets the DOM id on the component */
@@ -4794,7 +4795,7 @@ Use [vuetify-loader](https://github.com/vuetifyjs/vuetify-loader) to generate au
         /** The color used for empty icons */ backgroundColor?: string
         /** Allows for the component to be cleared. Triggers when the icon containing the current value is clicked. */
         clearable?: boolean
-        /** Milliseconds to wait before closing component. */
+        /** Milliseconds to wait before closing component. Only applies to hover and focus events. */
         closeDelay?: number | string
         /** Applies specified color to the control - it can be the name of material color (for example `success` or `purple`) or css color (`#033` or `rgba(255, 0, 0, 0.5)`). You can find a list of built-in classes on the [colors page](/styles/colors#material-colors). */
         color?: string
@@ -4820,7 +4821,7 @@ Use [vuetify-loader](https://github.com/vuetifyjs/vuetify-loader) to generate au
         length?: number | string
         /** Applies the light theme variant to the component. */
         light?: boolean
-        /** Milliseconds to wait before opening component. */
+        /** Milliseconds to wait before opening component. Only applies to hover and focus events. */
         openDelay?: number | string
         /** Removes all hover effects and pointer events */
         readonly?: boolean
@@ -4933,10 +4934,8 @@ Use [vuetify-loader](https://github.com/vuetifyjs/vuetify-loader) to generate au
         height?: number | string
         /** Hides hint and validation errors. When set to `auto` messages will be rendered only if there's a message (hint, error message, counter value etc) to display */
         hideDetails?: boolean | string
-        /** Do not display in the select menu items that are already selected */
+        /** Do not display in the select menu items that are already selected. Also removes checkboxes from the list when multiple */
         hideSelected?: boolean
-        /** Hides spin buttons on the input when type is set to `number`. */
-        hideSpinButtons?: boolean
         /** Hint text */
         hint?: string
         /** Sets the DOM id on the component */
@@ -5009,13 +5008,11 @@ Use [vuetify-loader](https://github.com/vuetifyjs/vuetify-loader) to generate au
         successMessages?: string | any[]
         /** Displays suffix text */
         suffix?: string
-        /** Sets input type */
-        type?: string
         /** Delays validation until blur event */
         validateOnBlur?: boolean
         /** The input's value */
         value?: any
-        /** The comparison algorithm used for values. [More info](https://github.com/vuetifyjs/vuetify/blob/master/packages/vuetify/src/util/helpers.ts) */
+        /** The comparison algorithm used for values. [More info](https://github.com/vuetifyjs/vuetify/blob/v2-stable/packages/vuetify/src/util/helpers.ts) */
         valueComparator?: Function
       },
       {
@@ -5079,6 +5076,7 @@ Use [vuetify-loader](https://github.com/vuetifyjs/vuetify-loader) to generate au
         light?: boolean
         /** Applies a loading animation with a on-hover loading cursor. A value of **false** will only work when there is content in the `default` slot. */
         loading?: boolean
+        loadingText?: string
         /** Sets the maximum height for the component. */
         maxHeight?: number | string
         /** Sets the maximum width for the component. */
@@ -5129,8 +5127,6 @@ Use [vuetify-loader](https://github.com/vuetifyjs/vuetify-loader) to generate au
         height?: number | string
         /** Hides hint and validation errors. When set to `auto` messages will be rendered only if there's a message (hint, error message, counter value etc) to display */
         hideDetails?: boolean | string
-        /** Hides spin buttons on the input when type is set to `number`. */
-        hideSpinButtons?: boolean
         /** Hint text */
         hint?: string
         /** Sets the DOM id on the component */
@@ -5228,7 +5224,7 @@ Use [vuetify-loader](https://github.com/vuetifyjs/vuetify-loader) to generate au
         nextIcon?: string
         /** The prepended slot when arrows are shown */
         prevIcon?: string
-        /** Change when the overflow arrow indicators are shown. By **default**, arrows *always* display on Desktop when the container is overflowing. When the container overflows on mobile, arrows are not shown by default. A **show-arrows** value of `true` allows these arrows to show on Mobile if the container overflowing. A value of `desktop` *always* displays arrows on Desktop while a value of `mobile` always displays arrows on Mobile. A value of `always` always displays arrows on Desktop *and* Mobile. Find more information on how to customize breakpoint thresholds on the [breakpoints page](/customizing/breakpoints). */
+        /** Change when the overflow arrow indicators are shown. By **default**, arrows *always* display on Desktop when the container is overflowing. When the container overflows on mobile, arrows are not shown by default. A **show-arrows** value of `true` allows these arrows to show on Mobile if the container overflowing. A value of `desktop` *always* displays arrows on Desktop while a value of `mobile` always displays arrows on Mobile. A value of `always` always displays arrows on Desktop *and* Mobile. A value of `never` always hides the arrows. Find more information on how to customize breakpoint thresholds on the [breakpoints page](/customizing/breakpoints). */
         showArrows?: boolean | string
         /** Specify a custom tag used on the root element. */
         tag?: string
@@ -5569,8 +5565,6 @@ Use [vuetify-loader](https://github.com/vuetifyjs/vuetify-loader) to generate au
         flat?: boolean
         /** Hides hint and validation errors. When set to `auto` messages will be rendered only if there's a message (hint, error message, counter value etc) to display */
         hideDetails?: boolean | string
-        /** Hides spin buttons on the input when type is set to `number`. */
-        hideSpinButtons?: boolean
         /** Hint text */
         hint?: string
         /** Sets the DOM id on the component */
@@ -5725,6 +5719,7 @@ Use [vuetify-loader](https://github.com/vuetifyjs/vuetify-loader) to generate au
         replace?: boolean
         /** Applies the [v-ripple](/directives/ripple) directive. */
         ripple?: boolean | object
+        tabValue?: any
         /** Specify a custom tag used on the root element. */
         tag?: string
         /** Designates the target attribute. This should only be applied when using the **href** prop. */
@@ -5856,8 +5851,6 @@ Use [vuetify-loader](https://github.com/vuetifyjs/vuetify-loader) to generate au
         height?: number | string
         /** Hides hint and validation errors. When set to `auto` messages will be rendered only if there's a message (hint, error message, counter value etc) to display */
         hideDetails?: boolean | string
-        /** Hides spin buttons on the input when type is set to `number`. */
-        hideSpinButtons?: boolean
         /** Hint text */
         hint?: string
         /** Sets the DOM id on the component */
@@ -5914,8 +5907,6 @@ Use [vuetify-loader](https://github.com/vuetifyjs/vuetify-loader) to generate au
         successMessages?: string | any[]
         /** Displays suffix text */
         suffix?: string
-        /** Sets input type */
-        type?: string
         /** Delays validation until blur event */
         validateOnBlur?: boolean
         /** The input's value */
@@ -6139,6 +6130,8 @@ Use [vuetify-loader](https://github.com/vuetifyjs/vuetify-loader) to generate au
     >
     VTimePicker: DefineComponent<
       {
+        /** Determines which picker is being displayed. Allowed values: `'HOUR'`, `'MINUTE'`, `'SECOND'` */
+        activePicker?: string
         /** Restricts which hours can be selected */
         allowedHours?: Function | any[]
         /** Restricts which minutes can be selected */
