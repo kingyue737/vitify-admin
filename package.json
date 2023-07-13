@@ -1,6 +1,6 @@
 {
   "private": true,
-  "packageManager": "pnpm@8.6.6",
+  "packageManager": "pnpm@8.6.7",
   "scripts": {
     "dev": "vite --open --host",
     "build": "vite build",
@@ -54,7 +54,7 @@
     "msw": "^1.2.2",
     "postcss-load-config": "^4.0.1",
     "postcss-preset-env": "^9.0.0",
-    "prettier": "^3.0.0",
+    "prettier": "^2.8.8",
     "sass": "~1.32.13",
     "start-server-and-test": "^2.0.0",
     "terser": "^5.18.2",
