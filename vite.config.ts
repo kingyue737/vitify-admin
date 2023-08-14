@@ -13,7 +13,7 @@ import VueI18n from '@intlify/unplugin-vue-i18n/vite'
 import browserslistToEsbuild from 'browserslist-to-esbuild'
 import Modify from '@kingyue/rollup-plugin-modify'
 import * as mdicons from '@mdi/js'
-import { mapKeys, kebabCase } from 'lodash'
+import { mapKeys } from 'lodash'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -26,7 +26,9 @@ export default defineConfig({
       exclude: ['node_modules/**'],
       find: /\b(?<![/\w])(mdi-[\w-]+)\b(?!\.)/,
       replace: (match: string) =>
-        mapKeys(mdicons, (v, k) => kebabCase(k))[match],
+        mapKeys(mdicons, (v, k) =>
+          k.replace(/([a-z])([A-Z0-9])/g, '$1-$2').toLowerCase(),
+        )[match],
       sourcemap: false,
     }),
     vue2(),
