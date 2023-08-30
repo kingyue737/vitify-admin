@@ -119,5 +119,9 @@ export default defineConfig({
     environment: 'jsdom',
     server: { deps: { inline: ['vuetify', '@vueuse', 'echarts'] } },
     setupFiles: ['./test/vitest.setup.ts'],
+    onConsoleLog(log) {
+      if (log.includes('Download the Vue Devtools extension')) return false
+      if (log.includes('Lit is in dev mode.')) return false
+    },
   },
 })
