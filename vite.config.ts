@@ -113,11 +113,9 @@ export default defineConfig({
     },
   },
   test: {
-    alias: { vue: 'vue/dist/vue.runtime.mjs' },
     globals: true,
     include: ['test/**/*.test.ts', 'src/**/__tests__/*'],
     environment: 'jsdom',
-    server: { deps: { inline: ['vuetify', '@vueuse', 'echarts'] } },
     setupFiles: ['./test/vitest.setup.ts'],
     onConsoleLog(log) {
       if (log.includes('Download the Vue Devtools extension')) return false
