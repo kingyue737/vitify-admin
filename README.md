@@ -8,7 +8,7 @@
     <img src="https://img.shields.io/badge/vue-2.7.14-brightgreen.svg" alt="vue">
   </a>
   <a href="https://github.com/vuetifyjs/vuetify">
-    <img src="https://img.shields.io/badge/vuetify-2.6.14-blue.svg" alt="vuetify">
+    <img src="https://img.shields.io/badge/vuetify-2.7.1-blue.svg" alt="vuetify">
   </a>
   <a href="https://github.com/kingyue737/vitify-admin/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license">
@@ -235,7 +235,7 @@ Inspired by [vitesse](https://github.com/antfu/vitesse) and [vue-element-admin](
 
 I made this starter template for promptly scaffolding admin projects of my company, along with some good practices I've learned during making these apps.
 
-Currently, plenty of awesome Vue 2 librarys have not migrated to Vue 3 ecosystem, maybe never 😭. There is still a long way to go before the release of version Vuetify [v3.3](https://github.com/vuetifyjs/vuetify/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22v3.3.0+%28Icarus%29%22) which includes all components of Vuetify 2. So I struggle with bridging perfect DX of Vue 3 to my Vuetify 2 projects.
+Currently, plenty of awesome Vue 2 librarys have not migrated to Vue 3 ecosystem, maybe never 😭. There is still a [long way to go](https://vuetifyjs.com/en/introduction/roadmap/#in-development) before Vuetify 3 includes all the features of Vuetify 2. So I struggle with bridging perfect DX of Vue 3 to my Vuetify 2 projects.
 It's strongly opinionated, but hope it can help you to avoid detours.
 
-Don't hesitate to open an issue or a discussion, if you meet any problem.
+Don't hesitate to open an issue or a discussion if you meet any problem.
