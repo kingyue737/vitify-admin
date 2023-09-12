@@ -25,12 +25,12 @@
     "vue": "^2.7.14",
     "vue-echarts": "^6.6.1",
     "vue-i18n": "^8.28.2",
-    "vue-i18n-bridge": "~9.2.2",
+    "vue-i18n-bridge": "^9.4.0",
     "vue-router": "^3.6.5",
     "vuetify": "^2.7.1"
   },
   "devDependencies": {
-    "@intlify/unplugin-vue-i18n": "^1.0.1",
+    "@intlify/unplugin-vue-i18n": "^1.2.0",
     "@kingyue/rollup-plugin-modify": "^4.1.0",
     "@kingyue/vite-plugin-vue2-svg": "^0.6.0",
     "@pinia/testing": "^0.1.3",
