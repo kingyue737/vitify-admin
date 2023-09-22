@@ -3045,6 +3045,11 @@ declare module 'vue' {
         $scopedSlots: Readonly<{
           /** When used, will activate the component when clicked (or hover for specific components). This manually stops the event propagation. Without this slot, if you open the component through its model, you will need to manually stop the event propagation */
           activator: (args: {
+            attrs: {
+              role: string
+              'aria-haspopup': boolean
+              'aria-expanded': string
+            }
             on: { [eventName: string]: eventHandler }
             value: boolean
           }) => VNode[]
