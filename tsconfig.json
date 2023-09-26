@@ -16,14 +16,14 @@
   ],
   "ts-node": {
     "compilerOptions": {
+      "module": "ESNext",
       "lib": ["es2023"],
-      "module": "Node16",
       "target": "es2022",
       "strict": true,
       "esModuleInterop": true,
       "skipLibCheck": true,
-      "forceConsistentCasingInFileNames": true,
-      "moduleResolution": "node"
+      "moduleResolution": "Node10",
+      "forceConsistentCasingInFileNames": true
     },
     "moduleTypes": {
       "postcss.config.ts": "cjs"
