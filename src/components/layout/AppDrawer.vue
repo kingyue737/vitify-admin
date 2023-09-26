@@ -102,18 +102,18 @@ nextTick(() => {
         class="px-0 d-flex flex-column justify-center"
       >
         <div />
-        <div class="text-body-2 font-weight-light pt-6 pt-md-0 text-center">
+        <div class="caption pt-6 pt-md-0 text-center">
           &copy; Copyright 2022
           <a
             href="https://github.com/kingyue737"
-            class="font-weight-regular"
+            class="font-weight-bold"
             target="_blank"
             >Yue JIN</a
           >
           <span> & </span>
           <a
             href="https://www.nustarnuclear.com/"
-            class="font-weight-regular"
+            class="font-weight-bold"
             target="_blank"
             >NuStar</a
           >
