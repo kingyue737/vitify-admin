@@ -10,8 +10,7 @@
     "test:unit": "vitest",
     "coverage": "vitest run --coverage",
     "typecheck": "vue-tsc --noEmit -p tsconfig.app.json --composite false",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "type:vuetify": "node ./scripts/vuetify-type.mjs > ./src/vuetify2.d.ts"
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
     "@mdi/js": "^7.2.96",
@@ -33,6 +32,7 @@
     "@intlify/unplugin-vue-i18n": "^1.2.0",
     "@kingyue/rollup-plugin-modify": "^4.1.0",
     "@kingyue/vite-plugin-vue2-svg": "^0.6.0",
+    "@kingyue/vuetify2-component-types": "^2.7.0",
     "@pinia/testing": "^0.1.3",
     "@rushstack/eslint-patch": "^1.4.0",
     "@testing-library/vue": "^5.9.0",
