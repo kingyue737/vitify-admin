@@ -13,14 +13,17 @@ import VueI18n from '@intlify/unplugin-vue-i18n/vite'
 import browserslistToEsbuild from 'browserslist-to-esbuild'
 import Modify from '@kingyue/rollup-plugin-modify'
 import * as mdicons from '@mdi/js'
-import { mapKeys } from 'lodash'
 
-const mdi = mapKeys(mdicons, (v, k) =>
-  k.replace(
-    /[A-Z]+(?![a-z])|[A-Z0-9]/g,
-    ($, ofs) => (ofs ? '-' : '') + $.toLowerCase(),
-  ),
-)
+const mdi: Record<string, string> = {}
+Object.keys(mdicons).forEach((key) => {
+  const value = (mdicons as Record<string, string>)[key]
+  mdi[
+    key.replace(
+      /[A-Z]+(?![a-z])|[A-Z0-9]/g,
+      ($, ofs) => (ofs ? '-' : '') + $.toLowerCase(),
+    )
+  ] = value
+})
 
 // https://vitejs.dev/config/
 export default defineConfig({
