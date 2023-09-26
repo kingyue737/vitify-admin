@@ -35,7 +35,14 @@ export default defineConfig({
     Modify({
       exclude: ['node_modules/**'],
       find: /\b(?<![/\w])(mdi-[\w-]+)\b(?!\.)/,
-      replace: (match: string) => mdi[match],
+      replace: (match: string) => {
+        if (mdi[match]) {
+          return mdi[match]
+        } else {
+          console.warn('[plugin-modify] No matched svg icon for ' + match)
+          return match
+        }
+      },
       sourcemap: false,
     }),
     vue2(),
