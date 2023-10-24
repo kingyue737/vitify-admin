@@ -1,5 +1,5 @@
-import { setupWorker, rest } from 'msw'
-import type { IUserData, Token } from '@/api/users'
+import { setupWorker } from 'msw/browser'
+import { http } from 'msw'
 
 const baseURL =
   import.meta.env.VITE_API_URL ||
@@ -54,28 +54,26 @@ const users = [
 ]
 
 export const worker = setupWorker(
-  rest.get(url('/users/:id'), (req, res, ctx) => {
-    return res(ctx.json({ id: 99, groups: [1] }))
+  http.get(url('/users/:id'), async ({ request }) => {
+    return Response.json({ id: 99, groups: [1] })
   }),
-  rest.get(url('/users'), (req, res, ctx) => {
-    return res(ctx.json<IUserData[]>(users))
+  http.get(url('/users'), async ({ request }) => {
+    return Response.json(users)
   }),
-  rest.delete(url('/users/:id'), (req, res, ctx) => {
-    users.splice(users.map((x) => x.id).indexOf(Number(req.params.id)), 1)
-    return res(ctx.status(204))
+  http.delete(url('/users/:id'), ({ params }) => {
+    users.splice(users.map((x) => x.id).indexOf(Number(params.id)), 1)
+    return new Response(null, { status: 204 })
   }),
-  rest.post(url('/auth/access-token'), (req, res, ctx) => {
-    return res(
-      ctx.json<Token>({
-        accessToken: 'admin',
-        refreshToken: 'admin',
-      }),
-    )
+  http.post(url('/auth/access-token'), async () => {
+    return Response.json({
+      accessToken: 'admin',
+      refreshToken: 'admin',
+    })
   }),
-  rest.get(url('/groups'), (req, res, ctx) => {
-    return res(ctx.json(groups))
+  http.get(url('/groups'), async () => {
+    return Response.json(groups)
   }),
-  rest.get(url('/groups/:id'), (req, res, ctx) => {
-    return res(ctx.json(groups.find((g) => g.id === Number(req.params.id))))
+  http.get(url('/groups/:id'), async ({ params }) => {
+    return Response.json(groups.find((g) => g.id === Number(params.id)))
   }),
 )
