@@ -26,6 +26,8 @@
 
 ## Variants
 
+- [vitify-nuxt](https://github.com/kingyue737/vitify-nuxt) - with Nuxt 3, the best DX 🔥🔥🔥
+  
 - [vitify-next](https://github.com/kingyue737/vitify-next) - Lightweight Vue 3 version of this template
 - [vitify-electron](https://github.com/kingyue737/vitify-electron) - Vuetify 3 + Electron starter
 
