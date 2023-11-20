@@ -38,7 +38,7 @@
     "@testing-library/vue": "^5.9.0",
     "@types/lodash": "^4.14.201",
     "@types/node": "^20.9.2",
-    "@vitejs/plugin-legacy": "^4.1.1",
+    "@vitejs/plugin-legacy": "^5.0.0",
     "@vitejs/plugin-vue2": "^2.3.1",
     "@vue/eslint-config-prettier": "^8.0.0",
     "@vue/eslint-config-typescript": "^12.0.0",
@@ -61,7 +61,7 @@
     "typescript": "^5.2.2",
     "unplugin-auto-import": "^0.16.7",
     "unplugin-vue-components": "^0.25.2",
-    "vite": "^4.5.0",
+    "vite": "^5.0.0",
     "vite-plugin-inspect": "^0.7.42",
     "vite-plugin-pages": "^0.31.0",
     "vite-plugin-vue-layouts": "^0.8.0",
@@ -79,5 +79,12 @@
   ],
   "msw": {
     "workerDirectory": "public"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "allowedVersions": {
+        "vite": "5"
+      }
+    }
   }
 }
