@@ -13,5 +13,13 @@
     {
       "path": "./tsconfig.cypress.json"
     }
-  ]
+  ],
+  "ts-node": {
+    "transpileOnly": true,
+    "compilerOptions": {
+      "module": "ESNext",
+      "lib": ["es2023"],
+      "target": "es2022"
+    }
+  }
 }
