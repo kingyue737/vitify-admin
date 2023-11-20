@@ -15,18 +15,11 @@
     }
   ],
   "ts-node": {
+    "transpileOnly": true,
     "compilerOptions": {
       "module": "ESNext",
       "lib": ["es2023"],
-      "target": "es2022",
-      "strict": true,
-      "esModuleInterop": true,
-      "skipLibCheck": true,
-      "moduleResolution": "Node10",
-      "forceConsistentCasingInFileNames": true
-    },
-    "moduleTypes": {
-      "postcss.config.ts": "cjs"
+      "target": "es2022"
     }
   }
 }
