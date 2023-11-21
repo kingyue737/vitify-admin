@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { groupBy } from 'lodash'
 import { useVuetify } from '@/composables/useVuetify'
 import AppDrawerItem from './AppDrawerItem.vue'
-import { routes } from '@/plugins/router'
+import generatedRoutes from '~pages'
 import { isPermitted } from '@/utils/permission'
 
 const appStore = useAppStore()
@@ -29,9 +28,11 @@ const gradient = computed(() =>
 
 const groupedRoutes = computed(() =>
   Object.values(
-    groupBy(
-      routes.map((c) => c.children![0]),
-      'meta.drawerGroup',
+    generatedRoutes.reduce<Record<string, typeof generatedRoutes>>(
+      (r, v, i, a, k = v.meta?.drawerGroup || 'PUC') => (
+        (r[k] || (r[k] = [])).push(v), r
+      ),
+      {},
     ),
   )
     .map((rs) =>

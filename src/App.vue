@@ -1,7 +1,17 @@
 <script setup lang="ts">
-import { useChartGlobalOption } from '@/composables/useECharts'
-
-useChartGlobalOption()
+import { THEME_KEY, INIT_OPTIONS_KEY, UPDATE_OPTIONS_KEY } from 'vue-echarts'
+import { useVuetify } from './composables/useVuetify'
+const vuetify = useVuetify()
+const { locale } = useI18n()
+provide(
+  THEME_KEY,
+  computed(() => (vuetify?.theme.dark ? 'dark' : undefined)),
+)
+provide(
+  INIT_OPTIONS_KEY,
+  computed(() => ({ locale: locale.value.toUpperCase() })),
+)
+provide(UPDATE_OPTIONS_KEY, { notMerge: false })
 </script>
 
 <template>
