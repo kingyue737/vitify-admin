@@ -46,9 +46,6 @@ devDependencies:
   '@intlify/unplugin-vue-i18n':
     specifier: ^1.5.0
     version: 1.5.0(vue-i18n-bridge@9.7.0)(vue-i18n@8.28.2)
-  '@kingyue/rollup-plugin-modify':
-    specifier: ^4.1.0
-    version: 4.1.0
   '@kingyue/vite-plugin-vue2-svg':
     specifier: ^0.6.0
     version: 0.6.0
@@ -112,6 +109,9 @@ devDependencies:
   prettier:
     specifier: ^3.1.0
     version: 3.1.0
+  rollup-plugin-regexp:
+    specifier: ^5.0.1
+    version: 5.0.1
   sass:
     specifier: ~1.32.13
     version: 1.32.13
@@ -2179,15 +2179,6 @@ packages:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.1
       '@jridgewell/sourcemap-codec': 1.4.15
-    dev: true
-
-  /@kingyue/rollup-plugin-modify@4.1.0:
-    resolution: {integrity: sha512-KKQoD10NlHONAIPCmwGysP7N/UZ773+1wIeh+cXtOe9MRtGjYVa1INV4oyEVkWYu/KbAeKZWRw3IU+NifVVwRg==}
-    dependencies:
-      '@rollup/pluginutils': 5.0.5
-      magic-string: 0.30.5
-    transitivePeerDependencies:
-      - rollup
     dev: true
 
   /@kingyue/vite-plugin-vue2-svg@0.6.0:
@@ -6411,6 +6402,15 @@ packages:
     hasBin: true
     dependencies:
       glob: 7.2.3
+    dev: true
+
+  /rollup-plugin-regexp@5.0.1:
+    resolution: {integrity: sha512-0iYd6R8dkjt4ELNACA/FNoDeg4mKBR1jUvmZtPqg6BXQ22ml9HPRU6OtY4AjjiaA+jMxREAlfCVhY684LsGZgg==, tarball: https://registry.npmjs.org/rollup-plugin-regexp/-/rollup-plugin-regexp-5.0.1.tgz}
+    dependencies:
+      '@rollup/pluginutils': 5.0.5
+      magic-string: 0.30.5
+    transitivePeerDependencies:
+      - rollup
     dev: true
 
   /rollup@4.5.0:

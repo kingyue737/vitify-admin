@@ -12,7 +12,7 @@ import Inspect from 'vite-plugin-inspect'
 import VueI18n from '@intlify/unplugin-vue-i18n/vite'
 import browserslistToEsbuild from 'browserslist-to-esbuild'
 import postcssPresetEnv from 'postcss-preset-env'
-import Modify from '@kingyue/rollup-plugin-modify'
+import regexpPlugin from 'rollup-plugin-regexp'
 import * as mdicons from '@mdi/js'
 
 const mdi: Record<string, string> = {}
@@ -33,14 +33,14 @@ export default defineConfig({
     port: 9527,
   },
   plugins: [
-    Modify({
+    regexpPlugin({
       exclude: ['node_modules/**'],
       find: /\b(?<![/\w])(mdi-[\w-]+)\b(?!\.)/,
       replace: (match: string) => {
         if (mdi[match]) {
           return mdi[match]
         } else {
-          console.warn('[plugin-modify] No matched svg icon for ' + match)
+          console.warn('[plugin-regexp] No matched svg icon for ' + match)
           return match
         }
       },
