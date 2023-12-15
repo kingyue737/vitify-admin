@@ -1,5 +1,9 @@
 import Vue from 'vue'
-import Vuetify from 'vuetify/lib'
+Vue.config.devtools = false
+Vue.config.productionTip = false
+
+// import vuetify after suppressing devtools warning
+const Vuetify = (await import('vuetify/lib')).default
 
 Vue.use(Vuetify)
 

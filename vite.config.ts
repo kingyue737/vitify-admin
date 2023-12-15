@@ -131,9 +131,5 @@ export default defineConfig({
     include: ['test/**/*.test.ts', 'src/**/__tests__/*'],
     environment: 'jsdom',
     setupFiles: ['./test/vitest.setup.ts'],
-    onConsoleLog(log) {
-      if (log.includes('Download the Vue Devtools extension')) return false
-      if (log.includes('Lit is in dev mode.')) return false
-    },
   },
 })
