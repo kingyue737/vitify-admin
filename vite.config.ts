@@ -104,6 +104,7 @@ export default defineConfig({
   ],
   css: {
     devSourcemap: true,
+    preprocessorMaxWorkers: true,
     // https://vitejs.dev/config/#css-preprocessoroptions
     preprocessorOptions: {
       sass: {
