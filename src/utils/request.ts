@@ -4,7 +4,7 @@ const service = axios.create({
   baseURL:
     import.meta.env.VITE_API_URL ||
     `${window.location.protocol}//${window.location.hostname}:9529/api/v1`,
-  timeout: 120000,
+  timeout: 5000,
 })
 
 const errHandler = async (error: AxiosError) => {
