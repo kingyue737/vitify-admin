@@ -4,6 +4,6 @@
   "exclude": [],
   "compilerOptions": {
     "composite": true,
-    "types": ["node", "jsdom", "vitest/globals"]
+    "types": ["node", "vitest/globals"]
   }
 }
