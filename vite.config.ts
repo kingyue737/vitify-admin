@@ -54,7 +54,7 @@ export default defineConfig({
       modernPolyfills: true,
       renderLegacyChunks: false,
       modernTargets: browserslist.loadConfig({
-        path: fileURLToPath(new URL('.', import.meta.url)),
+        path: path.resolve(__dirname),
       }),
     }),
     Components({
