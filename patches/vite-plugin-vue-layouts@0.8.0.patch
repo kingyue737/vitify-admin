@@ -1,0 +1,29 @@
+diff --git a/package.json b/package.json
+index de999023f87c55dee2e57e2583e1e96b6f95095f..3df13b998cd92bc3a2cfd1767147c4b042edc6a9 100644
+--- a/package.json
++++ b/package.json
+@@ -18,11 +18,15 @@
+     "client.d.ts"
+   ],
+   "exports": {
+-    ".": {
+-      "require": "./dist/index.js",
+-      "import": "./dist/index.mjs"
++    "./client": {
++      "types": "./client.d.ts"
+     },
+-    "./*": "./*"
++    "./*": "./*",
++    ".": {
++      "types": "./dist/index.d.ts",
++      "import": "./dist/index.mjs",
++      "require": "./dist/index.js"
++    }
+   },
+   "scripts": {
+     "dev": "npm run build -- --watch",
+@@ -59,3 +63,4 @@
+     "vue-router": "^4.0.13"
+   }
+ }
++

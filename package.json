@@ -85,6 +85,9 @@
     },
     "allowedDeprecatedVersions": {
       "vue": "2"
+    },
+    "patchedDependencies": {
+      "vite-plugin-vue-layouts@0.8.0": "patches/vite-plugin-vue-layouts@0.8.0.patch"
     }
   }
 }
