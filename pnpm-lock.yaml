@@ -76,6 +76,9 @@ devDependencies:
   '@vue/test-utils':
     specifier: ^1.3.6
     version: 1.3.6(vue-template-compiler@2.7.16)(vue@2.7.16)
+  browserslist:
+    specifier: ^4.23.0
+    version: 4.23.0
   browserslist-to-esbuild:
     specifier: ^2.1.1
     version: 2.1.1(browserslist@4.23.0)

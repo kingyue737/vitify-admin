@@ -14,6 +14,7 @@ import browserslistToEsbuild from 'browserslist-to-esbuild'
 import postcssPresetEnv from 'postcss-preset-env'
 import regexpPlugin from 'rollup-plugin-regexp'
 import * as mdicons from '@mdi/js'
+import browserslist from 'browserslist'
 
 const mdi: Record<string, string> = {}
 Object.keys(mdicons).forEach((key) => {
@@ -52,6 +53,9 @@ export default defineConfig({
     legacy({
       modernPolyfills: true,
       renderLegacyChunks: false,
+      modernTargets: browserslist.loadConfig({
+        path: fileURLToPath(new URL('.', import.meta.url)),
+      }),
     }),
     Components({
       resolvers: [
