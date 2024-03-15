@@ -5,10 +5,10 @@
 
 <p align="center">
   <a href="https://github.com/vuejs/vue">
-    <img src="https://img.shields.io/badge/vue-2.7.15-brightgreen.svg" alt="vue">
+    <img src="https://img.shields.io/badge/vue-2.7.16-brightgreen.svg" alt="vue">
   </a>
   <a href="https://github.com/vuetifyjs/vuetify">
-    <img src="https://img.shields.io/badge/vuetify-2.7.1-blue.svg" alt="vuetify">
+    <img src="https://img.shields.io/badge/vuetify-2.7.2-blue.svg" alt="vuetify">
   </a>
   <a href="https://github.com/kingyue737/vitify-admin/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license">
@@ -27,7 +27,7 @@
 ## Variants
 
 - [vitify-nuxt](https://github.com/kingyue737/vitify-nuxt) - with Nuxt 3, the best DX 🔥🔥🔥
-  
+
 - [vitify-next](https://github.com/kingyue737/vitify-next) - Lightweight Vue 3 version of this template
 - [vitify-electron](https://github.com/kingyue737/vitify-electron) - Vuetify 3 + Electron starter
 
