@@ -20,10 +20,10 @@ const mdi: Record<string, string> = {}
 Object.keys(mdicons).forEach((key) => {
   const value = (mdicons as Record<string, string>)[key]
   mdi[
-    key.replace(
-      /[A-Z]+(?![a-z])|[A-Z0-9]/g,
-      ($, ofs) => (ofs ? '-' : '') + $.toLowerCase(),
-    )
+    key
+      .replace(/([A-Z])/g, '-$1')
+      .toLowerCase()
+      .replace(/([0-9]+)/g, '-$1')
   ] = value
 })
 
