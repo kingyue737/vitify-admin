@@ -23,7 +23,7 @@ export default defineComponent({
         return
       }
 
-      activeTimeout = setTimeout(() => {
+      activeTimeout = window.setTimeout(() => {
         isActive.value = false
       }, timeout.value)
     }
