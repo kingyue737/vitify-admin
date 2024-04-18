@@ -5,7 +5,6 @@ import legacy from '@vitejs/plugin-legacy'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { createSvgPlugin } from '@kingyue/vite-plugin-vue2-svg'
-import { splitVendorChunkPlugin } from 'vite'
 import Pages from 'vite-plugin-pages'
 import Layouts from 'vite-plugin-vue-layouts'
 import Inspect from 'vite-plugin-inspect'
@@ -97,7 +96,6 @@ export default defineConfig({
         ],
       },
     }),
-    splitVendorChunkPlugin(),
     VueI18n({
       runtimeOnly: false,
       compositionOnly: true,
@@ -136,5 +134,9 @@ export default defineConfig({
     include: ['test/**/*.test.ts', 'src/**/__tests__/*'],
     environment: 'jsdom',
     setupFiles: ['./test/vitest.setup.ts'],
+    onConsoleLog(log) {
+      /* Suppress EOL warning from vue-i18n */
+      if (log.startsWith('vue-i18n-bridge v10')) return false
+    },
   },
 })
