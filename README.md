@@ -37,7 +37,7 @@
 
 - 🖖 [Vue 2.7](https://github.com/vuejs/vue) - Composition API and `<script setup>`
 
-- ⚡️ [Vite 4](https://github.com/vitejs/vite), [pnpm](https://pnpm.io/), [ESBuild](https://github.com/evanw/esbuild) - born with fastness
+- ⚡️ [Vite](https://github.com/vitejs/vite), [pnpm](https://pnpm.io/), [ESBuild](https://github.com/evanw/esbuild) - born with fastness
 
 - 🗂️ [File based routing](./src/pages)
 
