@@ -124,7 +124,6 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
-      'vue-echarts': 'vue-echarts/dist/index.esm.min.js',
       'vue-i18n-bridge':
         'vue-i18n-bridge/dist/vue-i18n-bridge.runtime.esm-bundler.js',
     },
