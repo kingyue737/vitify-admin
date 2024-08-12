@@ -17,7 +17,7 @@ describe('Example Test', () => {
         cy.get('#' + id)
       })
       .type('your-password{Enter}')
-      .url()
-      .should('eq', 'http://localhost:5050/homepage')
+
+    cy.url().should('eq', 'http://localhost:5050/homepage')
   })
 })
