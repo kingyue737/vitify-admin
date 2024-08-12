@@ -105,7 +105,7 @@
 ### Coding Style
 
 - [Prettier](https://prettier.io/), single quotes, no semi
-- [ESLint](https://eslint.org/) with adapted [@vue/eslint-config-typescript](https://github.com/vuejs/eslint-config-typescript)
+- [ESLint](https://eslint.org/) with Flat Config
 
 ### Dev tools
 
