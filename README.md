@@ -96,7 +96,6 @@
 - [VueUse](https://github.com/antfu/vueuse) - Collection of useful composition APIs
 - [Mock Service Worker](https://github.com/mswjs/msw) - Seamless REST/GraphQL API mocking library for browser and Node.js
 - [`vite-plugin-vue2-svg`](https://github.com/pakholeung37/vite-plugin-vue2-svg) - Load SVG files as Vue components, and auto register as Vuetify `v-icon`s
-- [`volar-plugin-vue-router`](https://github.com/kingyue737/volar-plugin-vue-router) - Intellisense in `<route>` custom block
 
 ### Compatibility
 

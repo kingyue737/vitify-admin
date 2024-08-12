@@ -63,7 +63,6 @@
     "vite-plugin-pages": "^0.32.3",
     "vite-plugin-vue-layouts": "^0.8.0",
     "vitest": "^2.0.5",
-    "volar-plugin-vue-router": "^0.2.0",
     "vue-template-compiler": "^2.7.16",
     "vue-tsc": "^2.0.29",
     "vuetify2-component-types": "^2.7.2"
