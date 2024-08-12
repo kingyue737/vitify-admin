@@ -66,11 +66,7 @@ const toggleDark = useToggle(isDark)
     <v-card class="text-center mb-0" width="320">
       <v-card-text>
         <strong class="mb-3 d-inline-block">{{ t('themeColor') }}</strong>
-        <v-color-picker
-          v-model="color"
-          show-swatches
-          :swatches="colors"
-        ></v-color-picker>
+        <v-color-picker v-model="color" show-swatches :swatches="colors" />
         <v-divider class="my-3" />
         <v-row align="center" no-gutters>
           <v-col cols="auto">{{ t('darkMode') }}</v-col>

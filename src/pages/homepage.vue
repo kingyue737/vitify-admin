@@ -21,7 +21,7 @@ function warning() {
         :label="t('inputLabel')"
         class="input mx-auto"
       />
-      <v-btn-toggle></v-btn-toggle>
+      <v-btn-toggle />
       <v-btn :disabled="!name" class="mr-2" color="primary" @click="sayHi">
         {{ t('confirm') }}
       </v-btn>

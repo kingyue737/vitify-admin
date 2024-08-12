@@ -55,7 +55,7 @@ async function onSubmit() {
           max-height="40"
           max-width="40"
           contain
-        ></v-img>
+        />
         <v-app-bar-title class="font-weight-bold">
           Vitify <span class="primary--text text--lighten-1">Admin</span>
         </v-app-bar-title>

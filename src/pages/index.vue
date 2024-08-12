@@ -1,5 +1,5 @@
 <template>
-  <div></div>
+  <div />
 </template>
 <route lang="json">
 {

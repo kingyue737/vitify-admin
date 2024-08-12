@@ -48,14 +48,14 @@ export default defineComponent({
         <span style="line-height: 24px">{{ message }}</span>
       </v-card-title>
       <v-card-actions>
-        <v-spacer></v-spacer>
+        <v-spacer />
         <v-btn color="primary darken-1" text @click="cancel">{{
           t('cancel')
         }}</v-btn>
         <v-btn color="primary darken-1" text @click="confirm">{{
           t('confirm')
         }}</v-btn>
-        <v-spacer></v-spacer>
+        <v-spacer />
       </v-card-actions>
     </v-card>
   </v-dialog>
