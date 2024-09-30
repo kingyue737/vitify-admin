@@ -32,7 +32,7 @@ const colors = [
 ]
 const images = [drawer1, drawer2, drawer3]
 const menuShow = ref(false)
-const isDark = useDark({
+const isDark: WritableComputedRef<boolean> = useDark({
   onChanged(dark: boolean) {
     vuetify.theme.dark = dark
   },

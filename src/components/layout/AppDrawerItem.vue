@@ -1,6 +1,7 @@
 <script lang="ts">
 import type { RouteConfig } from 'vue-router'
 import type { PropType } from 'vue'
+import type {} from '@intlify/core-base'
 
 export default defineComponent({
   name: 'AppDrawerItem',

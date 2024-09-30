@@ -53,6 +53,9 @@ importers:
       '@eslint/compat':
         specifier: ^1.1.1
         version: 1.1.1
+      '@intlify/core-base':
+        specifier: ^9.14.1
+        version: 9.14.1
       '@intlify/unplugin-vue-i18n':
         specifier: ^2.0.0
         version: 2.0.0(rollup@4.22.5)(vue-i18n-bridge@9.14.1(vue@2.7.16))(vue-i18n@8.28.2(vue@2.7.16))(webpack-sources@3.2.3)
