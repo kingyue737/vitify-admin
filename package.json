@@ -1,7 +1,7 @@
 {
   "private": true,
   "type": "module",
-  "packageManager": "pnpm@9.11.0",
+  "packageManager": "pnpm@10.18.1",
   "scripts": {
     "dev": "vite --open --host",
     "build": "vite build",
@@ -16,10 +16,10 @@
   },
   "dependencies": {
     "@mdi/js": "^7.4.47",
-    "@vueuse/core": "^11.1.0",
-    "axios": "^1.7.7",
-    "echarts": "^5.5.1",
-    "pinia": "^2.2.2",
+    "@vueuse/core": "^11.3.0",
+    "axios": "^1.12.2",
+    "echarts": "^5.6.0",
+    "pinia": "^2.3.1",
     "portal-vue": "^2.1.7",
     "vue": "^2.7.16",
     "vue-echarts": "^7.0.3",
@@ -29,45 +29,45 @@
     "vuetify": "^2.7.2"
   },
   "devDependencies": {
-    "@eslint/compat": "^1.1.1",
-    "@intlify/core-base": "^9.14.1",
+    "@eslint/compat": "^1.4.0",
+    "@intlify/core-base": "^9.14.5",
     "@intlify/unplugin-vue-i18n": "^2.0.0",
     "@kingyue/vite-plugin-vue2-svg": "^0.6.0",
-    "@pinia/testing": "^0.1.5",
+    "@pinia/testing": "^0.1.7",
     "@testing-library/vue": "^5.9.0",
     "@types/jsdom": "^21.1.7",
-    "@types/node": "^20.16.10",
-    "@vitejs/plugin-legacy": "^5.4.2",
-    "@vitejs/plugin-vue2": "^2.3.1",
+    "@types/node": "^20.19.19",
+    "@vitejs/plugin-legacy": "^5.4.3",
+    "@vitejs/plugin-vue2": "^2.3.4",
     "@vue/test-utils": "^1.3.6",
-    "browserslist": "^4.24.0",
+    "browserslist": "^4.26.3",
     "browserslist-to-esbuild": "^2.1.1",
-    "cypress": "^13.15.0",
-    "eslint": "^9.11.1",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-cypress": "^3.5.0",
-    "eslint-plugin-vue": "^9.28.0",
+    "cypress": "^13.17.0",
+    "eslint": "^9.37.0",
+    "eslint-config-prettier": "^9.1.2",
+    "eslint-plugin-cypress": "^3.6.0",
+    "eslint-plugin-vue": "^9.33.0",
     "flush-promises": "^1.0.2",
     "jsdom": "^25.0.1",
-    "msw": "^2.4.9",
-    "postcss-preset-env": "^10.0.5",
-    "prettier": "^3.3.3",
+    "msw": "^2.11.3",
+    "postcss-preset-env": "^10.4.0",
+    "prettier": "^3.6.2",
     "rollup-plugin-regexp": "^5.0.1",
     "sass": "~1.32.13",
-    "start-server-and-test": "^2.0.8",
-    "terser": "^5.34.1",
-    "typescript": "^5.6.2",
-    "typescript-eslint": "^8.7.0",
-    "unplugin-auto-import": "^0.18.3",
-    "unplugin-vue-components": "^0.27.4",
-    "vite": "^5.4.8",
-    "vite-plugin-inspect": "^0.8.7",
-    "vite-plugin-pages": "^0.32.3",
+    "start-server-and-test": "^2.1.2",
+    "terser": "^5.44.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.0",
+    "unplugin-auto-import": "^20.2.0",
+    "unplugin-vue-components": "^0.27.5",
+    "vite": "^7.1.9",
+    "vite-plugin-inspect": "^11.3.3",
+    "vite-plugin-pages": "^0.32.5",
     "vite-plugin-vue-layouts": "^0.8.0",
-    "vitest": "^2.1.1",
+    "vitest": "^3.2.4",
     "vue-template-compiler": "^2.7.16",
-    "vue-tsc": "^2.1.6",
-    "vuetify2-component-types": "^2.7.2"
+    "vue-tsc": "^2.2.12",
+    "vuetify2-component-types": "^2.7.3"
   },
   "browserslist": [
     "> 1.3%",
@@ -82,14 +82,23 @@
   "pnpm": {
     "peerDependencyRules": {
       "allowedVersions": {
-        "vite-plugin-vue-layouts>vite": "5"
+        "vite-plugin-vue-layouts>vite": "7"
       }
     },
     "allowedDeprecatedVersions": {
-      "vue": "2"
+      "vue": "2",
+      "vuetify": "2",
+      "vue-i18n": "8"
     },
     "patchedDependencies": {
       "vite-plugin-vue-layouts@0.8.0": "patches/vite-plugin-vue-layouts@0.8.0.patch"
-    }
+    },
+    "onlyBuiltDependencies": [
+      "core-js",
+      "cypress",
+      "esbuild",
+      "msw",
+      "vue-demi"
+    ]
   }
 }
